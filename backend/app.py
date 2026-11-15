@@ -3,7 +3,7 @@
 https://fastapi.tiangolo.com/tutorial/static-files/
 """
 from concurrent.futures import ThreadPoolExecutor
-from contextlib import closing
+from contextlib import closing, asynccontextmanager
 from pathlib import Path
 import hashlib
 import json
@@ -25,7 +25,12 @@ from backend.science import ROOT, POLICY, build_sequence
 
 RUNTIME = Path(os.environ.get('VANTAGE_RUNTIME', ROOT / '.runtime'))
 RUNTIME.mkdir(exist_ok=True)
-app = FastAPI(title='Vantage scientific service')
+@asynccontextmanager
+async def lifespan(app):
+    app.state.recover_products()
+    yield
+
+app = FastAPI(title='Vantage scientific service',lifespan=lifespan)
 from backend.spectral_routes import router as spectral_router
 app.include_router(spectral_router)
 
@@ -55,6 +60,9 @@ with closing(connect()) as db:
     db.execute("UPDATE jobs SET state='interrupted',error='Service restarted. Retry the request.' WHERE state NOT IN ('complete','failed','cancelled','interrupted')")
     db.commit()
 
+from backend.product_jobs import create_router
+product_router,app.state.recover_products=create_router(database,pool)
+app.include_router(product_router)
 
 class Search(BaseModel):
     ra: str | float

@@ -59,10 +59,11 @@ class ScientificContract(unittest.TestCase):
     def test_actual_dr1_text_detector_schema(self):
         from astropy.io import fits
         from backend.science import write_json
-        calibration = next((ROOT/'.runtime/sources').glob('1d77*.fits'),None)
-        exposure = next((ROOT/'.runtime/sources').glob('99a093*.fits'),None)
-        if calibration is None or exposure is None:
-            self.skipTest('Live DR1 cache is not present in this checkout')
+        calibration = ROOT/'research/fixtures/dr1_spectral_wcs_d6.fits'
+        exposure = ROOT/'research/fixtures/dr1_d6_cutout.fits'
+        retained=json.loads((ROOT/'research/updates/2026-11-14/dr1-fixtures.json').read_text())
+        for row in retained['files']:
+            self.assertEqual(digest(ROOT/row['path']),row['sha256'])
         self.assertEqual(str(fits.getheader(calibration,'CWAVE')['DETECTOR']),'6')
         wcs,size=grid([133.79512916666664,-7.245147222222222],6)
         result=plane({'fixture':str(exposure),'source_calibration':str(calibration),'release':'dr1'},wcs,size)

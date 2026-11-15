@@ -8,6 +8,7 @@ import type { Sequence, Plane, Coverage } from "./types";
 import { json, readResponse } from "./api";
 import "./style.css";
 import { SpectralExplorer } from "./SpectralExplorer";
+import { CoaddAnalysis } from "./CoaddAnalysis";
 
 function download(name: string, value: string, type = "application/json") {
   const url = URL.createObjectURL(new Blob([value], { type }));
@@ -18,6 +19,8 @@ function download(name: string, value: string, type = "application/json") {
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
 function TemporalExplorer({onSpectral}:{onSpectral:()=>void}) {
+  const [analysis,setAnalysis]=useState(false);
+  const [targetLoading,setTargetLoading]=useState(false);
   const [catalog, setCatalog] = useState<Sequence[]>([]),
     [sequence, setSequence] = useState<Sequence | null>(null),
     [planes, setPlanes] = useState<Plane[]>([]);
@@ -49,8 +52,9 @@ function TemporalExplorer({onSpectral}:{onSpectral:()=>void}) {
   const [failedSelection, setFailedSelection] = useState<Sequence | null>(null);
   const request = useRef(0),
     canvas = useRef<HTMLCanvasElement>(null);
-  async function open(s: Sequence, replace = true) {
+  async function open(s: Sequence, replace = true, collapseControls = true) {
     const generation = ++request.current;
+    setTargetLoading(true);
     setPlaying(false);
     setMessage("Preparing aligned frames…");
     try {
@@ -90,12 +94,14 @@ function TemporalExplorer({onSpectral}:{onSpectral:()=>void}) {
       setOverlays(view.overlays);
       setJobId(null);
       setFailedSelection(null);
-      if (window.innerWidth <= 760) setPanel(false);
+      if (window.innerWidth <= 760 && collapseControls) setPanel(false);
     } catch (e) {
       if (generation === request.current) {
         setFailedSelection(s);
         setMessage(`Frames unavailable. Playback paused. ${String(e)}`);
       }
+    } finally {
+      if (generation === request.current) setTargetLoading(false);
     }
   }
   // Cleanup and generation guards follow https://react.dev/reference/react/useEffect#fetching-data-with-effects
@@ -120,6 +126,7 @@ function TemporalExplorer({onSpectral}:{onSpectral:()=>void}) {
         await open(
           selected || items.find((s) => s.key === "wise0855")!,
           !id && !location.pathname.startsWith("/sky"),
+          false,
         );
         if (location.pathname.startsWith("/sky")) {
           const q = new URLSearchParams(location.search);
@@ -840,10 +847,12 @@ function TemporalExplorer({onSpectral}:{onSpectral:()=>void}) {
             >
               Export provenance ↓
             </button>
+            <button onClick={() => setAnalysis(true)} disabled={!sequence||sequence.frames.length<2||targetLoading||!!failedSelection}>Stack observations</button>
             <button onClick={() => setMethods(true)}>Data & methods</button>
           </div>
         </aside>
       )}
+      {analysis&&sequence&&<CoaddAnalysis key={sequence.id} sequence={sequence} onClose={()=>setAnalysis(false)}/>}
       {methods && (
         <Methods
           credits={sequence?.credits || ""}
@@ -855,6 +864,8 @@ function TemporalExplorer({onSpectral}:{onSpectral:()=>void}) {
 }
 function App(){
   const [mode,setMode]=useState(new URLSearchParams(location.search).get('view')==='wavelengths'?'wavelengths':'time');
+  const [product,setProduct]=useState(new URLSearchParams(location.search).get('product'));
+  if(product)return <CoaddAnalysis initialProduct={product} standalone onClose={()=>{history.replaceState(null,'','/');setProduct(null);}}/>;
   return mode==='wavelengths'?<SpectralExplorer onTime={()=>{history.pushState(null,'','/');setMode('time');}}/>:<TemporalExplorer onSpectral={()=>{history.pushState(null,'','/?view=wavelengths');setMode('wavelengths');}}/>;
 }
 createRoot(document.getElementById("root")!).render(<App />);

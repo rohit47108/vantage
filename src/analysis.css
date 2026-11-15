@@ -1,0 +1,128 @@
+.analysis-dialog {
+  background: #0d151e;
+  color: #e2eaf0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  width: min(900px, 94vw);
+  max-height: 92dvh;
+  padding: 0;
+}
+.analysis-dialog::backdrop {
+  background: #000b;
+}
+.analysis-body {
+  padding: 28px;
+  line-height: 1.65;
+}
+.analysis-body .eyebrow {
+  color: var(--cyan);
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  font-size: 10px;
+}
+.analysis-title {
+  display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #0d151e;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+.analysis-title h1 {
+  font-size: 25px;
+  line-height: 1.2;
+  margin: 8px 0 16px;
+}
+.analysis-body p {
+  color: #b3c1cf;
+}
+.analysis-body fieldset {
+  border: 1px solid var(--line);
+  padding: 16px;
+  margin: 20px 0;
+  min-width: 0;
+}
+.analysis-body label {
+  display: block;
+  margin: 12px 0;
+}
+.analysis-body input[type="number"] {
+  display: block;
+  min-height: 42px;
+  max-width: 180px;
+  margin: 8px 0;
+}
+.analysis-frame {
+  display: flex !important;
+  align-items: center;
+  gap: 12px;
+}
+.analysis-frame input {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+.analysis-frame small {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  overflow-wrap: anywhere;
+}
+.coadd-result {
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr) minmax(240px, 1fr);
+  gap: 24px;
+  align-items: center;
+}
+.coadd-result h2 {
+  font-size: 20px;
+}
+.product-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  image-rendering: pixelated;
+  border: 1px solid var(--line);
+}
+.analysis-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 24px 0;
+}
+.action-link {
+  display: inline-block;
+  background: #14232e;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+.analysis-body details {
+  border-top: 1px solid var(--line);
+  padding: 16px 0;
+}
+.analysis-body summary {
+  cursor: pointer;
+}
+.standalone-analysis {
+  margin: 0 auto !important;
+  padding: 24px !important;
+  max-width: 980px;
+}
+@media (max-width: 650px) {
+  .analysis-body {
+    padding: 20px;
+  }
+  .coadd-result {
+    grid-template-columns: 1fr;
+  }
+  .standalone-analysis {
+    padding: 0 !important;
+  }
+  .analysis-actions > * {
+    width: 100%;
+    text-align: center;
+  }
+}

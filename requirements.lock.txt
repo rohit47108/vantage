@@ -33,3 +33,4 @@ typing_extensions==4.16.0
 urllib3==2.8.0
 uvicorn==0.49.0
 yarl==1.25.1
+photutils==3.1.1
