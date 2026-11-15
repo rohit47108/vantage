@@ -1,0 +1,26 @@
+{
+  "started_utc": "2026-11-15T14:21:51.702757+00:00",
+  "scope": "Actual sky-position workflow for a predefined adjacent D4 position, without source identification. No pixel values are synthesized.",
+  "base": "http://127.0.0.1:8005",
+  "field_request": {
+    "source": {
+      "name": "Adjacent fixed sky position (no source identification)",
+      "ra": 247.87725175719143,
+      "dec": 30.16146715509152
+    },
+    "start_utc": "2025-07-24",
+    "end_utc": "2025-07-24",
+    "include_deep": true
+  },
+  "field_job": {
+    "job_id": "9c8a3ea4e50546be8d95c9924a0e0afb",
+    "status_url": "/v1/analysis/jobs/9c8a3ea4e50546be8d95c9924a0e0afb"
+  },
+  "field_state": {
+    "job_id": "9c8a3ea4e50546be8d95c9924a0e0afb",
+    "state": "failed",
+    "result_id": null,
+    "error": "The archive discovery service is temporarily unavailable. Retry the search; existing fields and results remain available.",
+    "updated": 1794752517.8475976
+  }
+}

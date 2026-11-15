@@ -1,0 +1,12 @@
+test_actual_geometric_map_all_detectors_and_unassigned_failures (test_source_summary.SourceSummaryTests.test_actual_geometric_map_all_detectors_and_unassigned_failures) ... ok
+test_actual_summary_keeps_all_102_channels_dates_and_quality_counts (test_source_summary.SourceSummaryTests.test_actual_summary_keeps_all_102_channels_dates_and_quality_counts) ... ok
+test_fixed_gaussian_bound_agrees_with_independent_posterior_integral (test_source_summary.SourceSummaryTests.test_fixed_gaussian_bound_agrees_with_independent_posterior_integral) ... ok
+test_gaussian_scatter_and_detection_power_have_declared_null_behavior (test_source_summary.SourceSummaryTests.test_gaussian_scatter_and_detection_power_have_declared_null_behavior) ... ok
+test_limits_are_conditional_and_do_not_replace_missing_or_poor_fits (test_source_summary.SourceSummaryTests.test_limits_are_conditional_and_do_not_replace_missing_or_poor_fits) ... ok
+test_weighted_statistics_keep_negative_flux_and_conditional_covariance (test_source_summary.SourceSummaryTests.test_weighted_statistics_keep_negative_flux_and_conditional_covariance) ... ok
+test_actual_parent_summary_exports_dates_missing_and_dedup (test_source_summary_jobs.SourceSummaryJobTests.test_actual_parent_summary_exports_dates_missing_and_dedup) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.578s
+
+OK

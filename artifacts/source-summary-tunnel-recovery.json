@@ -1,0 +1,12 @@
+{
+  "checked_utc": "2026-11-15T16:13:36.339792+00:00",
+  "old_origin": "https://charm-college-doctrine-coffee.trycloudflare.com",
+  "old_connector_pid": 31264,
+  "connector_exec_session": 18694,
+  "local_backend_health": "HTTP 200",
+  "direct_dns": "getaddrinfo failed, Errno 11001",
+  "public_proxy_status": 502,
+  "public_proxy_error": "DNS_HOSTNAME_NOT_FOUND",
+  "connector_server_response": "Repeated Unauthorized: Tunnel not found after network disconnect; confirmed live process had lost its remote tunnel registration.",
+  "action_basis": "Remote registration rejection and failed public path, not an observation timeout. Replacement remains temporary local hosting."
+}

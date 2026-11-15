@@ -37,5 +37,7 @@ jobs:
         run: python -m scripts.validate_photometry
       - name: Six-detector native extraction validation
         run: python -m scripts.validate_native_extraction
+      - name: Retained spectral model fingerprints
+        run: python -m scripts.acquire_spectral_fiducials
       - name: Browser-runtime dependency audit
         run: npm audit --omit=dev

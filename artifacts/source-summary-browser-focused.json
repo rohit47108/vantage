@@ -1,0 +1,220 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\rohit\\OneDrive\\Documents\\ChatGPT\\nasa space apps\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/browser/source-summary.spec.ts",
+      "--reporter=json"
+    ],
+    "configFile": "C:\\Users\\rohit\\OneDrive\\Documents\\ChatGPT\\nasa space apps\\playwright.config.ts",
+    "rootDir": "C:/Users/rohit/OneDrive/Documents/ChatGPT/nasa space apps/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/rohit/OneDrive/Documents/ChatGPT/nasa space apps/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "C:/Users/rohit/OneDrive/Documents/ChatGPT/nasa space apps/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 120000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\rohit\\OneDrive\\Documents\\ChatGPT\\nasa space apps\\test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "",
+        "testDir": "C:\\Users\\rohit\\OneDrive\\Documents\\ChatGPT\\nasa space apps\\tests\\browser",
+        "snapshotDir": "C:\\Users\\rohit\\OneDrive\\Documents\\ChatGPT\\nasa space apps\\tests\\browser",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 120000,
+        "use": {
+          "baseURL": "http://127.0.0.1:8005",
+          "channel": "chrome",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "headless": true,
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": ""
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.65.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "source-summary.spec.ts",
+      "file": "source-summary.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "native time/channel summaries retain real contributors, gaps, exports and saved selection",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2946,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-15T14:25:12.189Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3133b1b687a2d4f8699a-89942f07d9652d0dec5e",
+          "file": "source-summary.spec.ts",
+          "line": 7,
+          "column": 1
+        },
+        {
+          "title": "real adjacent-position measurement preserves negative flux and separates bounds from sensitivity",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 12874,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByText('No low-signal fixed-position sample supports an upper bound in this selection.')\nExpected: visible\nReceived: hidden\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('No low-signal fixed-position sample supports an upper bound in this selection.') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByText('No low-signal fixed-position sample supports an upper bound in this selection.')\u001b[22m\n\u001b[2m    23 × locator resolved to <p>No low-signal fixed-position sample supports an u…</p>\u001b[22m\n\u001b[2m       - unexpected value \"hidden\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByText('No low-signal fixed-position sample supports an upper bound in this selection.')\nExpected: visible\nReceived: hidden\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('No low-signal fixed-position sample supports an upper bound in this selection.') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByText('No low-signal fixed-position sample supports an upper bound in this selection.')\u001b[22m\n\u001b[2m    23 × locator resolved to <p>No low-signal fixed-position sample supports an u…</p>\u001b[22m\n\u001b[2m       - unexpected value \"hidden\"\u001b[22m\n\n    at C:\\Users\\rohit\\OneDrive\\Documents\\ChatGPT\\nasa space apps\\tests\\browser\\source-summary.spec.ts:47:114",
+                    "location": {
+                      "file": "C:\\Users\\rohit\\OneDrive\\Documents\\ChatGPT\\nasa space apps\\tests\\browser\\source-summary.spec.ts",
+                      "column": 114,
+                      "line": 47
+                    },
+                    "snippet": " \u001b[90m 45 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'summary-coverage-count'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'0 of 102'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 46 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByTestId(\u001b[32m'native-selected-sample'\u001b[39m))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 47 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[32m'No low-signal fixed-position sample supports an upper bound in this selection.'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 48 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 49 |\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\rohit\\OneDrive\\Documents\\ChatGPT\\nasa space apps\\tests\\browser\\source-summary.spec.ts",
+                        "column": 114,
+                        "line": 47
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByText('No low-signal fixed-position sample supports an upper bound in this selection.')\nExpected: visible\nReceived: hidden\nTimeout:  10000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('No low-signal fixed-position sample supports an upper bound in this selection.') with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for getByText('No low-signal fixed-position sample supports an upper bound in this selection.')\u001b[22m\n\u001b[2m    23 × locator resolved to <p>No low-signal fixed-position sample supports an u…</p>\u001b[22m\n\u001b[2m       - unexpected value \"hidden\"\u001b[22m\n\n\n  45 |   await expect(page.getByTestId('summary-coverage-count')).toContainText('0 of 102');\n  46 |   await expect(page.getByTestId('native-selected-sample')).toHaveCount(0);\n> 47 |   await expect(page.getByText('No low-signal fixed-position sample supports an upper bound in this selection.')).toBeVisible();\n     |                                                                                                                  ^\n  48 | });\n  49 |\n    at C:\\Users\\rohit\\OneDrive\\Documents\\ChatGPT\\nasa space apps\\tests\\browser\\source-summary.spec.ts:47:114"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-15T14:25:15.502Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\rohit\\OneDrive\\Documents\\ChatGPT\\nasa space apps\\test-results\\source-summary-real-adjace-106e0-tes-bounds-from-sensitivity\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\rohit\\OneDrive\\Documents\\ChatGPT\\nasa space apps\\test-results\\source-summary-real-adjace-106e0-tes-bounds-from-sensitivity\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\rohit\\OneDrive\\Documents\\ChatGPT\\nasa space apps\\test-results\\source-summary-real-adjace-106e0-tes-bounds-from-sensitivity\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\rohit\\OneDrive\\Documents\\ChatGPT\\nasa space apps\\tests\\browser\\source-summary.spec.ts",
+                    "column": 114,
+                    "line": 47
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "3133b1b687a2d4f8699a-c35183dfd7353ded0bee",
+          "file": "source-summary.spec.ts",
+          "line": 33,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-15T14:25:11.536Z",
+    "duration": 17389.14,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

@@ -1,0 +1,15 @@
+test_actual_parent_summary_exports_dates_missing_and_dedup (test_source_summary_jobs.SourceSummaryJobTests.test_actual_parent_summary_exports_dates_missing_and_dedup) ... FAIL
+
+======================================================================
+FAIL: test_actual_parent_summary_exports_dates_missing_and_dedup (test_source_summary_jobs.SourceSummaryJobTests.test_actual_parent_summary_exports_dates_missing_and_dedup)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\rohit\OneDrive\Documents\ChatGPT\nasa space apps\tests\test_source_summary_jobs.py", line 27, in test_actual_parent_summary_exports_dates_missing_and_dedup
+    self.assertEqual(response.status_code,202,response.text)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 404 != 202 : {"detail":"Not Found"}
+
+----------------------------------------------------------------------
+Ran 1 test in 0.092s
+
+FAILED (failures=1)

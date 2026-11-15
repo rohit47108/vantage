@@ -1,6 +1,7 @@
 import {useEffect,useRef,useState} from 'react';
 import {Brand} from './Brand';
 import {json} from './api';
+import {useChartWidth} from './useChartWidth';
 import './sources.css';
 
 interface Observation {index:number;obs_id:string;utc_mid:string;detector:number;mjd_mid:number}
@@ -50,19 +51,20 @@ export function NativeStamp({sample,residual=false,geometry}:{sample:Sample;resi
     <figcaption>{residual?'Fit residual · µJy / native pixel · used pixels only':'Native brightness · MJy/sr'}<br/>Native columns → · rows ↑{geometry&&<><br/>Solid: {geometry.method==='aperture'?'aperture':'fit core'} · dashed: background annulus</>}</figcaption></figure>;
 }
 
-export function SampleChart({product,select,selected,wide=false,sourceLabel='P330E'}:{product:{samples:Sample[]};select:(id:string)=>void;selected:string;wide?:boolean;sourceLabel?:string}){
+export function SampleChart({product,select,selected,wide=false,responsive=false,sourceLabel='P330E'}:{product:{samples:Sample[]};select:(id:string)=>void;selected:string;wide?:boolean;responsive?:boolean;sourceLabel?:string}){
+  const layout=useChartWidth(responsive),left=responsive?80:110,right=responsive?layout.width-25:710;
   const samples=product.samples.filter(s=>s.status==='accepted');
   const max=Math.max(1,...samples.map(s=>s.flux_ujy!+3*s.statistical_sigma_ujy!))*1.15;
   const min=Math.min(0,...samples.map(s=>s.flux_ujy!-3*s.statistical_sigma_ujy!));
-  const x=(v:number)=>110+(v-(wide?0.7:1.05))/(wide?4.4:0.65)*600,y=(v:number)=>265-(v-min)/(max-min)*210;
+  const x=(v:number)=>left+(v-(wide?0.7:1.05))/(wide?4.4:0.65)*(right-left),y=(v:number)=>265-(v-min)/(max-min)*210;
   const key=(s:Sample)=>wide?(s.sample_id??s.obs_id+'/D'+s.detector):s.obs_id;
-  return <svg className="sample-chart" viewBox="0 0 760 340" role="group" aria-labelledby="sample-chart-title sample-chart-description">
+  return <svg ref={layout.ref} className={'sample-chart'+(responsive?' responsive-chart':'')} viewBox={`0 0 ${layout.width} 340`} role="group" aria-labelledby="sample-chart-title sample-chart-description">
     <title id="sample-chart-title">{sourceLabel} measured flux density versus wavelength</title>
     <desc id="sample-chart-description">{wide?'Individual native samples':'Partial D2 sampling'} at separate dates. Only samples passing fit checks are plotted. Vertical bars: one statistical standard deviation. Horizontal bars: central calibrated CBAND, not a full response curve. Use the observation table for rejected samples.</desc>
-    <path d="M110 50 V265 H710" fill="none" stroke="#8fa5b7"/>
+    <path d={`M${left} 50 V265 H${right}`} fill="none" stroke="#8fa5b7"/>
     {(wide?[1,2,3,4,5]:[1.1,1.3,1.5,1.65]).map(tick=><text key={tick} x={x(tick)} y={288} textAnchor="middle">{tick}</text>)}
-    {[0,.25,.5,.75,1].map(fraction=>{const value=min+(max-min)*fraction;return <text key={fraction} x="100" y={y(value)+5} textAnchor="end">{number(value,0)}</text>;})}
-    <text x="390" y="322" textAnchor="middle">Wavelength (µm) · horizontal bars: CBAND</text>
+    {[0,.25,.5,.75,1].map(fraction=>{const value=min+(max-min)*fraction;return <text key={fraction} x={left-10} y={y(value)+5} textAnchor="end">{number(value,0)}</text>;})}
+    <text x={responsive?(left+right)/2:390} y="322" textAnchor="middle">{responsive?'Wavelength (µm)':'Wavelength (µm) · horizontal bars: CBAND'}</text>
     <text transform="translate(20 160) rotate(-90)" textAnchor="middle">Flux density (µJy)</text>
     {samples.map(s=><g key={key(s)}>
       <path d={`M${x(s.wavelength_um!)} ${y(s.flux_ujy!-s.statistical_sigma_ujy!)} V${y(s.flux_ujy!+s.statistical_sigma_ujy!)} M${x(s.wavelength_um!-s.bandwidth_um!/2)} ${y(s.flux_ujy!)} H${x(s.wavelength_um!+s.bandwidth_um!/2)}`} stroke="#9ddfd2" strokeWidth="2"/>
@@ -70,7 +72,7 @@ export function SampleChart({product,select,selected,wide=false,sourceLabel='P33
         tabIndex={0} role="button" aria-label={`Select sample ${key(s)}, ${number(s.flux_ujy)} microJy, ${s.utc_mid}`} aria-pressed={selected===key(s)}
         onClick={()=>select(key(s))} onKeyDown={e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();select(key(s));}}}/>
     </g>)}
-    {!samples.length&&<text x="380" y="160" textAnchor="middle">No selected sample passes fit checks.</text>}
+    {!samples.length&&<text x={layout.width/2} y="160" textAnchor="middle">{responsive?'No passing samples':'No selected sample passes fit checks.'}</text>}
   </svg>;
 }
 

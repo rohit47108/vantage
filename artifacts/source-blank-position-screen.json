@@ -1,0 +1,53 @@
+{
+  "scope": "Four predefined diagonal positions in an authentic retained D4 cutout, no astrophysical source identification; all attempts retained. This selects an illustrative conditional noise-bound case, not a detection.",
+  "observation": "2025W30_1B_0610_1",
+  "records": [
+    {
+      "pixel": [
+        10,
+        10
+      ],
+      "position": [
+        247.87725175719143,
+        30.16146715509152
+      ],
+      "status": "accepted",
+      "flux_ujy": -18.790417168635415,
+      "sigma_ujy": 14.151138989165204,
+      "score": 1.0390287178419904
+    },
+    {
+      "pixel": [
+        10,
+        28
+      ],
+      "position": [
+        247.8707071836322,
+        30.131193705158577
+      ],
+      "failure": "The cutout does not contain the complete background annulus"
+    },
+    {
+      "pixel": [
+        28,
+        10
+      ],
+      "position": [
+        247.9125211479627,
+        30.156971610594187
+      ],
+      "failure": "The cutout does not contain the complete background annulus"
+    },
+    {
+      "pixel": [
+        28,
+        28
+      ],
+      "position": [
+        247.90596884282036,
+        30.126699979409736
+      ],
+      "failure": "The cutout does not contain the complete background annulus"
+    }
+  ]
+}

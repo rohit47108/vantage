@@ -1,0 +1,32 @@
+test_actual_geometric_map_all_detectors_and_unassigned_failures (test_source_summary.SourceSummaryTests.test_actual_geometric_map_all_detectors_and_unassigned_failures) ... ERROR
+test_fixed_gaussian_bound_agrees_with_independent_posterior_integral (test_source_summary.SourceSummaryTests.test_fixed_gaussian_bound_agrees_with_independent_posterior_integral) ... ERROR
+test_weighted_statistics_keep_negative_flux_and_conditional_covariance (test_source_summary.SourceSummaryTests.test_weighted_statistics_keep_negative_flux_and_conditional_covariance) ... ERROR
+
+======================================================================
+ERROR: test_actual_geometric_map_all_detectors_and_unassigned_failures (test_source_summary.SourceSummaryTests.test_actual_geometric_map_all_detectors_and_unassigned_failures)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\rohit\OneDrive\Documents\ChatGPT\nasa space apps\tests\test_source_summary.py", line 11, in test_actual_geometric_map_all_detectors_and_unassigned_failures
+    from backend.source_summary import channel_for_sample,channel_metadata
+ModuleNotFoundError: No module named 'backend.source_summary'
+
+======================================================================
+ERROR: test_fixed_gaussian_bound_agrees_with_independent_posterior_integral (test_source_summary.SourceSummaryTests.test_fixed_gaussian_bound_agrees_with_independent_posterior_integral)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\rohit\OneDrive\Documents\ChatGPT\nasa space apps\tests\test_source_summary.py", line 24, in test_fixed_gaussian_bound_agrees_with_independent_posterior_integral
+    from backend.source_summary import gaussian_upper_bound
+ModuleNotFoundError: No module named 'backend.source_summary'
+
+======================================================================
+ERROR: test_weighted_statistics_keep_negative_flux_and_conditional_covariance (test_source_summary.SourceSummaryTests.test_weighted_statistics_keep_negative_flux_and_conditional_covariance)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\rohit\OneDrive\Documents\ChatGPT\nasa space apps\tests\test_source_summary.py", line 39, in test_weighted_statistics_keep_negative_flux_and_conditional_covariance
+    from backend.source_summary import weighted_statistics
+ModuleNotFoundError: No module named 'backend.source_summary'
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+FAILED (errors=3)

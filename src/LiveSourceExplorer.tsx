@@ -1,8 +1,9 @@
-import {useEffect,useRef,useState} from 'react';
+import {useCallback,useEffect,useRef,useState} from 'react';
 import {Brand} from './Brand';
 import {NameLookup} from './NameLookup';
 import {json,readResponse} from './api';
 import {NativeStamp,SampleChart} from './SourceSamples';
+import {SourceSummaryPanel} from './SourceSummaryPanel';
 import type {Sample} from './SourceSamples';
 import './sources.css';
 
@@ -10,7 +11,7 @@ export interface SourceSeed {name?:string;ra:number;dec:number;pmra?:number|null
 interface Observation {index:number;obs_id:string;detector:number;release:string;utc_mid:string;measurement_capability:string}
 interface SourceField {id:string;type:string;source:SourceSeed;request:{source:SourceSeed;start_utc:string;end_utc:string;include_deep:boolean};observations:Observation[];candidate_observations:number;unsupported_release_observations:number;search_completeness:string;discovery:{data_status:string;retrieved_utc?:string;snapshot_note?:string}}
 interface Options {method:string;centroid_mode:string;aperture_radius:number;background_inner:number;background_outer:number}
-interface NativeProduct {id:string;type:string;name:string;source:SourceSeed;request:Options&{field_id:string;observation_indices:number[]};samples:Sample[];sampling:{accepted_samples:number;diagnostic_only_samples:number;rejected_samples:number;interpretation:string};uncertainty_method:string;limitations:string[];credits:string;exports:Record<string,{url:string}>}
+interface NativeProduct {id:string;type:string;data_status:string;name:string;source:SourceSeed;request:Options&{field_id?:string;observation_indices?:number[]};samples:Sample[];sampling:{accepted_samples:number;diagnostic_only_samples:number;rejected_samples:number;interpretation:string};uncertainty_method:string;limitations:string[];credits:string;exports:Record<string,{url:string}>}
 interface Job {job_id:string;state:string;result_id:string|null;error:string|null}
 const defaults:Options={method:'psf',centroid_mode:'auto',aperture_radius:2.5,background_inner:5,background_outer:8};
 const terminal=(job:Job|null)=>!job||['complete','failed','cancelled'].includes(job.state);
@@ -42,6 +43,16 @@ export function LiveSourceExplorer({onTime,seed}:{onTime:()=>void;seed?:SourceSe
   const [error,setError]=useState(linked.error),[fieldWarning,setFieldWarning]=useState(''),[filter,setFilter]=useState(''),[page,setPage]=useState(0);
   const [sampleId,setSampleId]=useState(''),[link,setLink]=useState(''),[quality,setQuality]=useState(initial.get('quality')==='passing'?'passing':'all');
   const [context,setContext]=useState<NonNullable<Sample['image_context']>|null>(null),[contextError,setContextError]=useState(''),[contextRetry,setContextRetry]=useState(0);
+  const [timeSelection,setTimeSelection]=useState<Set<string>|null>(null);
+  const sampleHeading=useRef<HTMLHeadingElement>(null);
+  const applyTimeSelection=useCallback((ids:string[]|null)=>{
+    setTimeSelection(ids?new Set(ids):null);
+    if(ids)setSampleId(current=>{
+      const visible=product?.samples.filter(s=>ids.includes(key(s))&&(quality==='all'||s.status==='accepted'))??[];
+      if(visible.some(s=>key(s)===current))return current;
+      const first=visible.find(s=>s.status==='accepted')??visible[0];return first?key(first):'';
+    });
+  },[product,quality]);
   const mounted=useRef(true),heading=useRef<HTMLHeadingElement>(null),fieldHeading=useRef<HTMLHeadingElement>(null),cache=useRef(new Map<string,NonNullable<Sample['image_context']>>());
   useEffect(()=>{mounted.current=true;return()=>{mounted.current=false;};},[]);
   const busy=submitting||exampleLoading||restoring||!terminal(job);
@@ -56,13 +67,14 @@ export function LiveSourceExplorer({onTime,seed}:{onTime:()=>void;seed?:SourceSe
     setSelected(selection??(candidates.length<=512?candidates:[]));setFilter('');setPage(0);
   }
   async function showProduct(value:NativeProduct,signal?:AbortSignal){
-    if(value.type!=='source_samples'||!value.request.field_id)throw new Error('Open a general native source-measurement product.');
+    if(value.type!=='source_samples'||value.data_status!=='native_exposure_measurements')throw new Error('Open a general native source-measurement product.');
     setProduct(value);setOptions({method:value.request.method,centroid_mode:value.request.centroid_mode,
       aperture_radius:value.request.aperture_radius,background_inner:value.request.background_inner,background_outer:value.request.background_outer});restoreSource(value.source);setLink('');
     const desired=new URLSearchParams(location.search).get('sample');
     const desiredSample=value.samples.find(s=>key(s)===desired&&(quality!=='passing'||s.status==='accepted'));
     setSampleId(desiredSample?key(desiredSample):key(value.samples.find(s=>s.status==='accepted')??value.samples[0]));
-    try{
+    if(!value.request.field_id){setField(null);setSelected([]);setFieldWarning('This native result was measured from explicitly selected exposures without a saved discovery field. Its measurements and provenance remain available; find source observations to make a new selection.');}
+    else try{
       const parent=await json<SourceField>('/v1/products/'+value.request.field_id,{signal});
       if(!signal?.aborted&&mounted.current){showField(parent,value.request.observation_indices);setFieldWarning('');}
     }catch(e){if(!signal?.aborted&&mounted.current)setFieldWarning('Discovery metadata could not be restored. The saved measurements and their provenance remain readable.');}
@@ -90,7 +102,7 @@ export function LiveSourceExplorer({onTime,seed}:{onTime:()=>void;seed?:SourceSe
           const value=await json<SourceField|NativeProduct>('/v1/products/'+current.result_id,{signal:abort.signal});
           if(abort.signal.aborted)return;
           if(value.type==='source_field'){showField(value as SourceField);history.replaceState(null,'','/?view=measure&field='+value.id);setTimeout(()=>fieldHeading.current?.focus(),0);}
-          else{await showProduct(value as NativeProduct,abort.signal);if(!abort.signal.aborted)history.replaceState(null,'','/?view=measure&samples='+value.id);}
+          else{history.replaceState(null,'','/?view=measure&samples='+value.id);await showProduct(value as NativeProduct,abort.signal);}
           if(!abort.signal.aborted){setJob(current);setError('');}return;
         }
         if(current.state==='failed'||current.state==='cancelled'){setJob(current);setError(current.error||'Cancelled. Update the selection and run again.');return;}
@@ -118,7 +130,7 @@ export function LiveSourceExplorer({onTime,seed}:{onTime:()=>void;seed?:SourceSe
       cache.current.set(resource.image_context_url!,value);setContext(value);
     };void load().catch(e=>{if(!abort.signal.aborted)setContextError(e.message);});return()=>abort.abort();
   },[product?.id,sampleId,contextRetry]);
-  function clearResult(){setProduct(null);setLink('');setContext(null);setError('');setFieldWarning('');history.replaceState(null,'',field?'/?view=measure&field='+field.id:'/?view=measure');}
+  function clearResult(){setProduct(null);setLink('');setContext(null);setTimeSelection(null);setError('');setFieldWarning('');history.replaceState(null,'',field?'/?view=measure&field='+field.id:'/?view=measure');}
   function edit(patch:Partial<typeof form>){setForm(f=>({...f,...patch}));setField(null);setSelected([]);clearResult();history.replaceState(null,'','/?view=measure');}
   async function submit(path:string,body:unknown){
     setSubmitting(true);setError('');clearResult();
@@ -139,7 +151,8 @@ export function LiveSourceExplorer({onTime,seed}:{onTime:()=>void;seed?:SourceSe
   async function cancel(){if(!job)return;try{const state=await json<{state:string}>('/v1/analysis/jobs/'+job.job_id,{method:'DELETE'});if(mounted.current)setJob({...job,state:state.state==='complete'?'queued':state.state});}catch(e){if(mounted.current)setError((e as Error).message);}}
   const filtered=field?.observations.filter(r=>!filter||r.obs_id.includes(filter))??[];
   const visible=filtered.slice(page*25,page*25+25);
-  const displayed=product?.samples.filter(s=>quality==='all'||s.status==='accepted')??[];
+  const timeSamples=product?.samples.filter(s=>timeSelection==null||timeSelection.has(key(s)))??[];
+  const displayed=timeSamples.filter(s=>quality==='all'||s.status==='accepted');
   const progress=job?.state.match(/^measuring_(\d+)_of_(\d+)$/);
   return <div className="source-workspace"><header className="source-header"><Brand/><button onClick={onTime}>← Back to sky</button></header><main>
     <div className="source-intro"><p className="eyebrow">Measure light</p><h1>Measure a source</h1><p>Choose a point of light, find its observations, and inspect its brightness across SPHEREx wavelengths.</p>
@@ -184,12 +197,13 @@ export function LiveSourceExplorer({onTime,seed}:{onTime:()=>void;seed?:SourceSe
     </section>}
     {product&&<section className="source-card" aria-labelledby="native-result-title"><h2 id="native-result-title" tabIndex={-1} ref={heading}>{product.source.name??'Selected source'} · measured light</h2>
       <div className="source-counts"><span>{product.sampling.accepted_samples} pass fit checks</span><span>{product.sampling.diagnostic_only_samples} need fit review</span><span>{product.sampling.rejected_samples} have no measurement</span></div><p>{product.sampling.interpretation}</p>
-      <div className="source-chart-scroll" role="region" aria-label="Native source chart; scroll horizontally on small screens" tabIndex={0}><SampleChart product={product} select={setSampleId} selected={sampleId} wide sourceLabel={product.source.name}/></div>
-      <p className="muted">Vertical bars: one statistical error. Horizontal bars: central calibrated bandwidth. No inferred missing channels or lines joining different dates.</p><p className="source-scroll-help">Scroll the chart and table sideways on narrow screens.</p>
-      <label>Result quality view<select value={quality} onChange={e=>{setQuality(e.target.value);if(e.target.value==='passing'&&sample?.status!=='accepted'){const first=product.samples.find(s=>s.status==='accepted');setSampleId(first?key(first):'');}}}><option value="all">All requested observations</option><option value="passing">Passing fit checks</option></select></label>
+      <SourceSummaryPanel key={product.id} productId={product.id} onFilter={applyTimeSelection} onInspect={id=>{setSampleId(id);setTimeout(()=>sampleHeading.current?.focus(),0);}}/>
+      <div className="source-chart-scroll" role="region" aria-label="Native source chart" tabIndex={0}><SampleChart product={{samples:timeSamples}} select={setSampleId} selected={sampleId} wide responsive sourceLabel={product.source.name}/></div>
+      <p className="muted">Vertical bars: one statistical error. Horizontal bars: central calibrated bandwidth. No inferred missing channels or lines joining different dates.</p><p className="source-scroll-help">Scroll the detailed tables sideways on narrow screens. Charts fit the available width.</p>
+      <label>Result quality view<select value={quality} onChange={e=>{setQuality(e.target.value);if(e.target.value==='passing'&&sample?.status!=='accepted'){const first=timeSamples.find(s=>s.status==='accepted');setSampleId(first?key(first):'');}}}><option value="all">All requested observations</option><option value="passing">Passing fit checks</option></select></label>
       <div className="source-table-scroll" role="region" aria-label="Native source measurements" tabIndex={0}><table><caption>Individual native measurements · errors are statistical only</caption><thead><tr><th scope="col">Observation · detector</th><th scope="col">UTC date</th><th scope="col">Wavelength · µm</th><th scope="col">Flux ± σ · µJy</th><th scope="col">Fit check</th><th scope="col">Inspect</th></tr></thead><tbody>
         {displayed.map(s=><tr key={key(s)}><th scope="row">{key(s)}</th><td>{s.utc_mid.slice(0,10)}</td><td>{n(s.wavelength_um,5)}</td><td>{s.flux_ujy==null?'—':`${n(s.flux_ujy)} ± ${n(s.statistical_sigma_ujy)}`}</td><td>{s.status==='accepted'?'Passes':s.status==='diagnostic_only'?'Inspect fit':'No measurement'}</td><td><button aria-label={'Inspect '+key(s)} aria-pressed={sampleId===key(s)} onClick={()=>setSampleId(key(s))}>Inspect</button></td></tr>)}</tbody></table></div>
-      {sample&&<section className="source-sample-detail" data-testid="native-selected-sample"><h3>{key(sample)}</h3><p>{sample.utc_mid} · D{sample.detector}</p>{sample.reason&&<p className="source-notice">{sample.reason}</p>}
+      {sample&&<section className="source-sample-detail" data-testid="native-selected-sample"><h3 ref={sampleHeading} tabIndex={-1}>{key(sample)}</h3><p>{sample.utc_mid} · D{sample.detector}</p>{sample.reason&&<p className="source-notice">{sample.reason}</p>}
         {sample.flux_ujy!=null&&<><p className="measurement-flux" data-testid="native-measured-flux">{n(sample.flux_ujy)} ± {n(sample.statistical_sigma_ujy)} µJy<small>Statistical error only</small></p><p>Wavelength {n(sample.wavelength_um,5)} µm · central bandwidth {n(sample.bandwidth_um,5)} µm · residual score {n(sample.reduced_chi2,3)} (maximum 3).</p></>}
         {context&&<div className="source-stamps"><NativeStamp sample={{...sample,image_context:context}} geometry={product.request}/><NativeStamp sample={{...sample,image_context:context}} residual geometry={product.request}/></div>}
         {sample.flux_ujy!=null&&!context&&!contextError&&<p role="status">Loading this observation’s native cutout…</p>}
@@ -197,7 +211,7 @@ export function LiveSourceExplorer({onTime,seed}:{onTime:()=>void;seed?:SourceSe
         <p>{sample.native_cutout_request&&<><a href={sample.native_cutout_request.url} target="_blank" rel="noreferrer">Official native cutout request ↗</a><br/></>}<a href={sample.source_url} target="_blank" rel="noreferrer">Official parent exposure ↗</a></p>
         <details><summary>Input identity and flags</summary><p className="source-hash">Retained input SHA-256: {sample.source_sha256}</p><p>Flags union: {sample.pixel_flags_union==null?'unavailable':'0x'+sample.pixel_flags_union.toString(16)}. The source flag is expected; a union can include rejected pixels outside the fitted support.</p></details>
       </section>}
-      <div className="source-actions">{Object.entries(product.exports).map(([name,resource])=><a key={name} className="source-download" href={resource.url} download>{name==='samples.ecsv'?'ECSV with units':name==='samples.csv'?'CSV · all observations':'SVG plot'}</a>)}<a className="source-download" href={'/v1/products/'+product.id} download={'vantage-'+product.id.slice(0,12)+'.json'}>Provenance JSON</a><button onClick={()=>setLink(location.origin+'/?view=measure&samples='+product.id+'&sample='+encodeURIComponent(sampleId)+'&quality='+quality)}>Share measured light</button></div>
+      <div className="source-actions">{Object.entries(product.exports).map(([name,resource])=><a key={name} className="source-download" href={resource.url} download>{name==='samples.ecsv'?'ECSV with units':name==='samples.csv'?'CSV · all observations':'SVG plot'}</a>)}<a className="source-download" href={'/v1/products/'+product.id} download={'vantage-'+product.id.slice(0,12)+'.json'}>Provenance JSON</a><button onClick={()=>{const summary=new URLSearchParams(location.search).get('summary');setLink(location.origin+'/?view=measure&samples='+product.id+'&sample='+encodeURIComponent(sampleId)+'&quality='+quality+(summary?'&summary='+encodeURIComponent(summary):''));}}>Share measured light</button></div>
       <p className="muted">Table downloads include every requested observation and its status.</p>
       {link&&<label className="source-share">Measured-light link<input readOnly value={link} onFocus={e=>e.target.select()}/></label>}
       <details><summary>Methods, uncertainties and limits</summary><p>{product.uncertainty_method}</p><ul>{product.limitations.map(item=><li key={item}>{item}</li>)}</ul><p>{product.credits}</p></details>

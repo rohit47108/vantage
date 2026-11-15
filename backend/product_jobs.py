@@ -19,6 +19,8 @@ from backend.spectra import SpectrumRequest,build_spectrum,target_description,PO
 from backend.science import digest
 from backend.source_fields import SourceFieldRequest,NativeExtractionRequest,build_source_field,POLICY as SOURCE_FIELD_POLICY
 from backend.native_extraction import SourcePosition,ExtractionOptions,extract_observations,POLICY as NATIVE_POLICY
+from backend.source_summary import SourceSummaryRequest,SummaryOptions,channel_metadata,POLICY as SUMMARY_POLICY
+from backend.source_summary_products import build_source_summary
 
 
 class CoaddRequest(BaseModel):
@@ -52,6 +54,14 @@ def create_router(database,executor):
             kind=decoded.pop('kind','coadd');decoded.pop('_attempt_nonce',None)
             def check_cancel():
                 if cancelled(job_id):raise ValueError('Job cancelled')
+            if kind=='source_summary':
+                request=SourceSummaryRequest.model_validate(decoded)
+                parent=source_parent_for(request.product_id)
+                options=SummaryOptions.model_validate(request.model_dump(include=set(SummaryOptions.model_fields)))
+                update(job_id,'summarizing_native_source')
+                product=build_source_summary(parent,options,destination(),check_cancel)
+                if not cancelled(job_id):update(job_id,'complete',product['id'])
+                return
             if kind=='source_field':
                 request=SourceFieldRequest.model_validate(decoded)
                 update(job_id,'discovering_source_observations')
@@ -158,6 +168,17 @@ def create_router(database,executor):
         if request.refresh:normalized['_attempt_nonce']=uuid.uuid4().hex
         return enqueue(normalized,NATIVE_POLICY+PHOTOMETRY_POLICY)
 
+    def source_parent_for(identity):
+        parent=json.loads(product_path(identity,'manifest.json').read_text(encoding='utf-8'))
+        if parent.get('type')!='source_samples':raise HTTPException(422,'Choose native source measurements before building a time/channel summary.')
+        return parent
+
+    @router.post('/v1/source-summaries',status_code=202)
+    def submit_source_summary(request:SourceSummaryRequest):
+        source_parent_for(request.product_id)
+        normalized=request.model_dump(mode='json');normalized['kind']='source_summary'
+        return enqueue(normalized,SUMMARY_POLICY+channel_metadata()['id'])
+
     @router.get('/v1/analysis/jobs/{job_id}')
     def status(job_id:str):
         with closing(connect()) as db:row=db.execute('SELECT state,result_id,error,updated FROM product_jobs WHERE id=?',(job_id,)).fetchone()
@@ -192,4 +213,7 @@ def create_router(database,executor):
     def native_context(identity:str,index:int):
         if not 0<=index<512:raise HTTPException(422,'Native sample index must be between 0 and 511.')
         return FileResponse(product_path(identity,f'sample-{index}.json'),media_type='application/json')
+    @router.get('/v1/products/{identity}/{resource}')
+    def source_summary_export(identity:str,resource:Literal['coverage.ecsv','coverage.csv','bins.ecsv','bins.csv','limits.ecsv','limits.csv','summary.svg']):
+        return FileResponse(product_path(identity,resource),media_type='image/svg+xml' if resource.endswith('.svg') else 'text/csv' if resource.endswith('.csv') else 'text/plain',filename=f'vantage-{identity[:12]}-{resource}')
     return router,recover

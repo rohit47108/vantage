@@ -1,0 +1,26 @@
+test_actual_geometric_map_all_detectors_and_unassigned_failures (test_source_summary.SourceSummaryTests.test_actual_geometric_map_all_detectors_and_unassigned_failures) ... ok
+test_actual_summary_keeps_all_102_channels_dates_and_quality_counts (test_source_summary.SourceSummaryTests.test_actual_summary_keeps_all_102_channels_dates_and_quality_counts) ... ERROR
+test_fixed_gaussian_bound_agrees_with_independent_posterior_integral (test_source_summary.SourceSummaryTests.test_fixed_gaussian_bound_agrees_with_independent_posterior_integral) ... ok
+test_limits_are_conditional_and_do_not_replace_missing_or_poor_fits (test_source_summary.SourceSummaryTests.test_limits_are_conditional_and_do_not_replace_missing_or_poor_fits) ... ERROR
+test_weighted_statistics_keep_negative_flux_and_conditional_covariance (test_source_summary.SourceSummaryTests.test_weighted_statistics_keep_negative_flux_and_conditional_covariance) ... ok
+
+======================================================================
+ERROR: test_actual_summary_keeps_all_102_channels_dates_and_quality_counts (test_source_summary.SourceSummaryTests.test_actual_summary_keeps_all_102_channels_dates_and_quality_counts)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\rohit\OneDrive\Documents\ChatGPT\nasa space apps\tests\test_source_summary.py", line 51, in test_actual_summary_keeps_all_102_channels_dates_and_quality_counts
+    from backend.source_summary import summarize_samples,SummaryOptions
+ImportError: cannot import name 'summarize_samples' from 'backend.source_summary' (C:\Users\rohit\OneDrive\Documents\ChatGPT\nasa space apps\backend\source_summary.py)
+
+======================================================================
+ERROR: test_limits_are_conditional_and_do_not_replace_missing_or_poor_fits (test_source_summary.SourceSummaryTests.test_limits_are_conditional_and_do_not_replace_missing_or_poor_fits)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\rohit\OneDrive\Documents\ChatGPT\nasa space apps\tests\test_source_summary.py", line 70, in test_limits_are_conditional_and_do_not_replace_missing_or_poor_fits
+    from backend.source_summary import sample_statistics
+ImportError: cannot import name 'sample_statistics' from 'backend.source_summary' (C:\Users\rohit\OneDrive\Documents\ChatGPT\nasa space apps\backend\source_summary.py)
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.052s
+
+FAILED (errors=2)
