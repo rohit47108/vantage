@@ -1,0 +1,34 @@
+{
+  "baseURL": "http://127.0.0.1:5173/sequence/d236d29869051a40bf0d5e09247b9c71a8cdd29c9dfcfc028126462e8f217af0",
+  "checked_utc": "2026-11-15T17:11:10.080Z",
+  "first_frame_ms": 1134.300000000745,
+  "decoded_swaps_ms": [
+    22.099999997764826,
+    17.5,
+    20.900000002235174,
+    21.799999997019768,
+    19.5
+  ],
+  "canvas_draw_ms": [
+    0.8000000007450581,
+    0.6000000014901161,
+    0.7000000029802322,
+    3.2999999970197678,
+    0.5
+  ],
+  "event_to_draw_ms": [
+    21.299999997019768,
+    16.800000000745058,
+    20.199999999254942,
+    18.5,
+    19
+  ],
+  "raf_observation_ms": [
+    22.299999997019768,
+    17.699999999254942,
+    21.100000001490116,
+    22,
+    19.699999999254942
+  ],
+  "environment": "Headless Chrome on Windows, fresh browser context, actual network. No mobile throttling. Swap timing ends when draw calls finish; RAF observation delay is separate. This is not physical display presentation timing."
+}

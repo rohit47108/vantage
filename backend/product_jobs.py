@@ -21,6 +21,8 @@ from backend.source_fields import SourceFieldRequest,NativeExtractionRequest,bui
 from backend.native_extraction import SourcePosition,ExtractionOptions,extract_observations,POLICY as NATIVE_POLICY
 from backend.source_summary import SourceSummaryRequest,SummaryOptions,channel_metadata,POLICY as SUMMARY_POLICY
 from backend.source_summary_products import build_source_summary
+from backend.spectral_trace import TraceRequest,build_visual_trace,POLICY as TRACE_POLICY
+from backend.spectral_routes import storage as spectral_storage
 
 
 class CoaddRequest(BaseModel):
@@ -54,6 +56,14 @@ def create_router(database,executor):
             kind=decoded.pop('kind','coadd');decoded.pop('_attempt_nonce',None)
             def check_cancel():
                 if cancelled(job_id):raise ValueError('Job cancelled')
+            if kind=='spectral_trace':
+                request=TraceRequest.model_validate(decoded)
+                try:plane=trace_plane_for(request)
+                except HTTPException as exc:raise ValueError(str(exc.detail)) from exc
+                update(job_id,'opening_native_spectral_cube')
+                product=build_visual_trace(plane,[request.x,request.y],destination(),check_cancel=check_cancel,progress=lambda stage:update(job_id,stage))
+                if not cancelled(job_id):update(job_id,'complete',product['id'])
+                return
             if kind=='source_summary':
                 request=SourceSummaryRequest.model_validate(decoded)
                 parent=source_parent_for(request.product_id)
@@ -100,7 +110,7 @@ def create_router(database,executor):
         except ValueError as exc:update(job_id,'failed',error=str(exc))
         except requests.RequestException:
             logging.warning(json.dumps({'event':'archive_request_unavailable','job_id':job_id}))
-            update(job_id,'failed',error='The archive discovery service is temporarily unavailable. Retry the search; existing fields and results remain available.')
+            update(job_id,'failed',error='An archive data service is temporarily unavailable. Retry this request; existing fields and results remain available.')
         except Exception:
             logging.exception('analysis_job_failed',extra={'job_id':job_id})
             update(job_id,'failed',error='Analysis processing failed. Retry this request or choose another selection.')
@@ -179,6 +189,19 @@ def create_router(database,executor):
         normalized=request.model_dump(mode='json');normalized['kind']='source_summary'
         return enqueue(normalized,SUMMARY_POLICY+channel_metadata()['id'])
 
+    def trace_plane_for(request):
+        path=spectral_storage()/(request.plane_id+'.json')
+        if not path.is_file():raise HTTPException(404,'The saved wavelength image is unavailable. Open the field again before sampling a trace.')
+        plane=json.loads(path.read_text(encoding='utf-8'));shape=plane.get('shape',[])
+        if len(shape)!=2 or request.x>=shape[1] or request.y>=shape[0]:raise HTTPException(422,'Choose a pixel inside the saved wavelength image.')
+        return plane
+
+    @router.post('/v1/spectral-traces',status_code=202)
+    def submit_spectral_trace(request:TraceRequest):
+        trace_plane_for(request)
+        normalized=request.model_dump();normalized['kind']='spectral_trace'
+        return enqueue(normalized,TRACE_POLICY)
+
     @router.get('/v1/analysis/jobs/{job_id}')
     def status(job_id:str):
         with closing(connect()) as db:row=db.execute('SELECT state,result_id,error,updated FROM product_jobs WHERE id=?',(job_id,)).fetchone()
@@ -214,6 +237,6 @@ def create_router(database,executor):
         if not 0<=index<512:raise HTTPException(422,'Native sample index must be between 0 and 511.')
         return FileResponse(product_path(identity,f'sample-{index}.json'),media_type='application/json')
     @router.get('/v1/products/{identity}/{resource}')
-    def source_summary_export(identity:str,resource:Literal['coverage.ecsv','coverage.csv','bins.ecsv','bins.csv','limits.ecsv','limits.csv','summary.svg']):
+    def source_summary_export(identity:str,resource:Literal['coverage.ecsv','coverage.csv','bins.ecsv','bins.csv','limits.ecsv','limits.csv','summary.svg','trace.ecsv','trace.csv','trace.svg']):
         return FileResponse(product_path(identity,resource),media_type='image/svg+xml' if resource.endswith('.svg') else 'text/csv' if resource.endswith('.csv') else 'text/plain',filename=f'vantage-{identity[:12]}-{resource}')
     return router,recover

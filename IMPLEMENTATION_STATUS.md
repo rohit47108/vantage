@@ -4,7 +4,15 @@
 
 The later complete-product specification supersedes the demo scope described below. The application is PARTIALLY COMPLETE for that goal. See tasks/product-evidence.md; remaining coadd methods, subtraction, source extraction, embeds/investigations, release promotion and durable hosting still require implementation/validation.
 
-### Native time/channel summaries — November 15, latest slice
+### Linked mosaic brightness trace — November 15, current slice
+
+The wavelength workspace now provides an actual asynchronous 102-channel native mosaic pixel trace linked to the image, slider and table, with crosshair/keyboard pixel selection, explicit blanks, flags/hits, combined dates, scientific downloads and saved links. The Measure action carries the clicked ICRS position into native source selection and returns to the same spectral context. A new pixel/field clears stale results; completed jobs for another selection are rejected. These are visual surface-brightness samples in MJy/sr, with no source flux or fabricated error bars.
+
+The live browser trace read 5,091,776 bytes in 311 requests over 34.45 seconds. All 102 brightness/hit/flag values match the independently retained native reference. Layers 0/50/62 match the corresponding displayed pixel exactly; all three download hashes and ECSV units/masks pass. Methods, byte fixture and scope: research/updates/2026-11-15/spectral-trace/METHODS.md. All 83 scientific/API tests and all 32 local browser tests pass, including real linkage/restore/Measure/mobile/accessibility plus stale jobs and request failure/cancellation. New public-release verification is pending; the prior verified preview below does not yet include this trace UI.
+
+Current local API exec 23771 serves port 8000 after a controlled restart with no pending product jobs. The unchanged temporary tunnel is exec 45352 at https://cardiovascular-encoding-duo-prefix.trycloudflare.com . This remains laptop dependent. The circular logo/favicon and descriptive tab title are retained per the user's latest explicit preference.
+
+### Native time/channel summaries — November 15, earlier checkpoint
 
 The source workflow now has immutable derived time/channel views: inclusive UTC dates, 1–366-day or whole-interval groups, all 102 geometric channel rows, missing/edge/unassigned states, conditional inverse-variance descriptive means, exact contributors linked to native inspection and scientific CSV/ECSV/SVG/provenance exports. The individual chart/table follow the applied time view; saved/share links retain the derived identity. Conditional low-signal credible bounds and Gaussian sensitivity are distinct, with no fabricated limits for missing/poor-fit samples. A general native result without a discovery parent can be read and summarized, with explicit provenance and a warning that rediscovery is needed for a new selection.
 

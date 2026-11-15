@@ -3,6 +3,7 @@ import { json } from "./api";
 import "./spectral.css";
 import { Brand } from "./Brand";
 import {NameLookup} from './NameLookup';
+import {SpectralTracePanel} from './SpectralTracePanel';
 
 interface Channel {
   index: number;
@@ -44,7 +45,7 @@ function save(name: string, data: unknown) {
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
 
-export function SpectralExplorer({ onTime }: { onTime: () => void }) {
+export function SpectralExplorer({ onTime,onMeasure }: { onTime: () => void;onMeasure:(position:number[])=>void }) {
   const initial = new URLSearchParams(location.search);
   const [metadata, setMetadata] = useState<Metadata | null>(null);
   const [center, setCenter] = useState([
@@ -59,7 +60,8 @@ export function SpectralExplorer({ onTime }: { onTime: () => void }) {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [playing, setPlaying] = useState(false);
-  const [selected, setSelected] = useState<number[] | null>(null);
+  const selectedParam=[initial.get('wave_x'),initial.get('wave_y')];
+  const [selected, setSelected] = useState<number[] | null>(selectedParam.every(v=>v!==null&&/^\d{1,3}$/.test(v)&&Number(v)<160)?selectedParam.map(Number):null);
   const colorParam = initial.get("rgb")?.split(",").map(Number);
   const validColors =
     colorParam?.length === 3 &&
@@ -128,6 +130,9 @@ export function SpectralExplorer({ onTime }: { onTime: () => void }) {
       layer: String(layer),
     });
     if (rgb) params.set("rgb", colors.join(","));
+    for(const key of ['trace','trace_job','wave_x','wave_y']){
+      const value=new URLSearchParams(location.search).get(key);if(value!==null)params.set(key,value);
+    }
     history.replaceState(null, "", `/?${params}`);
     return () => abort.abort();
   }, [center, fov, layer, rgb, colors, retry]);
@@ -182,14 +187,26 @@ export function SpectralExplorer({ onTime }: { onTime: () => void }) {
         image.data[offset + 3] = 255;
       }
     ctx.putImageData(image, 0, 0);
-  }, [plane, rgb, rgbPlanes]);
+    if(selected){
+      const [x,y]=[selected[0]+.5,size-1-selected[1]+.5];
+      ctx.strokeStyle='#05080b';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(x-5,y);ctx.lineTo(x+5,y);ctx.moveTo(x,y-5);ctx.lineTo(x,y+5);ctx.stroke();
+      ctx.strokeStyle='#f3e0ab';ctx.lineWidth=1;ctx.stroke();
+    }
+  }, [plane, rgb, rgbPlanes,selected]);
   const channel = metadata?.channels[layer];
   const choose = (l: number) => {
     setPlaying(false);
     setRgb(false);
     setLayer(l);
-    setSelected(null);
   };
+  function selectPixel(pixel:number[]){
+    const p=new URLSearchParams(location.search);p.delete('trace');p.delete('trace_job');p.set('wave_x',String(pixel[0]));p.set('wave_y',String(pixel[1]));history.replaceState(null,'','/?'+p);
+    setSelected(pixel);setPlaying(false);
+  }
+  function moveField(value:number[],width=fov){
+    const p=new URLSearchParams(location.search);for(const key of ['trace','trace_job','wave_x','wave_y'])p.delete(key);history.replaceState(null,'','/?'+p);
+    setCenter(value);setFov(width);setPlaying(false);setSelected(null);
+  }
   const inspector =
     selected && plane
       ? {
@@ -218,16 +235,14 @@ export function SpectralExplorer({ onTime }: { onTime: () => void }) {
             Move through real SPHEREx wavelengths. These mosaics combine
             observations across time.
           </p>
-          <NameLookup onResolve={result=>{setCenter(result.center_deg);setPlaying(false);setSelected(null);}}/>
+          <NameLookup onResolve={result=>moveField(result.center_deg)}/>
           <label>
             Start with a field
             <select
               aria-label="Spectral example"
               onChange={(e) => {
                 const c = JSON.parse(e.target.value);
-                setCenter(c);
-                setPlaying(false);
-                setSelected(null);
+                moveField(c);
               }}
               defaultValue="[60.8109955,51.3404038]"
             >
@@ -242,9 +257,7 @@ export function SpectralExplorer({ onTime }: { onTime: () => void }) {
             onSubmit={(e) => {
               e.preventDefault();
               const data = new FormData(e.currentTarget);
-              setCenter([Number(data.get("ra")), Number(data.get("dec"))]);
-              setFov(Number(data.get("fov")));
-              setPlaying(false);
+              moveField([Number(data.get("ra")), Number(data.get("dec"))],Number(data.get("fov")));
             }}
             key={center.join(",")}
           >
@@ -370,14 +383,17 @@ export function SpectralExplorer({ onTime }: { onTime: () => void }) {
               <canvas
                 ref={canvas}
                 aria-label="SPHEREx spectral sky image; press Enter to inspect center"
+                data-selected-pixel={selected?.join(',')}
                 tabIndex={0}
                 onKeyDown={(e) => {
-                  if (e.key === "Enter") setSelected([80, 80]);
+                  if(e.key==='Enter'){e.preventDefault();selectPixel([Math.floor(plane.shape[1]/2),Math.floor(plane.shape[0]/2)]);}
+                  const delta:Record<string,number[]>={ArrowLeft:[-1,0],ArrowRight:[1,0],ArrowUp:[0,1],ArrowDown:[0,-1]};
+                  if(delta[e.key]){e.preventDefault();const point=selected??[Math.floor(plane.shape[1]/2),Math.floor(plane.shape[0]/2)];selectPixel(point.map((v,i)=>Math.max(0,Math.min(plane.shape[1-i]-1,v+delta[e.key][i]))));}
                 }}
                 onClick={(e) => {
                   const r = e.currentTarget.getBoundingClientRect();
                   const n = plane.shape[0];
-                  setSelected([
+                  selectPixel([
                     Math.min(
                       n - 1,
                       Math.max(
@@ -457,6 +473,8 @@ export function SpectralExplorer({ onTime }: { onTime: () => void }) {
               over time. Playback skips the two blank channels.
             </p>
           </div>
+          <SpectralTracePanel key={`${center.join(',')}:${fov}:${selected?.join(',')??'none'}`} plane={plane} pixel={selected} center={center} fov={fov}
+            active={rgb?colors:[layer]} choose={choose} restorePixel={setSelected} onMeasure={onMeasure}/>
         </main>
         <aside className="spectral-inspector">
           <h2>What am I seeing?</h2>
@@ -511,6 +529,8 @@ export function SpectralExplorer({ onTime }: { onTime: () => void }) {
                 display:
                   "Independent percentile/asinh stretch; visualization only",
                 metadata,
+                selected_pixel_xy:selected,
+                trace_id:new URLSearchParams(location.search).get('trace'),
               })
             }
           >

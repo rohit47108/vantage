@@ -1,0 +1,8 @@
+test_actual_astropy_sections_and_versioned_bounded_ranges (test_range_reader.BoundedRangeTests.test_actual_astropy_sections_and_versioned_bounded_ranges) ... ok
+test_ignored_range_changed_etag_budget_and_cancel_fail_closed (test_range_reader.BoundedRangeTests.test_ignored_range_changed_etag_budget_and_cancel_fail_closed) ... ok
+test_malformed_or_weak_etags_are_not_strong_versions (test_range_reader.BoundedRangeTests.test_malformed_or_weak_etags_are_not_strong_versions) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 1.328s
+
+OK

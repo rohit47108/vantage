@@ -1,0 +1,14 @@
+
+> vantage@0.1.0 build
+> tsc --noEmit && vite build
+
+vite v8.3.8 building client environment for production...
+transforming...
+✓ 35 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.46 kB │ gzip:   0.31 kB
+dist/assets/index-gcRNqOOq.css   20.16 kB │ gzip:   5.04 kB
+dist/assets/index-DnnIKmpb.js   343.09 kB │ gzip: 102.82 kB
+
+✓ built in 396ms

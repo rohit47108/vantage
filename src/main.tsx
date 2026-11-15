@@ -919,9 +919,16 @@ function App(){
   const [product,setProduct]=useState(new URLSearchParams(location.search).get('product'));
   const [sourceSeed,setSourceSeed]=useState<SourceSeed|null>(null);
   const returnTo=useRef('/');
+  function openSource(seed?:SourceSeed){
+    returnTo.current=location.pathname+location.search;setSourceSeed(seed??null);
+    const params=new URLSearchParams({view:'measure'});
+    if(seed){params.set('source_ra',String(seed.ra));params.set('source_dec',String(seed.dec));if(seed.name)params.set('source_name',seed.name);
+      if(seed.pmra!=null&&seed.pmdec!=null){params.set('pmra',String(seed.pmra));params.set('pmdec',String(seed.pmdec));params.set('ref_epoch',String(seed.ref_epoch??2016));}}
+    history.pushState(null,'','/?'+params);setMode('measure');
+  }
   if(product)return <CoaddAnalysis initialProduct={product} standalone onClose={()=>{history.replaceState(null,'','/');setProduct(null);}}/>;
   if(mode==='sources')return <SourceSamples initialProduct={new URLSearchParams(location.search).get('samples')} onTime={()=>{history.pushState(null,'','/');setMode('time');}}/>;
-  if(mode==='measure')return <LiveSourceExplorer seed={sourceSeed} onTime={()=>{history.pushState(null,'',returnTo.current);setMode('time');}}/>;
-  return mode==='wavelengths'?<SpectralExplorer onTime={()=>{history.pushState(null,'','/');setMode('time');}}/>:<TemporalExplorer onSources={seed=>{returnTo.current=location.pathname+location.search;setSourceSeed(seed??null);const params=new URLSearchParams({view:'measure'});if(seed){params.set('source_ra',String(seed.ra));params.set('source_dec',String(seed.dec));if(seed.name)params.set('source_name',seed.name);if(seed.pmra!=null&&seed.pmdec!=null){params.set('pmra',String(seed.pmra));params.set('pmdec',String(seed.pmdec));params.set('ref_epoch',String(seed.ref_epoch??2016));}}history.pushState(null,'','/?'+params);setMode('measure');}} onSpectral={()=>{history.pushState(null,'','/?view=wavelengths');setMode('wavelengths');}}/>;
+  if(mode==='measure')return <LiveSourceExplorer seed={sourceSeed} onTime={()=>{history.pushState(null,'',returnTo.current);setMode(new URLSearchParams(location.search).get('view')||'time');}}/>;
+  return mode==='wavelengths'?<SpectralExplorer onMeasure={position=>openSource({name:'Selected mosaic position',ra:position[0],dec:position[1]})} onTime={()=>{history.pushState(null,'','/');setMode('time');}}/>:<TemporalExplorer onSources={openSource} onSpectral={()=>{history.pushState(null,'','/?view=wavelengths');setMode('wavelengths');}}/>;
 }
 createRoot(document.getElementById("root")!).render(<App />);

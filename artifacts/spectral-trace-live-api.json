@@ -1,0 +1,69 @@
+{
+  "checked_utc": "2026-11-15T17:08:36.469829+00:00",
+  "product_id": "f04f11501dd266bfe4f37930eb7d45bbd10f47ccb8ad7b0aee57bd89d96fc053",
+  "trace_data_id": "f02013c670670d8419b5c6c7825d80d8e2375950ca790a16e7a64cd2201ec3cf",
+  "native_point": [
+    240,
+    212
+  ],
+  "reference_all_102_samples_exact": true,
+  "source": {
+    "url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/hips5_cube/hips_20261026/Norder5/Dir0/Npix445_cube.fits",
+    "etag": "\"9bbeb7365d2bb8fdfd0842b729b0cf32\"",
+    "object_bytes": 320909760,
+    "last_modified": "Sun, 25 Oct 2026 05:14:07 GMT",
+    "tile": 445,
+    "product_version": "7.2.0",
+    "mjd_start": 60906.992220058,
+    "mjd_end": 61093.550470469,
+    "date_start": "2025-08-19T23:48:47.813",
+    "date_end": "2026-02-22T13:12:40.649",
+    "time_scale": "UTC",
+    "celestial_frame": "ICRS",
+    "unit": "MJy/sr"
+  },
+  "cold_archive_transfer": {
+    "bytes": 5091776,
+    "requests": 311,
+    "elapsed_seconds": 34.44863450000048
+  },
+  "warm_submit_and_status_seconds": 0.06691040000077919,
+  "image_pixel_checks": [
+    {
+      "layer": 0,
+      "plane_id": "d791b1ba0680bdccce2098601610c66834d691e8a736ff22601c620ae795de08",
+      "brightness_mjysr": 0.3881065845489502
+    },
+    {
+      "layer": 50,
+      "plane_id": "fa49fda611df953e981564462951270f1b8241c637fc95aafb129fe7672c0c98",
+      "brightness_mjysr": null
+    },
+    {
+      "layer": 62,
+      "plane_id": "f97e17a56b86fc5d8e55a6441a12b71f317cdc863b7ae2910d4f2cd4ab614df3",
+      "brightness_mjysr": 12.00507926940918
+    }
+  ],
+  "exports": [
+    {
+      "resource": "trace.ecsv",
+      "status": 200,
+      "bytes": 11454,
+      "sha256": "52e6bfc6a8a6db496f37c9bcc5efe5d531d2ea521f18078de1fe05589d501eb2"
+    },
+    {
+      "resource": "trace.csv",
+      "status": 200,
+      "bytes": 8988,
+      "sha256": "80bee7251efc67b9364c84c772dd06c6eb29f001a7c100f8b85519cbec4d7ce0"
+    },
+    {
+      "resource": "trace.svg",
+      "status": 200,
+      "bytes": 12457,
+      "sha256": "ee00954bbdee13ea824eee634c39df536c76e2761cf50b4943f1a99892e1eeaa"
+    }
+  ],
+  "independent_2026_11_14_probe_all_102_arrays_exact": true
+}
