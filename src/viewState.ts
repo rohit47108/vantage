@@ -1,3 +1,6 @@
+import {parseTimeSelection} from './timeSelection.ts';
+import type {TimeSelection} from './timeSelection';
+
 export interface ComparisonState {
   enabled:boolean;mode:'side-by-side'|'swipe';frame_a:number;frame_b:number;
   independent:boolean;stretch_a:number;stretch_b:number;divider:number;
@@ -10,9 +13,10 @@ export interface ViewState {
   overlays: string[];
   survey_opacity?:number[];
   comparison?:ComparisonState;
+  time_selection?:TimeSelection;
 }
 
-export function readView(search: string, frames: number): ViewState&{comparison:ComparisonState} {
+export function readView(search: string, frames: number): ViewState&{comparison:ComparisonState;time_selection:TimeSelection} {
   const query = new URLSearchParams(search);
   function bounded(key: string, fallback: number, min: number, max: number) {
     const text = query.get(key);
@@ -34,6 +38,7 @@ export function readView(search: string, frames: number): ViewState&{comparison:
           )
       : ["prediction"],
     survey_opacity:[bounded('gaia_opacity',.8,0,1),bounded('wise_opacity',.8,0,1)],
+    time_selection:parseTimeSelection(query),
     comparison:{enabled:frames>1&&['side-by-side','swipe'].includes(query.get('compare')??''),
       mode:query.get('compare')==='swipe'?'swipe':'side-by-side',
       frame_a:Math.floor(bounded('frame_a',0,0,frames-1)),frame_b:Math.floor(bounded('frame_b',1,0,frames-1)),
@@ -54,6 +59,10 @@ export function viewQuery(view: ViewState) {
     v: "1",
   });
   const c=view.comparison;
+  const t=view.time_selection;
+  if(t?.start_date)query.set('time_start',t.start_date);
+  if(t?.end_date)query.set('time_end',t.end_date);
+  if(t?.group_date)query.set('time_day',t.group_date);
   if(c?.enabled){
     query.set('compare',c.mode);query.set('frame_a',String(c.frame_a));query.set('frame_b',String(c.frame_b));
     query.set('independent',c.independent?'1':'0');query.set('stretch_a',String(c.stretch_a));query.set('stretch_b',String(c.stretch_b));query.set('divider',String(c.divider));

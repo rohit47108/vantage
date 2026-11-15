@@ -564,6 +564,10 @@ main .sky .swipe-content canvas { position: absolute; inset: 0; width: 100%; hei
 .swipe-line { position: absolute; top: 0; bottom: 0; width: 2px; transform: translateX(-1px); background: #ecf3f7; box-shadow: 0 0 3px #090d12; pointer-events: none; }
 .swipe-label { position: absolute; top: 10px; padding: 4px 8px; background: #090d12cc; color: white; pointer-events: none; }
 .swipe-label-a { left: 10px; }.swipe-label-b { right: 10px; }
+.time-selection { border-top: 1px solid var(--line); margin-top: 16px; padding-top: 8px; }
+.time-selection summary { cursor: pointer; padding: 12px 0; color: #dbe8ef; }
+.time-selection p { font-size: 12px; line-height: 1.6; color: #aabac8; }
+.empty-time-selection { line-height: 1.7; padding: 24px; }
 @media (max-width:760px) { .sky.comparison-swipe { aspect-ratio: 1; height: auto; } }
 @media (min-width: 761px) {
   main {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef,useMemo } from "react";
 import { createRoot } from "react-dom/client";
 import { SkyCanvas } from "./SkyCanvas";
 import { Methods } from "./Methods";
@@ -7,6 +7,9 @@ import { readView, viewQuery } from "./viewState";
 import type {ComparisonState} from './viewState';
 import {ComparisonSurface} from './ComparisonSurface';
 import {comparisonImage} from './comparisonExport';
+import {TimeSelectionControls} from './TimeSelectionControls';
+import {ALL_TIMES,selectTemporalFrames} from './timeSelection';
+import type {TimeSelection} from './timeSelection';
 import type { Sequence, Plane, Coverage } from "./types";
 import { json, readResponse } from "./api";
 import "./style.css";
@@ -57,6 +60,16 @@ function TemporalExplorer({onSpectral,onSources}:{onSpectral:()=>void;onSources:
   const [comparisonMode,setComparisonMode]=useState<'side-by-side'|'swipe'>('side-by-side');
   const [independent,setIndependent]=useState(false),[stretchA,setStretchA]=useState(1),[stretchB,setStretchB]=useState(1),[divider,setDivider]=useState(50);
   const comparison:ComparisonState={enabled:compare,mode:comparisonMode,frame_a:a,frame_b:b,independent,stretch_a:stretchA,stretch_b:stretchB,divider};
+  const [timeSelection,setTimeSelection]=useState<TimeSelection>({...ALL_TIMES});
+  const visibleIndices=useMemo(()=>selectTemporalFrames(sequence?.frames??[],timeSelection),[sequence,timeSelection]);
+  const playbackPosition=visibleIndices.indexOf(index);
+  useEffect(()=>{
+    if(!visibleIndices.length){setPlaying(false);setCompare(false);return;}
+    if(!visibleIndices.includes(index))setIndex(visibleIndices[0]);
+    if(!visibleIndices.includes(a)||!visibleIndices.includes(b)){setA(visibleIndices[0]);setB(visibleIndices[Math.min(1,visibleIndices.length-1)]);}
+    if(visibleIndices.length<2)setCompare(false);
+  },[visibleIndices,index,a,b]);
+  function applyTimeSelection(value:TimeSelection){setPlaying(false);setInspect(null);setInspectFrame(null);setTimeSelection(value);}
   const [coverage, setCoverage] = useState<Coverage | null>(null),
     [detector, setDetector] = useState(6),
     [jobId, setJobId] = useState<string | null>(null);
@@ -127,6 +140,7 @@ function TemporalExplorer({onSpectral,onSources}:{onSpectral:()=>void;onSources:
       setZoom(view.zoom);
       setPan(view.pan);
       setStretch(view.stretch);
+      setTimeSelection(view.time_selection);
       setCompare(view.comparison.enabled);setComparisonMode(view.comparison.mode);
       setA(view.comparison.frame_a);setB(view.comparison.frame_b);
       setIndependent(view.comparison.independent);setStretchA(view.comparison.stretch_a);setStretchB(view.comparison.stretch_b);setDivider(view.comparison.divider);
@@ -215,15 +229,16 @@ function TemporalExplorer({onSpectral,onSources}:{onSpectral:()=>void;onSources:
     const timer = setInterval(
       () =>
         setIndex((i) => {
-          if (i + 1 < sequence.frames.length) return i + 1;
-          if (loop) return 0;
+          const position=visibleIndices.indexOf(i);
+          if (position+1<visibleIndices.length) return visibleIndices[position+1];
+          if (loop) return visibleIndices[0];
           setPlaying(false);
           return i;
         }),
       1000 / speed,
     );
     return () => clearInterval(timer);
-  }, [playing, speed, loop, sequence]);
+  }, [playing, speed, loop, sequence,visibleIndices]);
   useEffect(() => setInspectFrame(null), [index, compare, a, b]);
   async function search(e: React.FormEvent) {
     e.preventDefault();
@@ -301,10 +316,14 @@ function TemporalExplorer({onSpectral,onSources}:{onSpectral:()=>void;onSources:
       }
     }
   }
+  function sequencePath(){return `/sequence/${sequence!.id}?${viewQuery({frame:index,zoom,pan,stretch,overlays,survey_opacity:surveyOpacity,comparison,time_selection:timeSelection})}`;}
+  function openSourceSelection(seed?:SourceSeed){
+    if(sequence)history.replaceState(null,'',sequencePath());onSources(seed);
+  }
   function share(search = false) {
     const path = search
       ? `/sky?ra=${encodeURIComponent(ra)}&dec=${encodeURIComponent(dec)}&fov_arcmin=${fov}`
-      : `/sequence/${sequence!.id}?${viewQuery({ frame: index, zoom, pan, stretch, overlays,survey_opacity:surveyOpacity,comparison })}`;
+      : sequencePath();
     navigator.clipboard
       .writeText(location.origin + path)
       .then(() => setMessage("Link copied."))
@@ -371,7 +390,7 @@ function TemporalExplorer({onSpectral,onSources}:{onSpectral:()=>void;onSources:
         <span className="badge">● {sequence?.data_status || "prepared"}</span>
       </header>
       <nav aria-label="Main navigation">
-        <button title="Measure a source" onClick={()=>onSources()}>∿<small>Sources</small></button>
+        <button title="Measure a source" onClick={()=>openSourceSelection()}>∿<small>Sources</small></button>
         <button title="Explore wavelengths" onClick={onSpectral}>λ<small>Wavelengths</small></button>
         <button
           title="Explore"
@@ -403,7 +422,7 @@ function TemporalExplorer({onSpectral,onSources}:{onSpectral:()=>void;onSources:
               ‹
             </button>
           </div>
-          <p className="muted">One patch of sky. Different moments in time.</p>
+          <p className="muted">{sequence?.mode==='source_tracked'?'Follow the predicted object position between observations.':'One patch of sky. Different moments in time.'}</p>
           <NameLookup onResolve={result=>{setRa(String(result.center_deg[0]));setDec(String(result.center_deg[1]));history.pushState(null,'',`/sky?ra=${result.center_deg[0]}&dec=${result.center_deg[1]}&fov_arcmin=${fov}`);void searchCoordinates(String(result.center_deg[0]),String(result.center_deg[1]),fov);}}/>
           <form onSubmit={search}>
             <label>
@@ -596,6 +615,7 @@ function TemporalExplorer({onSpectral,onSources}:{onSpectral:()=>void;onSources:
                 ) && <small>No locator for this field</small>}
             </label>
           ))}
+          {sequence&&<TimeSelectionControls frames={sequence.frames} selection={timeSelection} onApply={applyTimeSelection}/>}
           <label>
             Shared display stretch
             <input
@@ -628,6 +648,9 @@ function TemporalExplorer({onSpectral,onSources}:{onSpectral:()=>void;onSources:
             {sequence?.center_deg.map((n) => n.toFixed(6)).join("°, ")}° ·{" "}
             {sequence?.fov_arcmin}′ field · north ↑ east ←
           </p>
+          {(timeSelection.start_date||timeSelection.end_date||timeSelection.group_date)&&<p data-testid="playback-active-selection">
+            Showing {visibleIndices.length} of {sequence?.frames.length} exposures · UTC midpoint dates {timeSelection.start_date||'earliest'} to {timeSelection.end_date||'latest'}{timeSelection.group_date?` · day group ${timeSelection.group_date}`:''}.
+          </p>}
         </div>
         {message && (
           <div className="notice" role="status">
@@ -637,7 +660,11 @@ function TemporalExplorer({onSpectral,onSources}:{onSpectral:()=>void;onSources:
             </button>
           </div>
         )}
-        {plane && current && (
+        {sequence&&!visibleIndices.length&&<div className="sky empty-time-selection"><div>
+          <p>No exposures in this playback selection.</p><p>Choose a different interval or day group. The retained sequence contains {sequence.frames.length} individual exposures.</p>
+          <button onClick={()=>applyTimeSelection({...ALL_TIMES})}>Show all sequence exposures</button>
+        </div></div>}
+        {plane && current && playbackPosition>=0 && (
           <ComparisonSurface enabled={compare} swipe={comparisonMode==='swipe'} divider={divider}>
             <SkyCanvas
               plane={compare ? planes[a] : plane}
@@ -703,9 +730,9 @@ function TemporalExplorer({onSpectral,onSources}:{onSpectral:()=>void;onSources:
           </button>
           <button
             aria-pressed={compare}
-            disabled={!sequence || sequence.frames.length < 2}
+            disabled={!sequence || visibleIndices.length < 2}
             title={
-              sequence && sequence.frames.length < 2
+              sequence && visibleIndices.length < 2
                 ? "Comparison needs two observations"
                 : "Compare two frames"
             }
@@ -717,7 +744,7 @@ function TemporalExplorer({onSpectral,onSources}:{onSpectral:()=>void;onSources:
             A/B compare
           </button>
         </div>
-        {sequence && (
+        {sequence && playbackPosition>=0 && (
           <section className="dock" aria-label="Playback controls">
             <div className="frameInfo">
               <strong>
@@ -731,19 +758,19 @@ function TemporalExplorer({onSpectral,onSources}:{onSpectral:()=>void;onSources:
             <div className="playControls">
               <button
                 aria-label="Previous frame"
-                disabled={index === 0}
+                disabled={playbackPosition<=0}
                 onClick={() => {
                   setPlaying(false);
-                  setIndex((i) => Math.max(0, i - 1));
+                  setIndex(visibleIndices[Math.max(0,playbackPosition-1)]);
                 }}
               >
                 ←
               </button>
               <button
                 className="primary"
-                disabled={sequence.frames.length < 2}
+                disabled={visibleIndices.length < 2}
                 title={
-                  sequence.frames.length < 2
+                  visibleIndices.length < 2
                     ? "One observation is available. Choose a wider date range for playback."
                     : "Play or pause actual observations"
                 }
@@ -756,10 +783,10 @@ function TemporalExplorer({onSpectral,onSources}:{onSpectral:()=>void;onSources:
               </button>
               <button
                 aria-label="Next frame"
-                disabled={index === sequence.frames.length - 1}
+                disabled={playbackPosition===visibleIndices.length-1}
                 onClick={() => {
                   setPlaying(false);
-                  setIndex((i) => Math.min(sequence.frames.length - 1, i + 1));
+                  setIndex(visibleIndices[Math.min(visibleIndices.length-1,playbackPosition+1)]);
                 }}
               >
                 →
@@ -785,21 +812,21 @@ function TemporalExplorer({onSpectral,onSources}:{onSpectral:()=>void;onSources:
               </label>
             </div>
             <label className="scrub">
-              Frame {index + 1} of {sequence.frames.length}
+              Frame {playbackPosition + 1} of {visibleIndices.length}
               <input
                 aria-label="Selected frame"
                 type="range"
                 min={0}
-                max={sequence.frames.length - 1}
-                value={index}
+                max={visibleIndices.length - 1}
+                value={playbackPosition}
                 onChange={(e) => {
                   setPlaying(false);
-                  setIndex(Number(e.target.value));
+                  setIndex(visibleIndices[Number(e.target.value)]);
                 }}
               />
             </label>
             <div className="dates">
-              {sequence.frames.map((f, i) => (
+              {visibleIndices.map((i,position) => {const f=sequence.frames[i];return (
                 <button
                   key={f.obs_id}
                   aria-pressed={index === i}
@@ -809,19 +836,19 @@ function TemporalExplorer({onSpectral,onSources}:{onSpectral:()=>void;onSources:
                   }}
                 >
                   {f.utc_mid.slice(0, 10)}
-                  {i > 0 && (
+                  {position > 0 && (
                     <small>
-                      +{(f.mjd_mid - sequence.frames[i - 1].mjd_mid).toFixed(2)}{" "}
+                      +{(f.mjd_mid - sequence.frames[visibleIndices[position-1]].mjd_mid).toFixed(2)}{" "}
                       days
                     </small>
                   )}
                 </button>
-              ))}
+              );})}
             </div>
           </section>
         )}
       </main>
-      {sequence && current && (
+      {sequence && current && playbackPosition>=0 && (
         <aside className="inspector">
           <div className="eyebrow">OBSERVATION DETAILS</div>
           <h2>
@@ -859,8 +886,9 @@ function TemporalExplorer({onSpectral,onSources}:{onSpectral:()=>void;onSources:
                 </p>;})}
               </section>
               <label>Comparison display<select value={comparisonMode} onChange={e=>setComparisonMode(e.target.value as 'side-by-side'|'swipe')}>
-                <option value="side-by-side">Side by side</option><option value="swipe">Swipe over the same sky</option>
+                <option value="side-by-side">Side by side</option><option value="swipe">{sequence.mode==='source_tracked'?'Swipe aligned tracked thumbnails':'Swipe over the same sky'}</option>
               </select></label>
+              {sequence.mode==='source_tracked'&&<p className="warning">These thumbnails follow the predicted object position. The two halves use different sky centers. Inspect each exposure's coordinates.</p>}
               {comparisonMode==='swipe'&&<label>Swipe divider<input type="range" min={0} max={100} value={divider} onChange={e=>setDivider(Number(e.target.value))}/></label>}
               <label className="check"><input type="checkbox" checked={independent} onChange={e=>{
                 setIndependent(e.target.checked);if(e.target.checked){setStretchA(stretch);setStretchB(stretch);}
@@ -876,11 +904,11 @@ function TemporalExplorer({onSpectral,onSources}:{onSpectral:()=>void;onSources:
                   value={a}
                   onChange={(e) => setA(Number(e.target.value))}
                 >
-                  {sequence.frames.map((f, i) => (
+                  {visibleIndices.map(i=>{const f=sequence.frames[i];return (
                     <option value={i} key={f.obs_id}>
                       {f.utc_mid.replace('T',' ')} · {f.obs_id}
                     </option>
-                  ))}
+                  );})}
                 </select>
               </label>
               <label>
@@ -889,11 +917,11 @@ function TemporalExplorer({onSpectral,onSources}:{onSpectral:()=>void;onSources:
                   value={b}
                   onChange={(e) => setB(Number(e.target.value))}
                 >
-                  {sequence.frames.map((f, i) => (
+                  {visibleIndices.map(i=>{const f=sequence.frames[i];return (
                     <option value={i} key={f.obs_id}>
                       {f.utc_mid.replace('T',' ')} · {f.obs_id}
                     </option>
-                  ))}
+                  );})}
                 </select>
               </label>
             </div>
@@ -909,7 +937,7 @@ function TemporalExplorer({onSpectral,onSources}:{onSpectral:()=>void;onSources:
               pixel={inspect}
             /><button onClick={()=>{
               const plane=planes[inspectFrame??index],x=inspect[0],y=inspect[1];
-              onSources({name:'Selected sky position',ra:plane.ra[y][x],dec:plane.dec[y][x]});
+              openSourceSelection({name:'Selected sky position',ra:plane.ra[y][x],dec:plane.dec[y][x]});
             }}>Measure this sky position</button></>
           )}
           <div className="exports">
@@ -921,7 +949,7 @@ function TemporalExplorer({onSpectral,onSources}:{onSpectral:()=>void;onSources:
                   JSON.stringify(
                     {
                       ...sequence,
-                      view: { frame: index, zoom, pan, stretch, overlays, comparison, survey_opacity:surveyOpacity, selected_catalog:selectedCatalog, catalog_frame:surveyFrame },
+                      view: { frame: index, zoom, pan, stretch, overlays, comparison, time_selection:timeSelection,selected_frame_indices:visibleIndices, survey_opacity:surveyOpacity, selected_catalog:selectedCatalog, catalog_frame:surveyFrame },
                       catalog_context:{gaia:surveys.gaia.layer,wise:surveys.wise.layer,associations,
                         failures:{gaia:surveys.gaia.error||null,wise:surveys.wise.error||null},
                         interpretation:'Imported catalog locators and proximity candidates; not measured SPHEREx positions or confirmed identities.'},
@@ -934,10 +962,10 @@ function TemporalExplorer({onSpectral,onSources}:{onSpectral:()=>void;onSources:
             >
               Export provenance ↓
             </button>
-            <button onClick={() => setAnalysis(true)} disabled={!sequence||sequence.frames.length<2||targetLoading||!!failedSelection}>Stack observations</button>
+            <button onClick={() => setAnalysis(true)} disabled={!sequence||visibleIndices.length<2||targetLoading||!!failedSelection}>Stack observations</button>
             {selectedCatalog?.startsWith('gaia:')&&<button onClick={()=>{
               const source=surveys.gaia.layer?.sources.find(s=>'gaia:'+s.id===selectedCatalog);
-              if(source)onSources({name:'Gaia DR3 '+source.id,ra:source.ra,dec:source.dec,pmra:source.pmra,pmdec:source.pmdec,ref_epoch:source.ref_epoch??2016});
+              if(source)openSourceSelection({name:'Gaia DR3 '+source.id,ra:source.ra,dec:source.dec,pmra:source.pmra,pmdec:source.pmdec,ref_epoch:source.ref_epoch??2016});
             }}>Measure selected Gaia source</button>}
             <button onClick={() => setMethods(true)}>Data & methods</button>
           </div>

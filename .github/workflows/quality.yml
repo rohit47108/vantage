@@ -32,7 +32,7 @@ jobs:
       - name: Scientific fixtures and API regressions
         run: python -m unittest discover -s tests -v
       - name: Display and comparison URL contracts
-        run: node --test tests/view-state.test.ts
+        run: node --test tests/view-state.test.ts tests/time-selection.test.ts
       - name: Independent real-data numerical validation
         run: python -m scripts.validate_coadd
       - name: Native photometry and calibrated-area validation

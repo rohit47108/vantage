@@ -1,0 +1,13 @@
+✔ real UTC-day groups retain Ceres exposures and their actual midpoint interval (2.7421ms)
+✔ inclusive UTC midpoint dates preserve original indices and explicit empty selections (0.3418ms)
+✔ calendar validation and saved temporal selection round-trip without fabricating groups (0.9693ms)
+✔ comparison URL round-trips the actual frames and each display choice (2.2253ms)
+✔ comparison controls clamp invalid values and reject unavailable/single-frame modes (0.3638ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 181.139
