@@ -13,6 +13,8 @@ interface Props {
   canvasRef?: React.RefObject<HTMLCanvasElement | null>;
   catalogMarkers?:CatalogMarker[];
   onCatalogSelect?:(key:string)=>void;
+  label?:string;
+  clipLeft?:number;
 }
 export function SkyCanvas({
   plane,
@@ -26,6 +28,7 @@ export function SkyCanvas({
   canvasRef,
   catalogMarkers=[],
   onCatalogSelect,
+  label,clipLeft,
 }: Props) {
   const local = useRef<HTMLCanvasElement>(null);
   const ref = canvasRef || local;
@@ -135,7 +138,9 @@ export function SkyCanvas({
       height={800}
       tabIndex={0}
       role="img"
-      aria-label="Infrared sky. Drag to pan. Arrow keys pan, Enter inspects the central pixel. Zoom controls are below."
+      aria-label={`${label?label+'. ':''}Infrared sky. Drag to pan. Arrow keys pan, Enter inspects the central pixel. Zoom controls are below.`}
+      data-stretch={stretch}
+      style={clipLeft===undefined?undefined:{clipPath:`inset(0 0 0 ${clipLeft}%)`}}
       onKeyDown={(e) => {
         const moves: Record<string, number[]> = {
           ArrowLeft: [20, 0],

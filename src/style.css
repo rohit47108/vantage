@@ -448,6 +448,8 @@ main .comparison canvas {
 }
 @media (max-width: 1200px) {
   .inspector {
+    max-height: none;
+    overflow: visible;
     position: relative;
     top: auto;
     right: auto;
@@ -556,6 +558,13 @@ main .comparison canvas {
   top: 160px;
   left: 20px;
 }
+.sky.comparison-swipe { display: grid; place-items: center; grid-template-columns: minmax(0,1fr); grid-template-rows: minmax(0,1fr); overflow: hidden; width: 100%; }
+.swipe-content { position: relative; flex: none; }
+main .sky .swipe-content canvas { position: absolute; inset: 0; width: 100%; height: 100%; max-width: 100%; max-height: 100%; }
+.swipe-line { position: absolute; top: 0; bottom: 0; width: 2px; transform: translateX(-1px); background: #ecf3f7; box-shadow: 0 0 3px #090d12; pointer-events: none; }
+.swipe-label { position: absolute; top: 10px; padding: 4px 8px; background: #090d12cc; color: white; pointer-events: none; }
+.swipe-label-a { left: 10px; }.swipe-label-b { right: 10px; }
+@media (max-width:760px) { .sky.comparison-swipe { aspect-ratio: 1; height: auto; } }
 @media (min-width: 761px) {
   main {
     height: calc(100dvh - 64px);

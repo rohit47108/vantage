@@ -4,6 +4,9 @@ import { SkyCanvas } from "./SkyCanvas";
 import { Methods } from "./Methods";
 import { PixelInspector } from "./PixelInspector";
 import { readView, viewQuery } from "./viewState";
+import type {ComparisonState} from './viewState';
+import {ComparisonSurface} from './ComparisonSurface';
+import {comparisonImage} from './comparisonExport';
 import type { Sequence, Plane, Coverage } from "./types";
 import { json, readResponse } from "./api";
 import "./style.css";
@@ -51,6 +54,9 @@ function TemporalExplorer({onSpectral,onSources}:{onSpectral:()=>void;onSources:
     [compare, setCompare] = useState(false),
     [a, setA] = useState(0),
     [b, setB] = useState(1);
+  const [comparisonMode,setComparisonMode]=useState<'side-by-side'|'swipe'>('side-by-side');
+  const [independent,setIndependent]=useState(false),[stretchA,setStretchA]=useState(1),[stretchB,setStretchB]=useState(1),[divider,setDivider]=useState(50);
+  const comparison:ComparisonState={enabled:compare,mode:comparisonMode,frame_a:a,frame_b:b,independent,stretch_a:stretchA,stretch_b:stretchB,divider};
   const [coverage, setCoverage] = useState<Coverage | null>(null),
     [detector, setDetector] = useState(6),
     [jobId, setJobId] = useState<string | null>(null);
@@ -81,6 +87,7 @@ function TemporalExplorer({onSpectral,onSources}:{onSpectral:()=>void;onSources:
   }
   const request = useRef(0),
     canvas = useRef<HTMLCanvasElement>(null);
+  const canvasB=useRef<HTMLCanvasElement>(null);
   async function open(s: Sequence, replace = true, collapseControls = true) {
     const generation = ++request.current;
     setTargetLoading(true);
@@ -120,6 +127,9 @@ function TemporalExplorer({onSpectral,onSources}:{onSpectral:()=>void;onSources:
       setZoom(view.zoom);
       setPan(view.pan);
       setStretch(view.stretch);
+      setCompare(view.comparison.enabled);setComparisonMode(view.comparison.mode);
+      setA(view.comparison.frame_a);setB(view.comparison.frame_b);
+      setIndependent(view.comparison.independent);setStretchA(view.comparison.stretch_a);setStretchB(view.comparison.stretch_b);setDivider(view.comparison.divider);
       setOverlays(view.overlays);
       setSurveyOpacity(view.survey_opacity||[.8,.8]);
       setJobId(null);
@@ -294,7 +304,7 @@ function TemporalExplorer({onSpectral,onSources}:{onSpectral:()=>void;onSources:
   function share(search = false) {
     const path = search
       ? `/sky?ra=${encodeURIComponent(ra)}&dec=${encodeURIComponent(dec)}&fov_arcmin=${fov}`
-      : `/sequence/${sequence!.id}?${viewQuery({ frame: index, zoom, pan, stretch, overlays,survey_opacity:surveyOpacity })}`;
+      : `/sequence/${sequence!.id}?${viewQuery({ frame: index, zoom, pan, stretch, overlays,survey_opacity:surveyOpacity,comparison })}`;
     navigator.clipboard
       .writeText(location.origin + path)
       .then(() => setMessage("Link copied."))
@@ -302,6 +312,10 @@ function TemporalExplorer({onSpectral,onSources}:{onSpectral:()=>void;onSources:
   }
   function exportImage() {
     if (!sequence || !canvas.current) return;
+    if(compare&&canvasB.current){
+      const out=comparisonImage(canvas.current,canvasB.current,sequence,comparison,{zoom,pan,stretch,overlays});
+      const link=document.createElement('a');link.download=`vantage-${sequence.key}-comparison.png`;link.href=out.toDataURL();link.click();return;
+    }
     const out = document.createElement("canvas");
     const catalogLayers=[surveys.gaia.layer,surveys.wise.layer].filter(layer=>layer&&overlays.includes(layer.survey));
     out.width = 800;
@@ -591,6 +605,7 @@ function TemporalExplorer({onSpectral,onSources}:{onSpectral:()=>void;onSources:
               step={0.1}
               value={stretch}
               onChange={(e) => setStretch(Number(e.target.value))}
+              disabled={compare&&independent}
             />
           </label>
         </aside>
@@ -623,13 +638,14 @@ function TemporalExplorer({onSpectral,onSources}:{onSpectral:()=>void;onSources:
           </div>
         )}
         {plane && current && (
-          <div className={compare ? "sky comparison" : "sky"}>
+          <ComparisonSurface enabled={compare} swipe={comparisonMode==='swipe'} divider={divider}>
             <SkyCanvas
               plane={compare ? planes[a] : plane}
               frame={compare ? sequence!.frames[a] : current}
               zoom={zoom}
               pan={pan}
-              stretch={stretch}
+              stretch={compare&&independent?stretchA:stretch}
+              label={compare?`Frame A, ${sequence!.frames[a].utc_mid}`:undefined}
               overlays={overlays}
               onPan={setPan}
               onInspect={(x, y) => {
@@ -646,7 +662,10 @@ function TemporalExplorer({onSpectral,onSources}:{onSpectral:()=>void;onSources:
                 frame={sequence!.frames[b]}
                 zoom={zoom}
                 pan={pan}
-                stretch={stretch}
+                stretch={independent?stretchB:stretch}
+                label={`Frame B, ${sequence!.frames[b].utc_mid}`}
+                clipLeft={comparisonMode==='swipe'?divider:undefined}
+                canvasRef={canvasB}
                 overlays={overlays}
                 catalogMarkers={catalogMarkers(b)}
                 onCatalogSelect={key=>selectCatalog(key,b)}
@@ -657,7 +676,7 @@ function TemporalExplorer({onSpectral,onSources}:{onSpectral:()=>void;onSources:
                 }}
               />
             )}
-          </div>
+          </ComparisonSurface>
         )}
         <div className="viewTools">
           <button
@@ -677,6 +696,7 @@ function TemporalExplorer({onSpectral,onSources}:{onSpectral:()=>void;onSources:
               setZoom(1);
               setPan([0, 0]);
               setStretch(1);
+              setStretchA(1);setStretchB(1);setDivider(50);
             }}
           >
             Reset view
@@ -815,22 +835,41 @@ function TemporalExplorer({onSpectral,onSources}:{onSpectral:()=>void;onSources:
           <dl>
             <dt>Joint usable field</dt>
             <dd>{(sequence.joint_support_fraction * 100).toFixed(1)}%</dd>
-            <dt>Acquisition UTC</dt>
-            <dd>{current.utc_mid}</dd>
-            <dt>Observation</dt>
-            <dd>{current.obs_id}</dd>
-            <dt>Source-core bits</dt>
-            <dd>{current.core_flag_bits.join(", ") || "Not screened"}</dd>
+            {!compare&&<>
+              <dt>Acquisition UTC</dt><dd>{current.utc_mid}</dd>
+              <dt>Observation</dt><dd>{current.obs_id}</dd>
+              <dt>Source-core bits</dt><dd>{current.core_flag_bits.join(', ')||'Not screened'}</dd>
+            </>}
           </dl>
           <p className="muted">
             Bit 21 marks source information. Brightness-change measurements are
             unavailable.
           </p>
-          <a href={current.source_url} target="_blank" rel="noreferrer">
+          {!compare&&<a href={current.source_url} target="_blank" rel="noreferrer">
             Original FITS ↗
-          </a>
+          </a>}
           {compare && (
             <div>
+              <section aria-label="Comparison acquisitions">
+                {[a,b].map((frameIndex,side)=>{const frame=sequence.frames[frameIndex];return <p key={side}>
+                  <strong>{side?'B':'A'} · {frame.utc_mid}</strong><br/>
+                  {frame.wavelength_um?.toFixed(4)} µm · D{frame.detector} · {frame.release.toUpperCase()}<br/>
+                  <span className="mono">{frame.obs_id}</span><br/>Source-core bits: {frame.core_flag_bits.join(', ')||'Not screened'}<br/>
+                  <a href={frame.source_url} target="_blank" rel="noreferrer">Original {side?'B':'A'} FITS ↗</a>
+                </p>;})}
+              </section>
+              <label>Comparison display<select value={comparisonMode} onChange={e=>setComparisonMode(e.target.value as 'side-by-side'|'swipe')}>
+                <option value="side-by-side">Side by side</option><option value="swipe">Swipe over the same sky</option>
+              </select></label>
+              {comparisonMode==='swipe'&&<label>Swipe divider<input type="range" min={0} max={100} value={divider} onChange={e=>setDivider(Number(e.target.value))}/></label>}
+              <label className="check"><input type="checkbox" checked={independent} onChange={e=>{
+                setIndependent(e.target.checked);if(e.target.checked){setStretchA(stretch);setStretchB(stretch);}
+              }}/>Independent display stretches</label>
+              {independent&&<>
+                <label>Frame A display stretch<input type="range" min={.3} max={3} step={.1} value={stretchA} onChange={e=>setStretchA(Number(e.target.value))}/></label>
+                <label>Frame B display stretch<input type="range" min={.3} max={3} step={.1} value={stretchB} onChange={e=>setStretchB(Number(e.target.value))}/></label>
+                <p className="muted">Independent stretches change visual contrast. Recorded pixel brightness is unchanged. This comparison does not subtract the exposures or measure a brightness change.</p>
+              </>}
               <label>
                 Frame A
                 <select
@@ -839,7 +878,7 @@ function TemporalExplorer({onSpectral,onSources}:{onSpectral:()=>void;onSources:
                 >
                   {sequence.frames.map((f, i) => (
                     <option value={i} key={f.obs_id}>
-                      {f.utc_mid.slice(0, 10)}
+                      {f.utc_mid.replace('T',' ')} · {f.obs_id}
                     </option>
                   ))}
                 </select>
@@ -852,7 +891,7 @@ function TemporalExplorer({onSpectral,onSources}:{onSpectral:()=>void;onSources:
                 >
                   {sequence.frames.map((f, i) => (
                     <option value={i} key={f.obs_id}>
-                      {f.utc_mid.slice(0, 10)}
+                      {f.utc_mid.replace('T',' ')} · {f.obs_id}
                     </option>
                   ))}
                 </select>
@@ -882,7 +921,7 @@ function TemporalExplorer({onSpectral,onSources}:{onSpectral:()=>void;onSources:
                   JSON.stringify(
                     {
                       ...sequence,
-                      view: { frame: index, zoom, pan, stretch, overlays, survey_opacity:surveyOpacity, selected_catalog:selectedCatalog, catalog_frame:surveyFrame },
+                      view: { frame: index, zoom, pan, stretch, overlays, comparison, survey_opacity:surveyOpacity, selected_catalog:selectedCatalog, catalog_frame:surveyFrame },
                       catalog_context:{gaia:surveys.gaia.layer,wise:surveys.wise.layer,associations,
                         failures:{gaia:surveys.gaia.error||null,wise:surveys.wise.error||null},
                         interpretation:'Imported catalog locators and proximity candidates; not measured SPHEREx positions or confirmed identities.'},

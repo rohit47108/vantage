@@ -1,0 +1,57 @@
+import {test,expect} from '@playwright/test';
+import AxeBuilder from '@axe-core/playwright';
+import {readFileSync} from 'node:fs';
+
+const target=JSON.parse(readFileSync('public/prepared/catalog.json','utf8')).find((s:any)=>s.key==='m101');
+
+test('swipe comparison inspects both actual epochs and restores independent display settings',async({page,context,baseURL})=>{
+  await page.goto('/sequence/'+target.id);
+  await expect(page.getByRole('heading',{name:'M101',exact:true})).toBeVisible();
+  await page.getByRole('button',{name:'A/B compare',exact:true}).click();
+  await expect(page.getByRole('combobox',{name:'Comparison display',exact:true})).toBeVisible({timeout:5000});
+  await page.getByRole('combobox',{name:'Comparison display',exact:true}).selectOption('swipe');
+  const images=page.locator('.comparison-swipe canvas'),area=page.getByTestId('comparison-image');
+  await expect(images).toHaveCount(2);
+  const bounds=(await area.boundingBox())!;
+  const first=(await images.nth(0).boundingBox())!,second=(await images.nth(1).boundingBox())!;
+  expect(first.width).toBeCloseTo(second.width,1);expect(first.x).toBeCloseTo(second.x,1);
+  await page.mouse.click(bounds.x+bounds.width*.25,bounds.y+bounds.height*.5);
+  await expect(page.getByLabel('Inspected pixel measurements')).toContainText(target.frames[0].utc_mid);
+  await page.mouse.click(bounds.x+bounds.width*.75,bounds.y+bounds.height*.5);
+  await expect(page.getByLabel('Inspected pixel measurements')).toContainText(target.frames[1].utc_mid);
+  await page.getByLabel('Independent display stretches',{exact:true}).check();
+  await page.getByLabel('Frame A display stretch',{exact:true}).fill('0.7');
+  await page.getByLabel('Frame B display stretch',{exact:true}).fill('2');
+  await expect(images.nth(0)).toHaveAttribute('data-stretch','0.7');await expect(images.nth(1)).toHaveAttribute('data-stretch','2');
+  await page.getByLabel('Swipe divider',{exact:true}).fill('30');
+  await page.getByRole('combobox',{name:'Frame A',exact:true}).selectOption('1');await page.getByRole('combobox',{name:'Frame B',exact:true}).selectOption('0');
+  await expect(images.nth(0)).toHaveAttribute('data-ready',target.frames[1].obs_id);await expect(images.nth(1)).toHaveAttribute('data-ready',target.frames[0].obs_id);
+  await context.grantPermissions(['clipboard-read','clipboard-write']);await page.getByRole('button',{name:'Share view ↗',exact:true}).click();
+  const link=await page.evaluate(()=>navigator.clipboard.readText());expect(link).toContain('compare=swipe');expect(link).toContain('frame_a=1');
+  const fresh=await context.newPage();await fresh.goto(link);
+  await expect(fresh.getByRole('combobox',{name:'Comparison display',exact:true})).toHaveValue('swipe');
+  await expect(fresh.getByLabel('Independent display stretches',{exact:true})).toBeChecked();
+  await expect(fresh.getByLabel('Frame A display stretch',{exact:true})).toHaveValue('0.7');
+  await expect(fresh.getByLabel('Frame B display stretch',{exact:true})).toHaveValue('2');
+  await expect(fresh.getByLabel('Swipe divider',{exact:true})).toHaveValue('30');
+  await expect(fresh.getByRole('combobox',{name:'Frame A',exact:true})).toHaveValue('1');await fresh.close();
+  const download=page.waitForEvent('download');await page.getByRole('button',{name:'Export provenance ↓',exact:true}).click();
+  const value=JSON.parse(readFileSync((await (await download).path())!,'utf8'));
+  expect(value.view.comparison).toMatchObject({enabled:true,mode:'swipe',frame_a:1,frame_b:0,independent:true,stretch_a:.7,stretch_b:2,divider:30});
+  const image=page.waitForEvent('download');await page.getByRole('button',{name:'Export labeled image ↓',exact:true}).click();
+  const exported=await image;expect(exported.suggestedFilename()).toContain('comparison');
+  const bytes=readFileSync((await exported.path())!);expect(bytes.readUInt32BE(16)).toBe(800);
+  const imageData='data:image/png;base64,'+bytes.toString('base64');
+  const matches=await page.evaluate(async data=>{
+    const image=new Image();image.src=data;await image.decode();const canvas=document.createElement('canvas');canvas.width=image.width;canvas.height=image.height;
+    const ctx=canvas.getContext('2d')!;ctx.drawImage(image,0,0);const sources=Array.from(document.querySelectorAll<HTMLCanvasElement>('.comparison-swipe canvas'));
+    return [0,1].map((index)=>{const x=index?700:200;return Array.from(ctx.getImageData(x,400,1,1).data).join()===Array.from(sources[index].getContext('2d')!.getImageData(x,400,1,1).data).join();});
+  },imageData);expect(matches).toEqual([true,true]);
+  expect((await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze()).violations).toEqual([]);
+  await page.setViewportSize({width:390,height:844});expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+  expect(await page.locator('.inspector').evaluate(e=>e.scrollHeight<=e.clientHeight+1)).toBe(true);
+  await page.screenshot({path:`artifacts/time-comparison-${baseURL?.startsWith('https:')?'public':'local'}-mobile.png`,fullPage:true});
+  await page.getByRole('button',{name:'Reset view',exact:true}).click();
+  await expect(page.getByLabel('Frame A display stretch',{exact:true})).toHaveValue('1');
+  await expect(page.getByLabel('Frame B display stretch',{exact:true})).toHaveValue('1');
+});
