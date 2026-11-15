@@ -1,5 +1,17 @@
 # Vantage implementation status
 
+## Production demo — November 15, 2026
+
+Production: https://vantage-spherex.vercel.app . Functional source 154c4363e39033398b243103ec4ce7dd21d307ce; deployment dpl_7KYM2NHz23eFen5btgdxiBTyJKtK, created at 17:53:33 UTC and Ready/verified by 17:54 UTC. This was within the user's fifteen-minute demo window. The final handoff was delayed by a tool-runtime replacement and network interruption; production remained available and was rechecked HTTP 200 afterward.
+
+The new release adds swipe/side-by-side comparison, independent display stretches, exact two-frame exports/sharing, UTC-midpoint playback intervals/day groups, empty recovery and preserved return context from native measurements. All 34 local browser cases and five display/time-model contracts pass. Fresh Ubuntu CI 43743635803 passes the build, 83 scientific/API tests, independent benchmarks, display/time contracts, retained spectral fingerprints and runtime audit.
+
+On the exact production hostname, JS/CSS/favicon and HTML match the local build; all eight example manifests and 21 frame files match exactly, saved native/trace products are accessible, and backend health returns 200. The initial production browser run passed 33/34; one source-summary poll encountered Failed to fetch while preserving data/reconnecting. A focused rerun passed both source-summary cases. A subsequent complete rerun was disrupted by Chrome launch timeout and ERR_INTERNET_DISCONNECTED during the tool-runtime failure; it is not a clean full-suite pass. No claim of one uninterrupted 34-case production run is made. Earlier verified previews retain their own clean runs.
+
+Evidence: artifacts/demo-final-production-release.json, demo-final-preflight.json, demo-final-production-browser.json, demo-final-summary-recovery.log and demo-final-github-ci.json. DEMO.md contains presenting steps and direct production entry points. NASA_DEMO_CHECKLIST.md maps the current official core objectives and every optional consideration, including unfinished capabilities. No submission was made.
+
+Live science still uses API process 13092 on port 8000 and the existing cardiovascular-encoding-duo-prefix.trycloudflare.com tunnel. Keep this machine awake and these processes running. Prepared imagery is delivered independently by Vercel. Durable hosting, validated subtraction and the other open complete-product requirements below remain unfinished; demo readiness does not close them.
+
 ## New complete-product goal — active
 
 The later complete-product specification supersedes the demo scope described below. The application is PARTIALLY COMPLETE for that goal. See tasks/product-evidence.md; remaining coadd methods, subtraction, source extraction, embeds/investigations, release promotion and durable hosting still require implementation/validation.

@@ -1,0 +1,88 @@
+{
+  "checked_utc": "2026-11-15T18:08:26.544013+00:00",
+  "run_id": 43743635803,
+  "head_sha": "154c4363e39033398b243103ec4ce7dd21d307ce",
+  "html_url": "https://github.com/rohit47108/vantage/actions/runs/43743635803",
+  "status": "completed",
+  "conclusion": "success",
+  "jobs": [
+    {
+      "name": "verify",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run python -m pip install -r requirements-dev.txt",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm ci",
+          "conclusion": "success"
+        },
+        {
+          "name": "Type check and production build",
+          "conclusion": "success"
+        },
+        {
+          "name": "Scientific fixtures and API regressions",
+          "conclusion": "success"
+        },
+        {
+          "name": "Display and comparison URL contracts",
+          "conclusion": "success"
+        },
+        {
+          "name": "Independent real-data numerical validation",
+          "conclusion": "success"
+        },
+        {
+          "name": "Native photometry and calibrated-area validation",
+          "conclusion": "success"
+        },
+        {
+          "name": "Six-detector native extraction validation",
+          "conclusion": "success"
+        },
+        {
+          "name": "Retained spectral model fingerprints",
+          "conclusion": "success"
+        },
+        {
+          "name": "Browser-runtime dependency audit",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ]
+}

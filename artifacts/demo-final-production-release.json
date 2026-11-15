@@ -1,0 +1,39 @@
+{
+  "checked_utc": "2026-11-15T17:54:00.274408+00:00",
+  "preview": "https://vantage-spherex.vercel.app",
+  "deployment_id": "dpl_7KYM2NHz23eFen5btgdxiBTyJKtK",
+  "source_commit": "154c4363e39033398b243103ec4ce7dd21d307ce",
+  "backend_origin": "https://cardiovascular-encoding-duo-prefix.trycloudflare.com",
+  "hosting": "Temporary local backend and tunnel; not durable hosting.",
+  "assets": [
+    {
+      "path": "/assets/index-B-Y22Eqn.js",
+      "bytes": 354094,
+      "sha256": "62d5faa228cf47e30d2d0cbc03babbe7600ae03b8f9acf4882d939f53aa48c69",
+      "verified_exact": true
+    },
+    {
+      "path": "/assets/index-Dh-R1AOE.css",
+      "bytes": 21139,
+      "sha256": "8f9e72878938452ec314030cc5cfc0e277c7bf1cca42c8c1e0d10dbd1666f085",
+      "verified_exact": true
+    },
+    {
+      "path": "/favicon.svg",
+      "bytes": 242,
+      "sha256": "9c088dfc0aa951d21f08a2452f63695ff3f78ccf84b5a10510e656868e0c0ca7",
+      "verified_exact": true
+    }
+  ],
+  "html": {
+    "local_sha256": "71739aeefed3d66bc9a190cb0a700b200b9dc91b82eb49f67478e39ec7b67561",
+    "public_sha256": "71739aeefed3d66bc9a190cb0a700b200b9dc91b82eb49f67478e39ec7b67561",
+    "removed_exact_tag": null,
+    "one_appended_newline_removed": false,
+    "exact_otherwise": true
+  },
+  "public_health": {
+    "status": "ok",
+    "policy": "vantage-visual-3"
+  }
+}

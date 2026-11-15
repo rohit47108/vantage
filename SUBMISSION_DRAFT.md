@@ -20,4 +20,4 @@ OpenAI Codex assisted with architecture, code generation, scientific preprocessi
 
 Use the preview in IMPLEMENTATION_STATUS.md and DEMO.md for the walkthrough. Live processing currently depends on this computer and a temporary tunnel. Static prepared examples survive backend failure.
 
-The November 14 official challenge/FAQ refresh encountered certificate-validation errors and web fetch failures. The November 7 research snapshot remains available. Final 2026 submission-format limits and judging guidance were not reverified. Confirm current local-event requirements before submitting. No competition submission was made by this run.
+The official challenge objectives and optional considerations were reverified in Chrome on November 15, 2026 after other fetch methods failed. See NASA_DEMO_CHECKLIST.md for capabilities and remaining optional work. Submission-format limits and local judging guidance were not reverified during this demo deadline. Confirm those before submitting. No competition submission was made by this run.

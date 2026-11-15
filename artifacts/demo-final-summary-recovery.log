@@ -1,0 +1,9 @@
+
+Running 2 tests using 1 worker
+
+(node:43500) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 tests\browser\source-summary.spec.ts:7:1 › native time/channel summaries retain real contributors, gaps, exports and saved selection (5.7s)
+  ok 2 tests\browser\source-summary.spec.ts:41:1 › real adjacent-position measurement preserves negative flux and separates bounds from sensitivity (2.6s)
+
+  2 passed (10.1s)
