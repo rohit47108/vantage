@@ -1,15 +1,75 @@
 """Offline regression checks against independently supplied fixture metadata."""
 import json
 import unittest
+import os
+import tempfile
+from unittest.mock import patch
 import numpy as np
 from pathlib import Path
 from fastapi.testclient import TestClient
+TEST_RUNTIME = tempfile.TemporaryDirectory()
+os.environ['VANTAGE_RUNTIME'] = TEST_RUNTIME.name
 from backend.app import app
 from backend.archive import coordinates, allowed
 from backend.science import ROOT, digest, BAD_MASK, plane, grid
 
 
 class ScientificContract(unittest.TestCase):
+    def test_actual_qr2_qr3_named_layers_and_spatial_wcs(self):
+        from astropy.io import fits
+        from astropy.wcs import WCS
+        from astropy.time import Time
+        for name,psf_extension in [('m101_qr2_cutout.fits','PSF'),('qr3_cutout.fits','EPSF')]:
+            with fits.open(ROOT/'research/fixtures'/name) as hdus:
+                shape=hdus['IMAGE'].data.shape
+                self.assertTrue(all(hdus[layer].data.shape==shape for layer in ('FLAGS','VARIANCE','ZODI')))
+                raw=hdus['FLAGS'].data
+                self.assertIn(raw.dtype.kind,('i','u'))
+                normalized=np.array(raw,dtype=np.uint32)
+                np.testing.assert_array_equal(normalized.astype(np.uint64),raw.astype(np.int64)&0xffffffff)
+                self.assertIn(psf_extension,hdus)
+                wcs=WCS(hdus['IMAGE'].header)
+                ra,dec=wcs.pixel_to_world_values(20.,20.)
+                x,y=wcs.world_to_pixel_values(ra,dec)
+                np.testing.assert_allclose([x,y],[20,20],atol=1e-5)
+                self.assertTrue(np.isfinite(hdus['IMAGE'].header['MJD-AVG']))
+
+    def test_archive_failure_remains_explicit(self):
+        import requests
+        client=TestClient(app)
+        with patch('backend.app.discover',side_effect=requests.ConnectTimeout('test archive outage')):
+            response=client.post('/v1/observations/search',json={'ra':23,'dec':-32,'fov_arcmin':7})
+        self.assertEqual(response.status_code,502)
+        self.assertIn('prepared',response.json()['detail'])
+    def test_canonical_jobs_and_retry_identity(self):
+        from backend.app import connect
+        client = TestClient(app)
+        with patch('backend.app.pool.submit'):
+            request = {'ra':0,'dec':0,'fov_arcmin':6}
+            first = client.post('/v1/sequences',json=request).json()
+            duplicate = client.post('/v1/sequences',json=request | {'ra':360}).json()
+            self.assertEqual(first['job_id'],duplicate['job_id'])
+            self.assertEqual(client.delete('/v1/jobs/'+first['job_id']).status_code,200)
+            retry = client.post('/v1/sequences',json=request).json()
+            self.assertNotEqual(first['job_id'],retry['job_id'])
+            self.assertEqual(client.get(first['status_url']).json()['state'],'cancelled')
+        self.assertEqual(client.post('/v1/sequences',json=request|{'start_utc':'2026-12-01','end_utc':'2026-01-01'}).status_code,422)
+        self.assertEqual(client.post('/v1/sequences',json=request|{'observations':[{}]}).status_code,422)
+
+    def test_actual_dr1_text_detector_schema(self):
+        from astropy.io import fits
+        from backend.science import write_json
+        calibration = next((ROOT/'.runtime/sources').glob('1d77*.fits'),None)
+        exposure = next((ROOT/'.runtime/sources').glob('99a093*.fits'),None)
+        if calibration is None or exposure is None:
+            self.skipTest('Live DR1 cache is not present in this checkout')
+        self.assertEqual(str(fits.getheader(calibration,'CWAVE')['DETECTOR']),'6')
+        wcs,size=grid([133.79512916666664,-7.245147222222222],6)
+        result=plane({'fixture':str(exposure),'source_calibration':str(calibration),'release':'dr1'},wcs,size)
+        self.assertEqual(result[-1]['detector'],6)
+        self.assertIn('EPSF',result[-1]['ancillary_hdus'])
+        self.assertTrue(4.3<result[-1]['wavelength_um']<5.1)
+
     def test_coordinate_conventions(self):
         np.testing.assert_allclose(coordinates('08h55m10.831s', '−7d14m42.53s'),
                                    [133.79512916666664, -7.245147222222222], atol=1e-10)

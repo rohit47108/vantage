@@ -9,17 +9,32 @@ import hashlib
 import json
 import sqlite3
 import threading
+import os
+import uuid
+import time
+import logging
+from astropy.time import Time
 
 from fastapi import FastAPI, HTTPException
 from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
 
-from backend.archive import coordinates, discover, native_cutout, calibration
-from backend.science import ROOT, build_sequence
+from backend.archive import coordinates, discover, native_cutout, calibration, wavelength_at_center
+from backend.science import ROOT, POLICY, build_sequence
 
-RUNTIME = ROOT / '.runtime'
+RUNTIME = Path(os.environ.get('VANTAGE_RUNTIME', ROOT / '.runtime'))
 RUNTIME.mkdir(exist_ok=True)
 app = FastAPI(title='Vantage scientific service')
+
+
+@app.middleware('http')
+async def response_headers(request, call_next):
+    response = await call_next(request)
+    response.headers['X-Content-Type-Options'] = 'nosniff'
+    if request.url.path.startswith('/v1/'):
+        response.headers['Cache-Control'] = 'no-store'
+    return response
 pool = ThreadPoolExecutor(max_workers=2)
 lock = threading.Lock()
 database = RUNTIME / 'jobs.sqlite'
@@ -31,6 +46,10 @@ def connect():
 
 with closing(connect()) as db:
     db.execute('CREATE TABLE IF NOT EXISTS jobs (id TEXT PRIMARY KEY, state TEXT, result TEXT, error TEXT, request TEXT)')
+    columns = {row[1] for row in db.execute('PRAGMA table_info(jobs)')}
+    if 'request_key' not in columns:
+        db.execute('ALTER TABLE jobs ADD COLUMN request_key TEXT')
+    db.execute('CREATE INDEX IF NOT EXISTS jobs_request_key ON jobs(request_key)')
     db.execute("UPDATE jobs SET state='interrupted',error='Service restarted. Retry the request.' WHERE state NOT IN ('complete','failed','cancelled','interrupted')")
     db.commit()
 
@@ -41,10 +60,18 @@ class Search(BaseModel):
     fov_arcmin: float = Field(default=6, ge=1, le=30)
 
 
+class ObservationSelection(BaseModel):
+    obs_id: str = Field(min_length=1,max_length=64)
+    detector: int = Field(ge=1,le=6)
+
+
 class SequenceRequest(Search):
-    observations: list[dict] = Field(default_factory=list, max_length=8)
+    observations: list[ObservationSelection] = Field(default_factory=list, max_length=8)
     detector: int = Field(default=6, ge=1, le=6)
     max_frames: int = Field(default=3, ge=1, le=8)
+    start_utc: str | None = Field(default=None, max_length=32)
+    end_utc: str | None = Field(default=None, max_length=32)
+    wavelength_goal_um: float | None = Field(default=None, ge=.7, le=5.1)
 
 
 def state(job_id, status, result=None, error=None):
@@ -67,12 +94,33 @@ def run(job_id, request):
         result = discover(center, request.fov_arcmin)
         state(job_id, 'selection')
         rows = [r for r in result['observations'] if r['detector'] == request.detector]
+        if request.start_utc:
+            start = Time(request.start_utc, scale='utc').mjd
+            rows = [row for row in rows if row['mjd_mid'] >= start]
+        if request.end_utc:
+            end = Time(request.end_utc, scale='utc').mjd + 1
+            rows = [row for row in rows if row['mjd_mid'] < end]
+        if request.wavelength_goal_um is not None:
+            rows = [row for row in rows if row['em_min_um'] <= request.wavelength_goal_um <= row['em_max_um']]
         if request.observations:
-            wanted = {(r['obs_id'], r['detector']) for r in request.observations}
+            wanted = {(r.obs_id, r.detector) for r in request.observations}
             rows = [r for r in rows if (r['obs_id'], r['detector']) in wanted]
+        if request.wavelength_goal_um is not None and rows:
+            import numpy as np
+            indices=np.unique(np.linspace(0,len(rows)-1,min(20,len(rows))).astype(int))
+            matched=[]
+            state(job_id,'precision wavelength selection')
+            for index in indices:
+                check_cancel(job_id)
+                local=wavelength_at_center(rows[index],center)
+                if local and abs(local[0]-request.wavelength_goal_um)<=.1*local[1]:
+                    matched.append(rows[index])
+            rows=matched
+            if not rows:
+                raise ValueError('No precision wavelength match in the bounded 20-header selection. Refine dates, choose another goal or leave the goal empty.')
         visits = []
         for row in rows:
-            if not visits or row['mjd_mid'] - visits[-1]['mjd_mid'] >= 1:
+            if request.observations or not visits or row['mjd_mid'] - visits[-1]['mjd_mid'] >= 1:
                 visits.append(row)
         if len(visits) > request.max_frames:
             import numpy as np
@@ -83,9 +131,9 @@ def run(job_id, request):
         for row in visits:
             check_cancel(job_id)
             state(job_id, 'retrieval')
-            path = native_cutout(row, center, request.fov_arcmin)
+            path, mode = native_cutout(row, center, request.fov_arcmin)
             url, cal = calibration(row)
-            records.append(row | {'fixture': str(path), 'source_calibration': str(cal), 'source_calibration_url': url})
+            records.append(row | {'fixture': str(path), 'source_calibration': str(cal), 'source_calibration_url': url, 'retrieval_mode': mode})
         check_cancel(job_id)
         state(job_id, 'alignment')
         manifest = build_sequence('live', 'Your sky field', center, request.fov_arcmin, records, ROOT/'public/prepared',
@@ -93,7 +141,9 @@ def run(job_id, request):
         check_cancel(job_id)
         state(job_id, 'complete', manifest['id'])
     except Exception as error:
-        state(job_id, 'failed', error=str(error))
+        logging.getLogger('vantage.jobs').exception('Archive job failed: %s',job_id)
+        public_error = str(error) if isinstance(error,ValueError) else 'Archive processing failed. Retry or choose a prepared field.'
+        state(job_id, 'failed', error=public_error)
 
 
 @app.get('/v1/targets/resolve')
@@ -120,16 +170,32 @@ def sequence(request: SequenceRequest):
         coordinates(request.ra, request.dec)
     except ValueError as error:
         raise HTTPException(422, str(error))
-    normalized = request.model_dump_json()
-    job_id = hashlib.sha256(normalized.encode()).hexdigest()
+    normalized_parameters = request.model_dump()
+    normalized_parameters['policy'] = POLICY
+    normalized_parameters['selection_policy'] = 'precision-goal-1'
+    normalized_parameters['archive_cache_day'] = int(time.time() // 86400)
+    normalized_parameters['ra'], normalized_parameters['dec'] = coordinates(request.ra, request.dec)
+    normalized_parameters['observations'] = sorted(normalized_parameters['observations'], key=lambda row: (row['obs_id'],row['detector']))
+    try:
+        for value in (request.start_utc, request.end_utc):
+            if value:
+                Time(value, scale='utc')
+        if request.start_utc and request.end_utc and Time(request.start_utc) > Time(request.end_utc):
+            raise ValueError('Start date must precede end date')
+    except ValueError as error:
+        raise HTTPException(422, 'Invalid UTC date range') from error
+    normalized = json.dumps(normalized_parameters, sort_keys=True, allow_nan=False)
+    request_key = hashlib.sha256(normalized.encode()).hexdigest()
+    job_id = uuid.uuid4().hex
     with lock, closing(connect()) as db:
-        existing = db.execute('SELECT state FROM jobs WHERE id=?', (job_id,)).fetchone()
-        if existing and existing[0] not in ('failed', 'cancelled', 'interrupted'):
-            return {'job_id': job_id, 'status_url': f'/v1/jobs/{job_id}'}
+        db.execute('BEGIN IMMEDIATE')
+        existing = db.execute("SELECT id FROM jobs WHERE request_key=? AND state NOT IN ('failed','cancelled','interrupted')", (request_key,)).fetchone()
+        if existing:
+            return {'job_id': existing[0], 'status_url': f'/v1/jobs/{existing[0]}'}
         pending = db.execute("SELECT COUNT(*) FROM jobs WHERE state NOT IN ('complete','failed','cancelled','interrupted')").fetchone()[0]
         if pending >= 20:
             raise HTTPException(429, 'Processing queue is full. Try again shortly.')
-        db.execute('INSERT OR REPLACE INTO jobs VALUES (?,?,?,?,?)', (job_id, 'queued', None, None, normalized))
+        db.execute('INSERT INTO jobs (id,state,result,error,request,request_key) VALUES (?,?,?,?,?,?)', (job_id, 'queued', None, None, normalized, request_key))
         db.commit()
         pool.submit(run, job_id, request)
     return {'job_id': job_id, 'status_url': f'/v1/jobs/{job_id}'}
@@ -147,6 +213,11 @@ def job(job_id: str):
 @app.delete('/v1/jobs/{job_id}')
 def cancel(job_id: str):
     with closing(connect()) as db:
+        current = db.execute('SELECT state FROM jobs WHERE id=?',(job_id,)).fetchone()
+        if not current:
+            raise HTTPException(404,'Unknown job')
+        if current[0] == 'complete':
+            return {'state':'complete'}
         db.execute("UPDATE jobs SET state='cancelled' WHERE id=? AND state!='complete'", (job_id,))
         db.commit()
     return {'state': 'cancelled'}
@@ -163,3 +234,27 @@ def manifest(sequence_id: str):
 
 
 app.mount('/prepared', StaticFiles(directory=ROOT/'public/prepared'), name='prepared')
+
+
+@app.get('/v1/health')
+def health():
+    return {'status': 'ok', 'policy': POLICY}
+
+
+if (ROOT/'dist/assets').is_dir():
+    app.mount('/assets', StaticFiles(directory=ROOT/'dist/assets'), name='frontend-assets')
+
+
+@app.get('/')
+@app.get('/sky')
+@app.get('/sequence/{sequence_id}')
+def frontend(sequence_id: str | None = None):
+    path = ROOT/'dist/index.html'
+    if not path.is_file():
+        raise HTTPException(503, 'Build the frontend with npm run build before launch.')
+    return FileResponse(path)
+
+
+@app.get('/favicon.svg')
+def favicon():
+    return FileResponse(ROOT/'public/favicon.svg')

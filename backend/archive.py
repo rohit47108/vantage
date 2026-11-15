@@ -12,23 +12,27 @@ import tempfile
 import json
 import time
 import numpy as np
+import aiohttp
 from astropy.io import fits
 from astropy.wcs import WCS
+from scipy.ndimage import map_coordinates
 
 import requests
 from astropy.coordinates import Angle
-from astropy import units as u
 from astropy.io.votable import parse
 
-from backend.science import ROOT, digest
+from backend.science import ROOT, write_json
 
 CACHE = ROOT / '.runtime/sources'
 CACHE.mkdir(parents=True, exist_ok=True)
+S3_OPTIONS={'block_size':65536,'cache_type':'bytes','client_kwargs':{'timeout':aiohttp.ClientTimeout(total=25,connect=8,sock_read=20)}}
 
 
 def coordinates(ra, dec):
     ra = str(ra).strip().replace('−', '-')
     dec = str(dec).strip().replace('−', '-')
+    if len(ra) > 128 or len(dec) > 128:
+        raise ValueError('Coordinate inputs must be at most 128 characters')
     try:
         # Numeric RA means degrees. Sexagesimal requires an explicit h/d unit.
         try:
@@ -101,7 +105,14 @@ def votable(content):
     return table, 'OVERFLOW' in statuses
 
 
-def discover(center, fov):
+def discover(center, fov, refresh=False):
+    identity = hashlib.sha256(json.dumps([center, fov, 'dr1-qr3-20261114']).encode()).hexdigest()
+    cache = CACHE / (identity + '.json')
+    if cache.exists() and not refresh:
+        saved = json.loads(cache.read_text())
+        lifetime = 86400 if saved['observations'] else 900
+        if time.time() - cache.stat().st_mtime < lifetime:
+            return saved | {'data_status': 'cached'}
     radius = fov / 60 / math.sqrt(2) + 15 / 3600
     observations = []
     limited = False
@@ -135,9 +146,17 @@ def discover(center, fov):
             })
     observations.sort(key=lambda row: (row['mjd_mid'], row['obs_id'], row['detector']))
     unique = {(r['obs_id'], r['detector']): r for r in observations}
-    return {'center_deg': center, 'fov_arcmin': fov, 'observations': list(unique.values()),
+    visit_times = []
+    for row in unique.values():
+        if not visit_times or row['mjd_mid'] - visit_times[-1] >= 1:
+            visit_times.append(row['mjd_mid'])
+    coverage_state = ('empty', 'single', 'pair')[len(visit_times)] if len(visit_times) < 3 else 'sequence'
+    result = {'center_deg': center, 'fov_arcmin': fov, 'observations': list(unique.values()),
             'search_completeness': 'limited' if limited else 'complete', 'queries': queries,
-            'data_status': 'live', 'coverage_state': 'empty' if not unique else 'sequence'}
+            'data_status': 'live', 'coverage_state': coverage_state, 'visit_count': len(visit_times),
+            'retrieved_utc': __import__('datetime').datetime.now(__import__('datetime').timezone.utc).isoformat()}
+    write_json(cache, result)
+    return result
 
 
 def calibration(row):
@@ -150,10 +169,34 @@ def calibration(row):
     return matches[0], retrieve(matches[0])
 
 
+def wavelength_at_center(row,center):
+    """Read only native header metadata before fetching science cutouts."""
+    cloud=(row.get('cloud_access') or {}).get('aws')
+    if not cloud or cloud.get('bucket_name')!='nasa-irsa-spherex' or cloud.get('region')!='us-east-1':
+        raise ValueError('Precision selection requires verified cloud header access')
+    key=cloud['key']
+    if not key.startswith(row['release']+'/level2/') or '..' in key:
+        raise ValueError('Unsupported cloud header path')
+    url=f'https://nasa-irsa-spherex.s3.us-east-1.amazonaws.com/{key}'
+    with fits.open(url,use_fsspec=True,fsspec_kwargs=S3_OPTIONS) as hdus:
+        header=hdus['IMAGE'].header.copy()
+        shape=hdus['IMAGE'].shape
+    x,y=WCS(header).world_to_pixel_values(*center)
+    if not np.isfinite([x,y]).all() or not (0<=x<shape[1] and 0<=y<shape[0]):
+        return None
+    cal_url,path=calibration(row)
+    with fits.open(path,memmap=False) as hdus:
+        if int(hdus['CWAVE'].header['DETECTOR'])!=row['detector']:
+            raise ValueError('Precision calibration detector mismatch')
+        wave=float(map_coordinates(hdus['CWAVE'].data,[[y],[x]],order=1,cval=np.nan)[0])
+        width=float(map_coordinates(hdus['CBAND'].data,[[y],[x]],order=1,cval=np.nan)[0])
+    return [wave,width] if np.isfinite([wave,width]).all() and width>0 else None
+
+
 def native_cutout(row, center, fov):
     params = {'center': f'{center[0]},{center[1]}deg', 'size': f'{fov/60*1.5}deg'}
     try:
-        return retrieve(row['ibe'], params)
+        return retrieve(row['ibe'], params), 'native_ibe_cutout'
     except requests.RequestException:
         cloud = (row.get('cloud_access') or {}).get('aws')
         if not cloud or cloud.get('bucket_name') != 'nasa-irsa-spherex' or cloud.get('region') != 'us-east-1':
@@ -165,10 +208,10 @@ def native_cutout(row, center, fov):
         identity = hashlib.sha256((cloud_url+repr(center)+str(fov)).encode()).hexdigest()
         target = CACHE/(identity+'.fits')
         if target.exists():
-            return target
+            return target, 'native_s3_section'
         # Native sections and adjusted alternate origins follow the verified crop
         # method in research/verify_native_crop.py. EPSF and wavelength tables remain intact.
-        with fits.open(cloud_url, use_fsspec=True, fsspec_kwargs={'block_size':65536,'cache_type':'bytes'}) as hdus:
+        with fits.open(cloud_url, use_fsspec=True, fsspec_kwargs=S3_OPTIONS) as hdus:
             header = hdus['IMAGE'].header
             x,y = WCS(header).world_to_pixel_values(*center)
             if not np.isfinite([x,y]).all():
@@ -195,4 +238,4 @@ def native_cutout(row, center, fov):
                 temp = Path(handle.name)
             fits.HDUList(result).writeto(temp,overwrite=True)
             temp.replace(target)
-        return target
+        return target, 'native_s3_section'

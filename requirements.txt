@@ -1,9 +1,10 @@
-fastapi==0.115.11
+fastapi==0.163.0
 uvicorn==0.49.0
 pydantic==2.10.6
+starlette==1.10.0
 astropy==8.0.1
 numpy==2.2.4
 scipy==1.15.2
-requests==2.32.3
+requests==2.34.2
 fsspec==2026.9.0
-aiohttp==3.14.3
+aiohttp==3.14.5

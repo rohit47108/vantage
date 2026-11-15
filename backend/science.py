@@ -18,7 +18,8 @@ from scipy.ndimage import map_coordinates
 ROOT = Path(__file__).resolve().parents[1]
 BAD_BITS = [0, 1, 2, 4, 5, 6, 7, 9, 10, 11, 12, 14, 15, 17, 19, 20, 22, 23, 24, 25, 26, 27, 28, 29]
 BAD_MASK = sum(1 << bit for bit in BAD_BITS)
-POLICY = 'vantage-visual-1'
+KNOWN_MASK = BAD_MASK | (1 << 21)
+POLICY = 'vantage-visual-3'
 
 
 def digest(path):
@@ -61,12 +62,14 @@ def plane(record, output, size):
         raw = np.array(image.data, dtype=float)
         variance = np.array(hdus['VARIANCE'].data, dtype=float)
         flags = np.array(hdus['FLAGS'].data, dtype=np.uint32)
+        unknown = flags & np.uint32(~KNOWN_MASK & 0xffffffff)
+        unknown_union = int(np.bitwise_or.reduce(unknown.ravel(), initial=np.uint32(0)))
         if not all(hdus[name].data.shape == raw.shape for name in ('FLAGS', 'VARIANCE', 'ZODI')):
             raise ValueError('Ancillary layer shape mismatch')
         if record.get('obs_id') and header['OBSID'] != record['obs_id']:
             raise ValueError('Observation identity mismatch')
         brightness = sample(raw, x, y)
-        good = np.isfinite(raw) & np.isfinite(variance) & (variance > 0) & ((flags & BAD_MASK) == 0)
+        good = np.isfinite(raw) & np.isfinite(variance) & (variance > 0) & ((flags & BAD_MASK) == 0) & (unknown == 0)
         support = sample(good.astype(float), x, y, 0) >= 1 - 1e-8
         nearest_flags = sample(flags.astype(float), x, y, 0, order=0).astype(np.uint32)
         px = x + 1 - header['CRPIX1A']
@@ -75,7 +78,7 @@ def plane(record, output, size):
         with fits.open(record['source_calibration'], memmap=False) as calibration:
             wave_map = np.array(calibration['CWAVE'].data, dtype=float)
             width_map = np.array(calibration['CBAND'].data, dtype=float)
-            if calibration['CWAVE'].header['DETECTOR'] != header['DETECTOR']:
+            if int(calibration['CWAVE'].header['DETECTOR']) != int(header['DETECTOR']):
                 raise ValueError('Calibration detector mismatch')
         wave = sample(wave_map, px, py)
         width = sample(width_map, px, py)
@@ -101,6 +104,9 @@ def plane(record, output, size):
             'finite_fraction': float(np.isfinite(brightness).mean()),
             'good_fraction': float(support.mean()), 'core_flag_bits': record.get('core_flag_bits', []),
             'ancillary_hdus': [h.name for h in hdus],
+            'unknown_flag_bits': [bit for bit in range(32) if unknown_union & (1 << bit)],
+            'retrieval_mode': record.get('retrieval_mode', 'native_ibe_cutout'),
+            'foreground_policy': 'ZODI modeled layer retained in source. No foreground subtraction for visual playback.',
         }
     return brightness, support, wave, width, nearest_flags, ra, dec, meta
 
@@ -136,7 +142,8 @@ def build_sequence(key, name, center, fov, records, destination, note='', data_s
     low, high = np.percentile(values, [2, 99.5])
     span = max(float(high - low), 1e-10)
     sources = [p[-1] for p in planes]
-    identity = {'policy': POLICY, 'grid': dict(output.to_header()), 'sources': sources, 'tracked': tracked}
+    software = {'astropy': __import__('astropy').__version__, 'numpy': np.__version__, 'scipy': __import__('scipy').__version__}
+    identity = {'policy': POLICY, 'grid': dict(output.to_header()), 'sources': sources, 'tracked': tracked, 'software': software}
     sequence_id = hashlib.sha256(json.dumps(identity, sort_keys=True, allow_nan=False).encode()).hexdigest()
     folder = Path(destination) / sequence_id
     folder.mkdir(parents=True, exist_ok=True)
@@ -157,6 +164,18 @@ def build_sequence(key, name, center, fov, records, destination, note='', data_s
                               'grid': frame_grids[index]})
     count = len(frames)
     fraction = float(joint.mean())
+    source_waves = [frame['wavelength_um'] for frame in frames]
+    source_widths = [frame['bandwidth_um'] for frame in frames]
+    source_valid = all(value is not None for value in source_waves + source_widths)
+    if source_valid:
+        source_valid = max(source_waves) - min(source_waves) <= .1 * min(source_widths) and max(source_widths) <= 1.1 * min(source_widths)
+    source_defective = any(any(bit in BAD_BITS for bit in frame['core_flag_bits']) for frame in frames)
+    science_status = 'context_only'
+    if count >= 2 and source_valid and not source_defective and not tracked and fraction > 0:
+        science_status = 'matched_visual' if fraction >= .8 else 'restricted_visual'
+    credits = (ROOT / 'required_acknowledgments.txt').read_text(encoding='utf-8')
+    if any(frame['release'] == 'dr1' for frame in frames):
+        credits += '\nDR1 spectral images: https://doi.org/10.26131/IRSA678\n'
     manifest = {
         'schema_version': '1.0.0', 'id': sequence_id, 'key': key, 'name': name,
         'center_deg': center, 'fov_arcmin': fov, 'grid': dict(output.to_header()), 'shape': [size, size],
@@ -164,13 +183,13 @@ def build_sequence(key, name, center, fov, records, destination, note='', data_s
         'mode': 'source_tracked' if tracked else 'fixed_sky',
         'coverage_state': 'single' if count == 1 else 'pair' if count == 2 else 'sequence',
         'search_completeness': 'limited',
-        'science_status': 'restricted_visual' if fraction > 0 else 'context_only',
+        'science_status': science_status,
         'joint_support_fraction': fraction, 'numerical_products_authorized': False,
         'stretch': {'low': float(low), 'high': float(high), 'transfer': 'shared_asinh'},
         'limitations': [note, 'Visual WCS alignment. Precision registration, PSF matching and uncertainty validation are pending.',
                         'Brightness differences and detection significance are unavailable for this sequence.'],
-        'credits': (ROOT / 'required_acknowledgments.txt').read_text(),
-        'software': {'astropy': __import__('astropy').__version__, 'numpy': np.__version__},
+        'credits': credits,
+        'software': software,
     }
     write_json(folder / 'manifest.json', manifest)
     return manifest

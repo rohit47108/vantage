@@ -31,7 +31,9 @@ def prepare():
             motion = next((r for r in data['motion_fixtures'] if r['fixture'] == filename), {})
             detector = 3 if key == 'comet' else 2
             records.append({'fixture': str(ROOT / file['path']), 'source_calibration': str(ROOT / f'research/fixtures/spectral_wcs_d{detector}.fits'),
-                            'url': file['retrieval']['url'], 'predicted_target_deg': [motion['ra_deg'], motion['dec_deg']] if motion else None})
+                            'url': file['retrieval']['url'], 'predicted_target_deg': [motion['ra_deg'], motion['dec_deg']] if motion else None,
+                            'retrieval_mode': file['retrieval'].get('mode', 'direct_ibe_native_cutout'),
+                            'source_calibration_url': files[f'spectral_wcs_d{detector}.fits']['retrieval']['url']})
         manifest = build_sequence(key, name, center, 6, records, destination, note, tracked=key == 'comet')
         catalog.append(manifest)
         print(key, manifest['id'][:12], manifest['joint_support_fraction'], flush=True)
