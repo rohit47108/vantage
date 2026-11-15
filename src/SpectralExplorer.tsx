@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { json } from "./api";
 import "./spectral.css";
+import { Brand } from "./Brand";
 
 interface Channel {
   index: number;
@@ -201,11 +202,7 @@ export function SpectralExplorer({ onTime }: { onTime: () => void }) {
   return (
     <div className="spectral-workspace">
       <header>
-        <a className="brand" href="/" aria-label="Vantage home">
-          <span className="brand-logo">
-            <img src="/vantage-logo.png" alt="Vantage" />
-          </span>
-        </a>
+        <Brand />
         <div className="mode-switch">
           <button aria-current="page">Explore wavelengths</button>
           <button onClick={onTime}>Compare time</button>

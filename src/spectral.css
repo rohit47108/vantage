@@ -173,9 +173,6 @@
     flex-basis: 100%;
     justify-content: center;
   }
-  .spectral-workspace .brand-logo {
-    width: 120px;
-  }
   .spectral-image {
     max-height: none;
   }

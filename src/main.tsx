@@ -9,6 +9,7 @@ import { json, readResponse } from "./api";
 import "./style.css";
 import { SpectralExplorer } from "./SpectralExplorer";
 import { CoaddAnalysis } from "./CoaddAnalysis";
+import { Brand } from "./Brand";
 
 function download(name: string, value: string, type = "application/json") {
   const url = URL.createObjectURL(new Blob([value], { type }));
@@ -313,10 +314,7 @@ function TemporalExplorer({onSpectral}:{onSpectral:()=>void}) {
   return (
     <>
       <header>
-        <a className="brand" href="/">
-          <span className="brand-logo"><img src="/vantage-logo.png" alt="Vantage" /></span>
-          <span>/ Explore</span>
-        </a>
+        <Brand context="Explore" />
         <span className="tag">SPHEREx · infrared sky</span>
         <button onClick={() => share()} disabled={!sequence}>
           Share view ↗
