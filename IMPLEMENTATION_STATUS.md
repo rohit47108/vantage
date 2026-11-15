@@ -4,11 +4,13 @@
 
 The later complete-product specification supersedes the demo scope described below. The application is PARTIALLY COMPLETE for that goal. See tasks/product-evidence.md; coadds, subtraction, source extraction, Gaia/WISE, embeds/investigations, release promotion and durable hosting still require implementation/validation.
 
-The new spectral workspace runs at /?view=wavelengths. Verified locally: 102-channel metadata, six detector groups, two blank layers, actual range-read native brightness/hits/flags, false color, pixel inspection, view restore, provenance and image export. Fourteen scientific/API tests pass, including six new spectral tests. Two new real-data browser tests passed on desktop/mobile, with no automated WCAG A/AA findings in the tested spectral state. Full updated browser regression and new public release are pending.
+The new spectral workspace runs at /?view=wavelengths. Verified locally and publicly: 102-channel metadata, six detector groups, two blank layers, actual range-read native brightness/hits/flags, false color, pixel inspection, view restore, provenance and image export. Fourteen scientific/API tests pass, including six new spectral tests. All thirteen browser tests pass locally and on the public preview, including two new real-data spectral tests and automated WCAG A/AA checks in the tested desktop state. Reports: artifacts/product-local-browser.json and artifacts/product-public-browser.json.
+
+Current verified preview: https://vantage-spherex-7pcgn4j98-rohit-singhs-projects-48f82479.vercel.app . Local complete service: http://127.0.0.1:8000/ . API exec session 62536 replaced the earlier API session. Temporary tunnel session 31231 remains in use. This is not durable cloud backend hosting.
 
 Independent native range sampling and the north-up visual sampler agree exactly at the official tutorial coordinate for channel 62: 12.00507926940918 MJy/sr. This validates that context sample, not source photometry. Research/updates/2026-11-14 retains current cube properties and native schema evidence.
 
-GitHub origin is https://github.com/rohit47108/vantage.git. Its original MIT license and history were merged. Publication status must be verified after push.
+GitHub origin is https://github.com/rohit47108/vantage.git. Its original MIT license and history were merged. Source and authentic benchmark fixtures are published to main; downloaded upstream PDFs/HTML/text documentation remain local references. Current scoped Vercel CLI inspection returned no installed integration configurations; durable database/storage and Python hosting remain to be resolved.
 
 ## Earlier temporal demonstration
 

@@ -1,13 +1,13 @@
 {
-  "baseURL": "https://vantage-spherex-grpoty722-rohit-singhs-projects-48f82479.vercel.app/sequence/d236d29869051a40bf0d5e09247b9c71a8cdd29c9dfcfc028126462e8f217af0",
-  "checked_utc": "2026-11-15T00:31:39.384Z",
-  "first_frame_ms": 592.1999999284744,
+  "baseURL": "https://vantage-spherex-7pcgn4j98-rohit-singhs-projects-48f82479.vercel.app/sequence/d236d29869051a40bf0d5e09247b9c71a8cdd29c9dfcfc028126462e8f217af0",
+  "checked_utc": "2026-11-15T01:26:19.452Z",
+  "first_frame_ms": 399.7999999523163,
   "decoded_swaps_ms": [
-    3,
-    4.100000023841858,
-    2.299999952316284,
-    3.700000047683716,
-    1.7000000476837158
+    16,
+    10.800000071525574,
+    5.299999952316284,
+    4.799999952316284,
+    8.100000023841858
   ],
   "environment": "Headless Chrome on Windows, fresh browser context, actual network. No mobile throttling."
 }
