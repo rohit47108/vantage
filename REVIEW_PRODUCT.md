@@ -1,5 +1,15 @@
 # Complete-product review log
 
+## Native photometry core — November 15, 2026
+
+The numerical dependency now uses actual ePSF tables, parent-coordinate zone selection, native-phase evaluation and calibrated solid angles. It does not reuse visual bilinear brightness/variance products. Review caught the 1-versus-25 oversampled normalization convention, missing source-wing subtraction in the reported aperture background, source/background/centroid covariance, and the incorrect use of N-k for an aperture estimator's oblique residual projection. These were corrected and tested with independent analytic pixel-integrated Gaussians and repeated noisy nonlinear fits.
+
+The first real P330E fixed-position benchmark failed the predeclared residual criterion. Small fitted centroid corrections improved one sample enough to pass with the original threshold; another still fails and remains unapproved. A bad aperture pixel and a footprint-search hit whose native cutout misses the point are retained negative cases. Reference comparisons use a stated CALSPEC top-hat approximation and cannot independently validate an absolute gain scale that also uses CALSPEC.
+
+Quality/resource review: 96-pixel native-window bound, at least 20 non-source background pixels, conservative unknown/native flag handling including rejection of unsupported >32-bit flags, required angular-area units, matched detector IDs and integer parent offsets. Centroid fits require high S/N, interior bounded solutions and identifiable local Jacobians; masks remain anchored to the independent input position. Statistical results explicitly exclude unprovided native correlations and calibration/PSF systematics.
+
+This review approves the tested dependency at its documented validity range, not the full spectrum feature or subtraction. Remaining work includes release registry binding, all-detector benchmarks, isolation/quality decisions, asynchronous durable jobs, source/aperture selection, linked plots and scientific exports. The viewer/API's previously verified public capabilities are unchanged.
+
 ## Name and survey context — November 15, 2026
 
 The adapter uses actual Gator VOTables for both Gaia DR3 and AllWISE after spatial TAP probes failed. It preserves integer source IDs as strings, catalog flags/epochs, raw-query hashes and all query URLs. Bounded response, concurrency, rows, radius and redirect policies keep the routes from becoming arbitrary fetch proxies. A negative test proves name redirects cannot leave the approved CDS mirror hosts.

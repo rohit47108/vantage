@@ -1,0 +1,75 @@
+{
+  "files": [
+    {
+      "path": "research/updates/2026-11-15/photometry/sapm_d2.fits",
+      "url": "https://nasa-irsa-spherex.s3.us-east-1.amazonaws.com/dr1/solid_angle_pixel_map/cal-sapm-v3-2026-191/2/solid_angle_pixel_map_D2_spx_cal-sapm-v3-2026-191.fits",
+      "sha256": "231bcdab0aa31d0ee9c9349b10e6c871070bf3ed860b7dc799745c0f9d1c8bc0",
+      "bytes": 16652160
+    },
+    {
+      "path": "research/updates/2026-11-15/photometry/p330e_mod_009.fits",
+      "url": "https://ssb.stsci.edu/cdbs/current_calspec/p330e_mod_009.fits",
+      "sha256": "28475371eb199c62a9b741a5ec56ecee16019eee1f049dcd1173d0da16f759d8",
+      "bytes": 28748160
+    },
+    {
+      "path": "research/updates/2026-11-15/photometry/p330e_d2_0.fits",
+      "sha256": "2143963f0fb651c65f8719808d4638ecebf966cc9554cd192951ebc7ccb178a4",
+      "url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/level2/2025W29_1A/l2b-v27-2026-217/2/level2_2025W29_1A_0544_1D2_spx_l2b-v27-2026-217.fits",
+      "bytes": 3965760
+    },
+    {
+      "path": "research/updates/2026-11-15/photometry/p330e_d2_1.fits",
+      "sha256": "f881bae79802ecaf7e6d4bfc8e5d484f1148403dc344d8533a2ac35acf7294dd",
+      "url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/level2/2025W30_1B/l2b-v27-2026-220/2/level2_2025W30_1B_0059_3D2_spx_l2b-v27-2026-220.fits",
+      "bytes": 3965760
+    },
+    {
+      "path": "research/updates/2026-11-15/photometry/p330e_d2_2.fits",
+      "sha256": "329ef40a57883525546ff1da25297104ad7fa30a179ea091a95cf802750e8dad",
+      "url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/level2/2026W07_2A/l2b-v27-2026-226/2/level2_2026W07_2A_0338_3D2_spx_l2b-v27-2026-226.fits",
+      "bytes": 3965760
+    },
+    {
+      "path": "research/updates/2026-11-15/photometry/p330e_d2_3.fits",
+      "sha256": "38fab8314423ef295ce81a7757800dff74029561e9a262d525f7eb3aa9341022",
+      "url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/level2/2026W08_1A/l2b-v27-2026-227/2/level2_2026W08_1A_0601_1D2_spx_l2b-v27-2026-227.fits",
+      "bytes": 3954240
+    },
+    {
+      "path": "research/updates/2026-11-15/photometry/spectral_wcs_d2.fits",
+      "sha256": "0eb4e27f351e6161e21372818f9e811480a7ab8bab9295722f180791e151a463",
+      "url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/spectral_wcs/cal-swcs-v5-2026-191/2/spectral_wcs_D2_spx_cal-swcs-v5-2026-191.fits",
+      "bytes": 33312960
+    },
+    {
+      "path": "research/updates/2026-11-15/photometry/p330e_gaia.xml",
+      "sha256": "1ae33e7409b2575c92cea249af4cc21aed95ee04798c05b77fa584fc68e77815",
+      "bytes": 6465,
+      "purpose": "Actual catalog response; queries and parsed rows in isolation.json / benchmark.json"
+    },
+    {
+      "path": "research/updates/2026-11-15/photometry/p330e_gaia_neighbors.xml",
+      "sha256": "a59c40f65ae065cee19d8eeccec661bbfb8bab1c7671351c25b30b5ea565d63e",
+      "bytes": 12141,
+      "purpose": "Actual catalog response; queries and parsed rows in isolation.json / benchmark.json"
+    },
+    {
+      "path": "research/updates/2026-11-15/photometry/p330e_wise_neighbors.xml",
+      "sha256": "fdc2413bcbb2b5de402fac1955e5ae0c127edfbec2b40d46a1dbf90ddd665d93",
+      "bytes": 6259,
+      "purpose": "Actual catalog response; queries and parsed rows in isolation.json / benchmark.json"
+    }
+  ],
+  "credits": [
+    "NASA SPHEREx / JPL / Caltech / IRSA",
+    "ESA Gaia / DPAC; WISE / UCLA / JPL / Caltech / NASA",
+    "STScI CALSPEC P330E model; model history cites Bohlin et al. 2017, AJ 153, 234. Full current model description: https://www.stsci.edu/hst/instrumentation/reference-data-for-calibration-and-tools/astronomical-catalogs/calspec.html"
+  ],
+  "notes": [
+    "Native cutouts preserve named science and calibration HDUs.",
+    "Only DR1 detector 2 is sampled in this initial photometry benchmark; no 102-channel spectrum claim.",
+    "Pixel solid-angle map identified from the DR1 release S3 listing; DataLink did not include this additional product.",
+    "CALSPEC is also used by SPHEREx calibration, so reference agreement is reduction consistency, not independent absolute gain validation."
+  ]
+}

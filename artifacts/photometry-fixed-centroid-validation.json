@@ -1,0 +1,242 @@
+{
+  "checked_utc": "2026-11-15T07:04:24.118718+00:00",
+  "tolerances": {
+    "reference_relative": 0.1,
+    "method_relative": 0.05,
+    "solid_angle_relative": 0.001,
+    "maximum_reduced_chi2": 3.0
+  },
+  "records": [
+    {
+      "obs_id": "2025W29_1A_0544_1",
+      "mjd_mid": 60872.904404,
+      "position_pixel": [
+        18.374041461986202,
+        18.39456455761614
+      ],
+      "wavelength_um": 1.6210553646087646,
+      "bandwidth_um": 0.03935893252491951,
+      "reference_top_hat_flux_ujy": 26836.284146201197,
+      "solid_angle_relative_error": 2.5448480950318597e-05,
+      "rejected_reason": "A defective pixel intersects the source aperture"
+    },
+    {
+      "obs_id": "2025W30_1B_0059_3",
+      "mjd_mid": 60877.3219045,
+      "position_pixel": [
+        18.26017345866095,
+        17.726652051613573
+      ],
+      "wavelength_um": 1.4197367429733276,
+      "bandwidth_um": 0.03426642715930939,
+      "reference_top_hat_flux_ujy": 28822.785546862528,
+      "solid_angle_relative_error": 4.29117334377338e-06,
+      "psf": {
+        "flux_ujy": 28860.78940730749,
+        "statistical_sigma_ujy": 175.30797633226032,
+        "reduced_chi2": 2.985173972952023,
+        "background_pixels": 34,
+        "core_support_fraction": 1.0,
+        "aperture_throughput": 1.0,
+        "pixel_flags_union": 2097152,
+        "epsf": {
+          "oversampling_yx": [
+            5,
+            5
+          ],
+          "stored_sample_sum": 1.0,
+          "native_sum_before_normalization": 0.04013304930953041,
+          "cutout_psf_fraction": 1.0,
+          "cutout_absolute_psf_fraction": 1.0,
+          "negative_l1_fraction": 0.0,
+          "normalization": "Unit sum over the complete phase-rendered finite ePSF footprint before image clipping; no extra pixel integration.",
+          "detector": 2,
+          "zone_row": 152,
+          "zone_bin_xy": [
+            5,
+            7
+          ],
+          "zone_center_xy": [
+            533.7857055664062,
+            728.0714111328125
+          ],
+          "zone_width_xy": [
+            97.14286041259766,
+            97.14286041259766
+          ],
+          "parent_pixel_xy": [
+            519.2601734586609,
+            739.7266520516135
+          ],
+          "detector_coordinate_convention": "sky",
+          "basis": "native EPSF extension",
+          "zone_wavelength_um": 1.4229627847671509
+        },
+        "relative_reference_error": 0.0013185353089197882
+      },
+      "aperture": {
+        "flux_ujy": 28942.768806415294,
+        "statistical_sigma_ujy": 186.75415288706017,
+        "reduced_chi2": 3.0264807713117183,
+        "background_pixels": 34,
+        "core_support_fraction": 1.0,
+        "aperture_throughput": 0.9837898308523965,
+        "pixel_flags_union": 2097152,
+        "epsf": {
+          "oversampling_yx": [
+            5,
+            5
+          ],
+          "stored_sample_sum": 1.0,
+          "native_sum_before_normalization": 0.04013304930953041,
+          "cutout_psf_fraction": 1.0,
+          "cutout_absolute_psf_fraction": 1.0,
+          "negative_l1_fraction": 0.0,
+          "normalization": "Unit sum over the complete phase-rendered finite ePSF footprint before image clipping; no extra pixel integration.",
+          "detector": 2,
+          "zone_row": 152,
+          "zone_bin_xy": [
+            5,
+            7
+          ],
+          "zone_center_xy": [
+            533.7857055664062,
+            728.0714111328125
+          ],
+          "zone_width_xy": [
+            97.14286041259766,
+            97.14286041259766
+          ],
+          "parent_pixel_xy": [
+            519.2601734586609,
+            739.7266520516135
+          ],
+          "detector_coordinate_convention": "sky",
+          "basis": "native EPSF extension",
+          "zone_wavelength_um": 1.4229627847671509
+        },
+        "relative_reference_error": 0.004162791946589861
+      },
+      "method_relative_difference": 0.0028324656723800468,
+      "flux_consistency_pass": true,
+      "method_consistency_pass": true,
+      "geometry_pass": true,
+      "fit_quality_pass": false
+    },
+    {
+      "obs_id": "2026W07_2A_0338_3",
+      "mjd_mid": 61085.2534185,
+      "position_pixel": [
+        17.94756283119221,
+        18.33689308574595
+      ],
+      "wavelength_um": 1.2979724407196045,
+      "bandwidth_um": 0.03116498328745365,
+      "reference_top_hat_flux_ujy": 29585.85833202649,
+      "solid_angle_relative_error": 0.00022547440463738244,
+      "psf": {
+        "flux_ujy": 29772.358821638325,
+        "statistical_sigma_ujy": 183.9500827685206,
+        "reduced_chi2": 5.501456450625391,
+        "background_pixels": 32,
+        "core_support_fraction": 1.0000000000000002,
+        "aperture_throughput": 1.0,
+        "pixel_flags_union": 2097152,
+        "epsf": {
+          "oversampling_yx": [
+            5,
+            5
+          ],
+          "stored_sample_sum": 1.0,
+          "native_sum_before_normalization": 0.03994273260300394,
+          "cutout_psf_fraction": 1.0,
+          "cutout_absolute_psf_fraction": 1.0,
+          "negative_l1_fraction": 0.0007324067147194524,
+          "normalization": "Unit sum over the complete phase-rendered finite ePSF footprint before image clipping; no extra pixel integration.",
+          "detector": 2,
+          "zone_row": 267,
+          "zone_bin_xy": [
+            15,
+            12
+          ],
+          "zone_center_xy": [
+            1505.2142333984375,
+            1213.7857666015625
+          ],
+          "zone_width_xy": [
+            97.14286041259766,
+            97.14286041259766
+          ],
+          "parent_pixel_xy": [
+            1477.9475628311923,
+            1179.336893085746
+          ],
+          "detector_coordinate_convention": "sky",
+          "basis": "native EPSF extension",
+          "zone_wavelength_um": 1.2893376350402832
+        },
+        "relative_reference_error": 0.006303703868207444
+      },
+      "aperture": {
+        "flux_ujy": 30075.50756232292,
+        "statistical_sigma_ujy": 197.89311013623373,
+        "reduced_chi2": 5.556681336112702,
+        "background_pixels": 32,
+        "core_support_fraction": 1.0000000000000002,
+        "aperture_throughput": 0.9810466881366624,
+        "pixel_flags_union": 2097152,
+        "epsf": {
+          "oversampling_yx": [
+            5,
+            5
+          ],
+          "stored_sample_sum": 1.0,
+          "native_sum_before_normalization": 0.03994273260300394,
+          "cutout_psf_fraction": 1.0,
+          "cutout_absolute_psf_fraction": 1.0,
+          "negative_l1_fraction": 0.0007324067147194524,
+          "normalization": "Unit sum over the complete phase-rendered finite ePSF footprint before image clipping; no extra pixel integration.",
+          "detector": 2,
+          "zone_row": 267,
+          "zone_bin_xy": [
+            15,
+            12
+          ],
+          "zone_center_xy": [
+            1505.2142333984375,
+            1213.7857666015625
+          ],
+          "zone_width_xy": [
+            97.14286041259766,
+            97.14286041259766
+          ],
+          "parent_pixel_xy": [
+            1477.9475628311923,
+            1179.336893085746
+          ],
+          "detector_coordinate_convention": "sky",
+          "basis": "native EPSF extension",
+          "zone_wavelength_um": 1.2893376350402832
+        },
+        "relative_reference_error": 0.016550110691444297
+      },
+      "method_relative_difference": 0.0100795885175472,
+      "flux_consistency_pass": true,
+      "method_consistency_pass": true,
+      "geometry_pass": true,
+      "fit_quality_pass": false
+    },
+    {
+      "obs_id": "2026W08_1A_0601_1",
+      "mjd_mid": 61090.207367,
+      "position_pixel": [
+        18.096875913175413,
+        17.820840712389327
+      ],
+      "rejected_reason": "array of sample points is empty"
+    }
+  ],
+  "reference_interpretation": "CALSPEC model, uniform wavelength top-hat approximation. This tests reduction consistency; it is not exact bandpass synthesis or an independent absolute-gain validation.",
+  "all_methods_complete": false,
+  "public_spectrum_workflow_complete": false
+}

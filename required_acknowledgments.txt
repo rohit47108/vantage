@@ -25,3 +25,7 @@ Credit WISE, a joint project of UCLA and JPL/Caltech funded by NASA, together wi
 Name resolution
 Source: https://cds.unistra.fr/
 CDS Sesame/SIMBAD, Strasbourg, and the official IDIA mirror used for the returned position. A name lookup does not by itself establish an observation epoch or proper-motion correction.
+
+CALSPEC reference used for native photometry validation
+Source: https://www.stsci.edu/hst/instrumentation/reference-data-for-calibration-and-tools/astronomical-catalogs/calspec.html
+STScI CALSPEC / HST reference spectra and models. The retained P330E model is p330e_mod_009.fits (March 2026). Follow the current CALSPEC page and FITS model history for the relevant stellar-model and flux-scale references, including Bohlin et al. 2017 and the updated BOSZ models described by Meszaros et al. 2024. This model is a reference, not a Vantage or SPHEREx observation, and is not covered by the project-code MIT license.

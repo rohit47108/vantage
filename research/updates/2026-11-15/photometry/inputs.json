@@ -1,0 +1,16 @@
+{
+  "files": [
+    {
+      "path": "research/updates/2026-11-15/photometry/sapm_d2.fits",
+      "url": "https://nasa-irsa-spherex.s3.us-east-1.amazonaws.com/dr1/solid_angle_pixel_map/cal-sapm-v3-2026-191/2/solid_angle_pixel_map_D2_spx_cal-sapm-v3-2026-191.fits",
+      "sha256": "231bcdab0aa31d0ee9c9349b10e6c871070bf3ed860b7dc799745c0f9d1c8bc0",
+      "bytes": 16652160
+    },
+    {
+      "path": "research/updates/2026-11-15/photometry/p330e_mod_009.fits",
+      "url": "https://ssb.stsci.edu/cdbs/current_calspec/p330e_mod_009.fits",
+      "sha256": "28475371eb199c62a9b741a5ec56ecee16019eee1f049dcd1173d0da16f759d8",
+      "bytes": 28748160
+    }
+  ]
+}

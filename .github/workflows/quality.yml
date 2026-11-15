@@ -33,5 +33,7 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Independent real-data numerical validation
         run: python -m scripts.validate_coadd
+      - name: Native photometry and calibrated-area validation
+        run: python -m scripts.validate_photometry
       - name: Browser-runtime dependency audit
         run: npm audit --omit=dev
