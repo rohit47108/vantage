@@ -105,8 +105,6 @@ header {
   position: relative;
   z-index: 2;
 }
-.brand .brand-logo { display: block; position: relative; width: 140px; height: 30px; overflow: hidden; flex-shrink: 0; margin: 0; }
-.brand-logo img { position: absolute; width: 140px; height: 140px; max-width: none; left: 0; top: -52px; }
 .brand {
   color: #e4eef4;
   font-size: 19px;
@@ -601,4 +599,3 @@ main .comparison canvas {
     z-index: 4;
   }
 }
-@media(max-width:760px){.brand .brand-logo{width:108px;height:26px}.brand-logo img{width:108px;height:108px;top:-40px}}
