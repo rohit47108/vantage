@@ -1,0 +1,101 @@
+{
+  "public_url": "https://vantage-spherex-4kw8pa2lw-rohit-singhs-projects-48f82479.vercel.app",
+  "source_commit": "14ed1582c5c512f811d5415ac38ec6abeb67cf3e",
+  "deployment_id": "dpl_2g8ahS4L8fV7N3FTRLEbvdxNDB6q",
+  "files": [
+    {
+      "path": "/",
+      "status": 200,
+      "local_sha256": "531a917400273c941500716ddc291d1031535eaf9c246c4dbc8e99fbbae18299",
+      "raw_response_sha256": "779f29c5c0da8405c199284607bce4bbf1c9d63553b31300020892daf6439701",
+      "comparison": "Exact after removing the single inspected deployment-specific Vercel preview feedback script and trailing LF."
+    },
+    {
+      "path": "/favicon.svg",
+      "status": 200,
+      "local_sha256": "9c088dfc0aa951d21f08a2452f63695ff3f78ccf84b5a10510e656868e0c0ca7",
+      "response_sha256": "9c088dfc0aa951d21f08a2452f63695ff3f78ccf84b5a10510e656868e0c0ca7",
+      "exact_bytes_match": true
+    },
+    {
+      "path": "/assets/index-BqIwlR9n.js",
+      "status": 200,
+      "local_sha256": "bab7ba6550b49fee3c8baae67494ff5605045a7a61e50b54efa409a0f7969aee",
+      "response_sha256": "bab7ba6550b49fee3c8baae67494ff5605045a7a61e50b54efa409a0f7969aee",
+      "exact_bytes_match": true
+    },
+    {
+      "path": "/assets/index-DVNt594f.css",
+      "status": 200,
+      "local_sha256": "1743127ec8557f9f6bc128976d8a168062df18c715a5e70d2f9ee524eccb089c",
+      "response_sha256": "1743127ec8557f9f6bc128976d8a168062df18c715a5e70d2f9ee524eccb089c",
+      "exact_bytes_match": true
+    }
+  ],
+  "health": {
+    "status": "ok",
+    "policy": "vantage-visual-3"
+  },
+  "backend_origin": "https://journal-increases-recent-hope.trycloudflare.com",
+  "durable_hosting": false,
+  "actual_extraction": {
+    "request": {
+      "target_revision": "0be6fd927e86f0a053dd9eb40d34bcbd0770e19442e120133fd538004230d27b"
+    },
+    "job": {
+      "job_id": "a245378bf87c4341b87da20f8ea5d0d0",
+      "status_url": "/v1/analysis/jobs/a245378bf87c4341b87da20f8ea5d0d0"
+    },
+    "terminal_status": {
+      "job_id": "a245378bf87c4341b87da20f8ea5d0d0",
+      "state": "complete",
+      "result_id": "b1bdc4d6aa70050507f6d2473747ad284c0323633c2855411e5705291e62b9a4",
+      "error": null,
+      "updated": 1794730392.799023
+    },
+    "product_id": "b1bdc4d6aa70050507f6d2473747ad284c0323633c2855411e5705291e62b9a4",
+    "sampling": {
+      "available_observations": 4,
+      "selected_observation_indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "unselected_observations": 0,
+      "accepted_samples": 1,
+      "diagnostic_only_samples": 2,
+      "rejected_samples": 1,
+      "detectors": [
+        2
+      ],
+      "mjd_range": [
+        60872.904404,
+        61090.207367
+      ],
+      "interpretation": "Partial retained D2 sampling. Each point has its own observation time and central CWAVE/CBAND. Unobserved channels are not inferred or zero-filled."
+    },
+    "exports": [
+      {
+        "path": "/v1/products/b1bdc4d6aa70050507f6d2473747ad284c0323633c2855411e5705291e62b9a4/samples.ecsv",
+        "status": 200,
+        "sha256": "fa8825d6d98426f551adcff3140b90073228243f8b0e15d8bf73ae7cb997e186",
+        "manifest_checksum_matches": true
+      },
+      {
+        "path": "/v1/products/b1bdc4d6aa70050507f6d2473747ad284c0323633c2855411e5705291e62b9a4/samples.csv",
+        "status": 200,
+        "sha256": "a4cc56e3e6d323b2b6daefb8bfc87aecb9240884ddb30cf68059ad593f5c0533",
+        "manifest_checksum_matches": true
+      },
+      {
+        "path": "/v1/products/b1bdc4d6aa70050507f6d2473747ad284c0323633c2855411e5705291e62b9a4/plot.svg",
+        "status": 200,
+        "sha256": "9f137e2989fd76009c7b5ee5707cbebf7880580b7fa7064837c463759feb6f8f",
+        "manifest_checksum_matches": true
+      }
+    ],
+    "ecsv_roundtrip": true
+  },
+  "cutout_link_verification": "artifacts/source-samples-live-cutout-links.json"
+}
