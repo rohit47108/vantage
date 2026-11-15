@@ -5,10 +5,20 @@ from pathlib import Path
 from unittest.mock import patch
 from astropy.table import Table
 from backend.science import ROOT
-from backend.spectra import build_spectrum, SpectrumRequest,target_description
+from backend.spectra import build_spectrum, SpectrumRequest,target_description,spectrum_svg
 
 
 class SpectrumTests(unittest.TestCase):
+    def test_existing_public_plot_bytes_and_new_source_label_escaping(self):
+        import hashlib
+        import xml.etree.ElementTree as ET
+        product=json.loads((ROOT/'artifacts/source-samples-provenance-public-product.json').read_text(encoding='utf-8'))
+        self.assertEqual(hashlib.sha256(spectrum_svg(product).encode()).hexdigest(),product['exports']['plot.svg']['sha256'])
+        svg=spectrum_svg(product,x_bounds=(.7,5.1),title='<script>arbitrary source</script>')
+        tree=ET.fromstring(svg)
+        self.assertEqual(list(tree.iter('{http://www.w3.org/2000/svg}script')),[])
+        self.assertIn('&lt;script&gt;',svg)
+
     def test_actual_measurements_rejections_units_and_export_roundtrip(self):
         with tempfile.TemporaryDirectory() as directory:
             result=build_spectrum(SpectrumRequest(),Path(directory))

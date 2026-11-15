@@ -4,6 +4,14 @@
 
 The later complete-product specification supersedes the demo scope described below. The application is PARTIALLY COMPLETE for that goal. See tasks/product-evidence.md; remaining coadd methods, subtraction, source extraction, embeds/investigations, release promotion and durable hosting still require implementation/validation.
 
+### General native extraction dependency — November 15
+
+`backend/native_extraction.py` now accepts general source coordinates/angular motion and arbitrary native observation records. All six DR1 detectors have exact approved processing/calibration UUID bindings, DataLink associations, sky-coordinate orientation and checksum-pinned wavelength/solid-angle maps in `config/scientific_calibrations.json`. Unsupported inputs are rejected. This core keeps all sample failures, per-observation times, conditional statistical covariance and separately stored native image/residual stamps. A source product can include up to 512 distinct native observation/detector records; the live field/job/UI layer remains to be integrated.
+
+The real P330E benchmark now yields passing PSF measurements on all six detectors and passing aperture measurements on detectors 1–5: eleven passing measurements and five method pairs across approximately 0.91–4.77 microns. Actual uncovered/bad-aperture cases remain failures. Existing 10% CALSPEC consistency, 5% method, 0.1% area and residual-score-3 bounds are unchanged. This is reduction consistency on a calibration star, not independent absolute-gain validation or complete 102-channel coverage. See research/updates/2026-11-15/native-extraction/METHODS.md and artifacts/native-extraction-scientific-validation.json.
+
+The expanded 61-test scientific/API suite passes locally; focused checks are rerun after the final registry-snapshot/identity additions. This dependency is not yet exposed by a new public browser route. The last tested public release remains the retained D2 workflow below. A complete browser-to-live-source workflow and fresh-source CI evidence are still required before public functionality claims expand.
+
 ### Native source-sample workflow — November 15
 
 The tested native kernel is now connected to actual asynchronous extraction in the retained P330E DR1 D2 field, through the shared bounded/persistent analysis queue. The interface selects actual observations and PSF/aperture parameters, reports missing/bad-fit measurements separately, links the chart/table to native brightness and used-pixel residual stamps, and exports actual CSV/ECSV/SVG/provenance products. Shared links restore the immutable product, request controls and selected observation. Source/calibration checksums, target revision, covariance, units and time semantics are retained. No new runtime dependency was introduced.

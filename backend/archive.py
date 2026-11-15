@@ -11,6 +11,7 @@ import xml.etree.ElementTree as ET
 import tempfile
 import json
 import time
+import re
 import numpy as np
 import aiohttp
 from astropy.io import fits
@@ -56,11 +57,20 @@ def coordinates(ra, dec):
 
 def allowed(url):
     parsed = urlparse(url)
-    if parsed.scheme != 'https' or parsed.hostname != 'irsa.ipac.caltech.edu' or parsed.port not in (None, 443):
+    if parsed.scheme != 'https' or parsed.port not in (None,443) or parsed.username or parsed.password or parsed.fragment or '..' in parsed.path.split('/'):
         raise ValueError('Only official HTTPS IRSA artifacts are accepted')
-    if not parsed.path.startswith(('/ibe/data/spherex/', '/datalink/links/spherex')):
-        raise ValueError('Unsupported archive artifact path')
-    return url
+    if parsed.hostname=='irsa.ipac.caltech.edu' and parsed.path.startswith(('/ibe/data/spherex/','/datalink/links/spherex')):
+        return url
+    if parsed.hostname=='nasa-irsa-spherex.s3.us-east-1.amazonaws.com' and not parsed.query:
+        parts=parsed.path.strip('/').split('/')
+        if len(parts)==5:
+            release,kind,collection,detector,filename=parts
+            prefix={'spectral_wcs':'swcs','solid_angle_pixel_map':'sapm'}.get(kind)
+            if (release in ('dr1','qr3') and prefix and detector in '123456' and len(detector)==1
+                and re.fullmatch(r'cal-'+prefix+r'-v\d+-\d{4}-\d{3}',collection)
+                and filename==f'{kind}_D{detector}_spx_{collection}.fits'):
+                return url
+    raise ValueError('Unsupported archive artifact host or calibration path')
 
 
 def retrieve(url, params=None, limit=40_000_000):
@@ -105,8 +115,11 @@ def votable(content):
     return table, 'OVERFLOW' in statuses
 
 
-def discover(center, fov, refresh=False):
-    identity = hashlib.sha256(json.dumps([center, fov, 'dr1-qr3-20261114']).encode()).hexdigest()
+def discover(center, fov, refresh=False,include_deep=False,time_bounds=None):
+    if time_bounds is not None and (len(time_bounds)!=2 or not np.isfinite(time_bounds).all() or time_bounds[0]>=time_bounds[1]):
+        raise ValueError('Discovery time bounds must be finite and increasing')
+    collections=['spherex_dr1','spherex_qr3']+(['spherex_dr1_deep','spherex_qr3_deep'] if include_deep else [])
+    identity = hashlib.sha256(json.dumps([center, fov, 'dr1-qr3-20261115',collections,time_bounds]).encode()).hexdigest()
     cache = CACHE / (identity + '.json')
     if cache.exists() and not refresh:
         saved = json.loads(cache.read_text())
@@ -117,10 +130,20 @@ def discover(center, fov, refresh=False):
     observations = []
     limited = False
     queries = []
-    for collection in ('spherex_dr1', 'spherex_qr3'):
-        with requests.get('https://irsa.ipac.caltech.edu/SIA', params={
+    for collection in collections:
+        params={
             'COLLECTION': collection, 'POS': f'CIRCLE {center[0]} {center[1]} {radius}', 'MAXREC': 500,
-        }, timeout=(8, 35), stream=True) as response:
+        }
+        if time_bounds is not None:params['TIME']=f'{time_bounds[0]} {time_bounds[1]}'
+        for attempt in range(3):
+            try:
+                response=requests.get('https://irsa.ipac.caltech.edu/SIA',params=params,timeout=(8,35),stream=True)
+                if response.status_code not in (429,502,503,504) or attempt==2:break
+                response.close()
+            except (requests.ConnectionError,requests.Timeout):
+                if attempt==2:raise
+            time.sleep(attempt+1)
+        with response:
             response.raise_for_status()
             chunks = []
             total = 0
@@ -139,19 +162,24 @@ def discover(center, fov, refresh=False):
             observations.append({
                 'obs_id': str(row['obs_id']), 'publisher_id': str(row['obs_publisher_did']),
                 'detector': int(str(row['energy_bandpassname']).split('D')[-1]),
-                'release': collection.removeprefix('spherex_'), 'ibe': allowed(url),
+                'release': collection.removeprefix('spherex_').removesuffix('_deep'),
+                'survey':'deep' if collection.endswith('_deep') else 'wide','ibe': allowed(url),
                 'mjd_mid': (float(row['t_min']) + float(row['t_max'])) / 2,
                 'em_min_um': float(row['em_min']) * 1e6, 'em_max_um': float(row['em_max']) * 1e6,
                 'cloud_access': json.loads(str(row['cloud_access'])) if 'cloud_access' in table.colnames else None,
             })
     observations.sort(key=lambda row: (row['mjd_mid'], row['obs_id'], row['detector']))
-    unique = {(r['obs_id'], r['detector']): r for r in observations}
+    unique={}
+    for row in observations:
+        key=(row['obs_id'],row['detector'])
+        rank=lambda r:(r['release']!='dr1',r['survey']!='wide')
+        if key not in unique or rank(row)<rank(unique[key]):unique[key]=row
     visit_times = []
     for row in unique.values():
         if not visit_times or row['mjd_mid'] - visit_times[-1] >= 1:
             visit_times.append(row['mjd_mid'])
     coverage_state = ('empty', 'single', 'pair')[len(visit_times)] if len(visit_times) < 3 else 'sequence'
-    result = {'center_deg': center, 'fov_arcmin': fov, 'observations': list(unique.values()),
+    result = {'center_deg': center, 'fov_arcmin': fov, 'observations': list(unique.values()),'collections':collections,'time_bounds_mjd_utc':time_bounds,
             'search_completeness': 'limited' if limited else 'complete', 'queries': queries,
             'data_status': 'live', 'coverage_state': coverage_state, 'visit_count': len(visit_times),
             'retrieved_utc': __import__('datetime').datetime.now(__import__('datetime').timezone.utc).isoformat()}
@@ -166,7 +194,15 @@ def calibration(row):
     matches = [str(record['access_url']) for record in table if 'spectral_wcs' in str(record['access_url'])]
     if len(matches) != 1:
         raise ValueError('An unambiguous spectral calibration association is required')
-    return matches[0], retrieve(matches[0])
+    associated=allowed(matches[0])
+    try:return associated,retrieve(associated)
+    except requests.RequestException:
+        # IRSA documents the NASA S3 bucket as a mirror of these release files.
+        # Preserve the actual DataLink association; never choose a newer map.
+        # The strict mirror allowlist rejects non-calibration and unknown paths.
+        mirror=associated.replace('https://irsa.ipac.caltech.edu/ibe/data/spherex/',
+                                  'https://nasa-irsa-spherex.s3.us-east-1.amazonaws.com/')
+        return associated,retrieve(allowed(mirror))
 
 
 def wavelength_at_center(row,center):

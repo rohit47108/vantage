@@ -35,5 +35,7 @@ jobs:
         run: python -m scripts.validate_coadd
       - name: Native photometry and calibrated-area validation
         run: python -m scripts.validate_photometry
+      - name: Six-detector native extraction validation
+        run: python -m scripts.validate_native_extraction
       - name: Browser-runtime dependency audit
         run: npm audit --omit=dev

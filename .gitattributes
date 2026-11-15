@@ -1,2 +1,3 @@
 # Scientific data must retain exact bytes across Windows/Linux checkouts.
 *.fits binary
+*.fits.gz binary

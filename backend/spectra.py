@@ -139,23 +139,26 @@ def table_for_product(product):
     return table
 
 
-def spectrum_svg(product):
+def spectrum_svg(product,x_bounds=None,title=None):
     accepted=[s for s in product['samples'] if s['status']=='accepted']
     width,height=780,390
     left,right,top,bottom=115,745,75,280
-    low_x,high_x=1.05,1.7
+    low_x,high_x=x_bounds or (1.05,1.7)
+    display_title=escape(title or 'P330E')
+    sampling_label='Partial native sampling' if x_bounds else 'Partial D2 sampling'
+    coverage_label='Individual native exposures' if x_bounds else 'Partial D2 coverage'
     high_y=max([s['flux_ujy']+s['statistical_sigma_ujy']*3 for s in accepted]+[1.])*1.15
     low_y=min([s['flux_ujy']-s['statistical_sigma_ujy']*3 for s in accepted]+[0.])
     def x(v):return left+(v-low_x)/(high_x-low_x)*(right-left)
     def y(v):return bottom-(v-low_y)/(high_y-low_y)*(bottom-top)
     elements=[f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc">',
-        '<title id="title">Vantage — P330E native source samples</title>',
-        '<desc id="desc">Partial D2 sampling at separate acquisition times. Only samples passing residual checks are plotted. Error bars are one statistical standard deviation. Horizontal bars are calibrated CBAND, not an exact response curve.</desc>',
+        f'<title id="title">Vantage — {display_title} native source samples</title>',
+        f'<desc id="desc">{sampling_label} at separate acquisition times. Only samples passing residual checks are plotted. Error bars are one statistical standard deviation. Horizontal bars are calibrated CBAND, not an exact response curve.</desc>',
         '<rect width="100%" height="100%" fill="#09151a"/>','<g fill="#e3efeb" font-family="sans-serif" font-size="14">',
-        '<text x="35" y="30" font-size="20">Vantage · P330E source samples</text>',
-        '<text x="35" y="53">Partial D2 coverage · separate acquisition times · statistical errors only</text>',
+        f'<text x="35" y="30" font-size="20">Vantage · {display_title} source samples</text>',
+        f'<text x="35" y="53">{coverage_label} · separate acquisition times · statistical errors only</text>',
         f'<path d="M {left} {top} V {bottom} H {right}" fill="none" stroke="#b7cbc4"/>']
-    for tick in [1.1,1.3,1.5,1.65]:
+    for tick in ([1,2,3,4,5] if x_bounds else [1.1,1.3,1.5,1.65]):
         elements.append(f'<text x="{x(tick):.2f}" y="302" text-anchor="middle">{tick}</text>')
     for value in np.linspace(low_y,high_y,5):
         elements.append(f'<text x="105" y="{y(value)+5:.2f}" text-anchor="end">{value:.0f}</text>')
