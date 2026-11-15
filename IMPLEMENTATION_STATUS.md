@@ -1,34 +1,40 @@
 # Vantage implementation status
 
-Updated November 14, 2026, 18:35 EST. Goal remains active. Deadline 23:59 EST.
+Updated November 14, 2026. Required demonstration workflows are complete at the documented scientific scope. Public acceptance passed all eleven browser tests, including real date and precision-wavelength selection.
 
-## Verified progress
+## Public demo
 
-- React 19.3.1, Vite 8.3.8, TypeScript build passes. npm audit after updates reports zero vulnerabilities.
-- Prepared preprocessing checks every supplied source checksum. Eight static manifests include the five required three-frame sequences, Ceres/M101 two-frame controls and separately tracked comet thumbnails.
-- Shared TAN reprojection, eager calibration arrays, parent detector origins, named QR2/QR3 HDUs, finite/defect support propagation, joint spectral gate, shared asinh stretch and inspection maps are implemented in backend/science.py.
-- Four offline regression tests pass, covering input conventions and invalid inputs, source bit preservation, prepared identities/assets/fixed grids, API bounds, and independently supplied per-target wavelength values.
-- Actual Playwright browser smoke actions opened all eight targets, stepped a frame, inspected via keyboard Enter and opened a two-canvas A/B comparison. Screenshots artifacts/prepared-desktop.png, prepared-comparison.png and prepared-mobile.png are current partial-state evidence.
-- Actual DR1 SIA cone returned five rows. Raw response artifacts/dr1-live-probe.vot. Current IRSA guide says DR1/QR3 replace QR2 search and QR2 direct files remain through February 2027.
-- Backend offers coordinate parsing, discovery, persistent SQLite jobs, bounded workers, cancellation, immutable manifest lookup and static assets.
+Verified public preview: https://vantage-spherex-grpoty722-rohit-singhs-projects-48f82479.vercel.app . The older production alias is not the final tested release; use this preview.
 
-## Active process handles and next actions
+The full local application is http://127.0.0.1:8000/. Vite development mode is http://127.0.0.1:5173/.
 
-Vite exec session 39702 serves http://127.0.0.1:5173/. Current API exec session 50451 serves http://127.0.0.1:8000/. Old API sessions 33601, 46781 and 12295 were stopped. CLI browser session is `vantage`, currently mobile viewport 390x844. Use `npx @playwright/cli -s=vantage snapshot` before interactions.
+## Running processes
 
-Job f93a3a042f5f1277304f75767cc58c4d594e44de18ef6a925753e0d3477fe506 was retried after the initial IBE HTTP503. It reached retrieval and then failed with a missing Path import in the new fallback/cache code. The import is fixed, the API was restarted with it and the terminal job was resubmitted successfully (HTTP 202). Poll GET /v1/jobs/{id} and inspect result/error. S3 fallback and bounded retry still require live verification.
+- Python API and complete local application use exec session 56256 on port 8000.
+- Cloudflare tunnel uses exec session 31231 and origin https://dependent-singing-burning-int.trycloudflare.com.
+- Vite development server uses exec session 39702.
+- The browser CLI session is vantage.
 
-## Outstanding required acceptance
+The public static frontend is on Vercel. Live processing currently depends on this computer and the temporary tunnel. A persistent public Python host has not been provisioned. Prepared targets remain available if the backend stops. The first Vercel deployment was automatically assigned to production by the CLI. Subsequent releases are public preview deployments. Access settings were changed only for the new Vantage project to permit public viewing.
 
-- Complete live retrieval/generation and browser opening. Diagnose real upstream errors. Verify actual DR1/QR3 calibration/HDU differences and S3 fallback against the resulting file.
-- Finish date and wavelength selection from live coverage. Current UI lets users choose detector and lists exposure dates/bounds; it does not yet let users filter dates or explicit wavelength selection.
-- Fix coordinate URL boot workflow so it automatically searches/restores, and preserve exact frame/camera/display state in immutable sharing. Frame query restore is present; pan/zoom/stretch are not yet encoded.
-- Complete job generation identity, retry/cancellation race review, caching/negative cache, safe failure detail and anonymous ownership. Current request hashes preserve field order rather than a fully canonical normalized request. Complete manifests are atomically published, but multi-process dedup is not established.
-- Review absolute WCS/pixel conventions, unsigned flag schema, unknown bits, ZODI policy, source calibration fields for supporting controls, missing calibration/state edge cases and provenance. Current numerical products remain disabled.
-- Inspect mobile screenshot. Left panel is in normal flow on narrow screens and needs sheet-style usability refinement. Desktop dock currently overlaps part of the image and view tools. Improve layout before final screenshots.
-- Native or fully focus-managed methods dialog, focus restoration, reduced-motion player behavior, text measurement tables, image flash safety and keyboard full-flow tests remain incomplete.
-- Measure cold load/swap performance. Test image/provenance downloads, sharing in fresh session, browser back/popstate, API restart, archive-offline fallback, failed/slow frames and stale results. Do not infer these from smoke checks.
-- Read review and launch skills in their phases. Inspect authorized hosting tools and credentials. No public deployment attempted or verified yet. No infrastructure blocker established yet.
-- Produce full acceptance checklist, tested production launch/configuration, final screenshots, 60-second/3-minute walkthrough, project copy/data/AI disclosure and precise optional-work list.
+## Completed behavior and evidence
 
-Historical research audit is unchanged and does not certify application acceptance. No competition submission was made.
+- Eight authentic prepared examples, including the five required three-frame targets and Ceres/M101 controls.
+- Fixed TAN-grid processing, exact source/calibration hashes, eager precision maps, unknown/defective-flag support, source bit preservation and gated numerical products.
+- DR1/QR3 coordinate search, persistent jobs, typed inputs, canonical deduplication, safe retry/cancellation, cached metadata and native IBE/S3 retrieval.
+- Exact date and precision-wavelength filtering was verified against a real single-observation result in artifacts/precision-goal-job.json.
+- Inspection, A/B comparison, overlays, camera/stretch, immutable URLs, exports and failed/slow-request handling.
+- Eight scientific/API tests pass in the clean environment. Source/hash/grid checks, actual QR2/QR3 flag representations and real DR1 text-detector behavior are covered.
+- Public browser reports, screenshots and measured timings are under artifacts. All eleven public browser tests pass with no skipped or flaky tests. The final run measured a prepared first frame of 592 ms and decoded swaps of 1.7–4.1 ms in fresh-context headless Chrome on Windows without mobile throttling. These are observed timings, not service guarantees.
+- A physical backend shutdown produced public health HTTP 502 and static catalog HTTP 200. All eight prepared examples still opened and played.
+- Actual S3 fallback data matched IBE over 3,473 common pixels, with equal flags/wavelengths and brightness differences below 1e-6 MJy/sr.
+- Runtime requirement audit reports no known vulnerabilities. npm audit reports zero vulnerabilities. pip check reports no broken requirements.
+- scripts/launch.ps1 built and served the full app on port 8002. The same service now runs on 8000 and was opened in Chrome for prepared playback.
+
+## Delivered documentation
+
+README.md contains setup, preprocessing, tests and deployment staging. DEMO.md has 60-second and three-minute walkthroughs. SUBMISSION_DRAFT.md contains project/data/AI text and current competition-source limits. REVIEW.md records fixes and scope. ACCEPTANCE.md maps requirements to evidence.
+
+## Remaining scope
+
+Quantitative photometry, precision astrometry, validated differences/significance, survey overlays and live spectra remain optional and gated. The final competition-guide refresh failed certificate validation or web retrieval. Submission-format limits and judging guidance remain unverified. Final competition submission belongs to the user.

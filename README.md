@@ -1,16 +1,37 @@
 # Vantage
 
-SPHEREx sky exploration built from authentic calibrated detector exposures. The original research package remains in the workspace. Current build status and open acceptance work are in IMPLEMENTATION_STATUS.md.
+SPHEREx sky exploration built from authentic calibrated detector exposures. The original research package remains in the workspace. Current build status, verified public URL and hosting limits are in IMPLEMENTATION_STATUS.md.
 
 ## Local launch
 
-Use Node 24 and Python 3.13. From the workspace root, install `npm ci`, then create a Python virtual environment and run `python -m pip install -r requirements.txt`. The supplied research virtual environment is usable in this workspace.
+Use Node 24 and Python 3.13. From the workspace root, run `npm ci`, create `.venv` with Python 3.13, and install `requirements.lock.txt`. The application now has a clean environment separate from the research environment.
+
+```powershell
+npm ci
+& C:\Python313\python.exe -m venv .venv
+& .\.venv\Scripts\python.exe -m pip install -r requirements-dev.txt
+& .\scripts\launch.ps1
+```
+
+The Python path above is the verified interpreter on this Windows machine. Use the equivalent Python 3.13 executable on another machine. For preprocessing or tests, call `.\.venv\Scripts\python.exe` explicitly or activate that environment first.
 
 Generate prepared artifacts with `python -m scripts.prepare`. This verifies the supplied FITS checksums and produces static manifests and bounded pixel/inspection maps in public/prepared.
 
-Start the API with `python -m uvicorn backend.app:app --host 127.0.0.1 --port 8000` and the frontend with `npm run dev`. Open http://127.0.0.1:5173/. Vite proxies /v1 requests to the API. Prepared examples load from static delivery independently of the API.
+Run `& .\scripts\launch.ps1` to build and launch the full application at http://127.0.0.1:8000/. This procedure was tested on port 8002 as well. Use one Uvicorn process with the application's two bounded worker threads and persistent `.runtime` directory. For frontend development, run `npm run dev` separately and use http://127.0.0.1:5173/.
 
-Run `npm run build` and `python -m unittest discover -s tests -v` for the current build and offline scientific regression checks. Browser and public deployment acceptance remain tracked separately.
+Install `requirements-dev.txt`, then run `npm run build`, `python -m unittest discover -s tests -v`, and `npx playwright test`. Browser tests use installed Chrome and a running application. Set `VANTAGE_BASE_URL` to test a public deployment. See ACCEPTANCE.md for actual results, DEMO.md for the walkthrough, and IMPLEMENTATION_STATUS.md for the current public URL and process details.
+
+Prepared display assets are included in the repository. Regeneration and offline scientific tests require the supplied FITS research package. Live search caches metadata for 24 hours and empty results for 15 minutes. Wavelength goals check up to 20 parent headers and precision maps at the requested field center.
+
+## Public deployment
+
+The verified public preview is recorded in IMPLEMENTATION_STATUS.md. Static assets are hosted on Vercel. Live Python processing currently runs on this computer through a temporary Cloudflare tunnel. The live route stops when the computer or tunnel process stops. Static prepared examples remain available during backend failure. A persistent cloud Python service has not been provisioned.
+
+After `npm run build`, use `python -m scripts.stage_deploy --backend-url https://YOUR-BACKEND-ORIGIN`, then deploy `.runtime/deploy` through Vercel. Staging contains built public files and an API/new-manifest proxy. Source FITS, credentials, caches and research environment files are excluded. Preserve `.runtime` and generated manifests for exact live-result links. A changed backend origin requires restaging. Prior previews provide rollback.
+
+`python -m scripts.verify_fallback` forces an IBE failure and compares actual S3 native pixels with an authentic IBE cutout. It makes public network requests. Bundled React licenses are in `public/licenses`.
+
+Optional future work includes persistent cloud Python hosting, a context atlas, credited survey overlays, annotations, and validated photometry, coadds, differences or spectra.
 
 ## Data and scientific scope
 
@@ -19,6 +40,10 @@ Prepared QR2 examples preserve their original dates, files and checksums. Curren
 Full NASA/IRSA acknowledgments and release DOIs appear in the application methods panel and exported manifests. Source files and dependency documentation are identified in the research dossier and source comments.
 
 ## Official implementation sources
+
+The visual processing path uses Requests plus Astropy's VOTable reader rather than PyVO, and explicit Astropy WCS transformations plus a SciPy bilinear sampler rather than Reproject or Photutils. This keeps interpolation support and defect propagation explicit. These choices implement visual alignment only; they do not establish photometric flux conservation or correct resampled variance. Numerical products remain gated.
+
+SQLite persists the single-instance job index, while hashed disk files cache metadata and scientific products. Two bounded threads perform independent FITS reads with eagerly materialized calibration maps. Multi-instance execution requires a shared queue/storage design before scaling.
 
 - https://react.dev/reference/react/useEffect#fetching-data-with-effects
 - https://vite.dev/guide/

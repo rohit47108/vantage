@@ -1,0 +1,12 @@
+[
+  {
+    "path": "/v1/health",
+    "status": 502,
+    "bytes": 6571
+  },
+  {
+    "path": "/prepared/catalog.json",
+    "status": 200,
+    "bytes": 51925
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "checked_utc": "2026-11-15T00:33:00.396998+00:00",
+  "command": ".venv/Scripts/python.exe -m unittest discover -s tests -p test_science.py",
+  "tests_run": 8,
+  "exit_code": 0,
+  "result": "OK",
+  "scope": "Actual scientific fixtures, WCS, hashes, precision wavelength samples, release parsing, flags, API validation and job identity. See tests/test_science.py."
+}

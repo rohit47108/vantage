@@ -1,0 +1,14 @@
+[
+  {
+    "url": "https://www.spaceappschallenge.org/resources/participant-faqs/",
+    "error": "SSLError"
+  },
+  {
+    "url": "https://www.spaceappschallenge.org/2026/challenges/planet-x-and-spherex/",
+    "error": "SSLError"
+  },
+  {
+    "url": "https://www.spaceappschallenge.org/resources/",
+    "error": "SSLError"
+  }
+]

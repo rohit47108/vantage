@@ -1,0 +1,30 @@
+{
+  "checked_utc": "2026-11-15T00:31:43.584440+00:00",
+  "endpoints": [
+    {
+      "url": "https://vantage-spherex-grpoty722-rohit-singhs-projects-48f82479.vercel.app",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://vantage-spherex-grpoty722-rohit-singhs-projects-48f82479.vercel.app/v1/health",
+      "status": 200,
+      "content_type": "application/json"
+    },
+    {
+      "url": "https://vantage-spherex-grpoty722-rohit-singhs-projects-48f82479.vercel.app/prepared/catalog.json",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8"
+    },
+    {
+      "url": "http://127.0.0.1:8000/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "http://127.0.0.1:8000/v1/health",
+      "status": 200,
+      "content_type": "application/json"
+    }
+  ]
+}
