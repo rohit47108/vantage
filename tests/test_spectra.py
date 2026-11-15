@@ -16,6 +16,11 @@ class SpectrumTests(unittest.TestCase):
             self.assertEqual(len(result['samples']),4)
             by_id={s['obs_id']:s for s in result['samples']}
             good=by_id['2025W30_1B_0059_3']
+            from urllib.parse import parse_qs,urlparse
+            query=parse_qs(urlparse(good['native_cutout_request']['url']).query)
+            self.assertEqual(query['size'],['0.0625deg'])
+            self.assertEqual(good['native_cutout_request']['parent_url'],good['source_url'])
+            self.assertEqual(good['native_cutout_request']['sha256'],good['source_sha256'])
             self.assertEqual(good['status'],'accepted')
             self.assertAlmostEqual(good['flux_ujy'],28983.6846778,places=3)
             self.assertAlmostEqual(good['statistical_sigma_ujy'],175.6402061,places=3)

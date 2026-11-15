@@ -10,6 +10,7 @@ test('actual source extraction, linked selection, rejection reasons and exports'
   await expect(page.getByText('1 passes fit checks',{exact:true})).toBeVisible();
   await page.getByRole('button',{name:'Inspect 2025W30_1B_0059_3'}).click();
   await expect(page.getByTestId('measurement-flux')).toContainText('28,983.68');
+  await expect(page.getByRole('link',{name:'Official native cutout request'})).toHaveAttribute('href',/center=.*size=0\.0625deg/);
   await expect(page.getByRole('img',{name:'Native brightness cutout; source cross marks the measured position. Array rows increase upward.'})).toBeVisible();
   await page.getByRole('button',{name:'Inspect 2026W08_1A_0601_1'}).click();
   await expect(page.getByTestId('selected-sample')).toContainText('does not cover');

@@ -8,6 +8,7 @@ interface Target {key:string;name:string;revision:string;sampling_description:st
 interface Sample {obs_id:string;utc_mid:string;detector:number;status:'accepted'|'diagnostic_only'|'rejected';reason:string|null;
   flux_ujy:number|null;statistical_sigma_ujy:number|null;wavelength_um:number|null;bandwidth_um:number|null;
   reduced_chi2?:number;position_pixel_xy?:number[];pixel_flags_union?:number;source_url:string;source_sha256:string;
+  native_cutout_request?:{url:string;checksum_semantics:string};
   image_context?:{shape:number[];brightness_mjysr:(number|null)[][];residual_ujy:(number|null)[][];used:number[][]};
   centroid_fit?:{shift_pixel_xy:number[];sigma_pixel_xy:number[]}}
 interface Product {id:string;name:string;type:string;samples:Sample[];limitations:string[];uncertainty_method:string;credits:string;
@@ -182,8 +183,9 @@ export function SourceSamples({onTime,initialProduct}:{onTime:()=>void;initialPr
             <p>Residual score: {number(sample.reduced_chi2,3)} · maximum 3. This is a fit diagnostic, not a probability of discovery.</p>
             {sample.centroid_fit&&<p>Position shift: {sample.centroid_fit.shift_pixel_xy.map(v=>number(v,4)).join(', ')} native pixels.</p>}
             <div className="source-stamps"><NativeStamp sample={sample}/><NativeStamp sample={sample} residual/></div></>}
-          <p><a href={sample.source_url} target="_blank" rel="noreferrer">Official native source file ↗</a></p>
-          <details><summary>Input identity</summary><p className="source-hash">SHA-256: {sample.source_sha256}</p></details>
+          <p>{sample.native_cutout_request&&<><a href={sample.native_cutout_request.url} target="_blank" rel="noreferrer">Official native cutout request ↗</a><br/></>}
+            <a href={sample.source_url} target="_blank" rel="noreferrer">Official parent exposure ↗</a></p>
+          <details><summary>Input identity</summary><p className="source-hash">Retained cutout SHA-256: {sample.source_sha256}</p><p>The parent exposure is a separate file. The checksum identifies the retained cutout used for this measurement.</p></details>
         </section>}
         <div className="source-actions">{Object.entries(product.exports).map(([name,resource])=><a className="source-download" key={name} href={resource.url} download>{name==='samples.ecsv'?'ECSV with units':name==='samples.csv'?'CSV table':'SVG plot'}</a>)}
           <a className="source-download" href={'/v1/products/'+product.id} download={'vantage-'+product.id.slice(0,12)+'.json'}>Provenance JSON</a>

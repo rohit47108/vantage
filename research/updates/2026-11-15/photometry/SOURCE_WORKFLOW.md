@@ -12,6 +12,8 @@ This increment connects the native photometry kernel to actual asynchronous extr
 
 OpenAPI is generated from the actual running FastAPI/Pydantic routes at `/openapi.json`. No caller-supplied filesystem path or archive URL is accepted by this slice.
 
+Provenance correction: policy `retained-native-source-samples-2` explicitly separates the full parent-exposure URL from the native cutout request/parameters and retained cutout checksum. The first workflow linked the parent while labeling it as the native measurement input; the corrected interface labels both resources accurately. All four recorded cutout requests were replayed against IRSA and returned exactly the retained SHA-256 values (artifacts/source-samples-live-cutout-links.json). An initial probe returned HTTP 503; subsequent sequential checks succeeded. This verifies the request/byte associations, not uninterrupted upstream availability. New request/product identities prevent earlier cached output from hiding the correction; existing products remain readable.
+
 ## Scientific interpretation
 
 Native `IMAGE`/`VARIANCE`, detector/observation/time associations, calibrated SAPM and embedded effective PSF drive the numerical measurement. Visual resampling is not used for fluxes. The methods and statistical assumptions are detailed in [METHODS.md](METHODS.md), with links to the official [IRSA ePSF tutorial](https://caltech-ipac.github.io/irsa-tutorials/spherex-psf/) and [SPHEREx product documentation](https://caltech-ipac.github.io/spherex-archive-documentation/spherex-data-products/).

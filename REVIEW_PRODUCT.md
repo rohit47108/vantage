@@ -18,6 +18,8 @@ The UI and exports distinguish passing, diagnostic-only and rejected observation
 
 Review fixes from direct visual inspection: retain readable mobile chart labels through bounded horizontal scrolling; give export links usable widths; separate the flux axis from tick labels; restrict residual contrast to used fit pixels; restore aperture/observation choices from shared products; handle a cancellation racing with completed output; separate source-metadata errors from saved-product errors. All 52 scientific/API tests and 23 local browser tests pass, with focused browser checks after the final display fix. Public and fresh-source CI acceptance are recorded separately. The first workflow's strict P330E/D2 scope remains visible; it does not satisfy the full spectrum requirement or durable hosting.
 
+Provenance follow-up: a full parent-exposure link was initially labeled as the native input although the checksum identified the retained cutout. Policy version 2 records the explicit native cutout request/parameters and parent URL separately. Replayed requests for all four observations return the exact retained FITS checksums. Regression tests assert the cutout geometry/identity and the browser link. No flux, fit threshold, mask or covariance method changed.
+
 ## Name and survey context — November 15, 2026
 
 The adapter uses actual Gator VOTables for both Gaia DR3 and AllWISE after spatial TAP probes failed. It preserves integer source IDs as strings, catalog flags/epochs, raw-query hashes and all query URLs. Bounded response, concurrency, rows, radius and redirect policies keep the routes from becoming arbitrary fetch proxies. A negative test proves name redirects cannot leave the approved CDS mirror hosts.

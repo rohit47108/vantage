@@ -1,0 +1,82 @@
+[
+  {
+    "obs_id": "2025W29_1A_0544_1",
+    "parent_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/level2/2025W29_1A/l2b-v27-2026-217/2/level2_2025W29_1A_0544_1D2_spx_l2b-v27-2026-217.fits",
+    "parameters": {
+      "center": "247.89081206507063,30.14594690615793deg",
+      "size": "0.0625deg"
+    },
+    "url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/level2/2025W29_1A/l2b-v27-2026-217/2/level2_2025W29_1A_0544_1D2_spx_l2b-v27-2026-217.fits?center=247.89081206507063%2C30.14594690615793deg&size=0.0625deg",
+    "retrieval_mode": "native_ibe_cutout",
+    "sha256": "2143963f0fb651c65f8719808d4638ecebf966cc9554cd192951ebc7ccb178a4",
+    "checksum_semantics": "Checksum identifies the retained native IBE cutout response, not the full parent exposure. Parameters record its native cutout geometry. Compare any refreshed response bytes with this retained checksum; upstream service availability is separate.",
+    "bytes": 3965760,
+    "response_sha256": "2143963f0fb651c65f8719808d4638ecebf966cc9554cd192951ebc7ccb178a4",
+    "exact_retained_bytes": true,
+    "attempts": [
+      {
+        "status": 200
+      }
+    ]
+  },
+  {
+    "obs_id": "2025W30_1B_0059_3",
+    "parent_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/level2/2025W30_1B/l2b-v27-2026-220/2/level2_2025W30_1B_0059_3D2_spx_l2b-v27-2026-220.fits",
+    "parameters": {
+      "center": "247.89081203056386,30.145946776125705deg",
+      "size": "0.0625deg"
+    },
+    "url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/level2/2025W30_1B/l2b-v27-2026-220/2/level2_2025W30_1B_0059_3D2_spx_l2b-v27-2026-220.fits?center=247.89081203056386%2C30.145946776125705deg&size=0.0625deg",
+    "retrieval_mode": "native_ibe_cutout",
+    "sha256": "f881bae79802ecaf7e6d4bfc8e5d484f1148403dc344d8533a2ac35acf7294dd",
+    "checksum_semantics": "Checksum identifies the retained native IBE cutout response, not the full parent exposure. Parameters record its native cutout geometry. Compare any refreshed response bytes with this retained checksum; upstream service availability is separate.",
+    "bytes": 3965760,
+    "response_sha256": "f881bae79802ecaf7e6d4bfc8e5d484f1148403dc344d8533a2ac35acf7294dd",
+    "exact_retained_bytes": true,
+    "attempts": [
+      {
+        "status": 200
+      }
+    ]
+  },
+  {
+    "obs_id": "2026W07_2A_0338_3",
+    "parent_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/level2/2026W07_2A/l2b-v27-2026-226/2/level2_2026W07_2A_0338_3D2_spx_l2b-v27-2026-226.fits",
+    "parameters": {
+      "center": "247.89081040633272,30.145940655515904deg",
+      "size": "0.0625deg"
+    },
+    "url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/level2/2026W07_2A/l2b-v27-2026-226/2/level2_2026W07_2A_0338_3D2_spx_l2b-v27-2026-226.fits?center=247.89081040633272%2C30.145940655515904deg&size=0.0625deg",
+    "retrieval_mode": "native_ibe_cutout",
+    "sha256": "329ef40a57883525546ff1da25297104ad7fa30a179ea091a95cf802750e8dad",
+    "checksum_semantics": "Checksum identifies the retained native IBE cutout response, not the full parent exposure. Parameters record its native cutout geometry. Compare any refreshed response bytes with this retained checksum; upstream service availability is separate.",
+    "bytes": 3965760,
+    "response_sha256": "329ef40a57883525546ff1da25297104ad7fa30a179ea091a95cf802750e8dad",
+    "exact_retained_bytes": true,
+    "attempts": [
+      {
+        "status": 200
+      }
+    ]
+  },
+  {
+    "obs_id": "2026W08_1A_0601_1",
+    "parent_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/level2/2026W08_1A/l2b-v27-2026-227/2/level2_2026W08_1A_0601_1D2_spx_l2b-v27-2026-227.fits",
+    "parameters": {
+      "center": "247.89081036763557,30.145940509692956deg",
+      "size": "0.0625deg"
+    },
+    "url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/level2/2026W08_1A/l2b-v27-2026-227/2/level2_2026W08_1A_0601_1D2_spx_l2b-v27-2026-227.fits?center=247.89081036763557%2C30.145940509692956deg&size=0.0625deg",
+    "retrieval_mode": "native_ibe_cutout",
+    "sha256": "38fab8314423ef295ce81a7757800dff74029561e9a262d525f7eb3aa9341022",
+    "checksum_semantics": "Checksum identifies the retained native IBE cutout response, not the full parent exposure. Parameters record its native cutout geometry. Compare any refreshed response bytes with this retained checksum; upstream service availability is separate.",
+    "bytes": 3954240,
+    "response_sha256": "38fab8314423ef295ce81a7757800dff74029561e9a262d525f7eb3aa9341022",
+    "exact_retained_bytes": true,
+    "attempts": [
+      {
+        "status": 200
+      }
+    ]
+  }
+]

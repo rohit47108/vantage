@@ -12,6 +12,7 @@ import tempfile
 from pathlib import Path
 from typing import Literal
 from xml.sax.saxutils import escape
+from urllib.parse import urlencode
 import numpy as np
 import astropy
 import photutils
@@ -26,7 +27,7 @@ from pydantic import BaseModel,ConfigDict,Field,model_validator
 from backend.science import ROOT,digest,write_json,finite_list
 from backend.photometry import measure_fits,POLICY as PHOTOMETRY_POLICY
 
-POLICY='retained-native-source-samples-1'
+POLICY='retained-native-source-samples-2'
 BENCHMARK=ROOT/'research/updates/2026-11-15/photometry'
 
 
@@ -65,10 +66,21 @@ def atomic_text(path,content):
     os.replace(temporary,path)
 
 
+def cutout_request(row):
+    if row['retrieval_mode']!='native_ibe_cutout':
+        raise ValueError('This retained workflow requires an explicitly recorded native IBE cutout derivation')
+    parameters={'center':f"{row['position_deg'][0]},{row['position_deg'][1]}deg",
+        'size':f"{row['cutout_fov_arcmin']/60*1.5}deg"}
+    return {'parent_url':row['ibe'],'parameters':parameters,'url':row['ibe']+'?'+urlencode(parameters),
+        'retrieval_mode':row['retrieval_mode'],'sha256':row['sha256'],
+        'checksum_semantics':'Checksum identifies the retained native IBE cutout response, not the full parent exposure. Parameters record its native cutout geometry. Compare any refreshed response bytes with this retained checksum; upstream service availability is separate.'}
+
+
 def native_sample(row,request,area_path):
     sample={k:row[k] for k in ['obs_id','detector','release','mjd_mid']}
     sample.update({'utc_mid':Time(row['mjd_mid'],format='mjd',scale='utc').isot+'Z',
         'source_url':row['ibe'],'source_sha256':row['sha256'],
+        'native_cutout_request':cutout_request(row),
         'calibration_url':row['calibration_url'],'calibration_sha256':row['calibration_sha256'],
         'input_position_deg':row['position_deg'],'flux_ujy':None,'statistical_sigma_ujy':None,
         'wavelength_um':None,'bandwidth_um':None,'status':'rejected','reason':None})
@@ -180,7 +192,7 @@ def build_spectrum(request,destination,check_cancel=lambda:None):
     canonical={'policy':POLICY,'photometry_policy':PHOTOMETRY_POLICY,
         'request':request.model_dump()|{'observation_indices':sorted(request.observation_indices)},
         'source':benchmark['source'],'position_model':benchmark['source_position_model'],
-        'observations':[{k:r[k] for k in ['obs_id','detector','release','mjd_mid','position_deg','sha256','calibration_sha256']} for r in rows],
+        'observations':[{k:r[k] for k in ['obs_id','detector','release','mjd_mid','position_deg','sha256','calibration_sha256','cutout_fov_arcmin','retrieval_mode']}|{'native_cutout_request':cutout_request(r)} for r in rows],
         'inputs':inputs,'residual_score_maximum':3.,
         'software':{'numpy':np.__version__,'scipy':scipy.__version__,'astropy':astropy.__version__,'photutils':photutils.__version__}}
     identity=hashlib.sha256(json.dumps(canonical,sort_keys=True,allow_nan=False).encode()).hexdigest()
