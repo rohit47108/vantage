@@ -1,0 +1,45 @@
+{
+  "public_url": "https://vantage-spherex-h5rr0ebgl-rohit-singhs-projects-48f82479.vercel.app",
+  "source_commit": "0d95a5144ed031ddffe6cd8b6793bb4878555eb7",
+  "deployment_id": "dpl_UVk8x3mhUU2HiHZHJvFqF6R6vk8g",
+  "files": [
+    {
+      "path": "/",
+      "status": 200,
+      "compared_sha256": "4c31d7525e932f118ac368374369f7816340997c65d9bc80630d967ddf6bbb73",
+      "local_file_sha256": "2320db46ae4c3655b2f8edb719bc455f515fdf7ecd9913de8427086381ad0188",
+      "raw_response_sha256": "0b72e07dc9b1c851e2e765e702a5922bab08742dbc51bca225a388047a0e06e2",
+      "transformation": "Known Vercel preview feedback tag and trailing newline differences excluded from HTML comparison. Asset bytes are compared exactly."
+    },
+    {
+      "path": "/favicon.svg",
+      "status": 200,
+      "compared_sha256": "9c088dfc0aa951d21f08a2452f63695ff3f78ccf84b5a10510e656868e0c0ca7",
+      "local_file_sha256": "9c088dfc0aa951d21f08a2452f63695ff3f78ccf84b5a10510e656868e0c0ca7",
+      "raw_response_sha256": "9c088dfc0aa951d21f08a2452f63695ff3f78ccf84b5a10510e656868e0c0ca7",
+      "transformation": null
+    },
+    {
+      "path": "/assets/index-CjnG11fj.js",
+      "status": 200,
+      "compared_sha256": "6cd4164c8f84c6a050078d8b68bf0a93c152f4c5dfd4eaac6f63ed5ae1f8a25a",
+      "local_file_sha256": "6cd4164c8f84c6a050078d8b68bf0a93c152f4c5dfd4eaac6f63ed5ae1f8a25a",
+      "raw_response_sha256": "6cd4164c8f84c6a050078d8b68bf0a93c152f4c5dfd4eaac6f63ed5ae1f8a25a",
+      "transformation": null
+    },
+    {
+      "path": "/assets/index-Cd-g7D_J.css",
+      "status": 200,
+      "compared_sha256": "fcf3709664c7413ba9f6c44e7644d40eb48037375dd83e4358e2f4c1bd296189",
+      "local_file_sha256": "fcf3709664c7413ba9f6c44e7644d40eb48037375dd83e4358e2f4c1bd296189",
+      "raw_response_sha256": "fcf3709664c7413ba9f6c44e7644d40eb48037375dd83e4358e2f4c1bd296189",
+      "transformation": null
+    }
+  ],
+  "health": {
+    "status": "ok",
+    "policy": "vantage-visual-3"
+  },
+  "backend_origin": "https://journal-increases-recent-hope.trycloudflare.com",
+  "durable_hosting": false
+}
