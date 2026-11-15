@@ -1,0 +1,4317 @@
+{
+  "schema_version": "1.0.0",
+  "id": "a71abe13c2200da79eaeb15550b6744e85cb0b10af9381d52a1853df7881059c",
+  "type": "visual_spectral_trace",
+  "policy": "visual-native-pixel-trace-1",
+  "source": {
+    "url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/hips5_cube/hips_20261026/Norder5/Dir0/Npix445_cube.fits",
+    "etag": "\"9bbeb7365d2bb8fdfd0842b729b0cf32\"",
+    "object_bytes": 320909760,
+    "last_modified": "Sun, 25 Oct 2026 05:14:07 GMT",
+    "tile": 445,
+    "product_version": "7.2.0",
+    "mjd_start": 60906.992220058,
+    "mjd_end": 61093.550470469,
+    "date_start": "2025-08-19T23:48:47.813",
+    "date_end": "2026-02-22T13:12:40.649",
+    "time_scale": "UTC",
+    "celestial_frame": "ICRS",
+    "unit": "MJy/sr"
+  },
+  "native_pixel_xy": [
+    241,
+    213
+  ],
+  "outside_native_tile": false,
+  "native_pixel_center_deg": [
+    60.802845528455286,
+    51.340543352874356
+  ],
+  "channel_table": [
+    {
+      "DETECTOR": 1.0,
+      "SUBCHAN": 1.0,
+      "WAVELENGTH": 0.753000020980835,
+      "WL_MIN": 0.7429999709129333,
+      "WL_MAX": 0.7620000243186951,
+      "R": 42.0,
+      "R_STD": 1.100000023841858,
+      "BANDWIDTH": 0.017999999225139618
+    },
+    {
+      "DETECTOR": 1.0,
+      "SUBCHAN": 2.0,
+      "WAVELENGTH": 0.7710000276565552,
+      "WL_MIN": 0.7609999775886536,
+      "WL_MAX": 0.781000018119812,
+      "R": 42.0,
+      "R_STD": 1.0,
+      "BANDWIDTH": 0.01899999938905239
+    },
+    {
+      "DETECTOR": 1.0,
+      "SUBCHAN": 3.0,
+      "WAVELENGTH": 0.7900000214576721,
+      "WL_MIN": 0.7799999713897705,
+      "WL_MAX": 0.800000011920929,
+      "R": 41.0,
+      "R_STD": 0.8999999761581421,
+      "BANDWIDTH": 0.01899999938905239
+    },
+    {
+      "DETECTOR": 1.0,
+      "SUBCHAN": 4.0,
+      "WAVELENGTH": 0.8090000152587891,
+      "WL_MIN": 0.7979999780654907,
+      "WL_MAX": 0.8190000057220459,
+      "R": 40.0,
+      "R_STD": 0.8999999761581421,
+      "BANDWIDTH": 0.019999999552965164
+    },
+    {
+      "DETECTOR": 1.0,
+      "SUBCHAN": 5.0,
+      "WAVELENGTH": 0.828000009059906,
+      "WL_MIN": 0.8169999718666077,
+      "WL_MAX": 0.8389999866485596,
+      "R": 40.0,
+      "R_STD": 0.800000011920929,
+      "BANDWIDTH": 0.019999999552965164
+    },
+    {
+      "DETECTOR": 1.0,
+      "SUBCHAN": 6.0,
+      "WAVELENGTH": 0.8479999899864197,
+      "WL_MIN": 0.8370000123977661,
+      "WL_MAX": 0.859000027179718,
+      "R": 40.0,
+      "R_STD": 0.800000011920929,
+      "BANDWIDTH": 0.020999999716877937
+    },
+    {
+      "DETECTOR": 1.0,
+      "SUBCHAN": 7.0,
+      "WAVELENGTH": 0.8679999709129333,
+      "WL_MIN": 0.8569999933242798,
+      "WL_MAX": 0.8790000081062317,
+      "R": 40.0,
+      "R_STD": 0.699999988079071,
+      "BANDWIDTH": 0.02199999988079071
+    },
+    {
+      "DETECTOR": 1.0,
+      "SUBCHAN": 8.0,
+      "WAVELENGTH": 0.8889999985694885,
+      "WL_MIN": 0.8769999742507935,
+      "WL_MAX": 0.8999999761581421,
+      "R": 39.0,
+      "R_STD": 0.699999988079071,
+      "BANDWIDTH": 0.023000000044703484
+    },
+    {
+      "DETECTOR": 1.0,
+      "SUBCHAN": 9.0,
+      "WAVELENGTH": 0.9100000262260437,
+      "WL_MIN": 0.8980000019073486,
+      "WL_MAX": 0.921999990940094,
+      "R": 39.0,
+      "R_STD": 0.6000000238418579,
+      "BANDWIDTH": 0.023000000044703484
+    },
+    {
+      "DETECTOR": 1.0,
+      "SUBCHAN": 10.0,
+      "WAVELENGTH": 0.9319999814033508,
+      "WL_MIN": 0.9200000166893005,
+      "WL_MAX": 0.9440000057220459,
+      "R": 39.0,
+      "R_STD": 0.6000000238418579,
+      "BANDWIDTH": 0.024000000208616257
+    },
+    {
+      "DETECTOR": 1.0,
+      "SUBCHAN": 11.0,
+      "WAVELENGTH": 0.9549999833106995,
+      "WL_MIN": 0.9419999718666077,
+      "WL_MAX": 0.9670000076293945,
+      "R": 39.0,
+      "R_STD": 0.5,
+      "BANDWIDTH": 0.02500000037252903
+    },
+    {
+      "DETECTOR": 1.0,
+      "SUBCHAN": 12.0,
+      "WAVELENGTH": 0.9779999852180481,
+      "WL_MIN": 0.9639999866485596,
+      "WL_MAX": 0.9900000095367432,
+      "R": 38.0,
+      "R_STD": 0.5,
+      "BANDWIDTH": 0.026000000536441803
+    },
+    {
+      "DETECTOR": 1.0,
+      "SUBCHAN": 13.0,
+      "WAVELENGTH": 1.0010000467300415,
+      "WL_MIN": 0.9879999756813049,
+      "WL_MAX": 1.0140000581741333,
+      "R": 38.0,
+      "R_STD": 0.5,
+      "BANDWIDTH": 0.026000000536441803
+    },
+    {
+      "DETECTOR": 1.0,
+      "SUBCHAN": 14.0,
+      "WAVELENGTH": 1.024999976158142,
+      "WL_MIN": 1.0119999647140503,
+      "WL_MAX": 1.0390000343322754,
+      "R": 38.0,
+      "R_STD": 0.5,
+      "BANDWIDTH": 0.027000000700354576
+    },
+    {
+      "DETECTOR": 1.0,
+      "SUBCHAN": 15.0,
+      "WAVELENGTH": 1.0499999523162842,
+      "WL_MIN": 1.0360000133514404,
+      "WL_MAX": 1.0640000104904175,
+      "R": 38.0,
+      "R_STD": 0.5,
+      "BANDWIDTH": 0.02800000086426735
+    },
+    {
+      "DETECTOR": 1.0,
+      "SUBCHAN": 16.0,
+      "WAVELENGTH": 1.0750000476837158,
+      "WL_MIN": 1.0609999895095825,
+      "WL_MAX": 1.090000033378601,
+      "R": 37.0,
+      "R_STD": 0.4000000059604645,
+      "BANDWIDTH": 0.028999999165534973
+    },
+    {
+      "DETECTOR": 1.0,
+      "SUBCHAN": 17.0,
+      "WAVELENGTH": 1.1019999980926514,
+      "WL_MIN": 1.0859999656677246,
+      "WL_MAX": 1.1160000562667847,
+      "R": 37.0,
+      "R_STD": 0.4000000059604645,
+      "BANDWIDTH": 0.029999999329447746
+    },
+    {
+      "DETECTOR": 2.0,
+      "SUBCHAN": 1.0,
+      "WAVELENGTH": 1.1130000352859497,
+      "WL_MIN": 1.0989999771118164,
+      "WL_MAX": 1.1260000467300415,
+      "R": 43.0,
+      "R_STD": 0.699999988079071,
+      "BANDWIDTH": 0.026000000536441803
+    },
+    {
+      "DETECTOR": 2.0,
+      "SUBCHAN": 2.0,
+      "WAVELENGTH": 1.1390000581741333,
+      "WL_MIN": 1.125,
+      "WL_MAX": 1.152999997138977,
+      "R": 42.0,
+      "R_STD": 0.6000000238418579,
+      "BANDWIDTH": 0.027000000700354576
+    },
+    {
+      "DETECTOR": 2.0,
+      "SUBCHAN": 3.0,
+      "WAVELENGTH": 1.1670000553131104,
+      "WL_MIN": 1.1519999504089355,
+      "WL_MAX": 1.1820000410079956,
+      "R": 42.0,
+      "R_STD": 0.5,
+      "BANDWIDTH": 0.02800000086426735
+    },
+    {
+      "DETECTOR": 2.0,
+      "SUBCHAN": 4.0,
+      "WAVELENGTH": 1.1950000524520874,
+      "WL_MIN": 1.1799999475479126,
+      "WL_MAX": 1.2100000381469727,
+      "R": 41.0,
+      "R_STD": 0.5,
+      "BANDWIDTH": 0.028999999165534973
+    },
+    {
+      "DETECTOR": 2.0,
+      "SUBCHAN": 5.0,
+      "WAVELENGTH": 1.2239999771118164,
+      "WL_MIN": 1.2089999914169312,
+      "WL_MAX": 1.2400000095367432,
+      "R": 41.0,
+      "R_STD": 0.5,
+      "BANDWIDTH": 0.029999999329447746
+    },
+    {
+      "DETECTOR": 2.0,
+      "SUBCHAN": 6.0,
+      "WAVELENGTH": 1.253999948501587,
+      "WL_MIN": 1.2380000352859497,
+      "WL_MAX": 1.2690000534057617,
+      "R": 41.0,
+      "R_STD": 0.5,
+      "BANDWIDTH": 0.029999999329447746
+    },
+    {
+      "DETECTOR": 2.0,
+      "SUBCHAN": 7.0,
+      "WAVELENGTH": 1.284000039100647,
+      "WL_MIN": 1.2669999599456787,
+      "WL_MAX": 1.2999999523162842,
+      "R": 42.0,
+      "R_STD": 0.4000000059604645,
+      "BANDWIDTH": 0.03099999949336052
+    },
+    {
+      "DETECTOR": 2.0,
+      "SUBCHAN": 8.0,
+      "WAVELENGTH": 1.315000057220459,
+      "WL_MIN": 1.2979999780654907,
+      "WL_MAX": 1.3309999704360962,
+      "R": 42.0,
+      "R_STD": 0.4000000059604645,
+      "BANDWIDTH": 0.03200000151991844
+    },
+    {
+      "DETECTOR": 2.0,
+      "SUBCHAN": 9.0,
+      "WAVELENGTH": 1.3459999561309814,
+      "WL_MIN": 1.3289999961853027,
+      "WL_MAX": 1.3630000352859497,
+      "R": 42.0,
+      "R_STD": 0.4000000059604645,
+      "BANDWIDTH": 0.03200000151991844
+    },
+    {
+      "DETECTOR": 2.0,
+      "SUBCHAN": 10.0,
+      "WAVELENGTH": 1.378000020980835,
+      "WL_MIN": 1.3600000143051147,
+      "WL_MAX": 1.3960000276565552,
+      "R": 42.0,
+      "R_STD": 0.4000000059604645,
+      "BANDWIDTH": 0.032999999821186066
+    },
+    {
+      "DETECTOR": 2.0,
+      "SUBCHAN": 11.0,
+      "WAVELENGTH": 1.4119999408721924,
+      "WL_MIN": 1.3930000066757202,
+      "WL_MAX": 1.4299999475479126,
+      "R": 41.0,
+      "R_STD": 0.4000000059604645,
+      "BANDWIDTH": 0.03400000184774399
+    },
+    {
+      "DETECTOR": 2.0,
+      "SUBCHAN": 12.0,
+      "WAVELENGTH": 1.4459999799728394,
+      "WL_MIN": 1.4259999990463257,
+      "WL_MAX": 1.4639999866485596,
+      "R": 41.0,
+      "R_STD": 0.30000001192092896,
+      "BANDWIDTH": 0.03500000014901161
+    },
+    {
+      "DETECTOR": 2.0,
+      "SUBCHAN": 13.0,
+      "WAVELENGTH": 1.4809999465942383,
+      "WL_MIN": 1.4609999656677246,
+      "WL_MAX": 1.5,
+      "R": 41.0,
+      "R_STD": 0.30000001192092896,
+      "BANDWIDTH": 0.035999998450279236
+    },
+    {
+      "DETECTOR": 2.0,
+      "SUBCHAN": 14.0,
+      "WAVELENGTH": 1.5169999599456787,
+      "WL_MIN": 1.496000051498413,
+      "WL_MAX": 1.5369999408721924,
+      "R": 41.0,
+      "R_STD": 0.30000001192092896,
+      "BANDWIDTH": 0.03700000047683716
+    },
+    {
+      "DETECTOR": 2.0,
+      "SUBCHAN": 15.0,
+      "WAVELENGTH": 1.5540000200271606,
+      "WL_MIN": 1.5329999923706055,
+      "WL_MAX": 1.5750000476837158,
+      "R": 41.0,
+      "R_STD": 0.30000001192092896,
+      "BANDWIDTH": 0.03799999877810478
+    },
+    {
+      "DETECTOR": 2.0,
+      "SUBCHAN": 16.0,
+      "WAVELENGTH": 1.5920000076293945,
+      "WL_MIN": 1.5700000524520874,
+      "WL_MAX": 1.6130000352859497,
+      "R": 41.0,
+      "R_STD": 0.30000001192092896,
+      "BANDWIDTH": 0.039000000804662704
+    },
+    {
+      "DETECTOR": 2.0,
+      "SUBCHAN": 17.0,
+      "WAVELENGTH": 1.63100004196167,
+      "WL_MIN": 1.6080000400543213,
+      "WL_MAX": 1.6510000228881836,
+      "R": 41.0,
+      "R_STD": 0.30000001192092896,
+      "BANDWIDTH": 0.039000000804662704
+    },
+    {
+      "DETECTOR": 3.0,
+      "SUBCHAN": 1.0,
+      "WAVELENGTH": 1.656000018119812,
+      "WL_MIN": 1.6360000371932983,
+      "WL_MAX": 1.6759999990463257,
+      "R": 42.0,
+      "R_STD": 0.30000001192092896,
+      "BANDWIDTH": 0.039000000804662704
+    },
+    {
+      "DETECTOR": 3.0,
+      "SUBCHAN": 2.0,
+      "WAVELENGTH": 1.6950000524520874,
+      "WL_MIN": 1.6749999523162842,
+      "WL_MAX": 1.715000033378601,
+      "R": 42.0,
+      "R_STD": 0.30000001192092896,
+      "BANDWIDTH": 0.04100000113248825
+    },
+    {
+      "DETECTOR": 3.0,
+      "SUBCHAN": 3.0,
+      "WAVELENGTH": 1.7350000143051147,
+      "WL_MIN": 1.7139999866485596,
+      "WL_MAX": 1.75600004196167,
+      "R": 41.0,
+      "R_STD": 0.30000001192092896,
+      "BANDWIDTH": 0.041999999433755875
+    },
+    {
+      "DETECTOR": 3.0,
+      "SUBCHAN": 4.0,
+      "WAVELENGTH": 1.774999976158142,
+      "WL_MIN": 1.753999948501587,
+      "WL_MAX": 1.7970000505447388,
+      "R": 41.0,
+      "R_STD": 0.30000001192092896,
+      "BANDWIDTH": 0.0430000014603138
+    },
+    {
+      "DETECTOR": 3.0,
+      "SUBCHAN": 5.0,
+      "WAVELENGTH": 1.8179999589920044,
+      "WL_MIN": 1.7949999570846558,
+      "WL_MAX": 1.840000033378601,
+      "R": 41.0,
+      "R_STD": 0.30000001192092896,
+      "BANDWIDTH": 0.04500000178813934
+    },
+    {
+      "DETECTOR": 3.0,
+      "SUBCHAN": 6.0,
+      "WAVELENGTH": 1.8609999418258667,
+      "WL_MIN": 1.8380000591278076,
+      "WL_MAX": 1.8839999437332153,
+      "R": 41.0,
+      "R_STD": 0.30000001192092896,
+      "BANDWIDTH": 0.04600000008940697
+    },
+    {
+      "DETECTOR": 3.0,
+      "SUBCHAN": 7.0,
+      "WAVELENGTH": 1.9049999713897705,
+      "WL_MIN": 1.88100004196167,
+      "WL_MAX": 1.9279999732971191,
+      "R": 41.0,
+      "R_STD": 0.30000001192092896,
+      "BANDWIDTH": 0.04699999839067459
+    },
+    {
+      "DETECTOR": 3.0,
+      "SUBCHAN": 8.0,
+      "WAVELENGTH": 1.9490000009536743,
+      "WL_MIN": 1.9249999523162842,
+      "WL_MAX": 1.9730000495910645,
+      "R": 41.0,
+      "R_STD": 0.30000001192092896,
+      "BANDWIDTH": 0.04800000041723251
+    },
+    {
+      "DETECTOR": 3.0,
+      "SUBCHAN": 9.0,
+      "WAVELENGTH": 1.9950000047683716,
+      "WL_MIN": 1.9700000286102295,
+      "WL_MAX": 2.0190000534057617,
+      "R": 41.0,
+      "R_STD": 0.30000001192092896,
+      "BANDWIDTH": 0.04899999871850014
+    },
+    {
+      "DETECTOR": 3.0,
+      "SUBCHAN": 10.0,
+      "WAVELENGTH": 2.0409998893737793,
+      "WL_MIN": 2.015000104904175,
+      "WL_MAX": 2.066999912261963,
+      "R": 40.0,
+      "R_STD": 0.4000000059604645,
+      "BANDWIDTH": 0.050999999046325684
+    },
+    {
+      "DETECTOR": 3.0,
+      "SUBCHAN": 11.0,
+      "WAVELENGTH": 2.0889999866485596,
+      "WL_MIN": 2.062000036239624,
+      "WL_MAX": 2.115000009536743,
+      "R": 40.0,
+      "R_STD": 0.30000001192092896,
+      "BANDWIDTH": 0.052000001072883606
+    },
+    {
+      "DETECTOR": 3.0,
+      "SUBCHAN": 12.0,
+      "WAVELENGTH": 2.1389999389648438,
+      "WL_MIN": 2.1110000610351562,
+      "WL_MAX": 2.1659998893737793,
+      "R": 40.0,
+      "R_STD": 0.30000001192092896,
+      "BANDWIDTH": 0.05400000140070915
+    },
+    {
+      "DETECTOR": 3.0,
+      "SUBCHAN": 13.0,
+      "WAVELENGTH": 2.188999891281128,
+      "WL_MIN": 2.1600000858306885,
+      "WL_MAX": 2.2160000801086426,
+      "R": 40.0,
+      "R_STD": 0.30000001192092896,
+      "BANDWIDTH": 0.054999999701976776
+    },
+    {
+      "DETECTOR": 3.0,
+      "SUBCHAN": 14.0,
+      "WAVELENGTH": 2.240000009536743,
+      "WL_MIN": 2.2109999656677246,
+      "WL_MAX": 2.2679998874664307,
+      "R": 40.0,
+      "R_STD": 0.30000001192092896,
+      "BANDWIDTH": 0.0560000017285347
+    },
+    {
+      "DETECTOR": 3.0,
+      "SUBCHAN": 15.0,
+      "WAVELENGTH": 2.2920000553131104,
+      "WL_MIN": 2.26200008392334,
+      "WL_MAX": 2.321000099182129,
+      "R": 40.0,
+      "R_STD": 0.4000000059604645,
+      "BANDWIDTH": 0.05700000002980232
+    },
+    {
+      "DETECTOR": 3.0,
+      "SUBCHAN": 16.0,
+      "WAVELENGTH": 2.3450000286102295,
+      "WL_MIN": 2.313999891281128,
+      "WL_MAX": 2.375,
+      "R": 40.0,
+      "R_STD": 0.30000001192092896,
+      "BANDWIDTH": 0.057999998331069946
+    },
+    {
+      "DETECTOR": 3.0,
+      "SUBCHAN": 17.0,
+      "WAVELENGTH": 2.3989999294281006,
+      "WL_MIN": 2.367000102996826,
+      "WL_MAX": 2.440000057220459,
+      "R": 41.0,
+      "R_STD": 4.0,
+      "BANDWIDTH": 0.05900000035762787
+    },
+    {
+      "DETECTOR": 4.0,
+      "SUBCHAN": 1.0,
+      "WAVELENGTH": 2.444999933242798,
+      "WL_MIN": 2.421999931335449,
+      "WL_MAX": 2.4739999771118164,
+      "R": 42.0,
+      "R_STD": 7.599999904632568,
+      "BANDWIDTH": 0.057999998331069946
+    },
+    {
+      "DETECTOR": 4.0,
+      "SUBCHAN": 2.0,
+      "WAVELENGTH": 2.50600004196167,
+      "WL_MIN": 2.4700000286102295,
+      "WL_MAX": 2.5420000553131104,
+      "R": 34.0,
+      "R_STD": 0.4000000059604645,
+      "BANDWIDTH": 0.0729999989271164
+    },
+    {
+      "DETECTOR": 4.0,
+      "SUBCHAN": 3.0,
+      "WAVELENGTH": 2.575000047683716,
+      "WL_MIN": 2.5380001068115234,
+      "WL_MAX": 2.611999988555908,
+      "R": 35.0,
+      "R_STD": 0.5,
+      "BANDWIDTH": 0.07400000095367432
+    },
+    {
+      "DETECTOR": 4.0,
+      "SUBCHAN": 4.0,
+      "WAVELENGTH": 2.6459999084472656,
+      "WL_MIN": 2.6070001125335693,
+      "WL_MAX": 2.684000015258789,
+      "R": 35.0,
+      "R_STD": 0.5,
+      "BANDWIDTH": 0.07599999755620956
+    },
+    {
+      "DETECTOR": 4.0,
+      "SUBCHAN": 5.0,
+      "WAVELENGTH": 2.7190001010894775,
+      "WL_MIN": 2.677999973297119,
+      "WL_MAX": 2.757999897003174,
+      "R": 35.0,
+      "R_STD": 0.6000000238418579,
+      "BANDWIDTH": 0.07800000160932541
+    },
+    {
+      "DETECTOR": 4.0,
+      "SUBCHAN": 6.0,
+      "WAVELENGTH": 2.7939999103546143,
+      "WL_MIN": 2.752000093460083,
+      "WL_MAX": 2.8350000381469727,
+      "R": 35.0,
+      "R_STD": 0.800000011920929,
+      "BANDWIDTH": 0.07900000363588333
+    },
+    {
+      "DETECTOR": 4.0,
+      "SUBCHAN": 7.0,
+      "WAVELENGTH": 2.871000051498413,
+      "WL_MIN": 2.828000068664551,
+      "WL_MAX": 2.9140000343322754,
+      "R": 34.0,
+      "R_STD": 0.6000000238418579,
+      "BANDWIDTH": 0.08399999886751175
+    },
+    {
+      "DETECTOR": 4.0,
+      "SUBCHAN": 8.0,
+      "WAVELENGTH": 2.9509999752044678,
+      "WL_MIN": 2.9059998989105225,
+      "WL_MAX": 2.994999885559082,
+      "R": 34.0,
+      "R_STD": 0.6000000238418579,
+      "BANDWIDTH": 0.0860000029206276
+    },
+    {
+      "DETECTOR": 4.0,
+      "SUBCHAN": 9.0,
+      "WAVELENGTH": 3.0329999923706055,
+      "WL_MIN": 2.984999895095825,
+      "WL_MAX": 3.0789999961853027,
+      "R": 34.0,
+      "R_STD": 0.6000000238418579,
+      "BANDWIDTH": 0.08900000154972076
+    },
+    {
+      "DETECTOR": 4.0,
+      "SUBCHAN": 10.0,
+      "WAVELENGTH": 3.118000030517578,
+      "WL_MIN": 3.069000005722046,
+      "WL_MAX": 3.1640000343322754,
+      "R": 34.0,
+      "R_STD": 0.6000000238418579,
+      "BANDWIDTH": 0.09099999815225601
+    },
+    {
+      "DETECTOR": 4.0,
+      "SUBCHAN": 11.0,
+      "WAVELENGTH": 3.2039999961853027,
+      "WL_MIN": 3.1549999713897705,
+      "WL_MAX": 3.252000093460083,
+      "R": 35.0,
+      "R_STD": 0.5,
+      "BANDWIDTH": 0.09300000220537186
+    },
+    {
+      "DETECTOR": 4.0,
+      "SUBCHAN": 12.0,
+      "WAVELENGTH": 3.2929999828338623,
+      "WL_MIN": 3.242000102996826,
+      "WL_MAX": 3.3420000076293945,
+      "R": 35.0,
+      "R_STD": 0.5,
+      "BANDWIDTH": 0.09399999678134918
+    },
+    {
+      "DETECTOR": 4.0,
+      "SUBCHAN": 13.0,
+      "WAVELENGTH": 3.382999897003174,
+      "WL_MIN": 3.3299999237060547,
+      "WL_MAX": 3.434000015258789,
+      "R": 35.0,
+      "R_STD": 0.6000000238418579,
+      "BANDWIDTH": 0.09600000083446503
+    },
+    {
+      "DETECTOR": 4.0,
+      "SUBCHAN": 14.0,
+      "WAVELENGTH": 3.4760000705718994,
+      "WL_MIN": 3.421999931335449,
+      "WL_MAX": 3.5280001163482666,
+      "R": 36.0,
+      "R_STD": 0.6000000238418579,
+      "BANDWIDTH": 0.09799999743700027
+    },
+    {
+      "DETECTOR": 4.0,
+      "SUBCHAN": 15.0,
+      "WAVELENGTH": 3.569999933242798,
+      "WL_MIN": 3.5139999389648438,
+      "WL_MAX": 3.624000072479248,
+      "R": 36.0,
+      "R_STD": 0.6000000238418579,
+      "BANDWIDTH": 0.0989999994635582
+    },
+    {
+      "DETECTOR": 4.0,
+      "SUBCHAN": 16.0,
+      "WAVELENGTH": 3.6670000553131104,
+      "WL_MIN": 3.609999895095825,
+      "WL_MAX": 3.7230000495910645,
+      "R": 36.0,
+      "R_STD": 0.800000011920929,
+      "BANDWIDTH": 0.10199999809265137
+    },
+    {
+      "DETECTOR": 4.0,
+      "SUBCHAN": 17.0,
+      "WAVELENGTH": 3.7679998874664307,
+      "WL_MIN": 3.7070000171661377,
+      "WL_MAX": 3.8269999027252197,
+      "R": 36.0,
+      "R_STD": 0.8999999761581421,
+      "BANDWIDTH": 0.10300000011920929
+    },
+    {
+      "DETECTOR": 5.0,
+      "SUBCHAN": 1.0,
+      "WAVELENGTH": 3.8329999446868896,
+      "WL_MIN": 3.813999891281128,
+      "WL_MAX": 3.8510000705718994,
+      "R": 109.0,
+      "R_STD": 0.4000000059604645,
+      "BANDWIDTH": 0.03500000014901161
+    },
+    {
+      "DETECTOR": 5.0,
+      "SUBCHAN": 2.0,
+      "WAVELENGTH": 3.867000102996826,
+      "WL_MIN": 3.8489999771118164,
+      "WL_MAX": 3.884999990463257,
+      "R": 109.0,
+      "R_STD": 0.6000000238418579,
+      "BANDWIDTH": 0.035999998450279236
+    },
+    {
+      "DETECTOR": 5.0,
+      "SUBCHAN": 3.0,
+      "WAVELENGTH": 3.9010000228881836,
+      "WL_MIN": 3.881999969482422,
+      "WL_MAX": 3.9189999103546143,
+      "R": 109.0,
+      "R_STD": 0.4000000059604645,
+      "BANDWIDTH": 0.035999998450279236
+    },
+    {
+      "DETECTOR": 5.0,
+      "SUBCHAN": 4.0,
+      "WAVELENGTH": 3.934999942779541,
+      "WL_MIN": 3.9159998893737793,
+      "WL_MAX": 3.953000068664551,
+      "R": 108.0,
+      "R_STD": 0.5,
+      "BANDWIDTH": 0.035999998450279236
+    },
+    {
+      "DETECTOR": 5.0,
+      "SUBCHAN": 5.0,
+      "WAVELENGTH": 3.9700000286102295,
+      "WL_MIN": 3.950000047683716,
+      "WL_MAX": 3.98799991607666,
+      "R": 109.0,
+      "R_STD": 0.5,
+      "BANDWIDTH": 0.035999998450279236
+    },
+    {
+      "DETECTOR": 5.0,
+      "SUBCHAN": 6.0,
+      "WAVELENGTH": 4.005000114440918,
+      "WL_MIN": 3.984999895095825,
+      "WL_MAX": 4.02400016784668,
+      "R": 110.0,
+      "R_STD": 0.6000000238418579,
+      "BANDWIDTH": 0.035999998450279236
+    },
+    {
+      "DETECTOR": 5.0,
+      "SUBCHAN": 7.0,
+      "WAVELENGTH": 4.039999961853027,
+      "WL_MIN": 4.019999980926514,
+      "WL_MAX": 4.059000015258789,
+      "R": 110.0,
+      "R_STD": 0.6000000238418579,
+      "BANDWIDTH": 0.03700000047683716
+    },
+    {
+      "DETECTOR": 5.0,
+      "SUBCHAN": 8.0,
+      "WAVELENGTH": 4.076000213623047,
+      "WL_MIN": 4.054999828338623,
+      "WL_MAX": 4.09499979019165,
+      "R": 111.0,
+      "R_STD": 0.699999988079071,
+      "BANDWIDTH": 0.03700000047683716
+    },
+    {
+      "DETECTOR": 5.0,
+      "SUBCHAN": 9.0,
+      "WAVELENGTH": 4.111999988555908,
+      "WL_MIN": 4.091000080108643,
+      "WL_MAX": 4.13100004196167,
+      "R": 112.0,
+      "R_STD": 0.6000000238418579,
+      "BANDWIDTH": 0.03700000047683716
+    },
+    {
+      "DETECTOR": 5.0,
+      "SUBCHAN": 10.0,
+      "WAVELENGTH": 4.1479997634887695,
+      "WL_MIN": 4.125999927520752,
+      "WL_MAX": 4.166999816894531,
+      "R": 113.0,
+      "R_STD": 0.6000000238418579,
+      "BANDWIDTH": 0.03700000047683716
+    },
+    {
+      "DETECTOR": 5.0,
+      "SUBCHAN": 11.0,
+      "WAVELENGTH": 4.184000015258789,
+      "WL_MIN": 4.1620001792907715,
+      "WL_MAX": 4.203000068664551,
+      "R": 113.0,
+      "R_STD": 0.6000000238418579,
+      "BANDWIDTH": 0.03700000047683716
+    },
+    {
+      "DETECTOR": 5.0,
+      "SUBCHAN": 12.0,
+      "WAVELENGTH": 4.21999979019165,
+      "WL_MIN": 4.198999881744385,
+      "WL_MAX": 4.239999771118164,
+      "R": 115.0,
+      "R_STD": 1.100000023841858,
+      "BANDWIDTH": 0.03700000047683716
+    },
+    {
+      "DETECTOR": 5.0,
+      "SUBCHAN": 13.0,
+      "WAVELENGTH": 4.256999969482422,
+      "WL_MIN": 4.235000133514404,
+      "WL_MAX": 4.2769999504089355,
+      "R": 114.0,
+      "R_STD": 0.8999999761581421,
+      "BANDWIDTH": 0.03700000047683716
+    },
+    {
+      "DETECTOR": 5.0,
+      "SUBCHAN": 14.0,
+      "WAVELENGTH": 4.294000148773193,
+      "WL_MIN": 4.270999908447266,
+      "WL_MAX": 4.313000202178955,
+      "R": 115.0,
+      "R_STD": 0.800000011920929,
+      "BANDWIDTH": 0.03700000047683716
+    },
+    {
+      "DETECTOR": 5.0,
+      "SUBCHAN": 15.0,
+      "WAVELENGTH": 4.330999851226807,
+      "WL_MIN": 4.308000087738037,
+      "WL_MAX": 4.35099983215332,
+      "R": 116.0,
+      "R_STD": 0.8999999761581421,
+      "BANDWIDTH": 0.03700000047683716
+    },
+    {
+      "DETECTOR": 5.0,
+      "SUBCHAN": 16.0,
+      "WAVELENGTH": 4.368000030517578,
+      "WL_MIN": 4.34499979019165,
+      "WL_MAX": 4.388000011444092,
+      "R": 116.0,
+      "R_STD": 1.0,
+      "BANDWIDTH": 0.03799999877810478
+    },
+    {
+      "DETECTOR": 5.0,
+      "SUBCHAN": 17.0,
+      "WAVELENGTH": 4.40500020980835,
+      "WL_MIN": 4.381999969482422,
+      "WL_MAX": 4.426000118255615,
+      "R": 117.0,
+      "R_STD": 1.2000000476837158,
+      "BANDWIDTH": 0.03799999877810478
+    },
+    {
+      "DETECTOR": 6.0,
+      "SUBCHAN": 1.0,
+      "WAVELENGTH": 4.434999942779541,
+      "WL_MIN": 4.418000221252441,
+      "WL_MAX": 4.452000141143799,
+      "R": 128.0,
+      "R_STD": 1.600000023841858,
+      "BANDWIDTH": 0.03500000014901161
+    },
+    {
+      "DETECTOR": 6.0,
+      "SUBCHAN": 2.0,
+      "WAVELENGTH": 4.4670000076293945,
+      "WL_MIN": 4.449999809265137,
+      "WL_MAX": 4.484000205993652,
+      "R": 125.0,
+      "R_STD": 1.100000023841858,
+      "BANDWIDTH": 0.035999998450279236
+    },
+    {
+      "DETECTOR": 6.0,
+      "SUBCHAN": 3.0,
+      "WAVELENGTH": 4.5,
+      "WL_MIN": 4.48199987411499,
+      "WL_MAX": 4.517000198364258,
+      "R": 127.0,
+      "R_STD": 1.2000000476837158,
+      "BANDWIDTH": 0.03500000014901161
+    },
+    {
+      "DETECTOR": 6.0,
+      "SUBCHAN": 4.0,
+      "WAVELENGTH": 4.5329999923706055,
+      "WL_MIN": 4.514999866485596,
+      "WL_MAX": 4.550000190734863,
+      "R": 126.0,
+      "R_STD": 1.2000000476837158,
+      "BANDWIDTH": 0.035999998450279236
+    },
+    {
+      "DETECTOR": 6.0,
+      "SUBCHAN": 5.0,
+      "WAVELENGTH": 4.565999984741211,
+      "WL_MIN": 4.547999858856201,
+      "WL_MAX": 4.584000110626221,
+      "R": 127.0,
+      "R_STD": 1.2999999523162842,
+      "BANDWIDTH": 0.035999998450279236
+    },
+    {
+      "DETECTOR": 6.0,
+      "SUBCHAN": 6.0,
+      "WAVELENGTH": 4.599999904632568,
+      "WL_MIN": 4.581999778747559,
+      "WL_MAX": 4.618000030517578,
+      "R": 125.0,
+      "R_STD": 1.399999976158142,
+      "BANDWIDTH": 0.03700000047683716
+    },
+    {
+      "DETECTOR": 6.0,
+      "SUBCHAN": 7.0,
+      "WAVELENGTH": 4.635000228881836,
+      "WL_MIN": 4.614999771118164,
+      "WL_MAX": 4.6529998779296875,
+      "R": 127.0,
+      "R_STD": 1.399999976158142,
+      "BANDWIDTH": 0.035999998450279236
+    },
+    {
+      "DETECTOR": 6.0,
+      "SUBCHAN": 8.0,
+      "WAVELENGTH": 4.669000148773193,
+      "WL_MIN": 4.64900016784668,
+      "WL_MAX": 4.688000202178955,
+      "R": 126.0,
+      "R_STD": 1.7000000476837158,
+      "BANDWIDTH": 0.03700000047683716
+    },
+    {
+      "DETECTOR": 6.0,
+      "SUBCHAN": 9.0,
+      "WAVELENGTH": 4.703999996185303,
+      "WL_MIN": 4.684000015258789,
+      "WL_MAX": 4.7230000495910645,
+      "R": 128.0,
+      "R_STD": 1.899999976158142,
+      "BANDWIDTH": 0.03700000047683716
+    },
+    {
+      "DETECTOR": 6.0,
+      "SUBCHAN": 10.0,
+      "WAVELENGTH": 4.738999843597412,
+      "WL_MIN": 4.718999862670898,
+      "WL_MAX": 4.757999897003174,
+      "R": 130.0,
+      "R_STD": 3.4000000953674316,
+      "BANDWIDTH": 0.03700000047683716
+    },
+    {
+      "DETECTOR": 6.0,
+      "SUBCHAN": 11.0,
+      "WAVELENGTH": 4.7729997634887695,
+      "WL_MIN": 4.752999782562256,
+      "WL_MAX": 4.791999816894531,
+      "R": 131.0,
+      "R_STD": 2.4000000953674316,
+      "BANDWIDTH": 0.035999998450279236
+    },
+    {
+      "DETECTOR": 6.0,
+      "SUBCHAN": 12.0,
+      "WAVELENGTH": 4.808000087738037,
+      "WL_MIN": 4.788000106811523,
+      "WL_MAX": 4.827000141143799,
+      "R": 132.0,
+      "R_STD": 2.5999999046325684,
+      "BANDWIDTH": 0.035999998450279236
+    },
+    {
+      "DETECTOR": 6.0,
+      "SUBCHAN": 13.0,
+      "WAVELENGTH": 4.8429999351501465,
+      "WL_MIN": 4.822000026702881,
+      "WL_MAX": 4.861999988555908,
+      "R": 131.0,
+      "R_STD": 2.299999952316284,
+      "BANDWIDTH": 0.03700000047683716
+    },
+    {
+      "DETECTOR": 6.0,
+      "SUBCHAN": 14.0,
+      "WAVELENGTH": 4.879000186920166,
+      "WL_MIN": 4.85699987411499,
+      "WL_MAX": 4.89900016784668,
+      "R": 130.0,
+      "R_STD": 2.5,
+      "BANDWIDTH": 0.03799999877810478
+    },
+    {
+      "DETECTOR": 6.0,
+      "SUBCHAN": 15.0,
+      "WAVELENGTH": 4.914999961853027,
+      "WL_MIN": 4.89300012588501,
+      "WL_MAX": 4.935999870300293,
+      "R": 130.0,
+      "R_STD": 2.799999952316284,
+      "BANDWIDTH": 0.03799999877810478
+    },
+    {
+      "DETECTOR": 6.0,
+      "SUBCHAN": 16.0,
+      "WAVELENGTH": 4.951000213623047,
+      "WL_MIN": 4.929999828338623,
+      "WL_MAX": 4.9720001220703125,
+      "R": 132.0,
+      "R_STD": 3.0,
+      "BANDWIDTH": 0.03700000047683716
+    },
+    {
+      "DETECTOR": 6.0,
+      "SUBCHAN": 17.0,
+      "WAVELENGTH": 4.98799991607666,
+      "WL_MIN": 4.966000080108643,
+      "WL_MAX": 5.008999824523926,
+      "R": 135.0,
+      "R_STD": 4.199999809265137,
+      "BANDWIDTH": 0.03700000047683716
+    }
+  ],
+  "samples": [
+    {
+      "index": 0,
+      "detector": 1,
+      "channel": 1,
+      "wavelength_um": 0.753000020980835,
+      "bandwidth_um": 0.017999999225139618,
+      "min_um": 0.7429999709129333,
+      "max_um": 0.7620000243186951,
+      "blank": false,
+      "brightness_mjysr": 0.2729535400867462,
+      "hits": 8,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 1,
+      "detector": 1,
+      "channel": 2,
+      "wavelength_um": 0.7710000276565552,
+      "bandwidth_um": 0.01899999938905239,
+      "min_um": 0.7609999775886536,
+      "max_um": 0.781000018119812,
+      "blank": false,
+      "brightness_mjysr": 0.31140291690826416,
+      "hits": 8,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 2,
+      "detector": 1,
+      "channel": 3,
+      "wavelength_um": 0.7900000214576721,
+      "bandwidth_um": 0.01899999938905239,
+      "min_um": 0.7799999713897705,
+      "max_um": 0.800000011920929,
+      "blank": false,
+      "brightness_mjysr": 0.31323105096817017,
+      "hits": 10,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 3,
+      "detector": 1,
+      "channel": 4,
+      "wavelength_um": 0.8090000152587891,
+      "bandwidth_um": 0.019999999552965164,
+      "min_um": 0.7979999780654907,
+      "max_um": 0.8190000057220459,
+      "blank": false,
+      "brightness_mjysr": 0.3198298513889313,
+      "hits": 15,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 4,
+      "detector": 1,
+      "channel": 5,
+      "wavelength_um": 0.828000009059906,
+      "bandwidth_um": 0.019999999552965164,
+      "min_um": 0.8169999718666077,
+      "max_um": 0.8389999866485596,
+      "blank": false,
+      "brightness_mjysr": 0.3208351731300354,
+      "hits": 8,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 5,
+      "detector": 1,
+      "channel": 6,
+      "wavelength_um": 0.8479999899864197,
+      "bandwidth_um": 0.020999999716877937,
+      "min_um": 0.8370000123977661,
+      "max_um": 0.859000027179718,
+      "blank": false,
+      "brightness_mjysr": 0.3215738534927368,
+      "hits": 8,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 6,
+      "detector": 1,
+      "channel": 7,
+      "wavelength_um": 0.8679999709129333,
+      "bandwidth_um": 0.02199999988079071,
+      "min_um": 0.8569999933242798,
+      "max_um": 0.8790000081062317,
+      "blank": false,
+      "brightness_mjysr": 0.32285282015800476,
+      "hits": 13,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 7,
+      "detector": 1,
+      "channel": 8,
+      "wavelength_um": 0.8889999985694885,
+      "bandwidth_um": 0.023000000044703484,
+      "min_um": 0.8769999742507935,
+      "max_um": 0.8999999761581421,
+      "blank": false,
+      "brightness_mjysr": 0.3603624105453491,
+      "hits": 8,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 8,
+      "detector": 1,
+      "channel": 9,
+      "wavelength_um": 0.9100000262260437,
+      "bandwidth_um": 0.023000000044703484,
+      "min_um": 0.8980000019073486,
+      "max_um": 0.921999990940094,
+      "blank": false,
+      "brightness_mjysr": 1.3162004947662354,
+      "hits": 10,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 9,
+      "detector": 1,
+      "channel": 10,
+      "wavelength_um": 0.9319999814033508,
+      "bandwidth_um": 0.024000000208616257,
+      "min_um": 0.9200000166893005,
+      "max_um": 0.9440000057220459,
+      "blank": false,
+      "brightness_mjysr": 0.43498116731643677,
+      "hits": 9,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 10,
+      "detector": 1,
+      "channel": 11,
+      "wavelength_um": 0.9549999833106995,
+      "bandwidth_um": 0.02500000037252903,
+      "min_um": 0.9419999718666077,
+      "max_um": 0.9670000076293945,
+      "blank": false,
+      "brightness_mjysr": 3.3511126041412354,
+      "hits": 12,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 11,
+      "detector": 1,
+      "channel": 12,
+      "wavelength_um": 0.9779999852180481,
+      "bandwidth_um": 0.026000000536441803,
+      "min_um": 0.9639999866485596,
+      "max_um": 0.9900000095367432,
+      "blank": false,
+      "brightness_mjysr": 0.4935908913612366,
+      "hits": 7,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 12,
+      "detector": 1,
+      "channel": 13,
+      "wavelength_um": 1.0010000467300415,
+      "bandwidth_um": 0.026000000536441803,
+      "min_um": 0.9879999756813049,
+      "max_um": 1.0140000581741333,
+      "blank": false,
+      "brightness_mjysr": 0.6416789293289185,
+      "hits": 8,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 13,
+      "detector": 1,
+      "channel": 14,
+      "wavelength_um": 1.024999976158142,
+      "bandwidth_um": 0.027000000700354576,
+      "min_um": 1.0119999647140503,
+      "max_um": 1.0390000343322754,
+      "blank": false,
+      "brightness_mjysr": 0.5039623379707336,
+      "hits": 9,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 14,
+      "detector": 1,
+      "channel": 15,
+      "wavelength_um": 1.0499999523162842,
+      "bandwidth_um": 0.02800000086426735,
+      "min_um": 1.0360000133514404,
+      "max_um": 1.0640000104904175,
+      "blank": false,
+      "brightness_mjysr": 0.48249563574790955,
+      "hits": 9,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 15,
+      "detector": 1,
+      "channel": 16,
+      "wavelength_um": 1.0750000476837158,
+      "bandwidth_um": 0.028999999165534973,
+      "min_um": 1.0609999895095825,
+      "max_um": 1.090000033378601,
+      "blank": false,
+      "brightness_mjysr": 1.808262825012207,
+      "hits": 14,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 16,
+      "detector": 1,
+      "channel": 17,
+      "wavelength_um": 1.1019999980926514,
+      "bandwidth_um": 0.029999999329447746,
+      "min_um": 1.0859999656677246,
+      "max_um": 1.1160000562667847,
+      "blank": false,
+      "brightness_mjysr": 1.7926197052001953,
+      "hits": 14,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 17,
+      "detector": 2,
+      "channel": 1,
+      "wavelength_um": 1.1130000352859497,
+      "bandwidth_um": 0.026000000536441803,
+      "min_um": 1.0989999771118164,
+      "max_um": 1.1260000467300415,
+      "blank": false,
+      "brightness_mjysr": 0.6864386200904846,
+      "hits": 12,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 18,
+      "detector": 2,
+      "channel": 2,
+      "wavelength_um": 1.1390000581741333,
+      "bandwidth_um": 0.027000000700354576,
+      "min_um": 1.125,
+      "max_um": 1.152999997138977,
+      "blank": false,
+      "brightness_mjysr": 0.5602695345878601,
+      "hits": 15,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 19,
+      "detector": 2,
+      "channel": 3,
+      "wavelength_um": 1.1670000553131104,
+      "bandwidth_um": 0.02800000086426735,
+      "min_um": 1.1519999504089355,
+      "max_um": 1.1820000410079956,
+      "blank": false,
+      "brightness_mjysr": 0.5739837288856506,
+      "hits": 9,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 20,
+      "detector": 2,
+      "channel": 4,
+      "wavelength_um": 1.1950000524520874,
+      "bandwidth_um": 0.028999999165534973,
+      "min_um": 1.1799999475479126,
+      "max_um": 1.2100000381469727,
+      "blank": false,
+      "brightness_mjysr": 0.6801379919052124,
+      "hits": 14,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 21,
+      "detector": 2,
+      "channel": 5,
+      "wavelength_um": 1.2239999771118164,
+      "bandwidth_um": 0.029999999329447746,
+      "min_um": 1.2089999914169312,
+      "max_um": 1.2400000095367432,
+      "blank": false,
+      "brightness_mjysr": 0.6838345527648926,
+      "hits": 14,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 22,
+      "detector": 2,
+      "channel": 6,
+      "wavelength_um": 1.253999948501587,
+      "bandwidth_um": 0.029999999329447746,
+      "min_um": 1.2380000352859497,
+      "max_um": 1.2690000534057617,
+      "blank": false,
+      "brightness_mjysr": 1.119515299797058,
+      "hits": 17,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 23,
+      "detector": 2,
+      "channel": 7,
+      "wavelength_um": 1.284000039100647,
+      "bandwidth_um": 0.03099999949336052,
+      "min_um": 1.2669999599456787,
+      "max_um": 1.2999999523162842,
+      "blank": false,
+      "brightness_mjysr": 2.3214199542999268,
+      "hits": 17,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 24,
+      "detector": 2,
+      "channel": 8,
+      "wavelength_um": 1.315000057220459,
+      "bandwidth_um": 0.03200000151991844,
+      "min_um": 1.2979999780654907,
+      "max_um": 1.3309999704360962,
+      "blank": false,
+      "brightness_mjysr": 0.9146363735198975,
+      "hits": 6,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 25,
+      "detector": 2,
+      "channel": 9,
+      "wavelength_um": 1.3459999561309814,
+      "bandwidth_um": 0.03200000151991844,
+      "min_um": 1.3289999961853027,
+      "max_um": 1.3630000352859497,
+      "blank": false,
+      "brightness_mjysr": 0.8213207125663757,
+      "hits": 8,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 26,
+      "detector": 2,
+      "channel": 10,
+      "wavelength_um": 1.378000020980835,
+      "bandwidth_um": 0.032999999821186066,
+      "min_um": 1.3600000143051147,
+      "max_um": 1.3960000276565552,
+      "blank": false,
+      "brightness_mjysr": 0.9742860198020935,
+      "hits": 8,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 27,
+      "detector": 2,
+      "channel": 11,
+      "wavelength_um": 1.4119999408721924,
+      "bandwidth_um": 0.03400000184774399,
+      "min_um": 1.3930000066757202,
+      "max_um": 1.4299999475479126,
+      "blank": false,
+      "brightness_mjysr": 0.9809690117835999,
+      "hits": 8,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 28,
+      "detector": 2,
+      "channel": 12,
+      "wavelength_um": 1.4459999799728394,
+      "bandwidth_um": 0.03500000014901161,
+      "min_um": 1.4259999990463257,
+      "max_um": 1.4639999866485596,
+      "blank": false,
+      "brightness_mjysr": 0.9381141662597656,
+      "hits": 17,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 29,
+      "detector": 2,
+      "channel": 13,
+      "wavelength_um": 1.4809999465942383,
+      "bandwidth_um": 0.035999998450279236,
+      "min_um": 1.4609999656677246,
+      "max_um": 1.5,
+      "blank": false,
+      "brightness_mjysr": 0.947119951248169,
+      "hits": 19,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 30,
+      "detector": 2,
+      "channel": 14,
+      "wavelength_um": 1.5169999599456787,
+      "bandwidth_um": 0.03700000047683716,
+      "min_um": 1.496000051498413,
+      "max_um": 1.5369999408721924,
+      "blank": false,
+      "brightness_mjysr": 1.0401830673217773,
+      "hits": 18,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 31,
+      "detector": 2,
+      "channel": 15,
+      "wavelength_um": 1.5540000200271606,
+      "bandwidth_um": 0.03799999877810478,
+      "min_um": 1.5329999923706055,
+      "max_um": 1.5750000476837158,
+      "blank": false,
+      "brightness_mjysr": 1.0038971900939941,
+      "hits": 12,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 32,
+      "detector": 2,
+      "channel": 16,
+      "wavelength_um": 1.5920000076293945,
+      "bandwidth_um": 0.039000000804662704,
+      "min_um": 1.5700000524520874,
+      "max_um": 1.6130000352859497,
+      "blank": false,
+      "brightness_mjysr": 1.0274327993392944,
+      "hits": 14,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 33,
+      "detector": 2,
+      "channel": 17,
+      "wavelength_um": 1.63100004196167,
+      "bandwidth_um": 0.039000000804662704,
+      "min_um": 1.6080000400543213,
+      "max_um": 1.6510000228881836,
+      "blank": false,
+      "brightness_mjysr": 1.124264121055603,
+      "hits": 11,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 34,
+      "detector": 3,
+      "channel": 1,
+      "wavelength_um": 1.656000018119812,
+      "bandwidth_um": 0.039000000804662704,
+      "min_um": 1.6360000371932983,
+      "max_um": 1.6759999990463257,
+      "blank": false,
+      "brightness_mjysr": 1.0388885736465454,
+      "hits": 7,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 35,
+      "detector": 3,
+      "channel": 2,
+      "wavelength_um": 1.6950000524520874,
+      "bandwidth_um": 0.04100000113248825,
+      "min_um": 1.6749999523162842,
+      "max_um": 1.715000033378601,
+      "blank": false,
+      "brightness_mjysr": 1.1978527307510376,
+      "hits": 8,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 36,
+      "detector": 3,
+      "channel": 3,
+      "wavelength_um": 1.7350000143051147,
+      "bandwidth_um": 0.041999999433755875,
+      "min_um": 1.7139999866485596,
+      "max_um": 1.75600004196167,
+      "blank": false,
+      "brightness_mjysr": 1.2295492887496948,
+      "hits": 12,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 37,
+      "detector": 3,
+      "channel": 4,
+      "wavelength_um": 1.774999976158142,
+      "bandwidth_um": 0.0430000014603138,
+      "min_um": 1.753999948501587,
+      "max_um": 1.7970000505447388,
+      "blank": false,
+      "brightness_mjysr": 1.1612931489944458,
+      "hits": 12,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 38,
+      "detector": 3,
+      "channel": 5,
+      "wavelength_um": 1.8179999589920044,
+      "bandwidth_um": 0.04500000178813934,
+      "min_um": 1.7949999570846558,
+      "max_um": 1.840000033378601,
+      "blank": false,
+      "brightness_mjysr": 1.6150625944137573,
+      "hits": 8,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 39,
+      "detector": 3,
+      "channel": 6,
+      "wavelength_um": 1.8609999418258667,
+      "bandwidth_um": 0.04600000008940697,
+      "min_um": 1.8380000591278076,
+      "max_um": 1.8839999437332153,
+      "blank": false,
+      "brightness_mjysr": 7.616823196411133,
+      "hits": 8,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 40,
+      "detector": 3,
+      "channel": 7,
+      "wavelength_um": 1.9049999713897705,
+      "bandwidth_um": 0.04699999839067459,
+      "min_um": 1.88100004196167,
+      "max_um": 1.9279999732971191,
+      "blank": false,
+      "brightness_mjysr": 3.9542999267578125,
+      "hits": 14,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 41,
+      "detector": 3,
+      "channel": 8,
+      "wavelength_um": 1.9490000009536743,
+      "bandwidth_um": 0.04800000041723251,
+      "min_um": 1.9249999523162842,
+      "max_um": 1.9730000495910645,
+      "blank": false,
+      "brightness_mjysr": 1.804282546043396,
+      "hits": 12,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 42,
+      "detector": 3,
+      "channel": 9,
+      "wavelength_um": 1.9950000047683716,
+      "bandwidth_um": 0.04899999871850014,
+      "min_um": 1.9700000286102295,
+      "max_um": 2.0190000534057617,
+      "blank": false,
+      "brightness_mjysr": 1.2869393825531006,
+      "hits": 7,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 43,
+      "detector": 3,
+      "channel": 10,
+      "wavelength_um": 2.0409998893737793,
+      "bandwidth_um": 0.050999999046325684,
+      "min_um": 2.015000104904175,
+      "max_um": 2.066999912261963,
+      "blank": false,
+      "brightness_mjysr": 1.8939571380615234,
+      "hits": 9,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 44,
+      "detector": 3,
+      "channel": 11,
+      "wavelength_um": 2.0889999866485596,
+      "bandwidth_um": 0.052000001072883606,
+      "min_um": 2.062000036239624,
+      "max_um": 2.115000009536743,
+      "blank": false,
+      "brightness_mjysr": 1.6772732734680176,
+      "hits": 13,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 45,
+      "detector": 3,
+      "channel": 12,
+      "wavelength_um": 2.1389999389648438,
+      "bandwidth_um": 0.05400000140070915,
+      "min_um": 2.1110000610351562,
+      "max_um": 2.1659998893737793,
+      "blank": false,
+      "brightness_mjysr": 2.047084331512451,
+      "hits": 14,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 46,
+      "detector": 3,
+      "channel": 13,
+      "wavelength_um": 2.188999891281128,
+      "bandwidth_um": 0.054999999701976776,
+      "min_um": 2.1600000858306885,
+      "max_um": 2.2160000801086426,
+      "blank": false,
+      "brightness_mjysr": 1.9813449382781982,
+      "hits": 10,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 47,
+      "detector": 3,
+      "channel": 14,
+      "wavelength_um": 2.240000009536743,
+      "bandwidth_um": 0.0560000017285347,
+      "min_um": 2.2109999656677246,
+      "max_um": 2.2679998874664307,
+      "blank": false,
+      "brightness_mjysr": 1.6609007120132446,
+      "hits": 9,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 48,
+      "detector": 3,
+      "channel": 15,
+      "wavelength_um": 2.2920000553131104,
+      "bandwidth_um": 0.05700000002980232,
+      "min_um": 2.26200008392334,
+      "max_um": 2.321000099182129,
+      "blank": false,
+      "brightness_mjysr": 1.3797903060913086,
+      "hits": 9,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 49,
+      "detector": 3,
+      "channel": 16,
+      "wavelength_um": 2.3450000286102295,
+      "bandwidth_um": 0.057999998331069946,
+      "min_um": 2.313999891281128,
+      "max_um": 2.375,
+      "blank": false,
+      "brightness_mjysr": 1.4165481328964233,
+      "hits": 9,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 50,
+      "detector": 3,
+      "channel": 17,
+      "wavelength_um": 2.3989999294281006,
+      "bandwidth_um": 0.05900000035762787,
+      "min_um": 2.367000102996826,
+      "max_um": 2.440000057220459,
+      "blank": true,
+      "brightness_mjysr": null,
+      "hits": 0,
+      "flags": 0,
+      "status": "blank",
+      "flag_review": false,
+      "reason": "Blank visualization channel"
+    },
+    {
+      "index": 51,
+      "detector": 4,
+      "channel": 1,
+      "wavelength_um": 2.444999933242798,
+      "bandwidth_um": 0.057999998331069946,
+      "min_um": 2.421999931335449,
+      "max_um": 2.4739999771118164,
+      "blank": true,
+      "brightness_mjysr": null,
+      "hits": 0,
+      "flags": 0,
+      "status": "blank",
+      "flag_review": false,
+      "reason": "Blank visualization channel"
+    },
+    {
+      "index": 52,
+      "detector": 4,
+      "channel": 2,
+      "wavelength_um": 2.50600004196167,
+      "bandwidth_um": 0.0729999989271164,
+      "min_um": 2.4700000286102295,
+      "max_um": 2.5420000553131104,
+      "blank": false,
+      "brightness_mjysr": 1.7476305961608887,
+      "hits": 9,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 53,
+      "detector": 4,
+      "channel": 3,
+      "wavelength_um": 2.575000047683716,
+      "bandwidth_um": 0.07400000095367432,
+      "min_um": 2.5380001068115234,
+      "max_um": 2.611999988555908,
+      "blank": false,
+      "brightness_mjysr": 2.5482540130615234,
+      "hits": 10,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 54,
+      "detector": 4,
+      "channel": 4,
+      "wavelength_um": 2.6459999084472656,
+      "bandwidth_um": 0.07599999755620956,
+      "min_um": 2.6070001125335693,
+      "max_um": 2.684000015258789,
+      "blank": false,
+      "brightness_mjysr": 3.902754306793213,
+      "hits": 11,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 55,
+      "detector": 4,
+      "channel": 5,
+      "wavelength_um": 2.7190001010894775,
+      "bandwidth_um": 0.07800000160932541,
+      "min_um": 2.677999973297119,
+      "max_um": 2.757999897003174,
+      "blank": false,
+      "brightness_mjysr": 1.925748348236084,
+      "hits": 9,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 56,
+      "detector": 4,
+      "channel": 6,
+      "wavelength_um": 2.7939999103546143,
+      "bandwidth_um": 0.07900000363588333,
+      "min_um": 2.752000093460083,
+      "max_um": 2.8350000381469727,
+      "blank": false,
+      "brightness_mjysr": 2.507877826690674,
+      "hits": 10,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 57,
+      "detector": 4,
+      "channel": 7,
+      "wavelength_um": 2.871000051498413,
+      "bandwidth_um": 0.08399999886751175,
+      "min_um": 2.828000068664551,
+      "max_um": 2.9140000343322754,
+      "blank": false,
+      "brightness_mjysr": 1.7564276456832886,
+      "hits": 11,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 58,
+      "detector": 4,
+      "channel": 8,
+      "wavelength_um": 2.9509999752044678,
+      "bandwidth_um": 0.0860000029206276,
+      "min_um": 2.9059998989105225,
+      "max_um": 2.994999885559082,
+      "blank": false,
+      "brightness_mjysr": 1.9859415292739868,
+      "hits": 7,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 59,
+      "detector": 4,
+      "channel": 9,
+      "wavelength_um": 3.0329999923706055,
+      "bandwidth_um": 0.08900000154972076,
+      "min_um": 2.984999895095825,
+      "max_um": 3.0789999961853027,
+      "blank": false,
+      "brightness_mjysr": 2.3083338737487793,
+      "hits": 10,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 60,
+      "detector": 4,
+      "channel": 10,
+      "wavelength_um": 3.118000030517578,
+      "bandwidth_um": 0.09099999815225601,
+      "min_um": 3.069000005722046,
+      "max_um": 3.1640000343322754,
+      "blank": false,
+      "brightness_mjysr": 1.9127267599105835,
+      "hits": 9,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 61,
+      "detector": 4,
+      "channel": 11,
+      "wavelength_um": 3.2039999961853027,
+      "bandwidth_um": 0.09300000220537186,
+      "min_um": 3.1549999713897705,
+      "max_um": 3.252000093460083,
+      "blank": false,
+      "brightness_mjysr": 3.6889724731445312,
+      "hits": 11,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 62,
+      "detector": 4,
+      "channel": 12,
+      "wavelength_um": 3.2929999828338623,
+      "bandwidth_um": 0.09399999678134918,
+      "min_um": 3.242000102996826,
+      "max_um": 3.3420000076293945,
+      "blank": false,
+      "brightness_mjysr": 13.978219032287598,
+      "hits": 7,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 63,
+      "detector": 4,
+      "channel": 13,
+      "wavelength_um": 3.382999897003174,
+      "bandwidth_um": 0.09600000083446503,
+      "min_um": 3.3299999237060547,
+      "max_um": 3.434000015258789,
+      "blank": false,
+      "brightness_mjysr": 7.218057155609131,
+      "hits": 10,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 64,
+      "detector": 4,
+      "channel": 14,
+      "wavelength_um": 3.4760000705718994,
+      "bandwidth_um": 0.09799999743700027,
+      "min_um": 3.421999931335449,
+      "max_um": 3.5280001163482666,
+      "blank": false,
+      "brightness_mjysr": 6.309271812438965,
+      "hits": 9,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 65,
+      "detector": 4,
+      "channel": 15,
+      "wavelength_um": 3.569999933242798,
+      "bandwidth_um": 0.0989999994635582,
+      "min_um": 3.5139999389648438,
+      "max_um": 3.624000072479248,
+      "blank": false,
+      "brightness_mjysr": 4.124402046203613,
+      "hits": 10,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 66,
+      "detector": 4,
+      "channel": 16,
+      "wavelength_um": 3.6670000553131104,
+      "bandwidth_um": 0.10199999809265137,
+      "min_um": 3.609999895095825,
+      "max_um": 3.7230000495910645,
+      "blank": false,
+      "brightness_mjysr": 3.168971538543701,
+      "hits": 14,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 67,
+      "detector": 4,
+      "channel": 17,
+      "wavelength_um": 3.7679998874664307,
+      "bandwidth_um": 0.10300000011920929,
+      "min_um": 3.7070000171661377,
+      "max_um": 3.8269999027252197,
+      "blank": false,
+      "brightness_mjysr": 3.778794288635254,
+      "hits": 12,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 68,
+      "detector": 5,
+      "channel": 1,
+      "wavelength_um": 3.8329999446868896,
+      "bandwidth_um": 0.03500000014901161,
+      "min_um": 3.813999891281128,
+      "max_um": 3.8510000705718994,
+      "blank": false,
+      "brightness_mjysr": 3.2673418521881104,
+      "hits": 13,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 69,
+      "detector": 5,
+      "channel": 2,
+      "wavelength_um": 3.867000102996826,
+      "bandwidth_um": 0.035999998450279236,
+      "min_um": 3.8489999771118164,
+      "max_um": 3.884999990463257,
+      "blank": false,
+      "brightness_mjysr": 3.0045619010925293,
+      "hits": 13,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 70,
+      "detector": 5,
+      "channel": 3,
+      "wavelength_um": 3.9010000228881836,
+      "bandwidth_um": 0.035999998450279236,
+      "min_um": 3.881999969482422,
+      "max_um": 3.9189999103546143,
+      "blank": false,
+      "brightness_mjysr": 3.2287533283233643,
+      "hits": 13,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 71,
+      "detector": 5,
+      "channel": 4,
+      "wavelength_um": 3.934999942779541,
+      "bandwidth_um": 0.035999998450279236,
+      "min_um": 3.9159998893737793,
+      "max_um": 3.953000068664551,
+      "blank": false,
+      "brightness_mjysr": 3.055859327316284,
+      "hits": 14,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 72,
+      "detector": 5,
+      "channel": 5,
+      "wavelength_um": 3.9700000286102295,
+      "bandwidth_um": 0.035999998450279236,
+      "min_um": 3.950000047683716,
+      "max_um": 3.98799991607666,
+      "blank": false,
+      "brightness_mjysr": 3.0401999950408936,
+      "hits": 14,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 73,
+      "detector": 5,
+      "channel": 6,
+      "wavelength_um": 4.005000114440918,
+      "bandwidth_um": 0.035999998450279236,
+      "min_um": 3.984999895095825,
+      "max_um": 4.02400016784668,
+      "blank": false,
+      "brightness_mjysr": 3.319087266921997,
+      "hits": 12,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 74,
+      "detector": 5,
+      "channel": 7,
+      "wavelength_um": 4.039999961853027,
+      "bandwidth_um": 0.03700000047683716,
+      "min_um": 4.019999980926514,
+      "max_um": 4.059000015258789,
+      "blank": false,
+      "brightness_mjysr": 13.296481132507324,
+      "hits": 22,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 75,
+      "detector": 5,
+      "channel": 8,
+      "wavelength_um": 4.076000213623047,
+      "bandwidth_um": 0.03700000047683716,
+      "min_um": 4.054999828338623,
+      "max_um": 4.09499979019165,
+      "blank": false,
+      "brightness_mjysr": 8.804265022277832,
+      "hits": 14,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 76,
+      "detector": 5,
+      "channel": 9,
+      "wavelength_um": 4.111999988555908,
+      "bandwidth_um": 0.03700000047683716,
+      "min_um": 4.091000080108643,
+      "max_um": 4.13100004196167,
+      "blank": false,
+      "brightness_mjysr": 3.3918261528015137,
+      "hits": 9,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 77,
+      "detector": 5,
+      "channel": 10,
+      "wavelength_um": 4.1479997634887695,
+      "bandwidth_um": 0.03700000047683716,
+      "min_um": 4.125999927520752,
+      "max_um": 4.166999816894531,
+      "blank": false,
+      "brightness_mjysr": 3.8284640312194824,
+      "hits": 10,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 78,
+      "detector": 5,
+      "channel": 11,
+      "wavelength_um": 4.184000015258789,
+      "bandwidth_um": 0.03700000047683716,
+      "min_um": 4.1620001792907715,
+      "max_um": 4.203000068664551,
+      "blank": false,
+      "brightness_mjysr": 3.840806007385254,
+      "hits": 9,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 79,
+      "detector": 5,
+      "channel": 12,
+      "wavelength_um": 4.21999979019165,
+      "bandwidth_um": 0.03700000047683716,
+      "min_um": 4.198999881744385,
+      "max_um": 4.239999771118164,
+      "blank": false,
+      "brightness_mjysr": 3.4042611122131348,
+      "hits": 18,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 80,
+      "detector": 5,
+      "channel": 13,
+      "wavelength_um": 4.256999969482422,
+      "bandwidth_um": 0.03700000047683716,
+      "min_um": 4.235000133514404,
+      "max_um": 4.2769999504089355,
+      "blank": false,
+      "brightness_mjysr": 3.33062481880188,
+      "hits": 21,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 81,
+      "detector": 5,
+      "channel": 14,
+      "wavelength_um": 4.294000148773193,
+      "bandwidth_um": 0.03700000047683716,
+      "min_um": 4.270999908447266,
+      "max_um": 4.313000202178955,
+      "blank": false,
+      "brightness_mjysr": 3.5469810962677,
+      "hits": 18,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 82,
+      "detector": 5,
+      "channel": 15,
+      "wavelength_um": 4.330999851226807,
+      "bandwidth_um": 0.03700000047683716,
+      "min_um": 4.308000087738037,
+      "max_um": 4.35099983215332,
+      "blank": false,
+      "brightness_mjysr": 3.3126626014709473,
+      "hits": 14,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 83,
+      "detector": 5,
+      "channel": 16,
+      "wavelength_um": 4.368000030517578,
+      "bandwidth_um": 0.03799999877810478,
+      "min_um": 4.34499979019165,
+      "max_um": 4.388000011444092,
+      "blank": false,
+      "brightness_mjysr": 3.8829970359802246,
+      "hits": 13,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 84,
+      "detector": 5,
+      "channel": 17,
+      "wavelength_um": 4.40500020980835,
+      "bandwidth_um": 0.03799999877810478,
+      "min_um": 4.381999969482422,
+      "max_um": 4.426000118255615,
+      "blank": false,
+      "brightness_mjysr": 3.836878776550293,
+      "hits": 12,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 85,
+      "detector": 6,
+      "channel": 1,
+      "wavelength_um": 4.434999942779541,
+      "bandwidth_um": 0.03500000014901161,
+      "min_um": 4.418000221252441,
+      "max_um": 4.452000141143799,
+      "blank": false,
+      "brightness_mjysr": 3.718446969985962,
+      "hits": 9,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 86,
+      "detector": 6,
+      "channel": 2,
+      "wavelength_um": 4.4670000076293945,
+      "bandwidth_um": 0.035999998450279236,
+      "min_um": 4.449999809265137,
+      "max_um": 4.484000205993652,
+      "blank": false,
+      "brightness_mjysr": 3.312194347381592,
+      "hits": 10,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 87,
+      "detector": 6,
+      "channel": 3,
+      "wavelength_um": 4.5,
+      "bandwidth_um": 0.03500000014901161,
+      "min_um": 4.48199987411499,
+      "max_um": 4.517000198364258,
+      "blank": false,
+      "brightness_mjysr": 3.1705408096313477,
+      "hits": 10,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 88,
+      "detector": 6,
+      "channel": 4,
+      "wavelength_um": 4.5329999923706055,
+      "bandwidth_um": 0.035999998450279236,
+      "min_um": 4.514999866485596,
+      "max_um": 4.550000190734863,
+      "blank": false,
+      "brightness_mjysr": 3.368831157684326,
+      "hits": 8,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 89,
+      "detector": 6,
+      "channel": 5,
+      "wavelength_um": 4.565999984741211,
+      "bandwidth_um": 0.035999998450279236,
+      "min_um": 4.547999858856201,
+      "max_um": 4.584000110626221,
+      "blank": false,
+      "brightness_mjysr": 3.1527798175811768,
+      "hits": 9,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 90,
+      "detector": 6,
+      "channel": 6,
+      "wavelength_um": 4.599999904632568,
+      "bandwidth_um": 0.03700000047683716,
+      "min_um": 4.581999778747559,
+      "max_um": 4.618000030517578,
+      "blank": false,
+      "brightness_mjysr": 3.571422576904297,
+      "hits": 7,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 91,
+      "detector": 6,
+      "channel": 7,
+      "wavelength_um": 4.635000228881836,
+      "bandwidth_um": 0.035999998450279236,
+      "min_um": 4.614999771118164,
+      "max_um": 4.6529998779296875,
+      "blank": false,
+      "brightness_mjysr": 6.164107799530029,
+      "hits": 13,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 92,
+      "detector": 6,
+      "channel": 8,
+      "wavelength_um": 4.669000148773193,
+      "bandwidth_um": 0.03700000047683716,
+      "min_um": 4.64900016784668,
+      "max_um": 4.688000202178955,
+      "blank": false,
+      "brightness_mjysr": 8.562244415283203,
+      "hits": 14,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 93,
+      "detector": 6,
+      "channel": 9,
+      "wavelength_um": 4.703999996185303,
+      "bandwidth_um": 0.03700000047683716,
+      "min_um": 4.684000015258789,
+      "max_um": 4.7230000495910645,
+      "blank": false,
+      "brightness_mjysr": 4.790169715881348,
+      "hits": 9,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 94,
+      "detector": 6,
+      "channel": 10,
+      "wavelength_um": 4.738999843597412,
+      "bandwidth_um": 0.03700000047683716,
+      "min_um": 4.718999862670898,
+      "max_um": 4.757999897003174,
+      "blank": false,
+      "brightness_mjysr": 3.812047004699707,
+      "hits": 9,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 95,
+      "detector": 6,
+      "channel": 11,
+      "wavelength_um": 4.7729997634887695,
+      "bandwidth_um": 0.035999998450279236,
+      "min_um": 4.752999782562256,
+      "max_um": 4.791999816894531,
+      "blank": false,
+      "brightness_mjysr": 3.5683562755584717,
+      "hits": 15,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 96,
+      "detector": 6,
+      "channel": 12,
+      "wavelength_um": 4.808000087738037,
+      "bandwidth_um": 0.035999998450279236,
+      "min_um": 4.788000106811523,
+      "max_um": 4.827000141143799,
+      "blank": false,
+      "brightness_mjysr": 3.3957202434539795,
+      "hits": 15,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 97,
+      "detector": 6,
+      "channel": 13,
+      "wavelength_um": 4.8429999351501465,
+      "bandwidth_um": 0.03700000047683716,
+      "min_um": 4.822000026702881,
+      "max_um": 4.861999988555908,
+      "blank": false,
+      "brightness_mjysr": 3.423102617263794,
+      "hits": 10,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 98,
+      "detector": 6,
+      "channel": 14,
+      "wavelength_um": 4.879000186920166,
+      "bandwidth_um": 0.03799999877810478,
+      "min_um": 4.85699987411499,
+      "max_um": 4.89900016784668,
+      "blank": false,
+      "brightness_mjysr": 3.4720916748046875,
+      "hits": 9,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 99,
+      "detector": 6,
+      "channel": 15,
+      "wavelength_um": 4.914999961853027,
+      "bandwidth_um": 0.03799999877810478,
+      "min_um": 4.89300012588501,
+      "max_um": 4.935999870300293,
+      "blank": false,
+      "brightness_mjysr": 3.471832513809204,
+      "hits": 7,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 100,
+      "detector": 6,
+      "channel": 16,
+      "wavelength_um": 4.951000213623047,
+      "bandwidth_um": 0.03700000047683716,
+      "min_um": 4.929999828338623,
+      "max_um": 4.9720001220703125,
+      "blank": false,
+      "brightness_mjysr": 3.8017001152038574,
+      "hits": 8,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    },
+    {
+      "index": 101,
+      "detector": 6,
+      "channel": 17,
+      "wavelength_um": 4.98799991607666,
+      "bandwidth_um": 0.03700000047683716,
+      "min_um": 4.966000080108643,
+      "max_um": 5.008999824523926,
+      "blank": false,
+      "brightness_mjysr": 3.7028610706329346,
+      "hits": 12,
+      "flags": 2097152,
+      "status": "available",
+      "flag_review": false,
+      "reason": null
+    }
+  ],
+  "trace_data_id": "cc18637cec66c4dffd5b34813cda3d15a7c95a480350a43d06bb4591bdef9b16",
+  "request": {
+    "plane_id": "f97e17a56b86fc5d8e55a6441a12b71f317cdc863b7ae2910d4f2cd4ab614df3",
+    "pixel_xy": [
+      81,
+      80
+    ],
+    "position_deg": [
+      60.80349154831263,
+      51.3419660602999
+    ]
+  },
+  "display_grid": {
+    "center_deg": [
+      60.8109955,
+      51.3404038
+    ],
+    "fov_arcmin": 30.0,
+    "shape": [
+      160,
+      160
+    ],
+    "grid": {
+      "WCSAXES": 2,
+      "CRPIX1": 80.5,
+      "CRPIX2": 80.5,
+      "CDELT1": -0.003125,
+      "CDELT2": 0.003125,
+      "CUNIT1": "deg",
+      "CUNIT2": "deg",
+      "CTYPE1": "RA---TAN",
+      "CTYPE2": "DEC--TAN",
+      "CRVAL1": 60.8109955,
+      "CRVAL2": 51.3404038,
+      "LONPOLE": 180.0,
+      "LATPOLE": 51.3404038,
+      "MJDREF": 0.0,
+      "RADESYS": "ICRS"
+    }
+  },
+  "data_status": "native_mosaic_pixel_samples",
+  "numerical_products_authorized": false,
+  "uncertainties_available": false,
+  "units": "MJy/sr",
+  "byte_ranges": [
+    {
+      "start": 0,
+      "end_inclusive": 16383,
+      "sha256": "175dee91b3e117b3133e29fc7ed3ac9d6954aaab9877173e495dd6b24d887a96"
+    },
+    {
+      "start": 106954752,
+      "end_inclusive": 106971135,
+      "sha256": "8eb9de1b38628b7e001c0b8d6182116ea1ef7d0b7e044305de42f3b9374a549d"
+    },
+    {
+      "start": 106971136,
+      "end_inclusive": 106987519,
+      "sha256": "0ccacf6e45c471eaa11a79d87c63594e2729095dc19aaf205ca8d395b1fea272"
+    },
+    {
+      "start": 213925888,
+      "end_inclusive": 213942271,
+      "sha256": "93b94aa0bad53112023d3470a1427f3604619b39b4178c920701ced77419b12d"
+    },
+    {
+      "start": 320897024,
+      "end_inclusive": 320909759,
+      "sha256": "70620194e3273f52aa8d87c59a03161f8b97df6a959c164ffafcac074e9e09fd"
+    },
+    {
+      "start": 442368,
+      "end_inclusive": 458751,
+      "sha256": "29ad33eefff1ef1dda61e21369a36f40d066e7bbf46afe4833f59e4c547a4ce2"
+    },
+    {
+      "start": 1490944,
+      "end_inclusive": 1507327,
+      "sha256": "1b1823d0c36108a6e437dc1e2ce48a0d7107c18eb3b8fde4045fd5d0650423c1"
+    },
+    {
+      "start": 2539520,
+      "end_inclusive": 2555903,
+      "sha256": "9114178e22bfe76000fbc9aafffef0789abb021fb97e11be491479a61dca6faa"
+    },
+    {
+      "start": 3588096,
+      "end_inclusive": 3604479,
+      "sha256": "be1a8c80ac332da7aafa2cbf49c0a5a4c3f15b05463ccd69b46ae14822c058fe"
+    },
+    {
+      "start": 4636672,
+      "end_inclusive": 4653055,
+      "sha256": "c9011ec4fe6ca5a0c39921347b98ae5b5697e8054b34ac78f48393bc619173aa"
+    },
+    {
+      "start": 5685248,
+      "end_inclusive": 5701631,
+      "sha256": "3555a3d70bd88492daca297f3e0206cd73631c9e0388dc83cf946287b4c38ad9"
+    },
+    {
+      "start": 6733824,
+      "end_inclusive": 6750207,
+      "sha256": "b80e8b2df56a6945a15224ec43772f6e79d279f2a3f039ff3b5fea038e18ab0e"
+    },
+    {
+      "start": 7782400,
+      "end_inclusive": 7798783,
+      "sha256": "1a06ee7ceff9cf754f68a3155d4864eaf717ce8f504e5b3c4baa67daf1bc7008"
+    },
+    {
+      "start": 8830976,
+      "end_inclusive": 8847359,
+      "sha256": "1de4cbac8d7aeddc1ae9cdc90cfecb7d4e1f96911f5491a9df28fb6573c99248"
+    },
+    {
+      "start": 9879552,
+      "end_inclusive": 9895935,
+      "sha256": "b2cd8662b022cf55656a6621667d674ef82f3e20c8120feff3b5dce91cf79957"
+    },
+    {
+      "start": 10928128,
+      "end_inclusive": 10944511,
+      "sha256": "89e4cda80c453258eac4643960179d9d58954bced3a9c0a597a90240c474d2c9"
+    },
+    {
+      "start": 11976704,
+      "end_inclusive": 11993087,
+      "sha256": "9c2e0418c2a7b8bb711bea1f76c39e6a8c9f3de4c87da8c7b34277a14ae5e632"
+    },
+    {
+      "start": 13025280,
+      "end_inclusive": 13041663,
+      "sha256": "44a684edcffbc481d872d374f022ad02fb5e2bef4722c9295b04535ece8a4a74"
+    },
+    {
+      "start": 14073856,
+      "end_inclusive": 14090239,
+      "sha256": "f34597c081481aac9b456f16e8f845f06801e198b164f9fe9e2a78facbfb25b1"
+    },
+    {
+      "start": 15122432,
+      "end_inclusive": 15138815,
+      "sha256": "136c543f97306c2f9b4e54702b81cde1a0983f18569230b1c75be995a1e55b3f"
+    },
+    {
+      "start": 16171008,
+      "end_inclusive": 16187391,
+      "sha256": "221ac9dc861edca3a737d405e2a6438483ea3ef3247fd9f5b22a460c0aa5a31d"
+    },
+    {
+      "start": 17219584,
+      "end_inclusive": 17235967,
+      "sha256": "803c7507f27eb5d8724f210f263e8d8351b4f249f073926887656ae216e8ad4e"
+    },
+    {
+      "start": 107397120,
+      "end_inclusive": 107413503,
+      "sha256": "ee1e2a9d33e1b80654d5b3821b91e018bb621006c8fee10cf0ebe413392d1913"
+    },
+    {
+      "start": 108445696,
+      "end_inclusive": 108462079,
+      "sha256": "0e0e99361fe714ee77d64a8748a34c91db1a7f3963c170a160ff33b1f866934c"
+    },
+    {
+      "start": 109494272,
+      "end_inclusive": 109510655,
+      "sha256": "0be14d64ce7be87d15dfe722e13b278f9486b48bec916a9ab66b31bb8b535d8a"
+    },
+    {
+      "start": 110542848,
+      "end_inclusive": 110559231,
+      "sha256": "d17e8a8ae6509fd84b757a0d1e27067f06878144e19adb16ece23aa746f44c42"
+    },
+    {
+      "start": 111591424,
+      "end_inclusive": 111607807,
+      "sha256": "1930bbe905fe7449ec37580a938a8e2a838961f5f146ced2a55981ce4619c836"
+    },
+    {
+      "start": 112640000,
+      "end_inclusive": 112656383,
+      "sha256": "556dd74858947ad192dbff0e810ccbf44043ad0079347eede3d87cb696554a58"
+    },
+    {
+      "start": 113688576,
+      "end_inclusive": 113704959,
+      "sha256": "bdbbba9dcc6aa20f97ce71da43cdac16942c53b3113db6c4d80750436a51e13b"
+    },
+    {
+      "start": 114737152,
+      "end_inclusive": 114753535,
+      "sha256": "e753e93fc75df7d571dfe0dda3bc9c5b1742c265584c221f550223f3b28ee8d7"
+    },
+    {
+      "start": 115785728,
+      "end_inclusive": 115802111,
+      "sha256": "b1f4e3b94afb1cf045a1aab3c5ecc1d1a23937928182c6c244435525abead513"
+    },
+    {
+      "start": 116834304,
+      "end_inclusive": 116850687,
+      "sha256": "6fa6f91c3d2a51276fc4a98d698e8f08f7f483aff55e68a4d13e92f03f14436d"
+    },
+    {
+      "start": 117882880,
+      "end_inclusive": 117899263,
+      "sha256": "b99e68eba12b4987bb54e2c321decfb115c5de588c3395e02c5ac581cdd73550"
+    },
+    {
+      "start": 118931456,
+      "end_inclusive": 118947839,
+      "sha256": "8b02a6494fed111dc9b01a0a7bfbbe214e296e219a7e62a385226bc55a2b857e"
+    },
+    {
+      "start": 119980032,
+      "end_inclusive": 119996415,
+      "sha256": "6894656e33f6b174187746e634e4d29fd7a0254f0884927d99a60a9088e3c574"
+    },
+    {
+      "start": 121028608,
+      "end_inclusive": 121044991,
+      "sha256": "be9c9ff42a634b8dfab7ba20169a4b9e1aad09ce5cd4db3d58863b6e34ed0f4a"
+    },
+    {
+      "start": 122077184,
+      "end_inclusive": 122093567,
+      "sha256": "8cda30028de92b70eb23632e9c68e2857cd860e2538a0b880814d9963be33f29"
+    },
+    {
+      "start": 123125760,
+      "end_inclusive": 123142143,
+      "sha256": "fb9824a0d905540c2e96e19d18dc2efb0a57596f68ad8fffc571a338806e3587"
+    },
+    {
+      "start": 124174336,
+      "end_inclusive": 124190719,
+      "sha256": "197148e17bac46b9561ce4dd4f94e1f46b215a0cec59a2237807e581aab650c0"
+    },
+    {
+      "start": 214368256,
+      "end_inclusive": 214384639,
+      "sha256": "ce6b44c81f8b7f4c5c2b394b528cd5ccb7bd8a5afc63399b9a803ba3abff791e"
+    },
+    {
+      "start": 215416832,
+      "end_inclusive": 215433215,
+      "sha256": "208ae78919b5a454523868cd8064d0f311607d73ef9258b95f66ed29104ba481"
+    },
+    {
+      "start": 216465408,
+      "end_inclusive": 216481791,
+      "sha256": "bfe6dcc9e08c76a8fb0c7bfc4407cf1356ee0bfc91b8dc476f5db18ee6ef9118"
+    },
+    {
+      "start": 217513984,
+      "end_inclusive": 217530367,
+      "sha256": "9c2c4270c4bd515185e89468996e84903c5376e80c2423b20a5bb7e9da8be4df"
+    },
+    {
+      "start": 218562560,
+      "end_inclusive": 218578943,
+      "sha256": "f314eceac268dfac87e9325ce3bfdd8ebbdfcd5a6a0f7cff581b6d3d2d172148"
+    },
+    {
+      "start": 219611136,
+      "end_inclusive": 219627519,
+      "sha256": "6a3abf83cbdfc326072e1bb21b7521e10a1a4dcb0af349a6d9ab7fdee2faa8b2"
+    },
+    {
+      "start": 220659712,
+      "end_inclusive": 220676095,
+      "sha256": "134b016dc429e6c9b5c4d89c8cebdb2255e5e0ff31d8ae6b09e6bde0130a9768"
+    },
+    {
+      "start": 221708288,
+      "end_inclusive": 221724671,
+      "sha256": "4e36321340847c56f0f7cb0bb28bf8565f197e3f9ae52894921d798f53243aab"
+    },
+    {
+      "start": 222756864,
+      "end_inclusive": 222773247,
+      "sha256": "9413396755f013b0a1acc0a09f1460783009700e011522e81cfaf08f0e71e44c"
+    },
+    {
+      "start": 223805440,
+      "end_inclusive": 223821823,
+      "sha256": "2f27260dc5d75ff6a2ecf9bda9761e28a7e7d9bf8136c12f6d85dcbc3bb74769"
+    },
+    {
+      "start": 224854016,
+      "end_inclusive": 224870399,
+      "sha256": "fcb66f2b62a08d0477774cabf6dd99767af775e3390404d73f266ea373438876"
+    },
+    {
+      "start": 225902592,
+      "end_inclusive": 225918975,
+      "sha256": "44060806edb15da23cdf10301f6ab3c8754dd838efd09d53e70fc4d0362cac06"
+    },
+    {
+      "start": 226951168,
+      "end_inclusive": 226967551,
+      "sha256": "7c83eaed37d37bbe87cd7ead7fc57437675809cd23f6036313ed1de4e455636d"
+    },
+    {
+      "start": 227999744,
+      "end_inclusive": 228016127,
+      "sha256": "ebe18810f938556f31868b5072b786a043dfa861049f71997b5e8a673c5ae151"
+    },
+    {
+      "start": 229048320,
+      "end_inclusive": 229064703,
+      "sha256": "a0f12dc809b95e814be31360f41678a139cf2b6b0626201cac1c8d15b1a60e10"
+    },
+    {
+      "start": 230096896,
+      "end_inclusive": 230113279,
+      "sha256": "f3694bcca7702e4a025c9bbc3ecaf79fa48b5004dcadbf5cbe101514b7843e8c"
+    },
+    {
+      "start": 231145472,
+      "end_inclusive": 231161855,
+      "sha256": "e8cd17bdfad01824f9f8e8ac4560765b4f900a49bb46468bcea0a6b9c1d8484c"
+    },
+    {
+      "start": 18268160,
+      "end_inclusive": 18284543,
+      "sha256": "0119c58488d9519a1adbad71a9ba22329be96cdec96b045b8b96401e2eebdd7e"
+    },
+    {
+      "start": 19316736,
+      "end_inclusive": 19333119,
+      "sha256": "d18f5e314255eb1904d0be52ac58c119351af335c3048fc75e50f823327b5bbb"
+    },
+    {
+      "start": 20365312,
+      "end_inclusive": 20381695,
+      "sha256": "b333f1fe1e730fcea42e9e18b8bc577eadf353585db25f0535c0d5b13fcaf8fc"
+    },
+    {
+      "start": 21413888,
+      "end_inclusive": 21430271,
+      "sha256": "b6ee9811e5ddd4d8d6bda81a4cc93b6d68df85b8f60bd5d90a8c5b32cef56aea"
+    },
+    {
+      "start": 22462464,
+      "end_inclusive": 22478847,
+      "sha256": "dcf2112a87be71d9e002c202d42d7bbc27c7a5a9c5bc3eeab9afbd2ae6c28e43"
+    },
+    {
+      "start": 23511040,
+      "end_inclusive": 23527423,
+      "sha256": "2bea5fe3dacf568e52e75d11763f81d9aa0d8499960fa7f2d2d02b45246e1c00"
+    },
+    {
+      "start": 24559616,
+      "end_inclusive": 24575999,
+      "sha256": "0db9458e81ab35f6187e479235bfe0cd4cbd2d25f6f1bc1566489a90a59d1cda"
+    },
+    {
+      "start": 25608192,
+      "end_inclusive": 25624575,
+      "sha256": "c43b03026857cac8f59638dde29ab3539f7c3fa552f2538952d201f0ce8e8fb7"
+    },
+    {
+      "start": 26656768,
+      "end_inclusive": 26673151,
+      "sha256": "e860a8435812b6e31fc2b2b7d519be53acbd278c6657647dc09cf9cdcfb50a23"
+    },
+    {
+      "start": 27705344,
+      "end_inclusive": 27721727,
+      "sha256": "8b7a64363b029ca456862578af3fead7bcf986325ec5a1c089d9389f682c2df2"
+    },
+    {
+      "start": 28753920,
+      "end_inclusive": 28770303,
+      "sha256": "439fc95d57c33794d49cdcd82ed52d9b34c90b460cd01d0a0f951acf05772bd8"
+    },
+    {
+      "start": 29802496,
+      "end_inclusive": 29818879,
+      "sha256": "f499c6c33908b9820f0a0647f7a9b84e17de0fbba611afcc96a24057873db30f"
+    },
+    {
+      "start": 30851072,
+      "end_inclusive": 30867455,
+      "sha256": "ad03e4d5375aab7a4a2cc052ecef2a54cde6ce14e8d2ef50d43bb7fe452e9c74"
+    },
+    {
+      "start": 31899648,
+      "end_inclusive": 31916031,
+      "sha256": "88ded07dac8f46f5957f9a24130d9b09c106769c00704f6475da1397ac071b57"
+    },
+    {
+      "start": 32948224,
+      "end_inclusive": 32964607,
+      "sha256": "5fd0a86265cef3711e01839d1ccec2872db452de6770ae8bcc433b94ad52a895"
+    },
+    {
+      "start": 33996800,
+      "end_inclusive": 34013183,
+      "sha256": "0e895c2aaacf5f094cadda401f7636f5d720a3da01bf2d4ad32d10fc98243cd4"
+    },
+    {
+      "start": 35045376,
+      "end_inclusive": 35061759,
+      "sha256": "69bbee23ddd9952ce696f9fd881b3b7e3c911bc62524cb4a1279c115c4113b89"
+    },
+    {
+      "start": 125222912,
+      "end_inclusive": 125239295,
+      "sha256": "6516ab01551bcd1faad877cb8adca24b5225d9629d34ce848b2ba6921d18b0db"
+    },
+    {
+      "start": 126271488,
+      "end_inclusive": 126287871,
+      "sha256": "b544ea9f27c7f3c63d1035bb74595711c85592968c5855bf4642f47134f16280"
+    },
+    {
+      "start": 127320064,
+      "end_inclusive": 127336447,
+      "sha256": "b5ba778bd0320b9c0b85f5d762107ee5170844588a3a07a21d782d9094d0e928"
+    },
+    {
+      "start": 128368640,
+      "end_inclusive": 128385023,
+      "sha256": "8b386f1119eda16f726016a915f9576f88a92349cdb8866f5be0f1ae464eda4f"
+    },
+    {
+      "start": 129417216,
+      "end_inclusive": 129433599,
+      "sha256": "ac099bd4dda5c64b5408483cd399c593d47499dda5a142c78b65e44613fde285"
+    },
+    {
+      "start": 130465792,
+      "end_inclusive": 130482175,
+      "sha256": "f642c1df4d1662ed7f1a7712e9b0458823ba5708cc1227ff15385362a064db37"
+    },
+    {
+      "start": 131514368,
+      "end_inclusive": 131530751,
+      "sha256": "c408782a4288ee7f147085377a17789f772cb9956090695e6f290d32d05b6806"
+    },
+    {
+      "start": 132562944,
+      "end_inclusive": 132579327,
+      "sha256": "57dda9131b98adf9b904ad7e80ff9168b0d483ff0541f28038551f5fd58d07c5"
+    },
+    {
+      "start": 133611520,
+      "end_inclusive": 133627903,
+      "sha256": "3305d4b2f97e4d74e544c5ca9a40de8d066b9fae6fd3909036afddceec2707ca"
+    },
+    {
+      "start": 134660096,
+      "end_inclusive": 134676479,
+      "sha256": "c692bb922f85554d1b2d93226c573d9a3c87ccee6ba1d7998e9d862bbea4d773"
+    },
+    {
+      "start": 135708672,
+      "end_inclusive": 135725055,
+      "sha256": "53ced3b310b30c4e51a9790493c17cab3994c26a2245b6f4f36c1a706f35971e"
+    },
+    {
+      "start": 136757248,
+      "end_inclusive": 136773631,
+      "sha256": "67e757092385076c837c17b54a14b4bf3e50fc0b3a4bb4820ad6d3052b754d2b"
+    },
+    {
+      "start": 137805824,
+      "end_inclusive": 137822207,
+      "sha256": "c9e682be78da4e7c57cf947ab921c34818445a9670b2acc9275481ad36935c11"
+    },
+    {
+      "start": 138854400,
+      "end_inclusive": 138870783,
+      "sha256": "a204ca594d8411d109bc3b2f45f83ce206d102269525ee8512db117aa6e4281c"
+    },
+    {
+      "start": 139902976,
+      "end_inclusive": 139919359,
+      "sha256": "ae2317451d179f0efbcdf94ac38035d7509b776c86b42cb7b7cbae9b04f51b65"
+    },
+    {
+      "start": 140951552,
+      "end_inclusive": 140967935,
+      "sha256": "2739a8928860dcbc00bffbeb226337dcf3729720306024df905a134b9dbcdd15"
+    },
+    {
+      "start": 142000128,
+      "end_inclusive": 142016511,
+      "sha256": "54de05b60d0ba7d28d373fd572bc14c23ee8b48938eaa8a6196546d4c78e47e0"
+    },
+    {
+      "start": 232194048,
+      "end_inclusive": 232210431,
+      "sha256": "efbf649507ebf58f4d95e2b92055a999847c89fefab52eb1cc082e194b8c459e"
+    },
+    {
+      "start": 233242624,
+      "end_inclusive": 233259007,
+      "sha256": "a1451dc706524d046ebd8c0302b8f6767cd5f759288d30e59abadbda798b7312"
+    },
+    {
+      "start": 234291200,
+      "end_inclusive": 234307583,
+      "sha256": "f0ade7d26cc578c8e14fd759226e9c40959c2b96153fd1381acc82b3cd396ee8"
+    },
+    {
+      "start": 235339776,
+      "end_inclusive": 235356159,
+      "sha256": "410eb70c0d073babd538914fd28eb8ad2dc496842eaf13d1d0f7b777b2d4eaa1"
+    },
+    {
+      "start": 236388352,
+      "end_inclusive": 236404735,
+      "sha256": "14c7c77e916d7807d955f2775b88b890f7313103b83650dafecf9e53218dcdb2"
+    },
+    {
+      "start": 237436928,
+      "end_inclusive": 237453311,
+      "sha256": "b26a93961c06db27fbf2c900dbaff5ec200c9582a1003cef1cf766b45613c9ae"
+    },
+    {
+      "start": 238485504,
+      "end_inclusive": 238501887,
+      "sha256": "2cd65f70e5aea40d117da70b22662627d293db0a6843f94000d25ef04909daf8"
+    },
+    {
+      "start": 239534080,
+      "end_inclusive": 239550463,
+      "sha256": "20ef2d25d75dd21a933f9308c2631a82bf786ede20fee79e3f12b5ff1b371f8f"
+    },
+    {
+      "start": 240582656,
+      "end_inclusive": 240599039,
+      "sha256": "40a90e3d38702bf442cc5c9c41e4d9aa4618cf2212dbb7d1d3d36868cd9b4e73"
+    },
+    {
+      "start": 241631232,
+      "end_inclusive": 241647615,
+      "sha256": "fa6054b6f80d687ba5d21988ce804249050acc8141790bbf41ae22286befa8f5"
+    },
+    {
+      "start": 242679808,
+      "end_inclusive": 242696191,
+      "sha256": "d6a34a33d326245036fd06f365f7326ca2aefa66a0c3e085615a3ce0b3160669"
+    },
+    {
+      "start": 243728384,
+      "end_inclusive": 243744767,
+      "sha256": "bb9a6ec7bbb16ff50cef7d90ff1e24b7d600f4a090f3050e3e184457bfded978"
+    },
+    {
+      "start": 244776960,
+      "end_inclusive": 244793343,
+      "sha256": "cfb6d69a6152703ff5589e1054742fc95725e47bf73db376955ff656b927e6e2"
+    },
+    {
+      "start": 245825536,
+      "end_inclusive": 245841919,
+      "sha256": "c7b9788a569db699373ee6bdd614e9fa801b093741e13502b4a259ea7dcfa856"
+    },
+    {
+      "start": 246874112,
+      "end_inclusive": 246890495,
+      "sha256": "7289ab6e6689decd2088b6464ed2eff843a05f270ac8188615ebbd7198ed5521"
+    },
+    {
+      "start": 247922688,
+      "end_inclusive": 247939071,
+      "sha256": "313b8fdd99010cd76c9de8da01c6a646de96043f2b85230e8e527f6edfe13aec"
+    },
+    {
+      "start": 248971264,
+      "end_inclusive": 248987647,
+      "sha256": "81ff1f04ff51db43cd32afaaa339440a4b472e1263c4cf4e1463e63d730eac80"
+    },
+    {
+      "start": 36093952,
+      "end_inclusive": 36110335,
+      "sha256": "f211ee51e43ac6fa0df29dbc63b35ba60d1434a4465349a574547f21c4411afe"
+    },
+    {
+      "start": 37142528,
+      "end_inclusive": 37158911,
+      "sha256": "6b4762e68e04e7dfb8d8d56c0164fa9aa292a0706fe58b948e3612bd0c90028d"
+    },
+    {
+      "start": 38191104,
+      "end_inclusive": 38207487,
+      "sha256": "1ba4d4ee5f0e7b743e4f0a717b34f2befca901a0fc0d2a62fdefdd4571f6346c"
+    },
+    {
+      "start": 39239680,
+      "end_inclusive": 39256063,
+      "sha256": "4a0f8b2cabc4a271e8fc15f92f4f1b5292011ada84ddf72ab606a5cdd3857831"
+    },
+    {
+      "start": 40288256,
+      "end_inclusive": 40304639,
+      "sha256": "896d3223466ae1bf619d47fb2e44e8d3d69401cb1026c9c106fbfdc4598ba076"
+    },
+    {
+      "start": 41336832,
+      "end_inclusive": 41353215,
+      "sha256": "6ac45bb39d1ceacfe1febcbed694359241bf3f8fe3eadff8190449e98052812d"
+    },
+    {
+      "start": 42385408,
+      "end_inclusive": 42401791,
+      "sha256": "fa9108103a0825ef5c582ab82f0096d672c7e65f7b8915626ef0c1663269c8e0"
+    },
+    {
+      "start": 43433984,
+      "end_inclusive": 43450367,
+      "sha256": "29df0b09dd3a0a8843e15978eea13fae4bcdc2c9fb142c43478fc4f62f346faa"
+    },
+    {
+      "start": 44482560,
+      "end_inclusive": 44498943,
+      "sha256": "34736dbc7d7fe11840fcb9f7b754fe83afa28152765f78937c9c3de0761dd21c"
+    },
+    {
+      "start": 45531136,
+      "end_inclusive": 45547519,
+      "sha256": "feb6d529b196bce2c376ed7ec9c077a8749d3fbf8adffc59e96828df236b68de"
+    },
+    {
+      "start": 46579712,
+      "end_inclusive": 46596095,
+      "sha256": "25fb39ad01a3f3f92a31fd98ebd8e26603023433551332ba473f75ed9431aca7"
+    },
+    {
+      "start": 47628288,
+      "end_inclusive": 47644671,
+      "sha256": "bb85318334f5ceffa6f70654d405eea9d69079413c18150556f2a2d10a51a2eb"
+    },
+    {
+      "start": 48676864,
+      "end_inclusive": 48693247,
+      "sha256": "a91889a1f6697d73b0e41cef351a500508b02a3f3130e48caf5a3b618d098cc5"
+    },
+    {
+      "start": 49725440,
+      "end_inclusive": 49741823,
+      "sha256": "9875ce5a9990f5484d37e3d2102398d7b5605b45fea1bc7bacf43ebd656a9a6f"
+    },
+    {
+      "start": 50774016,
+      "end_inclusive": 50790399,
+      "sha256": "c6af528fc1153055505fbd6548b94a3401dc4ada68466c629fd882ed6e8b9802"
+    },
+    {
+      "start": 51822592,
+      "end_inclusive": 51838975,
+      "sha256": "ea936f2cb29fac1f0c9a470388a94e4052db500ea07b7dd3e465c94daab08a9f"
+    },
+    {
+      "start": 52871168,
+      "end_inclusive": 52887551,
+      "sha256": "372ef8aab241d43a427888ccb6c2aeee10f4aa494bc4fc373744421b6d6943fb"
+    },
+    {
+      "start": 143048704,
+      "end_inclusive": 143065087,
+      "sha256": "050ca530b5e4cf9a697124cee98c00dae9c9ef293b8964f20955a98549ca54d0"
+    },
+    {
+      "start": 144097280,
+      "end_inclusive": 144113663,
+      "sha256": "01b2ef986ae23109c66dba55638a2469b75db604931a2331db3db8b9856a66de"
+    },
+    {
+      "start": 145145856,
+      "end_inclusive": 145162239,
+      "sha256": "e95c7e7a32cf776fb97f0164223f8a8bf543afcf0bb82d448c0c6c857dac5e9b"
+    },
+    {
+      "start": 146194432,
+      "end_inclusive": 146210815,
+      "sha256": "efc138c8db127d56dd57083259660ff25020cf75a15abdac8fb85cc0b3035549"
+    },
+    {
+      "start": 147243008,
+      "end_inclusive": 147259391,
+      "sha256": "caff190e247c3f4a2c0ef103a2bdf28d3e176723c102d23e277b76870444b9fa"
+    },
+    {
+      "start": 148291584,
+      "end_inclusive": 148307967,
+      "sha256": "ae79111598357518f9038ef74d3e14d8a17af1fd7b6c6128ee5c007139dcca15"
+    },
+    {
+      "start": 149340160,
+      "end_inclusive": 149356543,
+      "sha256": "41c3c821beaed365ed43d7cb5dd255598dbed9684b5a4fa1613529ac14d91148"
+    },
+    {
+      "start": 150388736,
+      "end_inclusive": 150405119,
+      "sha256": "99a024b7349ca68eaf60b79354f5cef3c84b434533e13ae108daa4840bcb2be0"
+    },
+    {
+      "start": 151437312,
+      "end_inclusive": 151453695,
+      "sha256": "dcebc76b981600100f50a6d04ecc1b65d8cc27cccb41db6d18edad4dc0dd8525"
+    },
+    {
+      "start": 152485888,
+      "end_inclusive": 152502271,
+      "sha256": "b9c950a6b46714fc848d9d04fdc730923c679ee740ed11705c56ffbeb6398ed6"
+    },
+    {
+      "start": 153534464,
+      "end_inclusive": 153550847,
+      "sha256": "ed7b4cc48c0de0c91355c30cf3b49e4468a431d90c8b0d4a8662f46f1018b063"
+    },
+    {
+      "start": 154583040,
+      "end_inclusive": 154599423,
+      "sha256": "2e5f330f21a268e3e65b0d935d1d20e42621cba6f82e50d8bcdabbc65e83c04b"
+    },
+    {
+      "start": 155631616,
+      "end_inclusive": 155647999,
+      "sha256": "35153c1cbccbe99832cf5a90f2b25e19989cf5ab7569cba00a6bb9491c48ac18"
+    },
+    {
+      "start": 156680192,
+      "end_inclusive": 156696575,
+      "sha256": "2412aedc2d31b219a9f5f4c302b2cac89040e63c1b295fa69c575efcaf0598a4"
+    },
+    {
+      "start": 157728768,
+      "end_inclusive": 157745151,
+      "sha256": "196958fa06856cbb62965d94782346226c68d2229435d83cc6f85fa86a83a991"
+    },
+    {
+      "start": 158777344,
+      "end_inclusive": 158793727,
+      "sha256": "f68e86cabf257591e74d9df65f3f542a66d2ee5c3e03233e6775cf4f89b7ef20"
+    },
+    {
+      "start": 159825920,
+      "end_inclusive": 159842303,
+      "sha256": "4fe7b59af6de3b665b67788cc2f99892ab827efae3a467342b3bb4e3bc8e5bfe"
+    },
+    {
+      "start": 250019840,
+      "end_inclusive": 250036223,
+      "sha256": "0d6e5e80be021154a3b66ad277fec07abc567e024e0dc568f36f0c7dffa0bab2"
+    },
+    {
+      "start": 251068416,
+      "end_inclusive": 251084799,
+      "sha256": "f7c5f298b2c64829d67063661019c13ec231a9f35b62eea6e0c98a28e0bcd9be"
+    },
+    {
+      "start": 252116992,
+      "end_inclusive": 252133375,
+      "sha256": "433bcf41e0f5a3228234f658cd11f7fb1e66604360b2527524d9bc3d3cacde3f"
+    },
+    {
+      "start": 253165568,
+      "end_inclusive": 253181951,
+      "sha256": "f06287eecd56fd7b172e7fde9c88b9f47a87f92e76c94b7be714c17f4c0dd487"
+    },
+    {
+      "start": 254214144,
+      "end_inclusive": 254230527,
+      "sha256": "53df3886344d4facd346d31098cf09b9619c622cdd36ccf192c9aae8a98ef14d"
+    },
+    {
+      "start": 255262720,
+      "end_inclusive": 255279103,
+      "sha256": "325e708bf6d9768078bf90e7f6400f504203a6003813415e11d98c81a1c199ec"
+    },
+    {
+      "start": 256311296,
+      "end_inclusive": 256327679,
+      "sha256": "a1427f730d32ecdf37e6edd8dfe9bc6cfdea8d0fa0543f5df70545ed6168753d"
+    },
+    {
+      "start": 257359872,
+      "end_inclusive": 257376255,
+      "sha256": "773ce96292737ca390bffff812f3eb803c135d605ed00805db58d29c8fc1a507"
+    },
+    {
+      "start": 258408448,
+      "end_inclusive": 258424831,
+      "sha256": "b3890a4fa6c6dd5b8634cb562361a0fa4a1dbafeb0125820e96dec6961780127"
+    },
+    {
+      "start": 259457024,
+      "end_inclusive": 259473407,
+      "sha256": "d7a8987ed3efedaa63bb65268c1db97a19bbc8f6e2b7846ce49b3cba87c2865e"
+    },
+    {
+      "start": 260505600,
+      "end_inclusive": 260521983,
+      "sha256": "3818a3e44bfaf6712b69c0e71d3847b7063dfa792bdf6fb9b43c8f6dcebdfffb"
+    },
+    {
+      "start": 261554176,
+      "end_inclusive": 261570559,
+      "sha256": "afbdade021e615bd5c374284f4cb936b77535bac78ce69924efae0d6266318f7"
+    },
+    {
+      "start": 262602752,
+      "end_inclusive": 262619135,
+      "sha256": "e1204ae0532a48d1e30dddda637fccc07a04def14cc3f237a6692bc7d595e777"
+    },
+    {
+      "start": 263651328,
+      "end_inclusive": 263667711,
+      "sha256": "cc42dd599743e918c188e909e4c3ce160690e6b4e5ddb9cd518d737650c53985"
+    },
+    {
+      "start": 264699904,
+      "end_inclusive": 264716287,
+      "sha256": "f3ed266b76805d05376b5c12dc59b9b2a6c14b099ee9261303ab936df45483b0"
+    },
+    {
+      "start": 265748480,
+      "end_inclusive": 265764863,
+      "sha256": "4b7c05cb99e9c4f705f06079b418a11b79afcfe4c8f70030cd0a37fc3316b3f8"
+    },
+    {
+      "start": 266797056,
+      "end_inclusive": 266813439,
+      "sha256": "4fe7b59af6de3b665b67788cc2f99892ab827efae3a467342b3bb4e3bc8e5bfe"
+    },
+    {
+      "start": 53919744,
+      "end_inclusive": 53936127,
+      "sha256": "372ef8aab241d43a427888ccb6c2aeee10f4aa494bc4fc373744421b6d6943fb"
+    },
+    {
+      "start": 54968320,
+      "end_inclusive": 54984703,
+      "sha256": "41d2eed6c301a2b70d882ecba21906b52802d8a4d80b1921b2a29e5155774ed0"
+    },
+    {
+      "start": 56016896,
+      "end_inclusive": 56033279,
+      "sha256": "70a2ca8c52dc31f71a6b1acc305c32166db325e2f47936c0e5bac06ad49ab710"
+    },
+    {
+      "start": 57065472,
+      "end_inclusive": 57081855,
+      "sha256": "0c382f687617b4e08fba66ff388bbf0fb3d1f148003d1176b41d854ca49fc8ae"
+    },
+    {
+      "start": 58114048,
+      "end_inclusive": 58130431,
+      "sha256": "d5c92427198a8ea289cea389d0e062a2b4832be76f307161557233b3da5ae0ef"
+    },
+    {
+      "start": 59162624,
+      "end_inclusive": 59179007,
+      "sha256": "cd998bd34ab698a6fbc437ecf0b4b76567a1e802bc8361b11564c7e208812072"
+    },
+    {
+      "start": 60211200,
+      "end_inclusive": 60227583,
+      "sha256": "ec69036af5c319dbde2d4cd18d565ee3172a75e9669d35eed38ac8b9d639c422"
+    },
+    {
+      "start": 61259776,
+      "end_inclusive": 61276159,
+      "sha256": "29f17c12924ef43e89d07b33104d9c3597d693ec38819f22289868242e40a388"
+    },
+    {
+      "start": 62308352,
+      "end_inclusive": 62324735,
+      "sha256": "0bcd5924a166c3d07060f313bad8f1e10f67754a2bf1fcbfa401a2ab41a1496f"
+    },
+    {
+      "start": 63356928,
+      "end_inclusive": 63373311,
+      "sha256": "ae630f582512d0074355f1bfaf1f1ef2ab19011ec7eaec1f55aaaef0ed567d40"
+    },
+    {
+      "start": 64405504,
+      "end_inclusive": 64421887,
+      "sha256": "2f9e00d5bc235790d63a248adae082c55c2e6b9302b535fca2196a0039eb77dc"
+    },
+    {
+      "start": 65454080,
+      "end_inclusive": 65470463,
+      "sha256": "fa1cd5be3ba9815748958af82082c0799fc650529045a7ad457599d51492d4c5"
+    },
+    {
+      "start": 66502656,
+      "end_inclusive": 66519039,
+      "sha256": "bc728757bc8d6011934b36e22eccd67f81bf3860b8f95a94f01e58cfe8358116"
+    },
+    {
+      "start": 67551232,
+      "end_inclusive": 67567615,
+      "sha256": "bbbe196656ca37c1e2d7c5cc9f05577f95ea9c8e8e10d477344ee723a7f0e9bc"
+    },
+    {
+      "start": 68599808,
+      "end_inclusive": 68616191,
+      "sha256": "1073f1c841e39ee83ce6cd4eb77884190990c40bf107c9582f92d39be08ee5b8"
+    },
+    {
+      "start": 69648384,
+      "end_inclusive": 69664767,
+      "sha256": "a727fcaa6e8f99f74c331bec3fa758314fcc6748c4b1fc84cb34b1a2524e707f"
+    },
+    {
+      "start": 70696960,
+      "end_inclusive": 70713343,
+      "sha256": "0f64a95555cb249212c28d17932238ba3f9b6385ae150f726a44490ac6540e1d"
+    },
+    {
+      "start": 160874496,
+      "end_inclusive": 160890879,
+      "sha256": "4fe7b59af6de3b665b67788cc2f99892ab827efae3a467342b3bb4e3bc8e5bfe"
+    },
+    {
+      "start": 161923072,
+      "end_inclusive": 161939455,
+      "sha256": "45cfd046f5a83b2f0497b19fba96dd70f159a6a3079beccb2214e07f5f2ca8b9"
+    },
+    {
+      "start": 162971648,
+      "end_inclusive": 162988031,
+      "sha256": "395e88651cd0a79ab13f4baa3f8909bca653ce607eb7591169fb2256122ceb54"
+    },
+    {
+      "start": 164020224,
+      "end_inclusive": 164036607,
+      "sha256": "01c1c8ca83bc657e163cec6c8e163e8c683d6b418ae0fff521f524f02c366f78"
+    },
+    {
+      "start": 165068800,
+      "end_inclusive": 165085183,
+      "sha256": "58a63da8cec90d526b175345397acca95bd81c73d59b49f16e04a07077995ccc"
+    },
+    {
+      "start": 166117376,
+      "end_inclusive": 166133759,
+      "sha256": "28e62c8f000fd696ac3084e05187b1e9cc86fa4d425263e9583803324ac6e164"
+    },
+    {
+      "start": 167165952,
+      "end_inclusive": 167182335,
+      "sha256": "d69064962c0f535b57c6ae9a11f5b8d4df64668b7f55b986010b061b09d86a8e"
+    },
+    {
+      "start": 168214528,
+      "end_inclusive": 168230911,
+      "sha256": "a1f300ccafbda8d95b75b2190cb3fa70f87f9ea16f612b537e2cdffff50271fd"
+    },
+    {
+      "start": 169263104,
+      "end_inclusive": 169279487,
+      "sha256": "6662e3abca4b5424f4bf4dd80369dcb468c5f019fe344ad9b339010a6480b83d"
+    },
+    {
+      "start": 170311680,
+      "end_inclusive": 170328063,
+      "sha256": "be29f7b52f82322e305220e52d871292cc95a8c191be408be8d5f184e26e51e7"
+    },
+    {
+      "start": 171360256,
+      "end_inclusive": 171376639,
+      "sha256": "d2fbab3eac196a63e49ac3b662ae0be3139e0ba0a87933d878302126b5ba5ff1"
+    },
+    {
+      "start": 172408832,
+      "end_inclusive": 172425215,
+      "sha256": "7f289c95600542bc26a6c3a8a616326db49d1e2002d354aae1a4921de172d86a"
+    },
+    {
+      "start": 173457408,
+      "end_inclusive": 173473791,
+      "sha256": "517412207e082cbd46acac3b0544e4094e62b5965f3f039668332ff1ab583807"
+    },
+    {
+      "start": 174505984,
+      "end_inclusive": 174522367,
+      "sha256": "87d854f31a32097a4a8d4179cef73bc79361f183beaf93b000d6623087928608"
+    },
+    {
+      "start": 175554560,
+      "end_inclusive": 175570943,
+      "sha256": "e55a70c2082ae9bf67cc95a5fc8275a5552691789450a95300e0ff5347fb12a7"
+    },
+    {
+      "start": 176603136,
+      "end_inclusive": 176619519,
+      "sha256": "1dddbb958fc2eab204ea8c21920b3dea59e64467050f7152672a766faf3f6d37"
+    },
+    {
+      "start": 177651712,
+      "end_inclusive": 177668095,
+      "sha256": "7683b49ee3406c2898fdf13e9112df6d6e085c84d08582812428db79a51d3782"
+    },
+    {
+      "start": 267845632,
+      "end_inclusive": 267862015,
+      "sha256": "4fe7b59af6de3b665b67788cc2f99892ab827efae3a467342b3bb4e3bc8e5bfe"
+    },
+    {
+      "start": 268894208,
+      "end_inclusive": 268910591,
+      "sha256": "8be1a971f01b3ae623d511d0442db15a639642b1a34c696f0d27ddbe03d085cf"
+    },
+    {
+      "start": 269942784,
+      "end_inclusive": 269959167,
+      "sha256": "4678d828fb92da583528508844847238330ffff7e196df0de5555246452888ec"
+    },
+    {
+      "start": 270991360,
+      "end_inclusive": 271007743,
+      "sha256": "a4ad6daf9a1839c1de0a5152919fcd28820330255c61905173445c8418b60b2d"
+    },
+    {
+      "start": 272039936,
+      "end_inclusive": 272056319,
+      "sha256": "194b04ce370fec98307c4ade4840067c076ca38b962435bfa74516dc2aa3b270"
+    },
+    {
+      "start": 273088512,
+      "end_inclusive": 273104895,
+      "sha256": "edf70d364a1f0f47434368d7f890bdfd0df98d7124ef229e9da86e3f6aeda904"
+    },
+    {
+      "start": 274137088,
+      "end_inclusive": 274153471,
+      "sha256": "0116248336ac8c85f33f7cad1d5510b3e1605b4e660163ab489c3d110fd3569f"
+    },
+    {
+      "start": 275185664,
+      "end_inclusive": 275202047,
+      "sha256": "15fe943cb5b9e61f2cc7544f881702aad3a5a6c9b4fa79158b582935c4f3f3e0"
+    },
+    {
+      "start": 276234240,
+      "end_inclusive": 276250623,
+      "sha256": "396624d8af480e6581b63beaf070cdb3776a31d67ac30451df316aa6088ab53d"
+    },
+    {
+      "start": 277282816,
+      "end_inclusive": 277299199,
+      "sha256": "b585373adfadc9062c4a2f80a68d6ea3532cf0245e2c6e3e50742a5f1d606779"
+    },
+    {
+      "start": 278331392,
+      "end_inclusive": 278347775,
+      "sha256": "7a13d95b1fc4eb2fef336dc060043e01001686ed490849c926e07bb4224d8175"
+    },
+    {
+      "start": 279379968,
+      "end_inclusive": 279396351,
+      "sha256": "1957dc41646bf625d6a0f939abdbca7afca0a9f0f8fe8ec422d4b91d36ed3ce2"
+    },
+    {
+      "start": 280428544,
+      "end_inclusive": 280444927,
+      "sha256": "f39720c24850dab1f20467288a7004975c2c308f7e4dd86c9a7fdcc4ea447930"
+    },
+    {
+      "start": 281477120,
+      "end_inclusive": 281493503,
+      "sha256": "b344e14cfa66c56175b735db3b7d484a4d3082254cd94d9f4db2c0798bd56de3"
+    },
+    {
+      "start": 282525696,
+      "end_inclusive": 282542079,
+      "sha256": "9d19e3e02f23cb7ea86b5329f6348ec69f59f2176e058f5fb61b966366f30468"
+    },
+    {
+      "start": 283574272,
+      "end_inclusive": 283590655,
+      "sha256": "471c7cc2548100f47236488801e41dcaa3c50ddf1086234264a0e070c4e3adca"
+    },
+    {
+      "start": 284622848,
+      "end_inclusive": 284639231,
+      "sha256": "67a295aeb0dc8fb18a3bcc67c72b6e94894336f02d97f37ab4a2f33bd82aa205"
+    },
+    {
+      "start": 71745536,
+      "end_inclusive": 71761919,
+      "sha256": "f218c446730e4c3182b4c0b3c5365dd225a76ca9c545e5a6a76a2de9d8fa957c"
+    },
+    {
+      "start": 72794112,
+      "end_inclusive": 72810495,
+      "sha256": "da39a1b838e5444f9ad737f2f9283158ec2295843a35a24d4d990312ff2df396"
+    },
+    {
+      "start": 73842688,
+      "end_inclusive": 73859071,
+      "sha256": "5de3a9f77be090988a9f367060f53021ae729e83a7fb357194502a83c65162f3"
+    },
+    {
+      "start": 74891264,
+      "end_inclusive": 74907647,
+      "sha256": "e19cdfb4dbc32f07cc71a658768e591c1b43fcb711b9eca82fb22889f59d92d3"
+    },
+    {
+      "start": 75939840,
+      "end_inclusive": 75956223,
+      "sha256": "283d76d0e28b745dd34ac63076ae0ec5ecce1959ccf9a3a7cb50186b6c198cce"
+    },
+    {
+      "start": 76988416,
+      "end_inclusive": 77004799,
+      "sha256": "12d6801a3a1a909363aec93ea25971a859f2af2edfa15e3daa681b3f2b9c1864"
+    },
+    {
+      "start": 78036992,
+      "end_inclusive": 78053375,
+      "sha256": "34fd9aa08565edc306e8e87ad1a4d90977a91d9f354aa62a8a815a205fad7eeb"
+    },
+    {
+      "start": 79085568,
+      "end_inclusive": 79101951,
+      "sha256": "26db286c935e58c43ff2cf1cc488a57e1b4af32f84a4046aaaa3d582fd1d2bdc"
+    },
+    {
+      "start": 80134144,
+      "end_inclusive": 80150527,
+      "sha256": "19a91dbfef2154e8263c5434516994cbffd63abad1f45e3b887bc8855242b770"
+    },
+    {
+      "start": 81182720,
+      "end_inclusive": 81199103,
+      "sha256": "46b56317dfd077a8aba61051f24afc7b54ff8d3bc1e4741d13f94b5ffc7ff4a6"
+    },
+    {
+      "start": 82231296,
+      "end_inclusive": 82247679,
+      "sha256": "f7a0e1443749b104243ed5619e86debc28d8f9c9c51517704aa2a1b81a16bded"
+    },
+    {
+      "start": 83279872,
+      "end_inclusive": 83296255,
+      "sha256": "53703b541e650b95f9202cb5b71dda50c1a0174a55c8619786933be303be234c"
+    },
+    {
+      "start": 84328448,
+      "end_inclusive": 84344831,
+      "sha256": "043558ddc0df0fd47b9e877b745db7aa365bab3d5d436ac5231655ad5da2494e"
+    },
+    {
+      "start": 85377024,
+      "end_inclusive": 85393407,
+      "sha256": "9bd65e12e2fe84b951cbba70036b2bd45647e9827ed477ad740c511a24e40651"
+    },
+    {
+      "start": 86425600,
+      "end_inclusive": 86441983,
+      "sha256": "96cf7aeb1498c7ed5040f491b14db501ea92147fddc55b0fc80002f662bd4a34"
+    },
+    {
+      "start": 87474176,
+      "end_inclusive": 87490559,
+      "sha256": "f1d86365a17bfdd2caf5539acd2cd1b3316e130d348f34eb3c679dd963d32ca7"
+    },
+    {
+      "start": 88522752,
+      "end_inclusive": 88539135,
+      "sha256": "c0d4ed52a3a102625c6ff49106f7afb88128df26156e30ee5869183d4f27dcb9"
+    },
+    {
+      "start": 178700288,
+      "end_inclusive": 178716671,
+      "sha256": "3dd16e28fdf1d4c99a82637c1aed806153ac1cf5c9613a3dc91c88a185095870"
+    },
+    {
+      "start": 179748864,
+      "end_inclusive": 179765247,
+      "sha256": "afdeca1c22fb8f5344be50b64e90a6e5e999cca5e46151ba4c0ba7b0513747bf"
+    },
+    {
+      "start": 180797440,
+      "end_inclusive": 180813823,
+      "sha256": "ba1cb95eb0e5b66ec3eba3795f9c45eeeddbc8e0c79397948bbf451dc2492a76"
+    },
+    {
+      "start": 181846016,
+      "end_inclusive": 181862399,
+      "sha256": "eb155028d7778870b422be02c31252ccedf85f67b78ded0fa5b794cfab21d2fe"
+    },
+    {
+      "start": 182894592,
+      "end_inclusive": 182910975,
+      "sha256": "0f698fcc5fa1022968cd8ebb6f00936c07809f30f0fb01911cf2a7db873f2900"
+    },
+    {
+      "start": 183943168,
+      "end_inclusive": 183959551,
+      "sha256": "dc7ff7b295e344610c7d0aac630f66470b76478d735d12aa807a1f6c233ab647"
+    },
+    {
+      "start": 184991744,
+      "end_inclusive": 185008127,
+      "sha256": "f216fdd98c9954064ed0c5eaf56b0ac2999d0a8d9bb293cef4e9564c8c1ba826"
+    },
+    {
+      "start": 186040320,
+      "end_inclusive": 186056703,
+      "sha256": "acaf42e080743177646a4de1117eb13dc4d716f1babe70f8bf9d90a3755975a6"
+    },
+    {
+      "start": 187088896,
+      "end_inclusive": 187105279,
+      "sha256": "8d5de10aaf7da7c7d224cebfe8af0623674b5a2ce57385681bac0ccda108c7df"
+    },
+    {
+      "start": 188137472,
+      "end_inclusive": 188153855,
+      "sha256": "06780fe3eb98e17e77d9c5124f1445efb0c4c75ec38d93ecb8e2bdd18db3bf10"
+    },
+    {
+      "start": 189186048,
+      "end_inclusive": 189202431,
+      "sha256": "6dacdb5185b38306477269b7e0bfff8a6f26f4971bbc7e6defefa8584390a72e"
+    },
+    {
+      "start": 190234624,
+      "end_inclusive": 190251007,
+      "sha256": "00666a874a119d6c059a2cb7beb9fe1d1ccb3e493cecc445cc74ce5e01e9d6d1"
+    },
+    {
+      "start": 191283200,
+      "end_inclusive": 191299583,
+      "sha256": "3d5eb7500c7729719def466907b739e4adc66a711614d74623ae4309c8d3d8f5"
+    },
+    {
+      "start": 192331776,
+      "end_inclusive": 192348159,
+      "sha256": "e29664aff64f1d0ad9176c655d096b97d5cef2598e0cea2d40b19ba71ba998c2"
+    },
+    {
+      "start": 193380352,
+      "end_inclusive": 193396735,
+      "sha256": "fdfb68cb5e5623e8a364a8391aa56571edf7abe3b28b03552ec2ec9396143c0d"
+    },
+    {
+      "start": 194428928,
+      "end_inclusive": 194445311,
+      "sha256": "60df5f66f5fddc27c0cca52b7258202e86432d0ee88062eb46a63f752a472566"
+    },
+    {
+      "start": 195477504,
+      "end_inclusive": 195493887,
+      "sha256": "c6f242b019b0fdf329e032e1bf9aeaac7508bc9187d01886473f1a6f9c07f034"
+    },
+    {
+      "start": 285671424,
+      "end_inclusive": 285687807,
+      "sha256": "4a5c66748beb41a0bfb641d5fbbd41c371fb9aaaee99580f628c84db7321db89"
+    },
+    {
+      "start": 286720000,
+      "end_inclusive": 286736383,
+      "sha256": "b70cbe9a1f2eb211a1d9b33590ca36b8a5f61a58f6d88c4cd68012f89dfdfaab"
+    },
+    {
+      "start": 287768576,
+      "end_inclusive": 287784959,
+      "sha256": "a2d28c3e205bbac869f986ccc2face33d2cf45aaea4a79d056986724fdfb8244"
+    },
+    {
+      "start": 288817152,
+      "end_inclusive": 288833535,
+      "sha256": "d1f155006d4110ee7bf2a9704d1ffcabda3fcd00525396aebd5e635760082de2"
+    },
+    {
+      "start": 289865728,
+      "end_inclusive": 289882111,
+      "sha256": "0388badae733fe2d7cdec2711b94b8c7548a0010119a1d3bbad97b38b1e29ca5"
+    },
+    {
+      "start": 290914304,
+      "end_inclusive": 290930687,
+      "sha256": "082a1974f6493e4f82398eb39229d095830b189b4621f0aace5d6c4b7cda29e2"
+    },
+    {
+      "start": 291962880,
+      "end_inclusive": 291979263,
+      "sha256": "8ba5fddcc53e9b378a94b14d08e55621b6345520bb0fdeb62d3e4b875446f298"
+    },
+    {
+      "start": 293011456,
+      "end_inclusive": 293027839,
+      "sha256": "e7a13e37f96fb264b01d15b08e2fc15b0abdc02bc38341b5883ce868456722bb"
+    },
+    {
+      "start": 294060032,
+      "end_inclusive": 294076415,
+      "sha256": "4d16b405ebfb5fa63624f6d97db925bfdacdeaf7fe9be1b5af3180e9ad72a0ce"
+    },
+    {
+      "start": 295108608,
+      "end_inclusive": 295124991,
+      "sha256": "5b7b8ddd5d72ed844fa743e3452300bda50c62518b2105cccfc33a8a403b231b"
+    },
+    {
+      "start": 296157184,
+      "end_inclusive": 296173567,
+      "sha256": "7b5e2ae1d93d63519eb374d7cf6b55474e2524ae64c10efa194c1872cf412031"
+    },
+    {
+      "start": 297205760,
+      "end_inclusive": 297222143,
+      "sha256": "61ff7978e9958ff06232f678df475dbd1a9ab3bcc90a28df5a2da3bbae29ba1a"
+    },
+    {
+      "start": 298254336,
+      "end_inclusive": 298270719,
+      "sha256": "9c29fea85a3ad322833702e2ab661cce9ca262f92d4679f8e10a50db1a956b16"
+    },
+    {
+      "start": 299302912,
+      "end_inclusive": 299319295,
+      "sha256": "5a5afaf4a06d44994add7cf9ab53baf096cb065860a846fa902e0ab20597a43c"
+    },
+    {
+      "start": 300351488,
+      "end_inclusive": 300367871,
+      "sha256": "e8a59bd83360e4f70363fd9e7beae39a68f8eacdb58b86525231bd5093974aec"
+    },
+    {
+      "start": 301400064,
+      "end_inclusive": 301416447,
+      "sha256": "cc2096821b24fb514c8c317c41b4d6f3fc0eb08d6d16fee353e6235a1cf74b3a"
+    },
+    {
+      "start": 302448640,
+      "end_inclusive": 302465023,
+      "sha256": "8b29709e9e1f35bbb55bd0b21ed15fd5e016c6be59de2d93c609702d0168a7fd"
+    },
+    {
+      "start": 89571328,
+      "end_inclusive": 89587711,
+      "sha256": "4a2f39bbb0ed0d0607aed9a7876aa5177b9dfef570b91a4a344f65e737c8f74a"
+    },
+    {
+      "start": 90619904,
+      "end_inclusive": 90636287,
+      "sha256": "56ef22c93c4974da6822fd21f0d7922a776072725d3ad79a6050df1e2f294aa1"
+    },
+    {
+      "start": 91668480,
+      "end_inclusive": 91684863,
+      "sha256": "b0fbfa1775bd89b0537937fe7490c09f6e9bd8ddef3632c09bc8b10f62ac466a"
+    },
+    {
+      "start": 92717056,
+      "end_inclusive": 92733439,
+      "sha256": "1d17a231ba586f39e1acbaef350bf0fb5e1acee5717f62b5c4a841a314898fed"
+    },
+    {
+      "start": 93765632,
+      "end_inclusive": 93782015,
+      "sha256": "799d38d009878254ad9a75a4078a67007abb7c6dad66b70783bc21826a9ab73d"
+    },
+    {
+      "start": 94814208,
+      "end_inclusive": 94830591,
+      "sha256": "85b2c0b37ffbce78a85c5d978d46fcdff12bc618b90a72b009f7b93558f31670"
+    },
+    {
+      "start": 95862784,
+      "end_inclusive": 95879167,
+      "sha256": "3183a43b32ac2b257116a31f835f5078475b897742026fe60a9ff8ef45e2fa8d"
+    },
+    {
+      "start": 96911360,
+      "end_inclusive": 96927743,
+      "sha256": "b9c4359b4eaf62dddeb179a5feab4019ad3002fc926fc68cd7730c6104f350a1"
+    },
+    {
+      "start": 97959936,
+      "end_inclusive": 97976319,
+      "sha256": "efc5253a5a48dbb94526fe7f0cf3b3dd6dfba565b8fa7ae408858592fd6dd141"
+    },
+    {
+      "start": 99008512,
+      "end_inclusive": 99024895,
+      "sha256": "e41581993d790766f83d6c99b88b1dddabf441544affde1e89cb99ec10c25397"
+    },
+    {
+      "start": 100057088,
+      "end_inclusive": 100073471,
+      "sha256": "60f0ca7ba3093c3ca47132fa8744f2014c2ee0eb66a9f602378020b260f40017"
+    },
+    {
+      "start": 101105664,
+      "end_inclusive": 101122047,
+      "sha256": "1ce7d5e8970c25930c34e6bb5c6eaa3cd4addcd5329dd6adc0ef4c487543b48e"
+    },
+    {
+      "start": 102154240,
+      "end_inclusive": 102170623,
+      "sha256": "e5f34d1609df0471b6b8c06de3ea4e585a85a90e9b442ff4a1bfa53dd21e5d43"
+    },
+    {
+      "start": 103202816,
+      "end_inclusive": 103219199,
+      "sha256": "de7270b71f0014b7903c8aeeeb4122811a83a602e795e04f74c030e27297767f"
+    },
+    {
+      "start": 104251392,
+      "end_inclusive": 104267775,
+      "sha256": "e25d4dedc7a630e811a99c22f110d643397793ac49df83a16e2759690a3fcc33"
+    },
+    {
+      "start": 105299968,
+      "end_inclusive": 105316351,
+      "sha256": "a4a4b5b377aff6de0f9ed9433e2afe2e2be073b7981ed2cbfc198bf25f5c5a3b"
+    },
+    {
+      "start": 106348544,
+      "end_inclusive": 106364927,
+      "sha256": "fb2829e1cc434fc2fa3c467ea1dc87eecdb6235ec3688b36b9882199fc3e4eff"
+    },
+    {
+      "start": 196526080,
+      "end_inclusive": 196542463,
+      "sha256": "79ab84ffcb6da9dc76d9b344d5398dfe39da6fde28d5194b6405acf99e1a9e2a"
+    },
+    {
+      "start": 197574656,
+      "end_inclusive": 197591039,
+      "sha256": "538ea1170d642bf6d7c124d99eb19bb8a45ea12d2e5f38c69a04d3b94817d56d"
+    },
+    {
+      "start": 198623232,
+      "end_inclusive": 198639615,
+      "sha256": "099895c3a6d88ae4c6ab0f73407e53b4a8a2baff54b880f63603fc55b2512924"
+    },
+    {
+      "start": 199671808,
+      "end_inclusive": 199688191,
+      "sha256": "22aab3dad41179f570b4b2a48c8abcd313a46d1ea81fc66ef6361fa44c3f4521"
+    },
+    {
+      "start": 200720384,
+      "end_inclusive": 200736767,
+      "sha256": "4d2dd5c38485f6b86f515448e2c0e438ede7270de53c491b5987dac67a3c198f"
+    },
+    {
+      "start": 201768960,
+      "end_inclusive": 201785343,
+      "sha256": "ad2a3e7b98316af8b9aafc3b684da86d8ec12099cfecd45300e7e8ad4a3bd07a"
+    },
+    {
+      "start": 202817536,
+      "end_inclusive": 202833919,
+      "sha256": "df5c9527f5a16b4fb56b18173e4ce856820b4410bb333dd971fd5da1691fabda"
+    },
+    {
+      "start": 203866112,
+      "end_inclusive": 203882495,
+      "sha256": "64c85ef3f628da2d78f7b76cfe8a03161ff8381d7038291b812e957dbe8a447c"
+    },
+    {
+      "start": 204914688,
+      "end_inclusive": 204931071,
+      "sha256": "b9cc49d1ac28537fd724fff39078271f710c68b8be1602bcc383c39757aa38a3"
+    },
+    {
+      "start": 205963264,
+      "end_inclusive": 205979647,
+      "sha256": "b5ead03eda28ec2adfa7fd33dc2d14492e4ff724135c242e7913f7a7e7c8d50f"
+    },
+    {
+      "start": 207011840,
+      "end_inclusive": 207028223,
+      "sha256": "3f6ed6ea16367f09ddcf1b8517665cfdd7c4740734099c2c951af3fac19dd316"
+    },
+    {
+      "start": 208060416,
+      "end_inclusive": 208076799,
+      "sha256": "9ea6f0bf60210573c763b21abbc5cadfe20d18a4d195f475fe01276e5e83b3c1"
+    },
+    {
+      "start": 209108992,
+      "end_inclusive": 209125375,
+      "sha256": "afbbe5fdbdb12e4ff103804a6108445949856a0557721b9122250d9dd7dc8192"
+    },
+    {
+      "start": 210157568,
+      "end_inclusive": 210173951,
+      "sha256": "8135856473dc604ebb202c674a6bf862559c22fc829bd14ecdca8b22cb0de745"
+    },
+    {
+      "start": 211206144,
+      "end_inclusive": 211222527,
+      "sha256": "ef0315c3a3c2787f888e7fa1988642bc12a6a3d39faa9ec57c83b68a2732ec52"
+    },
+    {
+      "start": 212254720,
+      "end_inclusive": 212271103,
+      "sha256": "fd7db75fb6e532ba3e3e5da2830adc20ce38881d6453ca284254a2690cec1b9e"
+    },
+    {
+      "start": 213303296,
+      "end_inclusive": 213319679,
+      "sha256": "9df12c79fe7ecf5ebf5c4c0ec60106f78801933eaec1aebc14e65b2c81bd7885"
+    },
+    {
+      "start": 303497216,
+      "end_inclusive": 303513599,
+      "sha256": "5694be4cf84e43253cc8cc31904c831b97414ce855f29123ce05e0a93e0da61f"
+    },
+    {
+      "start": 304545792,
+      "end_inclusive": 304562175,
+      "sha256": "4d60019fa6022851478151ffa0b4c944d3dbe0fbb708208de6dacb34f79247af"
+    },
+    {
+      "start": 305594368,
+      "end_inclusive": 305610751,
+      "sha256": "4e9aa4be62a9951c88a511f50dfa3d4e17bd597e5c40e4b04115e19d096329ef"
+    },
+    {
+      "start": 306642944,
+      "end_inclusive": 306659327,
+      "sha256": "dd80b500b49078ecf71cac3fe8f60d2a81ed861e68f7836c175ec2fd00bb32d5"
+    },
+    {
+      "start": 307691520,
+      "end_inclusive": 307707903,
+      "sha256": "32bcd5bc9f29cebf5466a6f6b880623669e7c421a3368ffcb265868dd425624e"
+    },
+    {
+      "start": 308740096,
+      "end_inclusive": 308756479,
+      "sha256": "94141d69f09b6e37d15e63d3bc0713492308bfccebf491eeac42ee10f60118c3"
+    },
+    {
+      "start": 309788672,
+      "end_inclusive": 309805055,
+      "sha256": "2068a1001b3ed7869cfea7a365960d3afb15667bcc9784283b41555614f9823d"
+    },
+    {
+      "start": 310837248,
+      "end_inclusive": 310853631,
+      "sha256": "8f9ef0c98ad1a06e99ed45426008ae3f999f28e419a84e3fd249ea1abe21749b"
+    },
+    {
+      "start": 311885824,
+      "end_inclusive": 311902207,
+      "sha256": "f802ac5b3a066bdc840f5f7882173903fd197020c83e612b0223681460537f42"
+    },
+    {
+      "start": 312934400,
+      "end_inclusive": 312950783,
+      "sha256": "f70ddf3ccd62ddbfa4a6db03b32ae88f6426fc5b7c419e8f8e790d47843fc3df"
+    },
+    {
+      "start": 313982976,
+      "end_inclusive": 313999359,
+      "sha256": "08a3fc3cd8edb34977a1a58b970bae5a0b967e3cbd7fa9841984964d1fe29cd9"
+    },
+    {
+      "start": 315031552,
+      "end_inclusive": 315047935,
+      "sha256": "17508f672843415cc57d89fcfeb0e210ae660e0224d3dd6fa21c858306c5a686"
+    },
+    {
+      "start": 316080128,
+      "end_inclusive": 316096511,
+      "sha256": "0dc30308548cd353df4dc616025c217644142c28ff58b3f9f729effd0c894edf"
+    },
+    {
+      "start": 317128704,
+      "end_inclusive": 317145087,
+      "sha256": "faac745eae07060ec79fd94ca72aebe0961ac240f720f852ed9c29fcc38bc411"
+    },
+    {
+      "start": 318177280,
+      "end_inclusive": 318193663,
+      "sha256": "b1817d3b1bb57e08449dc91dc59acedd7cb0dd3a8aeb266a706537e0b42451ac"
+    },
+    {
+      "start": 319225856,
+      "end_inclusive": 319242239,
+      "sha256": "10405b7bae7a90939ced88ac8a9868710b1ee0124390cc735269f2d95e6a8be9"
+    },
+    {
+      "start": 320274432,
+      "end_inclusive": 320290815,
+      "sha256": "eae74001a00299aef78159bf451dd46588e7807a0a44c5471c1a7228449e6be6"
+    }
+  ],
+  "transfer": {
+    "bytes": 5091776,
+    "requests": 311,
+    "elapsed_seconds": 38.9748757999987
+  },
+  "available_channels": 100,
+  "interpretation": "A nearest-native-pixel surface-brightness trace from the survey-combined visualization cube. It is not source photometry, an instantaneous spectrum or a measurement with supplied per-channel errors.",
+  "limitations": [
+    "Survey-combined imagery is not a temporal sequence.",
+    "No per-channel variance is supplied. This view does not measure a validated source spectrum.",
+    "Stripes near bright emission lines can be mosaic artifacts.",
+    "Contributing hit counts are not inverse variances. No error bars or statistical upper limits are inferred.",
+    "Flags are propagated context indicators. A source flag alone is not a defect; other known or unknown bits are marked for review.",
+    "The mosaic acquisition interval describes contributing survey data, not a separate date for each plotted channel."
+  ],
+  "credits": "NASA/SPHEREx; Caltech/IPAC/IRSA. DR1 doi:10.26131/IRSA678.",
+  "exports": {
+    "trace.ecsv": {
+      "url": "/v1/products/a71abe13c2200da79eaeb15550b6744e85cb0b10af9381d52a1853df7881059c/trace.ecsv",
+      "sha256": "7c3809fcc0cc0cdd55a05e4d1d36582302337087c08a56d9820b3da8da542173"
+    },
+    "trace.csv": {
+      "url": "/v1/products/a71abe13c2200da79eaeb15550b6744e85cb0b10af9381d52a1853df7881059c/trace.csv",
+      "sha256": "e39d82cce53d8fda33afea01cc3881a0d83ab13e999586f52e2bcb31683c2522"
+    },
+    "trace.svg": {
+      "url": "/v1/products/a71abe13c2200da79eaeb15550b6744e85cb0b10af9381d52a1853df7881059c/trace.svg",
+      "sha256": "038bae7d01c412fa3d0590875b7728d148f30661ec0e58ac6fe54b9ee625c295"
+    }
+  }
+}

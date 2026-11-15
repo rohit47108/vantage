@@ -1,0 +1,39 @@
+{
+  "checked_utc": "2026-11-15T17:17:50.590961+00:00",
+  "preview": "https://vantage-spherex-ayhk46e9h-rohit-singhs-projects-48f82479.vercel.app",
+  "deployment_id": "dpl_5B32VQtvHCt4ETiY2xy2MSYnFQ5c",
+  "source_commit": "f3e9d1170437c52c041ebe506f92760e1c6914d3",
+  "backend_origin": "https://cardiovascular-encoding-duo-prefix.trycloudflare.com",
+  "hosting": "Temporary local backend and tunnel; not durable hosting.",
+  "assets": [
+    {
+      "path": "/assets/index-DnnIKmpb.js",
+      "bytes": 343097,
+      "sha256": "d3442a70543d7bb4f0939ca8c6cbc9a1a09cc6ec8735332df585083e389ba14b",
+      "verified_exact": true
+    },
+    {
+      "path": "/assets/index-gcRNqOOq.css",
+      "bytes": 20160,
+      "sha256": "a941dc991f4235d02f63cedc33b12d6433c32dee25e2fd4ecc8f4f4e890bc286",
+      "verified_exact": true
+    },
+    {
+      "path": "/favicon.svg",
+      "bytes": 242,
+      "sha256": "9c088dfc0aa951d21f08a2452f63695ff3f78ccf84b5a10510e656868e0c0ca7",
+      "verified_exact": true
+    }
+  ],
+  "html": {
+    "local_sha256": "d057779261d602105af99f9077c1e7d98a43b133641e8f0f074ad313eaa74912",
+    "public_sha256": "f55d7f94081d76d459b8625007a79da91d753a8fba0216d0d89da40fd51b4805",
+    "removed_exact_tag": "<script async data-explicit-opt-in=\"true\" data-deployment-id=\"dpl_5B32VQtvHCt4ETiY2xy2MSYnFQ5c\" src=\"https://vercel.live/_next-live/feedback/feedback.js\"></script>",
+    "one_appended_newline_removed": false,
+    "exact_otherwise": true
+  },
+  "public_health": {
+    "status": "ok",
+    "policy": "vantage-visual-3"
+  }
+}

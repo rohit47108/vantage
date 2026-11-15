@@ -1,0 +1,73 @@
+{
+  "checked_utc": "2026-11-15T17:19:18.256235+00:00",
+  "preview": "https://vantage-spherex-ayhk46e9h-rohit-singhs-projects-48f82479.vercel.app",
+  "source_commit": "f3e9d1170437c52c041ebe506f92760e1c6914d3",
+  "request": {
+    "plane_id": "f97e17a56b86fc5d8e55a6441a12b71f317cdc863b7ae2910d4f2cd4ab614df3",
+    "x": 81,
+    "y": 80
+  },
+  "job_id": "41122d5b611444fbb6433af242f05b34",
+  "product_id": "a71abe13c2200da79eaeb15550b6744e85cb0b10af9381d52a1853df7881059c",
+  "stages": [
+    {
+      "elapsed_seconds": 1.3532790999997815,
+      "state": "opening_native_spectral_cube"
+    },
+    {
+      "elapsed_seconds": 9.535646100001031,
+      "state": "sampling_channels_17_of_102"
+    },
+    {
+      "elapsed_seconds": 16.065478299999086,
+      "state": "sampling_channels_34_of_102"
+    },
+    {
+      "elapsed_seconds": 24.12007309999899,
+      "state": "sampling_channels_51_of_102"
+    },
+    {
+      "elapsed_seconds": 28.9465483999993,
+      "state": "sampling_channels_68_of_102"
+    },
+    {
+      "elapsed_seconds": 35.37196519999998,
+      "state": "sampling_channels_85_of_102"
+    },
+    {
+      "elapsed_seconds": 40.21851959999913,
+      "state": "sampling_channels_102_of_102"
+    },
+    {
+      "elapsed_seconds": 41.83192140000028,
+      "state": "complete"
+    }
+  ],
+  "transfer": {
+    "bytes": 5091776,
+    "requests": 311,
+    "elapsed_seconds": 38.9748757999987
+  },
+  "available_channels": 100,
+  "displayed_layer_62_exact": true,
+  "exports": [
+    {
+      "name": "trace.ecsv",
+      "bytes": 11470,
+      "sha256": "7c3809fcc0cc0cdd55a05e4d1d36582302337087c08a56d9820b3da8da542173",
+      "exact": true
+    },
+    {
+      "name": "trace.csv",
+      "bytes": 9004,
+      "sha256": "e39d82cce53d8fda33afea01cc3881a0d83ab13e999586f52e2bcb31683c2522",
+      "exact": true
+    },
+    {
+      "name": "trace.svg",
+      "bytes": 12462,
+      "sha256": "038bae7d01c412fa3d0590875b7728d148f30661ec0e58ac6fe54b9ee625c295",
+      "exact": true
+    }
+  ]
+}
