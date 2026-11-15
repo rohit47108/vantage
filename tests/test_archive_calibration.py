@@ -7,6 +7,19 @@ from backend.archive import allowed,calibration
 
 
 class CalibrationAccessTests(unittest.TestCase):
+    def test_additive_discovery_schema_preserves_fresh_legacy_cache(self):
+        import hashlib,json
+        from backend.archive import discover
+        center=[11.,22.];fov=3
+        key=hashlib.sha256(json.dumps([center,fov,'dr1-qr3-20261114']).encode()).hexdigest()
+        saved={'center_deg':center,'fov_arcmin':fov,'observations':[],'search_completeness':'complete','queries':[],
+            'coverage_state':'empty','visit_count':0,'retrieved_utc':'2026-11-15T08:00:00+00:00','data_status':'live'}
+        with tempfile.TemporaryDirectory() as directory,patch('backend.archive.CACHE',Path(directory)),patch('backend.archive.requests.get',side_effect=AssertionError('Fresh existing metadata must not require a forced cold query')):
+            (Path(directory)/(key+'.json')).write_text(json.dumps(saved))
+            result=discover(center,fov)
+        self.assertEqual(result['data_status'],'cached')
+        self.assertEqual(result['collections'],['spherex_dr1','spherex_qr3'])
+
     def test_only_official_calibration_mirror_paths_are_allowed(self):
         good='https://nasa-irsa-spherex.s3.us-east-1.amazonaws.com/dr1/spectral_wcs/cal-swcs-v5-2026-191/2/spectral_wcs_D2_spx_cal-swcs-v5-2026-191.fits'
         self.assertEqual(allowed(good),good)

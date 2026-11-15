@@ -5,12 +5,12 @@ import './sources.css';
 
 interface Observation {index:number;obs_id:string;utc_mid:string;detector:number;mjd_mid:number}
 interface Target {key:string;name:string;revision:string;sampling_description:string;position_model:string;observations:Observation[]}
-interface Sample {obs_id:string;utc_mid:string;detector:number;status:'accepted'|'diagnostic_only'|'rejected';reason:string|null;
+export interface Sample {sample_id?:string;obs_id:string;utc_mid:string;detector:number;status:'accepted'|'diagnostic_only'|'rejected';reason:string|null;
   flux_ujy:number|null;statistical_sigma_ujy:number|null;wavelength_um:number|null;bandwidth_um:number|null;
   reduced_chi2?:number;position_pixel_xy?:number[];pixel_flags_union?:number;source_url:string;source_sha256:string;
   native_cutout_request?:{url:string;checksum_semantics:string};
   image_context?:{shape:number[];brightness_mjysr:(number|null)[][];residual_ujy:(number|null)[][];used:number[][]};
-  centroid_fit?:{shift_pixel_xy:number[];sigma_pixel_xy:number[]}}
+  centroid_fit?:{shift_pixel_xy:number[];sigma_pixel_xy:number[];initial_pixel_xy?:number[]}}
 interface Product {id:string;name:string;type:string;samples:Sample[];limitations:string[];uncertainty_method:string;credits:string;
   request:{method:string;observation_indices:number[];refine_centroid:boolean;aperture_radius:number;background_inner:number;background_outer:number};sampling:{accepted_samples:number;rejected_samples:number;diagnostic_only_samples:number;interpretation:string};
   exports:Record<string,{url:string}>}
@@ -19,7 +19,7 @@ const finished=(job:Job|null)=>!job||['complete','failed','cancelled'].includes(
 const number=(value:number|null|undefined,digits=2)=>value==null?'—':value.toLocaleString('en-US',{minimumFractionDigits:digits,maximumFractionDigits:digits});
 const status=(sample:Sample)=>sample.status==='accepted'?'Passes fit checks':sample.status==='diagnostic_only'?'Inspect fit':'No measurement';
 
-function NativeStamp({sample,residual=false}:{sample:Sample;residual?:boolean}){
+export function NativeStamp({sample,residual=false,geometry}:{sample:Sample;residual?:boolean;geometry?:{method:string;aperture_radius:number;background_inner:number;background_outer:number}}){
   const ref=useRef<HTMLCanvasElement>(null);
   useEffect(()=>{
     if(!sample.image_context||!ref.current)return;
@@ -39,29 +39,36 @@ function NativeStamp({sample,residual=false}:{sample:Sample;residual?:boolean}){
     }
     if(sample.position_pixel_xy){const [x,y]=sample.position_pixel_xy;ctx.strokeStyle='#c4ffda';ctx.lineWidth=1.5;
       const px=(x+.5)*8,py=(height-y-.5)*8;ctx.beginPath();ctx.moveTo(px-9,py);ctx.lineTo(px+9,py);ctx.moveTo(px,py-9);ctx.lineTo(px,py+9);ctx.stroke();}
-  },[sample,residual]);
+    if(geometry&&sample.position_pixel_xy){
+      const original=sample.centroid_fit?.initial_pixel_xy??sample.position_pixel_xy;
+      const ring=(position:number[],radius:number,dashed:boolean)=>{ctx.setLineDash(dashed?[4,4]:[]);ctx.strokeStyle='#b9f5d4';ctx.lineWidth=1;ctx.beginPath();ctx.arc((position[0]+.5)*8,(height-position[1]-.5)*8,radius*8,0,2*Math.PI);ctx.stroke();};
+      ring(geometry.method==='aperture'?sample.position_pixel_xy:original,geometry.method==='aperture'?geometry.aperture_radius:4.5,false);
+      ring(original,geometry.background_inner,true);ring(original,geometry.background_outer,true);ctx.setLineDash([]);
+    }
+  },[sample,residual,geometry]);
   return <figure><canvas ref={ref} role="img" aria-label={residual?'Fitted source and local background residual in microJy per native pixel; only fit pixels shown. Array rows increase upward.':'Native brightness cutout; source cross marks the measured position. Array rows increase upward.'}/>
-    <figcaption>{residual?'Fit residual · µJy / native pixel · used pixels only':'Native brightness · MJy/sr'}<br/>Native columns → · rows ↑</figcaption></figure>;
+    <figcaption>{residual?'Fit residual · µJy / native pixel · used pixels only':'Native brightness · MJy/sr'}<br/>Native columns → · rows ↑{geometry&&<><br/>Solid: {geometry.method==='aperture'?'aperture':'fit core'} · dashed: background annulus</>}</figcaption></figure>;
 }
 
-function SampleChart({product,select,selected}:{product:Product;select:(id:string)=>void;selected:string}){
+export function SampleChart({product,select,selected,wide=false,sourceLabel='P330E'}:{product:{samples:Sample[]};select:(id:string)=>void;selected:string;wide?:boolean;sourceLabel?:string}){
   const samples=product.samples.filter(s=>s.status==='accepted');
   const max=Math.max(1,...samples.map(s=>s.flux_ujy!+3*s.statistical_sigma_ujy!))*1.15;
   const min=Math.min(0,...samples.map(s=>s.flux_ujy!-3*s.statistical_sigma_ujy!));
-  const x=(v:number)=>110+(v-1.05)/.65*600,y=(v:number)=>265-(v-min)/(max-min)*210;
+  const x=(v:number)=>110+(v-(wide?0.7:1.05))/(wide?4.4:0.65)*600,y=(v:number)=>265-(v-min)/(max-min)*210;
+  const key=(s:Sample)=>wide?(s.sample_id??s.obs_id+'/D'+s.detector):s.obs_id;
   return <svg className="sample-chart" viewBox="0 0 760 340" role="group" aria-labelledby="sample-chart-title sample-chart-description">
-    <title id="sample-chart-title">P330E measured flux density versus wavelength</title>
-    <desc id="sample-chart-description">Partial D2 sampling at separate dates. Only samples passing fit checks are plotted. Vertical bars: one statistical standard deviation. Horizontal bars: central calibrated CBAND, not a full response curve. Use the observation table for rejected samples.</desc>
+    <title id="sample-chart-title">{sourceLabel} measured flux density versus wavelength</title>
+    <desc id="sample-chart-description">{wide?'Individual native samples':'Partial D2 sampling'} at separate dates. Only samples passing fit checks are plotted. Vertical bars: one statistical standard deviation. Horizontal bars: central calibrated CBAND, not a full response curve. Use the observation table for rejected samples.</desc>
     <path d="M110 50 V265 H710" fill="none" stroke="#8fa5b7"/>
-    {[1.1,1.3,1.5,1.65].map(tick=><text key={tick} x={x(tick)} y={288} textAnchor="middle">{tick}</text>)}
+    {(wide?[1,2,3,4,5]:[1.1,1.3,1.5,1.65]).map(tick=><text key={tick} x={x(tick)} y={288} textAnchor="middle">{tick}</text>)}
     {[0,.25,.5,.75,1].map(fraction=>{const value=min+(max-min)*fraction;return <text key={fraction} x="100" y={y(value)+5} textAnchor="end">{number(value,0)}</text>;})}
     <text x="390" y="322" textAnchor="middle">Wavelength (µm) · horizontal bars: CBAND</text>
     <text transform="translate(20 160) rotate(-90)" textAnchor="middle">Flux density (µJy)</text>
-    {samples.map(s=><g key={s.obs_id}>
+    {samples.map(s=><g key={key(s)}>
       <path d={`M${x(s.wavelength_um!)} ${y(s.flux_ujy!-s.statistical_sigma_ujy!)} V${y(s.flux_ujy!+s.statistical_sigma_ujy!)} M${x(s.wavelength_um!-s.bandwidth_um!/2)} ${y(s.flux_ujy!)} H${x(s.wavelength_um!+s.bandwidth_um!/2)}`} stroke="#9ddfd2" strokeWidth="2"/>
-      <circle cx={x(s.wavelength_um!)} cy={y(s.flux_ujy!)} r={selected===s.obs_id?9:7} fill="#9ddfd2" stroke={selected===s.obs_id?'white':'#061316'} strokeWidth="2"
-        tabIndex={0} role="button" aria-label={`Select sample ${s.obs_id}, ${number(s.flux_ujy)} microJy, ${s.utc_mid}`} aria-pressed={selected===s.obs_id}
-        onClick={()=>select(s.obs_id)} onKeyDown={e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();select(s.obs_id);}}}/>
+      <circle cx={x(s.wavelength_um!)} cy={y(s.flux_ujy!)} r={selected===key(s)?9:7} fill="#9ddfd2" stroke={selected===key(s)?'white':'#061316'} strokeWidth="2"
+        tabIndex={0} role="button" aria-label={`Select sample ${key(s)}, ${number(s.flux_ujy)} microJy, ${s.utc_mid}`} aria-pressed={selected===key(s)}
+        onClick={()=>select(key(s))} onKeyDown={e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();select(key(s));}}}/>
     </g>)}
     {!samples.length&&<text x="380" y="160" textAnchor="middle">No selected sample passes fit checks.</text>}
   </svg>;

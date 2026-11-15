@@ -1,3 +1,4 @@
 # Scientific data must retain exact bytes across Windows/Linux checkouts.
 *.fits binary
 *.fits.gz binary
+research/updates/2026-11-15/native-extraction/*-http502.html -text

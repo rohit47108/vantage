@@ -10,6 +10,8 @@ import "./style.css";
 import { SpectralExplorer } from "./SpectralExplorer";
 import { CoaddAnalysis } from "./CoaddAnalysis";
 import {SourceSamples} from './SourceSamples';
+import {LiveSourceExplorer} from './LiveSourceExplorer';
+import type {SourceSeed} from './LiveSourceExplorer';
 import { Brand } from "./Brand";
 import {NameLookup} from './NameLookup';
 import {SurveyContext} from './SurveyContext';
@@ -25,7 +27,7 @@ function download(name: string, value: string, type = "application/json") {
   link.click();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
-function TemporalExplorer({onSpectral,onSources}:{onSpectral:()=>void;onSources:()=>void}) {
+function TemporalExplorer({onSpectral,onSources}:{onSpectral:()=>void;onSources:(seed?:SourceSeed)=>void}) {
   const [analysis,setAnalysis]=useState(false);
   const [targetLoading,setTargetLoading]=useState(false);
   const [catalog, setCatalog] = useState<Sequence[]>([]),
@@ -355,7 +357,7 @@ function TemporalExplorer({onSpectral,onSources}:{onSpectral:()=>void;onSources:
         <span className="badge">● {sequence?.data_status || "prepared"}</span>
       </header>
       <nav aria-label="Main navigation">
-        <button title="Measure a source" onClick={onSources}>∿<small>Sources</small></button>
+        <button title="Measure a source" onClick={()=>onSources()}>∿<small>Sources</small></button>
         <button title="Explore wavelengths" onClick={onSpectral}>λ<small>Wavelengths</small></button>
         <button
           title="Explore"
@@ -862,11 +864,14 @@ function TemporalExplorer({onSpectral,onSources}:{onSpectral:()=>void;onSources:
             Click a pixel, or focus the sky and press Enter.
           </p>
           {inspect && sequence && (
-            <PixelInspector
+            <><PixelInspector
               plane={planes[inspectFrame ?? index]}
               frame={sequence.frames[inspectFrame ?? index]}
               pixel={inspect}
-            />
+            /><button onClick={()=>{
+              const plane=planes[inspectFrame??index],x=inspect[0],y=inspect[1];
+              onSources({name:'Selected sky position',ra:plane.ra[y][x],dec:plane.dec[y][x]});
+            }}>Measure this sky position</button></>
           )}
           <div className="exports">
             <button onClick={exportImage}>Export labeled image ↓</button>
@@ -891,6 +896,10 @@ function TemporalExplorer({onSpectral,onSources}:{onSpectral:()=>void;onSources:
               Export provenance ↓
             </button>
             <button onClick={() => setAnalysis(true)} disabled={!sequence||sequence.frames.length<2||targetLoading||!!failedSelection}>Stack observations</button>
+            {selectedCatalog?.startsWith('gaia:')&&<button onClick={()=>{
+              const source=surveys.gaia.layer?.sources.find(s=>'gaia:'+s.id===selectedCatalog);
+              if(source)onSources({name:'Gaia DR3 '+source.id,ra:source.ra,dec:source.dec,pmra:source.pmra,pmdec:source.pmdec,ref_epoch:source.ref_epoch??2016});
+            }}>Measure selected Gaia source</button>}
             <button onClick={() => setMethods(true)}>Data & methods</button>
           </div>
         </aside>
@@ -908,8 +917,11 @@ function TemporalExplorer({onSpectral,onSources}:{onSpectral:()=>void;onSources:
 function App(){
   const [mode,setMode]=useState(new URLSearchParams(location.search).get('view')||'time');
   const [product,setProduct]=useState(new URLSearchParams(location.search).get('product'));
+  const [sourceSeed,setSourceSeed]=useState<SourceSeed|null>(null);
+  const returnTo=useRef('/');
   if(product)return <CoaddAnalysis initialProduct={product} standalone onClose={()=>{history.replaceState(null,'','/');setProduct(null);}}/>;
   if(mode==='sources')return <SourceSamples initialProduct={new URLSearchParams(location.search).get('samples')} onTime={()=>{history.pushState(null,'','/');setMode('time');}}/>;
-  return mode==='wavelengths'?<SpectralExplorer onTime={()=>{history.pushState(null,'','/');setMode('time');}}/>:<TemporalExplorer onSources={()=>{history.pushState(null,'','/?view=sources');setMode('sources');}} onSpectral={()=>{history.pushState(null,'','/?view=wavelengths');setMode('wavelengths');}}/>;
+  if(mode==='measure')return <LiveSourceExplorer seed={sourceSeed} onTime={()=>{history.pushState(null,'',returnTo.current);setMode('time');}}/>;
+  return mode==='wavelengths'?<SpectralExplorer onTime={()=>{history.pushState(null,'','/');setMode('time');}}/>:<TemporalExplorer onSources={seed=>{returnTo.current=location.pathname+location.search;setSourceSeed(seed??null);const params=new URLSearchParams({view:'measure'});if(seed){params.set('source_ra',String(seed.ra));params.set('source_dec',String(seed.dec));if(seed.name)params.set('source_name',seed.name);if(seed.pmra!=null&&seed.pmdec!=null){params.set('pmra',String(seed.pmra));params.set('pmdec',String(seed.pmdec));params.set('ref_epoch',String(seed.ref_epoch??2016));}}history.pushState(null,'','/?'+params);setMode('measure');}} onSpectral={()=>{history.pushState(null,'','/?view=wavelengths');setMode('wavelengths');}}/>;
 }
 createRoot(document.getElementById("root")!).render(<App />);

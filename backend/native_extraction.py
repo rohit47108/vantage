@@ -111,12 +111,12 @@ def measure_native(image,calibration,area,position,options):
     return packet,context
 
 
-def extract_observations(rows,source,options,destination,native_loader=None,check_cancel=lambda:None,progress=lambda stage:None):
+def extract_observations(rows,source,options,destination,native_loader=None,check_cancel=lambda:None,progress=lambda stage:None,selection_context=None,approved_registry=None):
     if not 1<=len(rows)<=512:raise ValueError('Choose one to 512 native observations')
     if len({(r['obs_id'],r['detector']) for r in rows})!=len(rows):raise ValueError('Duplicate physical observations cannot enter one source product')
     rows=sorted(rows,key=lambda r:(r['mjd_mid'],r['detector'],r['obs_id']))
     samples=[];contexts={};handles={};verified=set();bindings={}
-    approved=registry()
+    approved=approved_registry or registry()
     loader=native_loader or (lambda row,position:native_cutout(row,position,2.5))
     with ExitStack() as stack:
         for index,row in enumerate(rows):
@@ -155,10 +155,14 @@ def extract_observations(rows,source,options,destination,native_loader=None,chec
             except requests.RequestException:sample['reason']='Native archive input is temporarily unavailable after bounded retries. Retry this observation.'
             samples.append(sample)
     check_cancel()
+    parameters=options.model_dump()
+    if selection_context is not None:
+        parameters.update({k:selection_context[k] for k in ['field_id','observation_indices']})
     canonical={'policy':POLICY,'photometry_policy':PHOTOMETRY_POLICY,'calibration_registry_policy':approved['policy'],
-        'source':source.model_dump(),'request':options.model_dump(),
+        'source':source.model_dump(),'request':parameters,
         'calibrations':bindings,'samples':samples,
         'software':{'numpy':np.__version__,'scipy':scipy.__version__,'astropy':astropy.__version__,'photutils':photutils.__version__}}
+    if selection_context is not None:canonical['selection']=selection_context
     identity=hashlib.sha256(json.dumps(canonical,sort_keys=True,allow_nan=False).encode()).hexdigest()
     counts={state:sum(s['status']==state for s in samples) for state in ['accepted','diagnostic_only','rejected']}
     product={'schema_version':'1.0.0','id':identity,'type':'source_samples','name':source.name+' · native source samples',**canonical,
@@ -178,6 +182,10 @@ def extract_observations(rows,source,options,destination,native_loader=None,chec
             'Accepted means the declared mask/coverage/geometry/fit checks pass; it is not a detection probability, source classification or claim of discovery.',
             'Finite calibrated ePSF convention; no unknown outer wings, separate ZODI subtraction, clipping or total calibration-error estimate.'],
         'credits':'SPHEREx: NASA/JPL-Caltech/Caltech-IPAC, IRSA. Supplied source-position metadata and its interpretation remain separate from measured native fluxes.'}
+    if selection_context is not None:
+        product['sampling']['available_observations']=selection_context['available_observations']
+        product['sampling']['unselected_observations']=selection_context['available_observations']-len(rows)
+        product['sampling']['search_completeness']=selection_context['search_completeness']
     folder=Path(destination)/identity;folder.mkdir(parents=True,exist_ok=True)
     for name,encoded in contexts.items():atomic_text(folder/name,encoded)
     table=table_for_product(product)

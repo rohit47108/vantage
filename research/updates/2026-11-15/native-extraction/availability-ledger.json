@@ -1,0 +1,27 @@
+{
+  "recorded_utc": "2026-11-15T13:41:02.867108+00:00",
+  "query_checks": "artifacts/native-query-availability.json",
+  "source_field": "artifacts/native-live-field-p330e.json",
+  "native_result": "artifacts/native-live-product-p330e.json",
+  "raw_failed_responses": [
+    {
+      "path": "research/updates/2026-11-15/native-extraction/tap-point-http502.html",
+      "http_status": 502,
+      "content_type_observed": "HTML proxy-error body, not a VOTable",
+      "sha256": "6c5cbf315d1e65021bda341d39f2f9126b1e63d3099d07c315894bd11add085b",
+      "bytes": 341,
+      "endpoint": "https://irsa.ipac.caltech.edu/TAP/sync",
+      "full_request_uri_retained": false
+    },
+    {
+      "path": "research/updates/2026-11-15/native-extraction/tap-columns-http502.html",
+      "http_status": 502,
+      "content_type_observed": "HTML proxy-error body, not a VOTable",
+      "sha256": "6c5cbf315d1e65021bda341d39f2f9126b1e63d3099d07c315894bd11add085b",
+      "bytes": 341,
+      "endpoint": "https://irsa.ipac.caltech.edu/TAP/sync",
+      "full_request_uri_retained": false
+    }
+  ],
+  "interpretation": "Query-specific HTTP/transport failures. Known broad P330E SIA URI returned an actual VOTable. No live-success or complete-inventory claim for P177D; retained source metadata is explicitly dated and limited. Exact TAP parameter URIs were not retained, so these bodies alone do not reproduce the failed TAP requests."
+}

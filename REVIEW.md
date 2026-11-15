@@ -1,5 +1,9 @@
 # Implementation review
 
+November 15, latest general-source slice: reviewed source-discovery/native-job boundaries, immutable calibration snapshots, physical observation/detector identities, result/sample links, error/cancellation and resubmission behavior, native stamp checksums, archive allowlists, input bounds and single-instance cache publication. Fixed saved-product options carrying stale observation indices, motion values dropped from links, reference loading that could overwrite edits, missing cancellation announcement, stale result URLs and invalid fallback-cache records. All 69 scientific/API tests, final 27 local browser cases, type/build checks and runtime npm audit pass. The initial 25/26 browser run and isolated wavelength rerun remain separately recorded. No implementation fix is claimed for that transient loading failure. Controlled native queue recovery after a real test-service restart reproduces the exact immutable six-detector result. Public acceptance follows separately.
+
+The declared limits remain material: conditional statistical errors; no source deblending, complete channel spectrum, validated binning/limits or simultaneous SED; query-specific live archive failures; source-cache quota covers binary publication in one process only; result-store budgets, admission/rate limiting and durable hosting remain unfinished. This slice improves the complete-product goal without marking it complete. See native-extraction/LIVE_SOURCE_WORKFLOW.md under research/updates/2026-11-15.
+
 Review covers correctness, readability, architecture, security and performance under the supplied specification.
 
 ## Corrected findings

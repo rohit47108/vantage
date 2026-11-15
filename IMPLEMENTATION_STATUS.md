@@ -4,7 +4,15 @@
 
 The later complete-product specification supersedes the demo scope described below. The application is PARTIALLY COMPLETE for that goal. See tasks/product-evidence.md; remaining coadd methods, subtraction, source extraction, embeds/investigations, release promotion and durable hosting still require implementation/validation.
 
-### General native extraction dependency — November 15
+### General source workflow — November 15, latest slice
+
+The general source workflow now runs at `/?view=measure`, reached through Sources or real sky/Gaia selections. It freezes dated discovery records and approved calibration bindings, accepts user-selected native observations/options, runs asynchronous extraction through the persistent analysis queue, and links all-detector measurements to checksummed native/residual stamps and actual scientific downloads. Paired motion values, reference epoch, result/sample/quality links, cancellation, failed submissions, stale-result clearing and mobile controls have focused browser coverage. The restored circular logo and descriptive title remain intact.
+
+All 69 scientific/API tests and all 27 browser tests pass locally. The browser suite includes four new general-source cases and desktop/mobile axe checks. An initial complete browser run passed 25/26 and failed a wavelength-loading check; that check passed on isolated rerun with no code change, and the final expanded complete run passed 27/27 without retries/skips. The initial failure remains in artifacts/native-workflow-browser-local.json; it is not described as a code fix. Final evidence: artifacts/native-workflow-browser-local-final.json and native-workflow-scientific-tests.log. Prior numerical foundation source 55e0e9f passed fresh Ubuntu CI run 43713445684. Controlled queued-native-request recovery on the restarted isolated test service reproduced the exact six-detector product and verified its native stamp checksum; see artifacts/native-source-restart-recovery.json. The final build and runtime npm audit pass with no known runtime vulnerabilities.
+
+Actual P330E HTTP extraction uses a dated enclosing metadata snapshot, explicitly marked limited after current date-bounded queries failed. It selected seven real exposures from 150 July candidates, yielding six passing PSF measurements and one uncovered input. The official SIA example and P177D searches returned HTTP 502 while the retained broad P330E query returned a VOTable. Current arbitrary-field discovery availability is therefore not established; no successful P177D measurement is claimed. Contracts, limits and primary references: research/updates/2026-11-15/native-extraction/LIVE_SOURCE_WORKFLOW.md. Public acceptance of this slice is pending below; older release evidence remains historical.
+
+### General native extraction dependency — November 15, earlier checkpoint
 
 `backend/native_extraction.py` now accepts general source coordinates/angular motion and arbitrary native observation records. All six DR1 detectors have exact approved processing/calibration UUID bindings, DataLink associations, sky-coordinate orientation and checksum-pinned wavelength/solid-angle maps in `config/scientific_calibrations.json`. Unsupported inputs are rejected. This core keeps all sample failures, per-observation times, conditional statistical covariance and separately stored native image/residual stamps. A source product can include up to 512 distinct native observation/detector records; the live field/job/UI layer remains to be integrated.
 
@@ -12,7 +20,7 @@ The real P330E benchmark now yields passing PSF measurements on all six detector
 
 The expanded 61-test scientific/API suite passes locally; focused checks are rerun after the final registry-snapshot/identity additions. This dependency is not yet exposed by a new public browser route. The last tested public release remains the retained D2 workflow below. A complete browser-to-live-source workflow and fresh-source CI evidence are still required before public functionality claims expand.
 
-### Native source-sample workflow — November 15
+### Native source-sample workflow — November 15, earlier checkpoint
 
 The tested native kernel is now connected to actual asynchronous extraction in the retained P330E DR1 D2 field, through the shared bounded/persistent analysis queue. The interface selects actual observations and PSF/aperture parameters, reports missing/bad-fit measurements separately, links the chart/table to native brightness and used-pixel residual stamps, and exports actual CSV/ECSV/SVG/provenance products. Shared links restore the immutable product, request controls and selected observation. Source/calibration checksums, target revision, covariance, units and time semantics are retained. No new runtime dependency was introduced.
 

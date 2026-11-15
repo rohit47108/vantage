@@ -1,0 +1,8 @@
+test_date_selection_and_extraction_bounds (test_source_fields.SourceFieldTests.test_date_selection_and_extraction_bounds) ... ok
+test_outage_fallback_requires_a_genuine_enclosing_snapshot (test_source_fields.SourceFieldTests.test_outage_fallback_requires_a_genuine_enclosing_snapshot) ... ok
+test_real_metadata_subset_keeps_completeness_dates_and_capabilities (test_source_fields.SourceFieldTests.test_real_metadata_subset_keeps_completeness_dates_and_capabilities) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.045s
+
+OK

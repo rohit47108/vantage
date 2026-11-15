@@ -1,0 +1,16 @@
+{
+  "center_deg": [
+    210.8024292,
+    54.34875
+  ],
+  "name": "M 101",
+  "provider": "Si=Simbad, all IDs (via url)",
+  "frame": "ICRS",
+  "position_reference": "2006AJ....131.1163S",
+  "warning": "Resolved catalog position. No observation epoch or proper-motion correction is inferred from this name lookup.",
+  "query": "M101",
+  "query_url": "https://vizier.idia.ac.za/viz-bin/nph-sesame/-oxp/SNV?M101",
+  "retrieved_utc": "2026-11-15T13:36:50.721415+00:00",
+  "data_status": "cached",
+  "credits": "CDS Sesame/SIMBAD; CDS, Strasbourg and its official mirror."
+}

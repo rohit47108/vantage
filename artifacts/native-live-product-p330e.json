@@ -1,0 +1,1649 @@
+{
+  "schema_version": "1.0.0",
+  "id": "0710a8b2666cbe5042f68812dec31f14deb4380e378845ffc79accf836b1ceee",
+  "type": "source_samples",
+  "name": "P330E \u00b7 native source samples",
+  "policy": "native-observation-extraction-1",
+  "photometry_policy": "native-isolated-photometry-1",
+  "calibration_registry_policy": "approved-native-dr1-20261115-1",
+  "source": {
+    "name": "P330E",
+    "ra": 247.8908392831,
+    "dec": 30.14604947207,
+    "ref_epoch": 2016.0,
+    "pmra": -8.882,
+    "pmdec": -38.705
+  },
+  "request": {
+    "method": "psf",
+    "centroid_mode": "auto",
+    "aperture_radius": 2.5,
+    "background_inner": 5.0,
+    "background_outer": 8.0,
+    "field_id": "389176372a1deb0f9df81019c2fab18ffb7198a4c652175b6110cf01c0b392ed",
+    "observation_indices": [
+      4,
+      7,
+      63,
+      64,
+      97,
+      112,
+      113
+    ]
+  },
+  "calibrations": {
+    "dr1/3": {
+      "release": "dr1",
+      "detector": 3,
+      "processing_versions": [
+        "7.0.5"
+      ],
+      "calibration_ids": {
+        "spectral_wcs": "019f4f99-19af-763f-8f2e-b7dc6cd00055",
+        "sip": "019f4f98-692f-7198-8618-f68b3cffaf8e",
+        "epsf": "019f4f97-fd05-77b6-939a-bbce423218bb"
+      },
+      "spectral_wcs": {
+        "path": "research/updates/2026-11-15/native-extraction/spectral_wcs_d3.fits.gz",
+        "sha256": "dadd65ab6339acb68b9467d6de12a4c621ef5370286d4a5239727dcd7a1daf54",
+        "original_fits_sha256": "51750c8f948a30541d391e54930279aa067c62c398a7cc2679e592bc6044427a",
+        "source_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/spectral_wcs/cal-swcs-v5-2026-191/3/spectral_wcs_D3_spx_cal-swcs-v5-2026-191.fits",
+        "bytes": 23869544
+      },
+      "solid_angle": {
+        "path": "research/updates/2026-11-15/native-extraction/solid_angle_d3.fits.gz",
+        "sha256": "673c4f9af81d95dbdc2396aa3eeda7d2247bad808a20ade91cc23d9045c6ebf0",
+        "original_fits_sha256": "4c731f195020b227ae05afc38463d30a0d18cab5a3786bc7af0bd49c46f87ea5",
+        "source_url": "https://nasa-irsa-spherex.s3.us-east-1.amazonaws.com/dr1/solid_angle_pixel_map/cal-sapm-v3-2026-191/3/solid_angle_pixel_map_D3_spx_cal-sapm-v3-2026-191.fits",
+        "bytes": 10221087
+      },
+      "reference": {
+        "obs_id": "2025W28_2A_0150_3",
+        "path": "research/updates/2026-11-15/native-extraction/reference_d3.fits",
+        "sha256": "55b16d763dec55a793de09c5bb144c0e7f935f691e95d021338b5e2ea97df00b",
+        "datalink_url": "https://irsa.ipac.caltech.edu/datalink/links/spherex?ID=ivo://irsa.ipac/spherex_dr1?2025W28_2A_0150_3/D3",
+        "datalink_path": "research/updates/2026-11-15/native-extraction/datalink_d3.xml",
+        "datalink_sha256": "ce6967937715800ee4efb0bbb2668a4790de164189c1bce28b4aa309df6ad426"
+      }
+    },
+    "dr1/6": {
+      "release": "dr1",
+      "detector": 6,
+      "processing_versions": [
+        "7.0.5"
+      ],
+      "calibration_ids": {
+        "spectral_wcs": "019f4f99-5f21-722d-bd8d-a6033df45708",
+        "sip": "019f4f98-ab5c-74f0-91f3-a154b83396b8",
+        "epsf": "019f4f97-b309-70c9-ac48-c9f75b692223"
+      },
+      "spectral_wcs": {
+        "path": "research/updates/2026-11-15/native-extraction/spectral_wcs_d6.fits.gz",
+        "sha256": "a1766df4c23502e252cb37a82726b44f946c0074534259e145f3f729f5b20d80",
+        "original_fits_sha256": "19195d253892883586aa2183cb66238b32f6032ade62d490b36b85b0dd18f212",
+        "source_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/spectral_wcs/cal-swcs-v5-2026-191/6/spectral_wcs_D6_spx_cal-swcs-v5-2026-191.fits",
+        "bytes": 23137116
+      },
+      "solid_angle": {
+        "path": "research/updates/2026-11-15/native-extraction/solid_angle_d6.fits.gz",
+        "sha256": "496330c2fccd9028a8bfdfbc3401b34087eeaf834bb8bdf5c4a85d015d0f3411",
+        "original_fits_sha256": "0986595851aab50dcc984b2d2f1c66a57d7726c5996368ed449bf89cf44346f7",
+        "source_url": "https://nasa-irsa-spherex.s3.us-east-1.amazonaws.com/dr1/solid_angle_pixel_map/cal-sapm-v3-2026-191/6/solid_angle_pixel_map_D6_spx_cal-sapm-v3-2026-191.fits",
+        "bytes": 10199447
+      },
+      "reference": {
+        "obs_id": "2025W28_2A_0150_4",
+        "path": "research/updates/2026-11-15/native-extraction/reference_d6.fits",
+        "sha256": "e793124a3652f7557d2951787cc40bb4695d4b9716fefcbcef4835c83ebed399",
+        "datalink_url": "https://irsa.ipac.caltech.edu/datalink/links/spherex?ID=ivo://irsa.ipac/spherex_dr1?2025W28_2A_0150_4/D6",
+        "datalink_path": "research/updates/2026-11-15/native-extraction/datalink_d6.xml",
+        "datalink_sha256": "781d1ad691b6642dc5ac0d4e04c679c148e47f1c00dae68c10feebf32249146a"
+      }
+    },
+    "dr1/5": {
+      "release": "dr1",
+      "detector": 5,
+      "processing_versions": [
+        "7.0.5"
+      ],
+      "calibration_ids": {
+        "spectral_wcs": "019f4f99-48fc-73a4-b778-eb25bf616d6b",
+        "sip": "019f4f98-951c-7db7-a258-f3be1c147274",
+        "epsf": "019f4f97-9ccf-74f0-878e-c4043f47c958"
+      },
+      "spectral_wcs": {
+        "path": "research/updates/2026-11-15/native-extraction/spectral_wcs_d5.fits.gz",
+        "sha256": "0facbf45f94772402baae09d9d19bacecc48078e40fcab12130ca69a746433bf",
+        "original_fits_sha256": "3361428284bddad1dcdce42081ebfbd225acb0b19f6caa94fba3e133bbabfc1c",
+        "source_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/spectral_wcs/cal-swcs-v5-2026-191/5/spectral_wcs_D5_spx_cal-swcs-v5-2026-191.fits",
+        "bytes": 22383478
+      },
+      "solid_angle": {
+        "path": "research/updates/2026-11-15/native-extraction/solid_angle_d5.fits.gz",
+        "sha256": "2616e3c6b9b1e0dbda39b70935ea75974d549b0c164ab7057272cf1bba0a7f07",
+        "original_fits_sha256": "1081fd45e39f96297589e9c4f8cec4fd212c081798fb62886dbb9607b8c865e2",
+        "source_url": "https://nasa-irsa-spherex.s3.us-east-1.amazonaws.com/dr1/solid_angle_pixel_map/cal-sapm-v3-2026-191/5/solid_angle_pixel_map_D5_spx_cal-sapm-v3-2026-191.fits",
+        "bytes": 7430571
+      },
+      "reference": {
+        "obs_id": "2025W29_1A_0544_1",
+        "path": "research/updates/2026-11-15/native-extraction/reference_d5.fits",
+        "sha256": "7b1550c1c21b1e61bfad03d69adc2709f0acf7e4b118e1f3e7f7ef4ea25645b5",
+        "datalink_url": "https://irsa.ipac.caltech.edu/datalink/links/spherex?ID=ivo://irsa.ipac/spherex_dr1?2025W29_1A_0544_1/D5",
+        "datalink_path": "research/updates/2026-11-15/native-extraction/datalink_d5.xml",
+        "datalink_sha256": "56be6e66c0dc6548bdc34c19e21d4bc282b342d58629b093d82def95d6946ec4"
+      }
+    },
+    "dr1/2": {
+      "release": "dr1",
+      "detector": 2,
+      "processing_versions": [
+        "7.0.5"
+      ],
+      "calibration_ids": {
+        "spectral_wcs": "019f4f99-03f1-7376-a5a0-676318f2ddb6",
+        "sip": "019f4f98-52fd-7b9b-b665-7f1270df75bb",
+        "epsf": "019f4f97-58e6-7f5d-a26f-24be8ba2ae7d"
+      },
+      "spectral_wcs": {
+        "path": "research/updates/2026-11-15/photometry/spectral_wcs_d2.fits",
+        "sha256": "0eb4e27f351e6161e21372818f9e811480a7ab8bab9295722f180791e151a463",
+        "original_fits_sha256": "0eb4e27f351e6161e21372818f9e811480a7ab8bab9295722f180791e151a463",
+        "source_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/spectral_wcs/cal-swcs-v5-2026-191/2/spectral_wcs_D2_spx_cal-swcs-v5-2026-191.fits",
+        "bytes": 33312960
+      },
+      "solid_angle": {
+        "path": "research/updates/2026-11-15/photometry/sapm_d2.fits",
+        "sha256": "231bcdab0aa31d0ee9c9349b10e6c871070bf3ed860b7dc799745c0f9d1c8bc0",
+        "original_fits_sha256": "231bcdab0aa31d0ee9c9349b10e6c871070bf3ed860b7dc799745c0f9d1c8bc0",
+        "source_url": "https://nasa-irsa-spherex.s3.us-east-1.amazonaws.com/dr1/solid_angle_pixel_map/cal-sapm-v3-2026-191/2/solid_angle_pixel_map_D2_spx_cal-sapm-v3-2026-191.fits",
+        "bytes": 16652160
+      },
+      "reference": {
+        "obs_id": "2025W29_1A_0544_2",
+        "path": "research/updates/2026-11-15/native-extraction/reference_d2.fits",
+        "sha256": "c4dae103feacb819370aae42fb24c8c6de75e6a099d720f63b2bf7805b06f65d",
+        "datalink_url": "https://irsa.ipac.caltech.edu/datalink/links/spherex?ID=ivo://irsa.ipac/spherex_dr1?2025W29_1A_0544_2/D2",
+        "datalink_path": "research/updates/2026-11-15/native-extraction/datalink_d2.xml",
+        "datalink_sha256": "2cae6b5cb24e9c96b005c8ca8a2a3c1c935effeec2ae515624bcbde27decb289"
+      }
+    },
+    "dr1/4": {
+      "release": "dr1",
+      "detector": 4,
+      "processing_versions": [
+        "7.0.5"
+      ],
+      "calibration_ids": {
+        "spectral_wcs": "019f4f99-3265-766b-b368-e28eb08fdbed",
+        "sip": "019f4f98-7f49-79e3-9a45-85e5641166aa",
+        "epsf": "019f4f97-864d-7bee-8722-a634bea7288f"
+      },
+      "spectral_wcs": {
+        "path": "research/updates/2026-11-15/native-extraction/spectral_wcs_d4.fits.gz",
+        "sha256": "1198de846f29c940d73a27b4a7b1f0fe034d82497cc46c130e2ccff5d1141965",
+        "original_fits_sha256": "dbdcb8addb4ffe817f31786c8cb359b1f47df3528173e9d4602b94c84f7d7c1a",
+        "source_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/spectral_wcs/cal-swcs-v5-2026-191/4/spectral_wcs_D4_spx_cal-swcs-v5-2026-191.fits",
+        "bytes": 24541043
+      },
+      "solid_angle": {
+        "path": "research/updates/2026-11-15/native-extraction/solid_angle_d4.fits.gz",
+        "sha256": "b67b5344c6c6d8313bda678755b73e286a9014483229b54ef46a178b7599ca8a",
+        "original_fits_sha256": "b5ede34463ab365ce4b97fdb10a98eba85c8d628141e7e6df1b3e84d50831204",
+        "source_url": "https://nasa-irsa-spherex.s3.us-east-1.amazonaws.com/dr1/solid_angle_pixel_map/cal-sapm-v3-2026-191/4/solid_angle_pixel_map_D4_spx_cal-sapm-v3-2026-191.fits",
+        "bytes": 10202199
+      },
+      "reference": {
+        "obs_id": "2025W30_1B_0610_1",
+        "path": "research/updates/2026-11-15/native-extraction/reference_d4.fits",
+        "sha256": "da6dd929d589a0358a95aea1d7e2a65b9c77aac43abf76bd73907aad6be29b71",
+        "datalink_url": "https://irsa.ipac.caltech.edu/datalink/links/spherex?ID=ivo://irsa.ipac/spherex_dr1?2025W30_1B_0610_1/D4",
+        "datalink_path": "research/updates/2026-11-15/native-extraction/datalink_d4.xml",
+        "datalink_sha256": "d4094499f233ca108057d5c4a5ab31325dd4076b192b5515ba6e8d9f4dd04942"
+      }
+    },
+    "dr1/1": {
+      "release": "dr1",
+      "detector": 1,
+      "processing_versions": [
+        "7.0.5"
+      ],
+      "calibration_ids": {
+        "spectral_wcs": "019f4f98-edf0-744b-9600-424841d46dc0",
+        "sip": "019f4f98-3cd6-702b-94d2-51e35bf1b279",
+        "epsf": "019f4f97-41f1-7f7c-a94b-cfc0f1d4c9c8"
+      },
+      "spectral_wcs": {
+        "path": "research/updates/2026-11-15/native-extraction/spectral_wcs_d1.fits.gz",
+        "sha256": "ab8dd9ce2ea8635126586f99af9e6cdc5aa588dd385baacafbf202bd2960d110",
+        "original_fits_sha256": "44fb48b236e25a99d42c8986da0064cc58359527e1fc76e182eda52371a1ae23",
+        "source_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/spectral_wcs/cal-swcs-v5-2026-191/1/spectral_wcs_D1_spx_cal-swcs-v5-2026-191.fits",
+        "bytes": 24520518
+      },
+      "solid_angle": {
+        "path": "research/updates/2026-11-15/native-extraction/solid_angle_d1.fits.gz",
+        "sha256": "35204993597cfac8afa809652c464c72cfb9c18fb7b4469b63ce547b8e89ea51",
+        "original_fits_sha256": "f2439d694c68766d0c488af6f051924aea886c2c015af80f10dc5f760a0aa193",
+        "source_url": "https://nasa-irsa-spherex.s3.us-east-1.amazonaws.com/dr1/solid_angle_pixel_map/cal-sapm-v3-2026-191/1/solid_angle_pixel_map_D1_spx_cal-sapm-v3-2026-191.fits",
+        "bytes": 10267274
+      },
+      "reference": {
+        "obs_id": "2025W30_1B_0610_2",
+        "path": "research/updates/2026-11-15/native-extraction/reference_d1.fits",
+        "sha256": "e5e2a5ae722a4b9763824016f845bb5acce2468d344bb4a7ba009a03b34d4190",
+        "datalink_url": "https://irsa.ipac.caltech.edu/datalink/links/spherex?ID=ivo://irsa.ipac/spherex_dr1?2025W30_1B_0610_2/D1",
+        "datalink_path": "research/updates/2026-11-15/native-extraction/datalink_d1.xml",
+        "datalink_sha256": "745a1a4534f6d6dde9f91e480bf2bd5c93bf0aa074be1b0cc74432a30c477f7d"
+      }
+    }
+  },
+  "samples": [
+    {
+      "obs_id": "2025W28_2A_0150_3",
+      "detector": 3,
+      "release": "dr1",
+      "mjd_mid": 60867.335824,
+      "sample_id": "2025W28_2A_0150_3/D3",
+      "utc_mid": "2025-07-11T08:03:35.194Z",
+      "source_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/level2/2025W28_2A/l2b-v27-2026-216/3/level2_2025W28_2A_0150_3D3_spx_l2b-v27-2026-216.fits",
+      "input_position_deg": [
+        247.89081210856892,
+        30.14594707007298
+      ],
+      "status": "accepted",
+      "reason": null,
+      "flux_ujy": 19965.30617550848,
+      "statistical_sigma_ujy": 146.65690934023738,
+      "wavelength_um": 2.034886360168457,
+      "bandwidth_um": 0.049771130084991455,
+      "source_sha256": "55b16d763dec55a793de09c5bb144c0e7f935f691e95d021338b5e2ea97df00b",
+      "native_input": {
+        "retrieval_mode": "native_ibe_cutout",
+        "requested_center_deg": [
+          247.89081210856892,
+          30.14594707007298
+        ],
+        "cutout_parameters": {
+          "center": "247.89081210856892,30.14594707007298deg",
+          "size": "0.0625deg"
+        },
+        "parent_detector_bbox_xywh": [
+          1758,
+          903,
+          37,
+          37
+        ],
+        "cloud_access": {
+          "aws": {
+            "bucket_name": "nasa-irsa-spherex",
+            "key": "dr1/level2/2025W28_2A/l2b-v27-2026-216/3/level2_2025W28_2A_0150_3D3_spx_l2b-v27-2026-216.fits",
+            "region": "us-east-1"
+          }
+        },
+        "checksum_semantics": "SHA-256 identifies the retained native measurement input. An S3 section is a derived FITS with native pixel values and adjusted cutout origins; its bytes are not the full parent exposure."
+      },
+      "native_cutout_request": {
+        "url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/level2/2025W28_2A/l2b-v27-2026-216/3/level2_2025W28_2A_0150_3D3_spx_l2b-v27-2026-216.fits?center=247.89081210856892%2C30.14594707007298deg&size=0.0625deg",
+        "sha256": "55b16d763dec55a793de09c5bb144c0e7f935f691e95d021338b5e2ea97df00b",
+        "parent_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/level2/2025W28_2A/l2b-v27-2026-216/3/level2_2025W28_2A_0150_3D3_spx_l2b-v27-2026-216.fits"
+      },
+      "background_coefficients_mjysr": [
+        0.10932310601557575,
+        -0.0003343385873192745,
+        0.00015835250956543678
+      ],
+      "parameter_covariance": [
+        [
+          21508.24905723061,
+          -0.01582316461379606,
+          0.0010461727129545152,
+          -0.0012712031595173395
+        ],
+        [
+          -0.01582316461379606,
+          1.298241444042257e-06,
+          -7.451810833122404e-08,
+          1.0193469791182777e-07
+        ],
+        [
+          0.0010461727129545152,
+          -7.451810833122404e-08,
+          7.454445537322145e-08,
+          -2.3395647908749415e-08
+        ],
+        [
+          -0.0012712031595173393,
+          1.0193469791182777e-07,
+          -2.3395647908749412e-08,
+          8.674733424529317e-08
+        ]
+      ],
+      "parameter_order": [
+        "flux_ujy",
+        "background_mjysr",
+        "gradient_x_mjysr_per_pixel",
+        "gradient_y_mjysr_per_pixel"
+      ],
+      "reduced_chi2": 1.9027755873242058,
+      "aperture_throughput": 1.0,
+      "residual_expected_noise_dof": 137.0,
+      "core_support_fraction": 0.9999999999999999,
+      "background_pixels": 80,
+      "pixel_flags_union": 2097152,
+      "position_pixel_xy": [
+        17.634380986570104,
+        17.557334919962557
+      ],
+      "epsf": {
+        "oversampling_yx": [
+          5,
+          5
+        ],
+        "stored_sample_sum": 1.0,
+        "native_sum_before_normalization": 0.039154853036546,
+        "cutout_psf_fraction": 1.0,
+        "cutout_absolute_psf_fraction": 1.0,
+        "negative_l1_fraction": 0.0,
+        "normalization": "Unit sum over the complete phase-rendered finite ePSF footprint before image clipping; no extra pixel integration.",
+        "detector": 3,
+        "zone_row": 207,
+        "zone_bin_xy": [
+          9,
+          18
+        ],
+        "zone_center_xy": [
+          1761.3182373046875,
+          919.98779296875
+        ],
+        "zone_width_xy": [
+          185.4545440673828,
+          49.75609588623047
+        ],
+        "parent_pixel_xy": [
+          1775.63438098657,
+          920.5573349199626
+        ],
+        "detector_coordinate_convention": "sky",
+        "basis": "native EPSF extension",
+        "zone_wavelength_um": 2.034522771835327
+      },
+      "centroid_fit": {
+        "initial_pixel_xy": [
+          17.684731008045645,
+          17.532743424236347
+        ],
+        "fitted_pixel_xy": [
+          17.634380986570104,
+          17.557334919962557
+        ],
+        "shift_pixel_xy": [
+          -0.05035002147554124,
+          0.024591495726209445
+        ],
+        "sigma_pixel_xy": [
+          0.0033132678906298736,
+          0.0034304751596281433
+        ],
+        "maximum_shift_per_axis": 0.75,
+        "covariance": [
+          [
+            21508.24905723061,
+            -0.01582316461379606,
+            0.0010461727129545152,
+            -0.0012712031595173395,
+            -0.003941019393680715,
+            0.010029380987484961
+          ],
+          [
+            -0.01582316461379606,
+            1.298241444042257e-06,
+            -7.451810833122404e-08,
+            1.0193469791182777e-07,
+            4.8878501957973895e-08,
+            1.491221050742475e-08
+          ],
+          [
+            0.0010461727129545152,
+            -7.451810833122404e-08,
+            7.454445537322145e-08,
+            -2.3395647908749415e-08,
+            -1.848119382748852e-08,
+            4.883081277962702e-09
+          ],
+          [
+            -0.0012712031595173393,
+            1.0193469791182777e-07,
+            -2.3395647908749412e-08,
+            8.674733424529317e-08,
+            1.118289049931533e-08,
+            -1.8507569909662488e-08
+          ],
+          [
+            -0.003941019393680747,
+            4.887850195797389e-08,
+            -1.8481193827488523e-08,
+            1.1182890499315334e-08,
+            1.0977744115078932e-05,
+            -1.3640099745208918e-06
+          ],
+          [
+            0.01002938098748494,
+            1.4912210507424724e-08,
+            4.8830812779627e-09,
+            -1.8507569909662488e-08,
+            -1.3640099745208918e-06,
+            1.1768159820825736e-05
+          ]
+        ],
+        "parameter_order": [
+          "flux_ujy",
+          "background_mjysr",
+          "gradient_x_mjysr_per_pixel",
+          "gradient_y_mjysr_per_pixel",
+          "centroid_x_pixel",
+          "centroid_y_pixel"
+        ],
+        "uncertainty_method": "Local full-Jacobian covariance; aperture uses delta-method position derivatives. Masks anchored to the independent input position. High-S/N bounded fit only."
+      },
+      "solid_angle_wcs_ratio": 1.0001293934231528,
+      "centroid_refinement": "performed",
+      "image_context_file": "sample-0.json",
+      "image_context_sha256": "e81cca9ce75a8b22c372e36f17c1ef3721ab4591b2209dbe7c5d921d4ee726c8",
+      "image_context_url": "/v1/products/0710a8b2666cbe5042f68812dec31f14deb4380e378845ffc79accf836b1ceee/sample-0.json"
+    },
+    {
+      "obs_id": "2025W28_2A_0150_4",
+      "detector": 6,
+      "release": "dr1",
+      "mjd_mid": 60867.337316,
+      "sample_id": "2025W28_2A_0150_4/D6",
+      "utc_mid": "2025-07-11T08:05:44.102Z",
+      "source_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/level2/2025W28_2A/l2b-v27-2026-216/6/level2_2025W28_2A_0150_4D6_spx_l2b-v27-2026-216.fits",
+      "input_position_deg": [
+        247.89081210855724,
+        30.14594707002907
+      ],
+      "status": "accepted",
+      "reason": null,
+      "flux_ujy": 4388.716834203104,
+      "statistical_sigma_ujy": 184.356791165889,
+      "wavelength_um": 4.771306037902832,
+      "bandwidth_um": 0.03696640953421593,
+      "source_sha256": "e793124a3652f7557d2951787cc40bb4695d4b9716fefcbcef4835c83ebed399",
+      "native_input": {
+        "retrieval_mode": "native_ibe_cutout",
+        "requested_center_deg": [
+          247.89081210855724,
+          30.14594707002907
+        ],
+        "cutout_parameters": {
+          "center": "247.89081210855724,30.14594707002907deg",
+          "size": "0.0625deg"
+        },
+        "parent_detector_bbox_xywh": [
+          1756,
+          775,
+          37,
+          37
+        ],
+        "cloud_access": {
+          "aws": {
+            "bucket_name": "nasa-irsa-spherex",
+            "key": "dr1/level2/2025W28_2A/l2b-v27-2026-216/6/level2_2025W28_2A_0150_4D6_spx_l2b-v27-2026-216.fits",
+            "region": "us-east-1"
+          }
+        },
+        "checksum_semantics": "SHA-256 identifies the retained native measurement input. An S3 section is a derived FITS with native pixel values and adjusted cutout origins; its bytes are not the full parent exposure."
+      },
+      "native_cutout_request": {
+        "url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/level2/2025W28_2A/l2b-v27-2026-216/6/level2_2025W28_2A_0150_4D6_spx_l2b-v27-2026-216.fits?center=247.89081210855724%2C30.14594707002907deg&size=0.0625deg",
+        "sha256": "e793124a3652f7557d2951787cc40bb4695d4b9716fefcbcef4835c83ebed399",
+        "parent_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/level2/2025W28_2A/l2b-v27-2026-216/6/level2_2025W28_2A_0150_4D6_spx_l2b-v27-2026-216.fits"
+      },
+      "background_coefficients_mjysr": [
+        0.29407668333939,
+        0.0005761366617000174,
+        -0.00028604005602619236
+      ],
+      "parameter_covariance": [
+        [
+          33987.42644898321,
+          -0.11327549763459298,
+          0.005116704862417513,
+          -0.005418794073942553
+        ],
+        [
+          -0.11327549763459298,
+          1.5395366055853775e-05,
+          -5.823330551081122e-07,
+          6.79059228865344e-07
+        ],
+        [
+          0.005116704862417511,
+          -5.82333055108112e-07,
+          9.229809387584175e-07,
+          -2.2944448340831756e-07
+        ],
+        [
+          -0.005418794073942553,
+          6.79059228865344e-07,
+          -2.294444834083176e-07,
+          1.0694850981934609e-06
+        ]
+      ],
+      "parameter_order": [
+        "flux_ujy",
+        "background_mjysr",
+        "gradient_x_mjysr_per_pixel",
+        "gradient_y_mjysr_per_pixel"
+      ],
+      "reduced_chi2": 1.063027366095707,
+      "aperture_throughput": 1.0,
+      "residual_expected_noise_dof": 142.0,
+      "core_support_fraction": 0.996559656224577,
+      "background_pixels": 89,
+      "pixel_flags_union": 270532609,
+      "position_pixel_xy": [
+        18.381361675240278,
+        18.15837344435038
+      ],
+      "epsf": {
+        "oversampling_yx": [
+          5,
+          5
+        ],
+        "stored_sample_sum": 1.0000000000000002,
+        "native_sum_before_normalization": 0.03994704696056803,
+        "cutout_psf_fraction": 1.0000000000000002,
+        "cutout_absolute_psf_fraction": 1.0,
+        "negative_l1_fraction": 0.010624846396302618,
+        "normalization": "Unit sum over the complete phase-rendered finite ePSF footprint before image clipping; no extra pixel integration.",
+        "detector": 6,
+        "zone_row": 186,
+        "zone_bin_xy": [
+          18,
+          8
+        ],
+        "zone_center_xy": [
+          1796.642822265625,
+          825.2142944335938
+        ],
+        "zone_width_xy": [
+          97.14286041259766,
+          97.14286041259766
+        ],
+        "parent_pixel_xy": [
+          1774.3813616752402,
+          793.1583734443503
+        ],
+        "detector_coordinate_convention": "sky",
+        "basis": "native EPSF extension",
+        "zone_wavelength_um": 4.7566633224487305
+      },
+      "centroid_fit": {
+        "initial_pixel_xy": [
+          18.376675539085202,
+          18.18777263720294
+        ],
+        "fitted_pixel_xy": [
+          18.381361675240278,
+          18.15837344435038
+        ],
+        "shift_pixel_xy": [
+          0.0046861361550760705,
+          -0.029399192852558542
+        ],
+        "sigma_pixel_xy": [
+          0.03157399898635928,
+          0.02661094630805049
+        ],
+        "maximum_shift_per_axis": 0.75,
+        "covariance": [
+          [
+            33987.42644898321,
+            -0.11327549763459298,
+            0.005116704862417513,
+            -0.005418794073942553,
+            -0.17966913690249695,
+            0.15715723385599106
+          ],
+          [
+            -0.11327549763459298,
+            1.5395366055853775e-05,
+            -5.823330551081122e-07,
+            6.79059228865344e-07,
+            1.034798434067619e-06,
+            -2.24092991170163e-06
+          ],
+          [
+            0.005116704862417511,
+            -5.82333055108112e-07,
+            9.229809387584175e-07,
+            -2.2944448340831756e-07,
+            -1.0334742001493983e-06,
+            4.288528290972674e-07
+          ],
+          [
+            -0.005418794073942553,
+            6.79059228865344e-07,
+            -2.294444834083176e-07,
+            1.0694850981934609e-06,
+            1.716020884139873e-07,
+            -1.3358642625621905e-06
+          ],
+          [
+            -0.17966913690249697,
+            1.034798434067619e-06,
+            -1.0334742001493983e-06,
+            1.7160208841398728e-07,
+            0.0009969174119906167,
+            -9.027461135961001e-05
+          ],
+          [
+            0.15715723385599112,
+            -2.2409299117016294e-06,
+            4.288528290972674e-07,
+            -1.3358642625621905e-06,
+            -9.027461135961005e-05,
+            0.000708142463409946
+          ]
+        ],
+        "parameter_order": [
+          "flux_ujy",
+          "background_mjysr",
+          "gradient_x_mjysr_per_pixel",
+          "gradient_y_mjysr_per_pixel",
+          "centroid_x_pixel",
+          "centroid_y_pixel"
+        ],
+        "uncertainty_method": "Local full-Jacobian covariance; aperture uses delta-method position derivatives. Masks anchored to the independent input position. High-S/N bounded fit only."
+      },
+      "solid_angle_wcs_ratio": 0.99981385084795,
+      "centroid_refinement": "performed",
+      "image_context_file": "sample-1.json",
+      "image_context_sha256": "af232e7db265ce9327fd9c0d810fdb56d9a37d5ea2b1c5bb8be4a4d634d9e798",
+      "image_context_url": "/v1/products/0710a8b2666cbe5042f68812dec31f14deb4380e378845ffc79accf836b1ceee/sample-1.json"
+    },
+    {
+      "obs_id": "2025W29_1A_0544_1",
+      "detector": 5,
+      "release": "dr1",
+      "mjd_mid": 60872.904404,
+      "sample_id": "2025W29_1A_0544_1/D5",
+      "utc_mid": "2025-07-16T21:42:20.506Z",
+      "source_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/level2/2025W29_1A/l2b-v27-2026-217/5/level2_2025W29_1A_0544_1D5_spx_l2b-v27-2026-217.fits",
+      "input_position_deg": [
+        247.89081206507063,
+        30.14594690615793
+      ],
+      "status": "accepted",
+      "reason": null,
+      "flux_ujy": 5277.563498519125,
+      "statistical_sigma_ujy": 155.0052260892667,
+      "wavelength_um": 4.399168968200684,
+      "bandwidth_um": 0.037096161395311356,
+      "source_sha256": "7b1550c1c21b1e61bfad03d69adc2709f0acf7e4b118e1f3e7f7ef4ea25645b5",
+      "native_input": {
+        "retrieval_mode": "native_ibe_cutout",
+        "requested_center_deg": [
+          247.89081206507063,
+          30.14594690615793
+        ],
+        "cutout_parameters": {
+          "center": "247.89081206507063,30.14594690615793deg",
+          "size": "0.0625deg"
+        },
+        "parent_detector_bbox_xywh": [
+          1607,
+          76,
+          37,
+          37
+        ],
+        "cloud_access": {
+          "aws": {
+            "bucket_name": "nasa-irsa-spherex",
+            "key": "dr1/level2/2025W29_1A/l2b-v27-2026-217/5/level2_2025W29_1A_0544_1D5_spx_l2b-v27-2026-217.fits",
+            "region": "us-east-1"
+          }
+        },
+        "checksum_semantics": "SHA-256 identifies the retained native measurement input. An S3 section is a derived FITS with native pixel values and adjusted cutout origins; its bytes are not the full parent exposure."
+      },
+      "native_cutout_request": {
+        "url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/level2/2025W29_1A/l2b-v27-2026-217/5/level2_2025W29_1A_0544_1D5_spx_l2b-v27-2026-217.fits?center=247.89081206507063%2C30.14594690615793deg&size=0.0625deg",
+        "sha256": "7b1550c1c21b1e61bfad03d69adc2709f0acf7e4b118e1f3e7f7ef4ea25645b5",
+        "parent_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/level2/2025W29_1A/l2b-v27-2026-217/5/level2_2025W29_1A_0544_1D5_spx_l2b-v27-2026-217.fits"
+      },
+      "background_coefficients_mjysr": [
+        0.18826462415567993,
+        -0.0005970583333980153,
+        -4.982114240024082e-05
+      ],
+      "parameter_covariance": [
+        [
+          24026.62011498469,
+          -0.05559183667128596,
+          0.0028657361077898715,
+          -0.002578257322035248
+        ],
+        [
+          -0.05559183667128596,
+          7.597291269955008e-06,
+          -3.752003061012302e-07,
+          3.1455406492987673e-07
+        ],
+        [
+          0.002865736107789872,
+          -3.752003061012302e-07,
+          4.782179021527458e-07,
+          -1.2357287002610979e-07
+        ],
+        [
+          -0.002578257322035247,
+          3.145540649298768e-07,
+          -1.2357287002610976e-07,
+          5.04928583484404e-07
+        ]
+      ],
+      "parameter_order": [
+        "flux_ujy",
+        "background_mjysr",
+        "gradient_x_mjysr_per_pixel",
+        "gradient_y_mjysr_per_pixel"
+      ],
+      "reduced_chi2": 1.2447727974236849,
+      "aperture_throughput": 1.0,
+      "residual_expected_noise_dof": 146.0,
+      "core_support_fraction": 1.0,
+      "background_pixels": 88,
+      "pixel_flags_union": 2097152,
+      "position_pixel_xy": [
+        18.40682379208774,
+        18.342975289872932
+      ],
+      "epsf": {
+        "oversampling_yx": [
+          5,
+          5
+        ],
+        "stored_sample_sum": 1.0,
+        "native_sum_before_normalization": 0.0396238724476989,
+        "cutout_psf_fraction": 1.0,
+        "cutout_absolute_psf_fraction": 1.0,
+        "negative_l1_fraction": 0.00040852695008775986,
+        "normalization": "Unit sum over the complete phase-rendered finite ePSF footprint before image clipping; no extra pixel integration.",
+        "detector": 5,
+        "zone_row": 16,
+        "zone_bin_xy": [
+          16,
+          0
+        ],
+        "zone_center_xy": [
+          1602.357177734375,
+          48.07143020629883
+        ],
+        "zone_width_xy": [
+          97.14286041259766,
+          97.14286041259766
+        ],
+        "parent_pixel_xy": [
+          1625.4068237920878,
+          94.34297528987292
+        ],
+        "detector_coordinate_convention": "sky",
+        "basis": "native EPSF extension",
+        "zone_wavelength_um": 4.407571792602539
+      },
+      "centroid_fit": {
+        "initial_pixel_xy": [
+          18.413361995247246,
+          18.352391800696058
+        ],
+        "fitted_pixel_xy": [
+          18.40682379208774,
+          18.342975289872932
+        ],
+        "shift_pixel_xy": [
+          -0.006538203159507816,
+          -0.00941651082312589
+        ],
+        "sigma_pixel_xy": [
+          0.019627363371923827,
+          0.01711497249639717
+        ],
+        "maximum_shift_per_axis": 0.75,
+        "covariance": [
+          [
+            24026.62011498469,
+            -0.05559183667128596,
+            0.0028657361077898715,
+            -0.002578257322035248,
+            0.023335114796371317,
+            0.09002403786491273
+          ],
+          [
+            -0.05559183667128596,
+            7.597291269955008e-06,
+            -3.752003061012302e-07,
+            3.1455406492987673e-07,
+            -2.0436597018523672e-07,
+            -6.555082001430704e-07
+          ],
+          [
+            0.002865736107789872,
+            -3.752003061012302e-07,
+            4.782179021527458e-07,
+            -1.2357287002610979e-07,
+            -4.0033384835396037e-07,
+            8.0615885787939e-08
+          ],
+          [
+            -0.002578257322035247,
+            3.145540649298768e-07,
+            -1.2357287002610976e-07,
+            5.04928583484404e-07,
+            1.388688004473408e-07,
+            -3.6017062919423903e-07
+          ],
+          [
+            0.023335114796371372,
+            -2.043659701852369e-07,
+            -4.003338483539604e-07,
+            1.388688004473408e-07,
+            0.00038523339293353707,
+            -5.106057662142377e-05
+          ],
+          [
+            0.09002403786491299,
+            -6.555082001430701e-07,
+            8.061588578793902e-08,
+            -3.601706291942391e-07,
+            -5.106057662142377e-05,
+            0.0002929222835524315
+          ]
+        ],
+        "parameter_order": [
+          "flux_ujy",
+          "background_mjysr",
+          "gradient_x_mjysr_per_pixel",
+          "gradient_y_mjysr_per_pixel",
+          "centroid_x_pixel",
+          "centroid_y_pixel"
+        ],
+        "uncertainty_method": "Local full-Jacobian covariance; aperture uses delta-method position derivatives. Masks anchored to the independent input position. High-S/N bounded fit only."
+      },
+      "solid_angle_wcs_ratio": 1.000053740001555,
+      "centroid_refinement": "performed",
+      "image_context_file": "sample-2.json",
+      "image_context_sha256": "5c0d227623947a922fa9fe070fb27aeec7b1c64eb156c9d2b84cbc52d1d42512",
+      "image_context_url": "/v1/products/0710a8b2666cbe5042f68812dec31f14deb4380e378845ffc79accf836b1ceee/sample-2.json"
+    },
+    {
+      "obs_id": "2025W29_1A_0544_2",
+      "detector": 2,
+      "release": "dr1",
+      "mjd_mid": 60872.9058965,
+      "sample_id": "2025W29_1A_0544_2/D2",
+      "utc_mid": "2025-07-16T21:44:29.458Z",
+      "source_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/level2/2025W29_1A/l2b-v27-2026-217/2/level2_2025W29_1A_0544_2D2_spx_l2b-v27-2026-217.fits",
+      "input_position_deg": [
+        247.89081206505898,
+        30.145946906114002
+      ],
+      "status": "rejected",
+      "reason": "Native cutout does not cover the requested source position",
+      "flux_ujy": null,
+      "statistical_sigma_ujy": null,
+      "wavelength_um": null,
+      "bandwidth_um": null,
+      "source_sha256": "7611c57bb30aebdf1637fdbb2777dea5a91da1b740f76025893fe6e4fb39c02f",
+      "native_input": {
+        "retrieval_mode": "native_ibe_cutout",
+        "requested_center_deg": [
+          247.89081206505898,
+          30.145946906114002
+        ],
+        "cutout_parameters": {
+          "center": "247.89081206505898,30.145946906114002deg",
+          "size": "0.0625deg"
+        },
+        "parent_detector_bbox_xywh": [
+          1610,
+          0,
+          37,
+          10
+        ],
+        "cloud_access": {
+          "aws": {
+            "bucket_name": "nasa-irsa-spherex",
+            "key": "dr1/level2/2025W29_1A/l2b-v27-2026-217/2/level2_2025W29_1A_0544_2D2_spx_l2b-v27-2026-217.fits",
+            "region": "us-east-1"
+          }
+        },
+        "checksum_semantics": "SHA-256 identifies the retained native measurement input. An S3 section is a derived FITS with native pixel values and adjusted cutout origins; its bytes are not the full parent exposure."
+      },
+      "native_cutout_request": {
+        "url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/level2/2025W29_1A/l2b-v27-2026-217/2/level2_2025W29_1A_0544_2D2_spx_l2b-v27-2026-217.fits?center=247.89081206505898%2C30.145946906114002deg&size=0.0625deg",
+        "sha256": "7611c57bb30aebdf1637fdbb2777dea5a91da1b740f76025893fe6e4fb39c02f",
+        "parent_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/level2/2025W29_1A/l2b-v27-2026-217/2/level2_2025W29_1A_0544_2D2_spx_l2b-v27-2026-217.fits"
+      }
+    },
+    {
+      "obs_id": "2025W30_1B_0059_3",
+      "detector": 2,
+      "release": "dr1",
+      "mjd_mid": 60877.3219045,
+      "sample_id": "2025W30_1B_0059_3/D2",
+      "utc_mid": "2025-07-21T07:43:32.549Z",
+      "source_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/level2/2025W30_1B/l2b-v27-2026-220/2/level2_2025W30_1B_0059_3D2_spx_l2b-v27-2026-220.fits",
+      "input_position_deg": [
+        247.89081203056386,
+        30.145946776125705
+      ],
+      "status": "accepted",
+      "reason": null,
+      "flux_ujy": 28983.684677755784,
+      "statistical_sigma_ujy": 175.6402060617618,
+      "wavelength_um": 1.4197288751602173,
+      "bandwidth_um": 0.03427177295088768,
+      "source_sha256": "f881bae79802ecaf7e6d4bfc8e5d484f1148403dc344d8533a2ac35acf7294dd",
+      "native_input": {
+        "retrieval_mode": "native_ibe_cutout",
+        "requested_center_deg": [
+          247.89081203056386,
+          30.145946776125705
+        ],
+        "cutout_parameters": {
+          "center": "247.89081203056386,30.145946776125705deg",
+          "size": "0.0625deg"
+        },
+        "parent_detector_bbox_xywh": [
+          501,
+          722,
+          37,
+          37
+        ],
+        "cloud_access": {
+          "aws": {
+            "bucket_name": "nasa-irsa-spherex",
+            "key": "dr1/level2/2025W30_1B/l2b-v27-2026-220/2/level2_2025W30_1B_0059_3D2_spx_l2b-v27-2026-220.fits",
+            "region": "us-east-1"
+          }
+        },
+        "checksum_semantics": "SHA-256 identifies the retained native measurement input. An S3 section is a derived FITS with native pixel values and adjusted cutout origins; its bytes are not the full parent exposure."
+      },
+      "native_cutout_request": {
+        "url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/level2/2025W30_1B/l2b-v27-2026-220/2/level2_2025W30_1B_0059_3D2_spx_l2b-v27-2026-220.fits?center=247.89081203056386%2C30.145946776125705deg&size=0.0625deg",
+        "sha256": "f881bae79802ecaf7e6d4bfc8e5d484f1148403dc344d8533a2ac35acf7294dd",
+        "parent_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/level2/2025W30_1B/l2b-v27-2026-220/2/level2_2025W30_1B_0059_3D2_spx_l2b-v27-2026-220.fits"
+      },
+      "background_coefficients_mjysr": [
+        0.15273330403438118,
+        -0.0006928821847504698,
+        0.0006384867717329902
+      ],
+      "parameter_covariance": [
+        [
+          30849.48198541815,
+          -0.033324727795451876,
+          0.0023472634407916567,
+          -0.0018647747486857332
+        ],
+        [
+          -0.033324727795451876,
+          2.7187064614003335e-06,
+          -2.1286750591651834e-07,
+          1.7108079773971853e-07
+        ],
+        [
+          0.0023472634407916567,
+          -2.1286750591651834e-07,
+          1.9811240668136642e-07,
+          -6.001263854428128e-08
+        ],
+        [
+          -0.0018647747486857328,
+          1.7108079773971853e-07,
+          -6.001263854428128e-08,
+          1.868373169069624e-07
+        ]
+      ],
+      "parameter_order": [
+        "flux_ujy",
+        "background_mjysr",
+        "gradient_x_mjysr_per_pixel",
+        "gradient_y_mjysr_per_pixel"
+      ],
+      "reduced_chi2": 1.5545639936137239,
+      "aperture_throughput": 1.0,
+      "residual_expected_noise_dof": 92.0,
+      "core_support_fraction": 1.0,
+      "background_pixels": 34,
+      "pixel_flags_union": 2097152,
+      "position_pixel_xy": [
+        18.25932331408569,
+        17.757681125364318
+      ],
+      "epsf": {
+        "oversampling_yx": [
+          5,
+          5
+        ],
+        "stored_sample_sum": 1.0,
+        "native_sum_before_normalization": 0.0401601881314168,
+        "cutout_psf_fraction": 1.0,
+        "cutout_absolute_psf_fraction": 1.0,
+        "negative_l1_fraction": 0.00015340187655593854,
+        "normalization": "Unit sum over the complete phase-rendered finite ePSF footprint before image clipping; no extra pixel integration.",
+        "detector": 2,
+        "zone_row": 152,
+        "zone_bin_xy": [
+          5,
+          7
+        ],
+        "zone_center_xy": [
+          533.7857055664062,
+          728.0714111328125
+        ],
+        "zone_width_xy": [
+          97.14286041259766,
+          97.14286041259766
+        ],
+        "parent_pixel_xy": [
+          519.2593233140857,
+          739.7576811253643
+        ],
+        "detector_coordinate_convention": "sky",
+        "basis": "native EPSF extension",
+        "zone_wavelength_um": 1.4229627847671509
+      },
+      "centroid_fit": {
+        "initial_pixel_xy": [
+          18.26017345866095,
+          17.726652051613573
+        ],
+        "fitted_pixel_xy": [
+          18.25932331408569,
+          17.757681125364318
+        ],
+        "shift_pixel_xy": [
+          -0.0008501445752600034,
+          0.031029073750744374
+        ],
+        "sigma_pixel_xy": [
+          0.0030330076474863552,
+          0.0027220265466223977
+        ],
+        "maximum_shift_per_axis": 0.75,
+        "covariance": [
+          [
+            30849.48198541815,
+            -0.033324727795451876,
+            0.0023472634407916567,
+            -0.0018647747486857332,
+            0.00844610989844618,
+            -0.005095620290194622
+          ],
+          [
+            -0.033324727795451876,
+            2.7187064614003335e-06,
+            -2.1286750591651834e-07,
+            1.7108079773971853e-07,
+            -6.545074658290886e-08,
+            4.949856148276036e-08
+          ],
+          [
+            0.0023472634407916567,
+            -2.1286750591651834e-07,
+            1.9811240668136642e-07,
+            -6.001263854428128e-08,
+            -3.0052955647976155e-08,
+            -4.867106220864088e-09
+          ],
+          [
+            -0.0018647747486857328,
+            1.7108079773971853e-07,
+            -6.001263854428128e-08,
+            1.868373169069624e-07,
+            1.663979550125027e-08,
+            -1.650705143984091e-08
+          ],
+          [
+            0.008446109898446186,
+            -6.545074658290886e-08,
+            -3.0052955647976155e-08,
+            1.663979550125027e-08,
+            9.199135389710715e-06,
+            -3.334354173978358e-07
+          ],
+          [
+            -0.005095620290194616,
+            4.949856148276035e-08,
+            -4.8671062208640856e-09,
+            -1.650705143984091e-08,
+            -3.334354173978362e-07,
+            7.4094285205170576e-06
+          ]
+        ],
+        "parameter_order": [
+          "flux_ujy",
+          "background_mjysr",
+          "gradient_x_mjysr_per_pixel",
+          "gradient_y_mjysr_per_pixel",
+          "centroid_x_pixel",
+          "centroid_y_pixel"
+        ],
+        "uncertainty_method": "Local full-Jacobian covariance; aperture uses delta-method position derivatives. Masks anchored to the independent input position. High-S/N bounded fit only."
+      },
+      "solid_angle_wcs_ratio": 0.9999957088266562,
+      "centroid_refinement": "performed",
+      "image_context_file": "sample-4.json",
+      "image_context_sha256": "87dc98412a19abcb6a82b40ca3bcf5da1b99d0c7cbac5437b1517b1a449d093b",
+      "image_context_url": "/v1/products/0710a8b2666cbe5042f68812dec31f14deb4380e378845ffc79accf836b1ceee/sample-4.json"
+    },
+    {
+      "obs_id": "2025W30_1B_0610_1",
+      "detector": 4,
+      "release": "dr1",
+      "mjd_mid": 60880.376035,
+      "sample_id": "2025W30_1B_0610_1/D4",
+      "utc_mid": "2025-07-24T09:01:29.424Z",
+      "source_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/level2/2025W30_1B/l2b-v27-2026-220/4/level2_2025W30_1B_0610_1D4_spx_l2b-v27-2026-220.fits",
+      "input_position_deg": [
+        247.8908120067069,
+        30.145946686225233
+      ],
+      "status": "accepted",
+      "reason": null,
+      "flux_ujy": 10804.082151756495,
+      "statistical_sigma_ujy": 101.63384174146437,
+      "wavelength_um": 2.9547059535980225,
+      "bandwidth_um": 0.08855117112398148,
+      "source_sha256": "da6dd929d589a0358a95aea1d7e2a65b9c77aac43abf76bd73907aad6be29b71",
+      "native_input": {
+        "retrieval_mode": "native_ibe_cutout",
+        "requested_center_deg": [
+          247.8908120067069,
+          30.145946686225233
+        ],
+        "cutout_parameters": {
+          "center": "247.8908120067069,30.145946686225233deg",
+          "size": "0.0625deg"
+        },
+        "parent_detector_bbox_xywh": [
+          1013,
+          1081,
+          37,
+          37
+        ],
+        "cloud_access": {
+          "aws": {
+            "bucket_name": "nasa-irsa-spherex",
+            "key": "dr1/level2/2025W30_1B/l2b-v27-2026-220/4/level2_2025W30_1B_0610_1D4_spx_l2b-v27-2026-220.fits",
+            "region": "us-east-1"
+          }
+        },
+        "checksum_semantics": "SHA-256 identifies the retained native measurement input. An S3 section is a derived FITS with native pixel values and adjusted cutout origins; its bytes are not the full parent exposure."
+      },
+      "native_cutout_request": {
+        "url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/level2/2025W30_1B/l2b-v27-2026-220/4/level2_2025W30_1B_0610_1D4_spx_l2b-v27-2026-220.fits?center=247.8908120067069%2C30.145946686225233deg&size=0.0625deg",
+        "sha256": "da6dd929d589a0358a95aea1d7e2a65b9c77aac43abf76bd73907aad6be29b71",
+        "parent_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/level2/2025W30_1B/l2b-v27-2026-220/4/level2_2025W30_1B_0610_1D4_spx_l2b-v27-2026-220.fits"
+      },
+      "background_coefficients_mjysr": [
+        0.0796748181796525,
+        -0.000651478770072634,
+        0.0006445276271647288
+      ],
+      "parameter_covariance": [
+        [
+          10329.437787129025,
+          -0.011562170545285404,
+          0.000896771453234713,
+          -0.00071860282392454
+        ],
+        [
+          -0.011562170545285405,
+          9.310207544408838e-07,
+          -6.803092851140785e-08,
+          5.6183636690442593e-08
+        ],
+        [
+          0.0008967714532347132,
+          -6.803092851140787e-08,
+          6.5114114729887e-08,
+          -2.4743360832026605e-08
+        ],
+        [
+          -0.00071860282392454,
+          5.6183636690442607e-08,
+          -2.4743360832026608e-08,
+          6.423152426074515e-08
+        ]
+      ],
+      "parameter_order": [
+        "flux_ujy",
+        "background_mjysr",
+        "gradient_x_mjysr_per_pixel",
+        "gradient_y_mjysr_per_pixel"
+      ],
+      "reduced_chi2": 1.5621037313764066,
+      "aperture_throughput": 1.0,
+      "residual_expected_noise_dof": 123.0,
+      "core_support_fraction": 1.0000000000000002,
+      "background_pixels": 68,
+      "pixel_flags_union": 2097152,
+      "position_pixel_xy": [
+        18.43783383986753,
+        17.99413316464912
+      ],
+      "epsf": {
+        "oversampling_yx": [
+          5,
+          5
+        ],
+        "stored_sample_sum": 1.0,
+        "native_sum_before_normalization": 0.039873365661805264,
+        "cutout_psf_fraction": 0.9999999999999999,
+        "cutout_absolute_psf_fraction": 1.0,
+        "negative_l1_fraction": 0.0003113689524836785,
+        "normalization": "Unit sum over the complete phase-rendered finite ePSF footprint before image clipping; no extra pixel integration.",
+        "detector": 4,
+        "zone_row": 241,
+        "zone_bin_xy": [
+          10,
+          11
+        ],
+        "zone_center_xy": [
+          1019.5,
+          1116.642822265625
+        ],
+        "zone_width_xy": [
+          97.14286041259766,
+          97.14286041259766
+        ],
+        "parent_pixel_xy": [
+          1031.4378338398676,
+          1098.9941331646492
+        ],
+        "detector_coordinate_convention": "sky",
+        "basis": "native EPSF extension",
+        "zone_wavelength_um": 2.9414772987365723
+      },
+      "centroid_fit": {
+        "initial_pixel_xy": [
+          18.402216312040714,
+          17.982069634642375
+        ],
+        "fitted_pixel_xy": [
+          18.43783383986753,
+          17.99413316464912
+        ],
+        "shift_pixel_xy": [
+          0.035617527826815376,
+          0.012063530006745538
+        ],
+        "sigma_pixel_xy": [
+          0.005471025374278944,
+          0.006034003036784286
+        ],
+        "maximum_shift_per_axis": 0.75,
+        "covariance": [
+          [
+            10329.437787129025,
+            -0.011562170545285404,
+            0.000896771453234713,
+            -0.00071860282392454,
+            -0.00510201319798134,
+            -8.266143019814169e-05
+          ],
+          [
+            -0.011562170545285405,
+            9.310207544408838e-07,
+            -6.803092851140785e-08,
+            5.6183636690442593e-08,
+            6.906004935701391e-08,
+            -2.9046103088687907e-08
+          ],
+          [
+            0.0008967714532347132,
+            -6.803092851140787e-08,
+            6.5114114729887e-08,
+            -2.4743360832026605e-08,
+            -4.8027985194137176e-08,
+            1.4291494524413864e-08
+          ],
+          [
+            -0.00071860282392454,
+            5.6183636690442607e-08,
+            -2.4743360832026608e-08,
+            6.423152426074515e-08,
+            2.9673973389817148e-08,
+            -5.813976263037383e-08
+          ],
+          [
+            -0.005102013197981357,
+            6.906004935701391e-08,
+            -4.8027985194137176e-08,
+            2.9673973389817148e-08,
+            2.993211864600406e-05,
+            3.4833131706851195e-06
+          ],
+          [
+            -8.266143019813822e-05,
+            -2.904610308868792e-08,
+            1.4291494524413864e-08,
+            -5.813976263037383e-08,
+            3.48331317068512e-06,
+            3.6409192647921985e-05
+          ]
+        ],
+        "parameter_order": [
+          "flux_ujy",
+          "background_mjysr",
+          "gradient_x_mjysr_per_pixel",
+          "gradient_y_mjysr_per_pixel",
+          "centroid_x_pixel",
+          "centroid_y_pixel"
+        ],
+        "uncertainty_method": "Local full-Jacobian covariance; aperture uses delta-method position derivatives. Masks anchored to the independent input position. High-S/N bounded fit only."
+      },
+      "solid_angle_wcs_ratio": 0.9999591119809716,
+      "centroid_refinement": "performed",
+      "image_context_file": "sample-5.json",
+      "image_context_sha256": "99da204f2a4f94d4ca46038f7f2b6fec21af696977ea93e73c0480d6bee7ccaf",
+      "image_context_url": "/v1/products/0710a8b2666cbe5042f68812dec31f14deb4380e378845ffc79accf836b1ceee/sample-5.json"
+    },
+    {
+      "obs_id": "2025W30_1B_0610_2",
+      "detector": 1,
+      "release": "dr1",
+      "mjd_mid": 60880.37752749999,
+      "sample_id": "2025W30_1B_0610_2/D1",
+      "utc_mid": "2025-07-24T09:03:38.376Z",
+      "source_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/level2/2025W30_1B/l2b-v27-2026-220/1/level2_2025W30_1B_0610_2D1_spx_l2b-v27-2026-220.fits",
+      "input_position_deg": [
+        247.89081200669526,
+        30.14594668618131
+      ],
+      "status": "accepted",
+      "reason": null,
+      "flux_ujy": 31248.75341374561,
+      "statistical_sigma_ujy": 190.6364577016166,
+      "wavelength_um": 0.908963143825531,
+      "bandwidth_um": 0.023413535207509995,
+      "source_sha256": "e5e2a5ae722a4b9763824016f845bb5acce2468d344bb4a7ba009a03b34d4190",
+      "native_input": {
+        "retrieval_mode": "native_ibe_cutout",
+        "requested_center_deg": [
+          247.89081200669526,
+          30.14594668618131
+        ],
+        "cutout_parameters": {
+          "center": "247.89081200669526,30.14594668618131deg",
+          "size": "0.0625deg"
+        },
+        "parent_detector_bbox_xywh": [
+          1008,
+          978,
+          37,
+          37
+        ],
+        "cloud_access": {
+          "aws": {
+            "bucket_name": "nasa-irsa-spherex",
+            "key": "dr1/level2/2025W30_1B/l2b-v27-2026-220/1/level2_2025W30_1B_0610_2D1_spx_l2b-v27-2026-220.fits",
+            "region": "us-east-1"
+          }
+        },
+        "checksum_semantics": "SHA-256 identifies the retained native measurement input. An S3 section is a derived FITS with native pixel values and adjusted cutout origins; its bytes are not the full parent exposure."
+      },
+      "native_cutout_request": {
+        "url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/level2/2025W30_1B/l2b-v27-2026-220/1/level2_2025W30_1B_0610_2D1_spx_l2b-v27-2026-220.fits?center=247.89081200669526%2C30.14594668618131deg&size=0.0625deg",
+        "sha256": "e5e2a5ae722a4b9763824016f845bb5acce2468d344bb4a7ba009a03b34d4190",
+        "parent_url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/dr1/level2/2025W30_1B/l2b-v27-2026-220/1/level2_2025W30_1B_0610_2D1_spx_l2b-v27-2026-220.fits"
+      },
+      "background_coefficients_mjysr": [
+        0.14671003279690292,
+        -0.0005917431016444704,
+        0.00022154743222814173
+      ],
+      "parameter_covariance": [
+        [
+          36342.259005020256,
+          -0.02285036740761331,
+          0.0017820443297536968,
+          -0.0012152294240545868
+        ],
+        [
+          -0.022850367407613315,
+          1.8271999895821576e-06,
+          -1.3447230603561883e-07,
+          1.0071137121477025e-07
+        ],
+        [
+          0.001782044329753697,
+          -1.3447230603561883e-07,
+          1.2493514931613484e-07,
+          -3.527959640569561e-08
+        ],
+        [
+          -0.0012152294240545868,
+          1.0071137121477025e-07,
+          -3.527959640569561e-08,
+          1.111924486088154e-07
+        ]
+      ],
+      "parameter_order": [
+        "flux_ujy",
+        "background_mjysr",
+        "gradient_x_mjysr_per_pixel",
+        "gradient_y_mjysr_per_pixel"
+      ],
+      "reduced_chi2": 1.3716840925132026,
+      "aperture_throughput": 1.0,
+      "residual_expected_noise_dof": 139.0,
+      "core_support_fraction": 0.9999999999999998,
+      "background_pixels": 82,
+      "pixel_flags_union": 2097152,
+      "position_pixel_xy": [
+        17.86387778022309,
+        17.61880163260601
+      ],
+      "epsf": {
+        "oversampling_yx": [
+          5,
+          5
+        ],
+        "stored_sample_sum": 1.0,
+        "native_sum_before_normalization": 0.03994101131465316,
+        "cutout_psf_fraction": 1.0000000000000002,
+        "cutout_absolute_psf_fraction": 1.0,
+        "negative_l1_fraction": 0.0,
+        "normalization": "Unit sum over the complete phase-rendered finite ePSF footprint before image clipping; no extra pixel integration.",
+        "detector": 1,
+        "zone_row": 220,
+        "zone_bin_xy": [
+          10,
+          10
+        ],
+        "zone_center_xy": [
+          1019.5,
+          1019.5
+        ],
+        "zone_width_xy": [
+          97.14286041259766,
+          97.14286041259766
+        ],
+        "parent_pixel_xy": [
+          1025.863877780223,
+          995.618801632606
+        ],
+        "detector_coordinate_convention": "sky",
+        "basis": "native EPSF extension",
+        "zone_wavelength_um": 0.9043552279472351
+      },
+      "centroid_fit": {
+        "initial_pixel_xy": [
+          17.83522700786196,
+          17.609739465053927
+        ],
+        "fitted_pixel_xy": [
+          17.86387778022309,
+          17.61880163260601
+        ],
+        "shift_pixel_xy": [
+          0.028650772361128674,
+          0.009062167552084333
+        ],
+        "sigma_pixel_xy": [
+          0.0030944569787985624,
+          0.0026106842428734334
+        ],
+        "maximum_shift_per_axis": 0.75,
+        "covariance": [
+          [
+            36342.259005020256,
+            -0.02285036740761331,
+            0.0017820443297536968,
+            -0.0012152294240545868,
+            -0.013781965569288918,
+            -0.0011072614926516088
+          ],
+          [
+            -0.022850367407613315,
+            1.8271999895821576e-06,
+            -1.3447230603561883e-07,
+            1.0071137121477025e-07,
+            1.1386895764420584e-07,
+            -2.2309849806140202e-09
+          ],
+          [
+            0.001782044329753697,
+            -1.3447230603561883e-07,
+            1.2493514931613484e-07,
+            -3.527959640569561e-08,
+            -3.0390080807866946e-08,
+            4.038328298319109e-09
+          ],
+          [
+            -0.0012152294240545868,
+            1.0071137121477025e-07,
+            -3.527959640569561e-08,
+            1.111924486088154e-07,
+            1.3111136181097018e-08,
+            -1.194532487547437e-08
+          ],
+          [
+            -0.0137819655692889,
+            1.1386895764420583e-07,
+            -3.039008080786694e-08,
+            1.3111136181097018e-08,
+            9.575663993635125e-06,
+            5.29746976196237e-08
+          ],
+          [
+            -0.0011072614926516172,
+            -2.230984980614007e-09,
+            4.03832829831911e-09,
+            -1.1945324875474373e-08,
+            5.297469761962385e-08,
+            6.815672215987632e-06
+          ]
+        ],
+        "parameter_order": [
+          "flux_ujy",
+          "background_mjysr",
+          "gradient_x_mjysr_per_pixel",
+          "gradient_y_mjysr_per_pixel",
+          "centroid_x_pixel",
+          "centroid_y_pixel"
+        ],
+        "uncertainty_method": "Local full-Jacobian covariance; aperture uses delta-method position derivatives. Masks anchored to the independent input position. High-S/N bounded fit only."
+      },
+      "solid_angle_wcs_ratio": 0.9999789408803826,
+      "centroid_refinement": "performed",
+      "image_context_file": "sample-6.json",
+      "image_context_sha256": "d9d7311f028710c73d0054e2e6b46695c6a00564c44150e9306ede4eeaed3889",
+      "image_context_url": "/v1/products/0710a8b2666cbe5042f68812dec31f14deb4380e378845ffc79accf836b1ceee/sample-6.json"
+    }
+  ],
+  "software": {
+    "numpy": "2.2.4",
+    "scipy": "1.15.2",
+    "astropy": "8.0.1",
+    "photutils": "3.1.1"
+  },
+  "selection": {
+    "field_id": "389176372a1deb0f9df81019c2fab18ffb7198a4c652175b6110cf01c0b392ed",
+    "observation_indices": [
+      4,
+      7,
+      63,
+      64,
+      97,
+      112,
+      113
+    ],
+    "available_observations": 150,
+    "search_completeness": "limited",
+    "time_bounds_mjd_utc": [
+      60857.0,
+      60888.0
+    ],
+    "queries": [
+      "https://irsa.ipac.caltech.edu/SIA?COLLECTION=spherex_dr1&POS=CIRCLE+247.8908392831+30.14604947207+0.033629449216106146&MAXREC=500",
+      "https://irsa.ipac.caltech.edu/SIA?COLLECTION=spherex_qr3&POS=CIRCLE+247.8908392831+30.14604947207+0.033629449216106146&MAXREC=500"
+    ]
+  },
+  "data_status": "native_exposure_measurements",
+  "science_status": "conditional_point_source_samples",
+  "complete_102_channel_spectrum": false,
+  "units": "uJy",
+  "sampling": {
+    "available_observations": 150,
+    "accepted_samples": 6,
+    "diagnostic_only_samples": 0,
+    "rejected_samples": 1,
+    "detectors": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "mjd_range": [
+      60867.335824,
+      60880.37752749999
+    ],
+    "interpretation": "Individual native measurements at their own acquisition times and central CWAVE/CBAND. No inferred or zero-filled missing channels; this is not an instantaneous spectrum.",
+    "unselected_observations": 143,
+    "search_completeness": "limited"
+  },
+  "uncertainty_method": "Native independent-pixel statistical covariance, including fitted local background and optional centroid/source cross covariance. Common calibration, native correlations and PSF/model errors are not supplied and are excluded.",
+  "limitations": [
+    "Point-source measurements require inspection of isolation and fit residuals; no deblending, extended-source or identity validation is performed.",
+    "Only exact approved native release/processing/calibration associations are enabled. Unsupported files remain rejected.",
+    "Samples at different acquisition dates must not be interpreted as a simultaneous spectrum. No binning or upper-limit inference is performed here.",
+    "Central CWAVE/CBAND do not describe the full wavelength-response variation over the native estimator.",
+    "Angular motion uses supplied reference-epoch components (pmra includes cos declination), with no observer parallax or perspective acceleration. Fixed ICRS inputs request one sky coordinate at all times.",
+    "Automatic centroid refinement is attempted only at initial PSF signal-to-noise >=20; fainter samples retain the supplied position and conditional statistical errors.",
+    "Accepted means the declared mask/coverage/geometry/fit checks pass; it is not a detection probability, source classification or claim of discovery.",
+    "Finite calibrated ePSF convention; no unknown outer wings, separate ZODI subtraction, clipping or total calibration-error estimate."
+  ],
+  "credits": "SPHEREx: NASA/JPL-Caltech/Caltech-IPAC, IRSA. Supplied source-position metadata and its interpretation remain separate from measured native fluxes.",
+  "exports": {
+    "samples.ecsv": {
+      "url": "/v1/products/0710a8b2666cbe5042f68812dec31f14deb4380e378845ffc79accf836b1ceee/samples.ecsv",
+      "sha256": "5ec87321fa98ba745fc247ac8bc85e5914b34d78ccecfbbb7364aac93ee61f17"
+    },
+    "samples.csv": {
+      "url": "/v1/products/0710a8b2666cbe5042f68812dec31f14deb4380e378845ffc79accf836b1ceee/samples.csv",
+      "sha256": "772bbb40355091f577be6d25d229f62b822808fd36fea625ef2525211f44c8bd"
+    },
+    "plot.svg": {
+      "url": "/v1/products/0710a8b2666cbe5042f68812dec31f14deb4380e378845ffc79accf836b1ceee/plot.svg",
+      "sha256": "bf6917b4b57705e977dddca28695fa061b9e9443f612cb592efede1a5477ec5d"
+    }
+  }
+}

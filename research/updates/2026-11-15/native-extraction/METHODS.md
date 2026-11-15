@@ -1,6 +1,6 @@
 # General native extraction and six-detector validation
 
-This is an implemented scientific backend increment toward the complete source-spectrum workflow. It accepts source coordinates and optional angular motion, arbitrary native observation records, and PSF/aperture geometry. The currently approved release is DR1 processing version 7.0.5 across all six detectors. The public source interface still exposes the earlier retained D2 workflow until the general field/job/interface layer is integrated. This increment does not complete requirement F.
+This is an implemented scientific backend increment toward the complete source-spectrum workflow. It accepts source coordinates and optional angular motion, arbitrary native observation records, and PSF/aperture geometry. The currently approved release is DR1 processing version 7.0.5 across all six detectors. The general field/job/interface layer is now implemented and undergoing public acceptance; see [its contracts and live-availability evidence](LIVE_SOURCE_WORKFLOW.md). This increment does not complete requirement F.
 
 ## Verified input associations
 

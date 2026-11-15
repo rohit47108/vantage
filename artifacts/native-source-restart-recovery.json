@@ -1,0 +1,45 @@
+{
+  "job_id": "f40dd235f32f4a93b61b04b3e18da298",
+  "runtime": ".runtime\\native-e2e",
+  "port": 8005,
+  "method": "Authentic frozen general-native request seeded as queued while the isolated test service was stopped. Startup recovery must execute the persisted request and produce native measurements. This is controlled recovery, not an uncontrolled crash test.",
+  "request": {
+    "field_id": "389176372a1deb0f9df81019c2fab18ffb7198a4c652175b6110cf01c0b392ed",
+    "observation_indices": [
+      4,
+      7,
+      63,
+      64,
+      97,
+      112,
+      113
+    ],
+    "method": "psf",
+    "centroid_mode": "auto",
+    "aperture_radius": 2.5,
+    "background_inner": 5.0,
+    "background_outer": 8.0,
+    "kind": "native_source_samples",
+    "refresh": true,
+    "_attempt_nonce": "341e17eb025c4f94ba693b6ac6488719"
+  },
+  "expected_product": "0710a8b2666cbe5042f68812dec31f14deb4380e378845ffc79accf836b1ceee",
+  "job": {
+    "job_id": "f40dd235f32f4a93b61b04b3e18da298",
+    "state": "complete",
+    "result_id": "0710a8b2666cbe5042f68812dec31f14deb4380e378845ffc79accf836b1ceee",
+    "error": null,
+    "updated": 1794749998.555194
+  },
+  "result_id": "0710a8b2666cbe5042f68812dec31f14deb4380e378845ffc79accf836b1ceee",
+  "accepted_detectors": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "context_sha256_verified": true,
+  "passed": true
+}

@@ -12,6 +12,8 @@ import tempfile
 import json
 import time
 import re
+import os
+import threading
 import numpy as np
 import aiohttp
 from astropy.io import fits
@@ -27,6 +29,30 @@ from backend.science import ROOT, write_json
 CACHE = ROOT / '.runtime/sources'
 CACHE.mkdir(parents=True, exist_ok=True)
 S3_OPTIONS={'block_size':65536,'cache_type':'bytes','client_kwargs':{'timeout':aiohttp.ClientTimeout(total=25,connect=8,sock_read=20)}}
+cache_lock=threading.Lock()
+
+
+def publish_cached_file(temporary,target):
+    """Single-instance quota and atomic publication; never evict science inputs."""
+    temporary,target=Path(temporary),Path(target)
+    if temporary.parent.resolve()!=CACHE.resolve() or target.parent.resolve()!=CACHE.resolve():
+        raise ValueError('Archive cache publication must remain inside its source directory')
+    if temporary.resolve()==target.resolve():raise ValueError('Cache publication requires a distinct temporary file')
+    with cache_lock:
+        try:
+            if target.exists():return target
+            limit=int(os.environ.get('VANTAGE_SOURCE_CACHE_BYTES',str(5*1024**3)))
+            # Includes in-flight temporary files, so simultaneous writers cannot
+            # each spend the same remaining capacity in this service instance.
+            current=0
+            for path in CACHE.iterdir():
+                try:
+                    if path.is_file():current+=path.stat().st_size
+                except FileNotFoundError:continue  # an atomic metadata temp file was renamed
+            if current>limit:raise ValueError('Archive source cache is full. Existing inputs were retained; storage cleanup or expansion is required.')
+            temporary.replace(target)
+            return target
+        finally:temporary.unlink(missing_ok=True)
 
 
 def coordinates(ra, dec):
@@ -102,8 +128,7 @@ def retrieve(url, params=None, limit=40_000_000):
     with tempfile.NamedTemporaryFile(dir=CACHE, delete=False) as handle:
         handle.write(content)
         temporary = Path(handle.name)
-    temporary.replace(target)
-    return target
+    return publish_cached_file(temporary,target)
 
 
 def votable(content):
@@ -121,6 +146,13 @@ def discover(center, fov, refresh=False,include_deep=False,time_bounds=None):
     collections=['spherex_dr1','spherex_qr3']+(['spherex_dr1_deep','spherex_qr3_deep'] if include_deep else [])
     identity = hashlib.sha256(json.dumps([center, fov, 'dr1-qr3-20261115',collections,time_bounds]).encode()).hexdigest()
     cache = CACHE / (identity + '.json')
+    if not cache.exists() and not refresh and not include_deep and time_bounds is None:
+        legacy=CACHE/(hashlib.sha256(json.dumps([center,fov,'dr1-qr3-20261114']).encode()).hexdigest()+'.json')
+        if legacy.is_file():
+            saved=json.loads(legacy.read_text(encoding='utf-8'))
+            lifetime=86400 if saved['observations'] else 900
+            if time.time()-legacy.stat().st_mtime<lifetime:
+                return saved|{'data_status':'cached','collections':collections,'time_bounds_mjd_utc':None}
     if cache.exists() and not refresh:
         saved = json.loads(cache.read_text())
         lifetime = 86400 if saved['observations'] else 900
@@ -272,6 +304,8 @@ def native_cutout(row, center, fov):
                     result.append(hdus[name].copy())
             with tempfile.NamedTemporaryFile(dir=CACHE,delete=False) as handle:
                 temp = Path(handle.name)
-            fits.HDUList(result).writeto(temp,overwrite=True)
-            temp.replace(target)
+            try:
+                fits.HDUList(result).writeto(temp,overwrite=True)
+                publish_cached_file(temp,target)
+            finally:temp.unlink(missing_ok=True)
         return target, 'native_s3_section'
