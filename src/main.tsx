@@ -9,6 +9,7 @@ import { json, readResponse } from "./api";
 import "./style.css";
 import { SpectralExplorer } from "./SpectralExplorer";
 import { CoaddAnalysis } from "./CoaddAnalysis";
+import {SourceSamples} from './SourceSamples';
 import { Brand } from "./Brand";
 import {NameLookup} from './NameLookup';
 import {SurveyContext} from './SurveyContext';
@@ -24,7 +25,7 @@ function download(name: string, value: string, type = "application/json") {
   link.click();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
-function TemporalExplorer({onSpectral}:{onSpectral:()=>void}) {
+function TemporalExplorer({onSpectral,onSources}:{onSpectral:()=>void;onSources:()=>void}) {
   const [analysis,setAnalysis]=useState(false);
   const [targetLoading,setTargetLoading]=useState(false);
   const [catalog, setCatalog] = useState<Sequence[]>([]),
@@ -354,6 +355,7 @@ function TemporalExplorer({onSpectral}:{onSpectral:()=>void}) {
         <span className="badge">● {sequence?.data_status || "prepared"}</span>
       </header>
       <nav aria-label="Main navigation">
+        <button title="Measure a source" onClick={onSources}>∿<small>Sources</small></button>
         <button title="Explore wavelengths" onClick={onSpectral}>λ<small>Wavelengths</small></button>
         <button
           title="Explore"
@@ -904,9 +906,10 @@ function TemporalExplorer({onSpectral}:{onSpectral:()=>void}) {
   );
 }
 function App(){
-  const [mode,setMode]=useState(new URLSearchParams(location.search).get('view')==='wavelengths'?'wavelengths':'time');
+  const [mode,setMode]=useState(new URLSearchParams(location.search).get('view')||'time');
   const [product,setProduct]=useState(new URLSearchParams(location.search).get('product'));
   if(product)return <CoaddAnalysis initialProduct={product} standalone onClose={()=>{history.replaceState(null,'','/');setProduct(null);}}/>;
-  return mode==='wavelengths'?<SpectralExplorer onTime={()=>{history.pushState(null,'','/');setMode('time');}}/>:<TemporalExplorer onSpectral={()=>{history.pushState(null,'','/?view=wavelengths');setMode('wavelengths');}}/>;
+  if(mode==='sources')return <SourceSamples initialProduct={new URLSearchParams(location.search).get('samples')} onTime={()=>{history.pushState(null,'','/');setMode('time');}}/>;
+  return mode==='wavelengths'?<SpectralExplorer onTime={()=>{history.pushState(null,'','/');setMode('time');}}/>:<TemporalExplorer onSources={()=>{history.pushState(null,'','/?view=sources');setMode('sources');}} onSpectral={()=>{history.pushState(null,'','/?view=wavelengths');setMode('wavelengths');}}/>;
 }
 createRoot(document.getElementById("root")!).render(<App />);

@@ -4,6 +4,14 @@
 
 The later complete-product specification supersedes the demo scope described below. The application is PARTIALLY COMPLETE for that goal. See tasks/product-evidence.md; remaining coadd methods, subtraction, source extraction, embeds/investigations, release promotion and durable hosting still require implementation/validation.
 
+### Native source-sample workflow — November 15
+
+The tested native kernel is now connected to actual asynchronous extraction in the retained P330E DR1 D2 field, through the shared bounded/persistent analysis queue. The interface selects actual observations and PSF/aperture parameters, reports missing/bad-fit measurements separately, links the chart/table to native brightness and used-pixel residual stamps, and exports actual CSV/ECSV/SVG/provenance products. Shared links restore the immutable product, request controls and selected observation. Source/calibration checksums, target revision, covariance, units and time semantics are retained. No new runtime dependency was introduced.
+
+All 52 scientific/API tests and 23 local browser tests pass. The final residual-display adjustment also passes the focused three-browser-test suite. Desktop/mobile axe checks, keyboard inspection, real extraction/export/share, deliberate service failures, stale-result clearing, unit/mask export round trips, checksum failure, cancelled retries, shared queue bounds and recovery are covered. New source-workflow public acceptance is pending verification; the last verified public viewer is recorded below. See research/updates/2026-11-15/photometry/SOURCE_WORKFLOW.md and artifacts/source-samples-*. The 47-test numerical dependency passed fresh Ubuntu CI run 43690900589 (artifacts/photometry-github-ci.json).
+
+This increment remains partial for requirement F: only the four retained P330E D2 observations are enabled. Arbitrary sources, six-detector calibration/discovery, complete missing-channel accounting, epoch windows, scientific binning/upper limits and broader isolation validation remain pending. Default PSF extraction retains one passing, two diagnostic-only and one rejected sample. Fits that fail the residual/coverage checks are not promoted into the passing-sample chart. Backend hosting is still laptop dependent.
+
 ### Native photometry dependency — November 15
 
 `backend/photometry.py` now implements native effective-PSF and exact-aperture measurements with the actual calibrated pixel solid-angle map, planar surface-brightness background, source/background covariance, optional bounded high-S/N centroid fitting and propagated residual diagnostics. It rejects legacy optical models without an explicit verified ePSF, unknown/defective core flags, invalid units/detectors/origins, insufficient background, missing coverage, oversized windows and failed centroid solutions. Native calibration arrays remain separate from the visual resampling path.

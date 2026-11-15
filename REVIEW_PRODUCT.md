@@ -10,6 +10,14 @@ Quality/resource review: 96-pixel native-window bound, at least 20 non-source ba
 
 This review approves the tested dependency at its documented validity range, not the full spectrum feature or subtraction. Remaining work includes release registry binding, all-detector benchmarks, isolation/quality decisions, asynchronous durable jobs, source/aperture selection, linked plots and scientific exports. The viewer/API's previously verified public capabilities are unchanged.
 
+## Native source-sample workflow — November 15, 2026
+
+Connected the approved kernel to persistent native extraction in the retained P330E field only. The enabled-target registry and native/calibration SHA-256 checks bound inputs; arbitrary URLs/paths, invalid geometry, duplicate/out-of-range observations and stale target revisions are rejected. Canonical request ordering deduplicates jobs. Cancelled attempts cannot replace retries; restart recovery and the shared ten-pending-analysis limit are regression tested. Covariance remains conditional statistical covariance, with unprovided calibration/native-correlation/PSF terms explicitly excluded.
+
+The UI and exports distinguish passing, diagnostic-only and rejected observations. A coverage failure retains null flux/error rather than becoming zero. The plot does not join separate acquisition times or infer missing channels. Used-pixel residuals do not misrepresent unmodeled neighboring stars outside the fit. Shared results restore the actual extraction controls and selected observation. Edits clear prior results; saved-product loading prevents a stale response from replacing a new extraction. Failed target loads and job requests retain recovery actions.
+
+Review fixes from direct visual inspection: retain readable mobile chart labels through bounded horizontal scrolling; give export links usable widths; separate the flux axis from tick labels; restrict residual contrast to used fit pixels; restore aperture/observation choices from shared products; handle a cancellation racing with completed output; separate source-metadata errors from saved-product errors. All 52 scientific/API tests and 23 local browser tests pass, with focused browser checks after the final display fix. Public and fresh-source CI acceptance are recorded separately. The first workflow's strict P330E/D2 scope remains visible; it does not satisfy the full spectrum requirement or durable hosting.
+
 ## Name and survey context — November 15, 2026
 
 The adapter uses actual Gator VOTables for both Gaia DR3 and AllWISE after spatial TAP probes failed. It preserves integer source IDs as strings, catalog flags/epochs, raw-query hashes and all query URLs. Bounded response, concurrency, rows, radius and redirect policies keep the routes from becoming arbitrary fetch proxies. A negative test proves name redirects cannot leave the approved CDS mirror hosts.

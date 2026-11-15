@@ -14,6 +14,8 @@ from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field, ConfigDict
 from backend.science import ROOT
 from backend.coadds import build_coadd, POLICY
+from backend.spectra import SpectrumRequest,build_spectrum,target_description,POLICY as SPECTRUM_POLICY,BENCHMARK,PHOTOMETRY_POLICY
+from backend.science import digest
 
 
 class CoaddRequest(BaseModel):
@@ -43,6 +45,15 @@ def create_router(database,executor):
     def run(job_id,payload):
         try:
             if cancelled(job_id):return
+            decoded=json.loads(payload)
+            if decoded.pop('kind','coadd')=='source_samples':
+                request=SpectrumRequest.model_validate(decoded)
+                update(job_id,'measuring_native_source')
+                def check_cancel():
+                    if cancelled(job_id):raise ValueError('Job cancelled')
+                product=build_spectrum(request,destination(),check_cancel=check_cancel)
+                if not cancelled(job_id):update(job_id,'complete',product['id'])
+                return
             request=CoaddRequest.model_validate_json(payload)
             update(job_id,'reading_native_and_reprojecting')
             path=ROOT/'public/prepared'/request.sequence_id/'manifest.json'
@@ -63,13 +74,9 @@ def create_router(database,executor):
         for job_id,payload in rows:executor.submit(run,job_id,payload)
         return len(rows)
 
-    @router.post('/v1/coadds',status_code=202)
-    def submit(request:CoaddRequest):
-        if len(set(request.frame_indices))!=len(request.frame_indices) or any(i<0 or i>7 for i in request.frame_indices):
-            raise HTTPException(422,'Choose two to eight distinct frame indices between 0 and 7.')
-        normalized=request.model_dump();normalized['frame_indices']=sorted(request.frame_indices)
+    def enqueue(normalized,policy):
         payload=json.dumps(normalized,sort_keys=True)
-        key=hashlib.sha256((POLICY+payload).encode()).hexdigest()
+        key=hashlib.sha256((policy+payload).encode()).hexdigest()
         with closing(connect()) as db:
             db.execute('BEGIN IMMEDIATE')
             row=db.execute("SELECT id,state,result_id FROM product_jobs WHERE request_key=? AND state NOT IN ('failed','cancelled') ORDER BY updated DESC LIMIT 1",(key,)).fetchone()
@@ -81,6 +88,25 @@ def create_router(database,executor):
             db.execute('INSERT INTO product_jobs (id,request_key,payload,state,result_id,error,updated) VALUES (?,?,?,?,?,?,?)',(job_id,key,payload,'queued',None,None,time.time()));db.commit()
         executor.submit(run,job_id,payload)
         return {'job_id':job_id,'status_url':f'/v1/analysis/jobs/{job_id}'}
+
+    @router.post('/v1/coadds',status_code=202)
+    def submit(request:CoaddRequest):
+        if len(set(request.frame_indices))!=len(request.frame_indices) or any(i<0 or i>7 for i in request.frame_indices):
+            raise HTTPException(422,'Choose two to eight distinct frame indices between 0 and 7.')
+        normalized=request.model_dump();normalized['frame_indices']=sorted(request.frame_indices)
+        return enqueue(normalized,POLICY)
+
+    @router.post('/v1/source-samples',status_code=202)
+    def submit_spectrum(request:SpectrumRequest):
+        if request.target_revision and request.target_revision!=target_description()['revision']:
+            raise HTTPException(409,'The retained target metadata changed. Reload the target before extracting.')
+        normalized=request.model_dump();normalized['observation_indices']=sorted(request.observation_indices)
+        normalized['kind']='source_samples'
+        policy=SPECTRUM_POLICY+PHOTOMETRY_POLICY+digest(BENCHMARK/'benchmark.json')+digest(BENCHMARK/'fixture-manifest.json')
+        return enqueue(normalized,policy)
+
+    @router.get('/v1/source-targets/p330e')
+    def describe_target():return target_description()
 
     @router.get('/v1/analysis/jobs/{job_id}')
     def status(job_id:str):
@@ -106,4 +132,10 @@ def create_router(database,executor):
     def product(identity:str):return json.loads(product_path(identity,'manifest.json').read_text(encoding='utf-8'))
     @router.get('/v1/products/{identity}/science.fits')
     def science(identity:str):return FileResponse(product_path(identity,'science.fits'),media_type='application/fits',filename=f'vantage-{identity[:12]}-coadd.fits')
+    @router.get('/v1/products/{identity}/samples.ecsv')
+    def ecsv(identity:str):return FileResponse(product_path(identity,'samples.ecsv'),media_type='text/plain',filename=f'vantage-{identity[:12]}-samples.ecsv')
+    @router.get('/v1/products/{identity}/samples.csv')
+    def csv(identity:str):return FileResponse(product_path(identity,'samples.csv'),media_type='text/csv',filename=f'vantage-{identity[:12]}-samples.csv')
+    @router.get('/v1/products/{identity}/plot.svg')
+    def svg(identity:str):return FileResponse(product_path(identity,'plot.svg'),media_type='image/svg+xml',filename=f'vantage-{identity[:12]}-samples.svg')
     return router,recover

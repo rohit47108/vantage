@@ -1,0 +1,71 @@
+import {test,expect} from '@playwright/test';
+import AxeBuilder from '@axe-core/playwright';
+
+test('actual source extraction, linked selection, rejection reasons and exports',async({page})=>{
+  await page.goto('/?view=sources');
+  await expect(page.getByRole('heading',{name:'Measure a source'})).toBeVisible();
+  await expect(page.getByText('Partial D2 sampling',{exact:true})).toBeVisible();
+  await page.getByRole('button',{name:'Extract selected observations'}).click();
+  await expect(page.getByRole('heading',{name:'P330E · source samples'})).toBeVisible();
+  await expect(page.getByText('1 passes fit checks',{exact:true})).toBeVisible();
+  await page.getByRole('button',{name:'Inspect 2025W30_1B_0059_3'}).click();
+  await expect(page.getByTestId('measurement-flux')).toContainText('28,983.68');
+  await expect(page.getByRole('img',{name:'Native brightness cutout; source cross marks the measured position. Array rows increase upward.'})).toBeVisible();
+  await page.getByRole('button',{name:'Inspect 2026W08_1A_0601_1'}).click();
+  await expect(page.getByTestId('selected-sample')).toContainText('does not cover');
+  const download=page.waitForEvent('download');
+  await page.getByRole('link',{name:'ECSV with units'}).click();
+  expect((await download).suggestedFilename()).toMatch(/samples\.ecsv$/);
+  await page.getByRole('button',{name:'Share these measurements'}).click();
+  await expect(page.getByLabel('Measurement link')).toHaveValue(/samples=[a-f0-9]{64}/);
+  const url=await page.getByLabel('Measurement link').inputValue();
+  await page.goto(url);
+  await expect(page.getByRole('heading',{name:'P330E · source samples'})).toBeVisible();
+  await expect(page.getByTestId('selected-sample')).toContainText('does not cover');
+  const results=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze();
+  expect(results.violations).toEqual([]);
+  await page.screenshot({path:'artifacts/source-samples-desktop.png',fullPage:true});
+});
+
+test('aperture selection and mobile keyboard workflow',async({page})=>{
+  await page.setViewportSize({width:390,height:844});
+  await page.goto('/?view=sources');
+  await page.getByLabel('Extraction method').selectOption('aperture');
+  await page.getByLabel('Include 2025W29_1A_0544_1').uncheck();
+  await page.getByLabel('Include 2026W07_2A_0338_3').uncheck();
+  await page.getByRole('button',{name:'Extract selected observations'}).click();
+  await expect(page.getByRole('heading',{name:'P330E · source samples'})).toBeVisible();
+  await expect(page.getByText('1 passes fit checks',{exact:true})).toBeVisible();
+  await page.getByRole('button',{name:'Inspect 2025W30_1B_0059_3'}).focus();
+  await page.keyboard.press('Enter');
+  await expect(page.getByTestId('measurement-flux')).toContainText('28,937.10');
+  await page.getByRole('button',{name:'Share these measurements'}).click();
+  const link=await page.getByLabel('Measurement link').inputValue();
+  await page.goto(link);
+  await expect(page.getByLabel('Extraction method')).toHaveValue('aperture');
+  await expect(page.getByLabel('Include 2025W29_1A_0544_1')).not.toBeChecked();
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth)).toBe(true);
+  const results=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze();
+  expect(results.violations).toEqual([]);
+  await page.screenshot({path:'artifacts/source-samples-mobile.png',fullPage:true});
+});
+
+test('failed source retrieval and extraction recover without stale results',async({page})=>{
+  let failed=true;
+  await page.route('**/v1/source-targets/p330e',route=>failed?route.fulfill({status:503,json:{detail:'Source field temporarily unavailable'}}):route.continue());
+  await page.goto('/?view=sources');
+  await expect(page.getByRole('alert')).toContainText('Source field temporarily unavailable');
+  failed=false;await page.getByRole('button',{name:'Retry source field'}).click();
+  await expect(page.getByLabel('Extraction method')).toBeVisible();
+  await page.route('**/v1/source-samples',route=>route.fulfill({status:503,json:{detail:'Extraction temporarily unavailable'}}));
+  await page.getByRole('button',{name:'Extract selected observations'}).click();
+  await expect(page.getByRole('alert')).toContainText('Extraction temporarily unavailable');
+  await expect(page.getByRole('heading',{name:'P330E · source samples'})).toHaveCount(0);
+  await page.unroute('**/v1/source-samples');
+  await page.getByRole('button',{name:'Extract selected observations'}).click();
+  await expect(page.getByRole('heading',{name:'P330E · source samples'})).toBeVisible();
+  await page.getByLabel('Extraction method').selectOption('aperture');
+  await expect(page.getByRole('heading',{name:'P330E · source samples'})).toHaveCount(0);
+  for(const id of ['2025W29_1A_0544_1','2025W30_1B_0059_3','2026W07_2A_0338_3','2026W08_1A_0601_1'])await page.getByLabel('Include '+id).uncheck();
+  await expect(page.getByRole('button',{name:'Extract selected observations'})).toBeDisabled();
+});

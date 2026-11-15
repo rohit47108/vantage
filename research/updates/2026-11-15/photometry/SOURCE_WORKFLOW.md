@@ -1,0 +1,37 @@
+# Native source-sample workflow
+
+This increment connects the native photometry kernel to actual asynchronous extraction, linked sample/chart/image inspection, persistent products, and downloadable tables and plots. It enables the retained P330E DR1 D2 field only. It does not complete requirement F: arbitrary source selection, six-detector discovery/calibration association, full 102-channel coverage accounting, epoch windows, science-aware binning and upper limits remain pending.
+
+## API contract
+
+- `GET /v1/source-targets/p330e`: enabled field, immutable target revision, actual observation IDs/times and Gaia angular-position interpretation. Four actual exposures are retained; this is not a live archive completeness claim.
+- `POST /v1/source-samples`: returns HTTP 202 with `job_id` and `status_url`. Input is `target_key: "p330e"`, optional exact `target_revision`, `observation_indices` (distinct indices 0–3, one to four), `method` (`psf` or `aperture`), `refine_centroid` (default true), `aperture_radius` (1.5–3.5, default 2.5), `background_inner` (4.5–6, default 5), `background_outer` (7–10, default 8), all radii in native pixels. Unknown fields/URLs, unsupported target keys/methods, nonfinite inputs and invalid geometry are rejected. A stale target revision returns 409 before enqueueing.
+- `GET /v1/analysis/jobs/{job_id}` and `DELETE` on the same resource: existing persistent status/cancellation interface. Source and coadd jobs share the existing two-worker executor and transactional ten-pending-analysis admission limit. An identical pending/completed request is deduplicated. Cancelled retries have distinct job IDs. Startup requeues persisted incomplete jobs.
+- `GET /v1/products/{id}`: complete provenance and all requested observations, including failures. Every native image, solid-angle and wavelength-calibration byte stream is checked against the retained SHA-256 registry before measurement. The manifest is atomically published after exports. Identity includes normalized input selection, numerical policies/parameters, source/epoch model, input associations/checksums and software versions.
+- `GET /v1/products/{id}/samples.ecsv`, `/samples.csv`, `/plot.svg`: actual generated downloads. ECSV retains units, masked missing values, time scale, request/limitations metadata and references to parameter covariance in the JSON manifest. CSV preserves statuses/reasons but cannot retain all ECSV metadata. The SVG includes labels, uncertainty conventions, missing-coverage interpretation and credits.
+
+OpenAPI is generated from the actual running FastAPI/Pydantic routes at `/openapi.json`. No caller-supplied filesystem path or archive URL is accepted by this slice.
+
+## Scientific interpretation
+
+Native `IMAGE`/`VARIANCE`, detector/observation/time associations, calibrated SAPM and embedded effective PSF drive the numerical measurement. Visual resampling is not used for fluxes. The methods and statistical assumptions are detailed in [METHODS.md](METHODS.md), with links to the official [IRSA ePSF tutorial](https://caltech-ipac.github.io/irsa-tutorials/spherex-psf/) and [SPHEREx product documentation](https://caltech-ipac.github.io/spherex-archive-documentation/spherex-data-products/).
+
+The source is located through the retained Gaia angular-motion model at each acquisition time, then optionally refined through the tested bounded high-S/N centroid fit. The fitted coordinate selects central precision CWAVE/CBAND by bilinear lookup in the correctly associated native calibration map. This is a central band descriptor, not a complete effective response of the pixel-weighted estimator. No common bandpass, simultaneous epoch, absolute astrometric precision or total calibration uncertainty is invented.
+
+Each requested observation has an explicit status:
+
+- `accepted`: core/coverage/units/model checks pass and the normalized residual score is below the predeclared maximum of 3. The UI says **Passes fit checks**, not a detection probability or validation of identity/isolation.
+- `diagnostic_only`: a measurement exists but exceeds the residual score. The signed flux and statistical error remain in the table/exports, excluded from the passing-sample plot.
+- `rejected`: no usable measurement; null flux/error and the actual reason are retained. A footprint hit outside the native cutout cannot become a zero-flux measurement.
+
+The default effective-PSF request yields one passing observation, two diagnostic observations and one rejected coverage case. The passing 2025W30_1B_0059_3 sample is 28,983.685 ± 175.640 microJy (statistical sigma), near 1.420 microns. The default aperture request rejects the defective-aperture case and retains the other outcomes explicitly; the passing point is 28,937.098 ± 186.825 microJy. P330E/CALSPEC agreement tests reduction consistency, not independent mission gain validation. Changing geometry/refinement can change which observations pass; thresholds are not relaxed.
+
+The plot displays only passing samples and never joins different acquisition times with a spectral curve. No binning, interpolation through missing channels, zero filling or upper-limit inference occurs. Vertical bars are one statistical sigma, horizontal bars central CBAND. Selection links chart, native source cutout, used-pixel residual and table; native columns/rows are labeled without pretending the unrotated detector stamp is north-up. Shared links preserve the immutable result, request controls and selected observation. Changing controls clears the previous result before another extraction. Failed requests retain retry paths.
+
+## Verification and remaining integration
+
+`tests/test_spectra.py` checks real flux/sigma values for both methods, failure retention, ECSV unit/mask round trips, canonical input ordering, stale metadata, checksum failure, cancellation before publication and parameter bounds. `tests/test_product_jobs.py` checks the real source job/export path, deduplication, cancelled retry isolation, startup recovery and the queue bound shared with coadds. `tests/browser/source-samples.spec.ts` checks actual PSF/aperture jobs, linked inspection, exports, immutable sharing/control restoration, desktop/mobile keyboard/accessibility, service failures and stale-result clearing. Only failure cases are deliberately intercepted; positive scientific results come from actual retained FITS through the real service.
+
+The full local suite has 52 scientific/API tests and 23 browser tests. The previous 47-test numerical core also passed fresh Ubuntu CI run [43690900589](https://github.com/rohit47108/vantage/actions/runs/43690900589). New source-workflow publication/CI/public evidence is recorded separately in `IMPLEMENTATION_STATUS.md` and `artifacts/source-samples-*` once verified.
+
+The [Astropy ECSV documentation](https://docs.astropy.org/en/stable/io/ascii/ecsv.html) was checked live for table masks/units; the actual Astropy 8.0.1 writer/reader is exercised in the regression. No new plotting or UI runtime dependency was introduced. Full source extraction and durable public hosting remain required future increments, with their pending status preserved in `tasks/product-evidence.md`.
