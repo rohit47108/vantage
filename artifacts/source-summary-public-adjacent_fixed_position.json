@@ -1,0 +1,2301 @@
+{
+  "schema_version": "1.0.0",
+  "id": "e8c8bcef75cf4edd37e170c75f29241ea369d8f6262234c2e46dfc3224b1d937",
+  "type": "source_summary",
+  "policy": "native-source-summary-1",
+  "parent_product_id": "070a1101e7cb812dea4361b27037699c85b2cc13389441aff72a8c4113c69a37",
+  "options": {
+    "start_utc": null,
+    "end_utc": null,
+    "time_bin_days": 1
+  },
+  "time_bounds_mjd_utc": [
+    60880.0,
+    60881.0
+  ],
+  "selected_sample_count": 1,
+  "parent_sample_count": 1,
+  "coverage": [
+    {
+      "index": 0,
+      "detector": 1,
+      "channel": 1,
+      "fiducial_wavelength_um": 0.752711,
+      "fiducial_bandwidth_um": 0.018345,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 1,
+      "detector": 1,
+      "channel": 2,
+      "fiducial_wavelength_um": 0.771016,
+      "fiducial_bandwidth_um": 0.018814,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 2,
+      "detector": 1,
+      "channel": 3,
+      "fiducial_wavelength_um": 0.789457,
+      "fiducial_bandwidth_um": 0.019602,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 3,
+      "detector": 1,
+      "channel": 4,
+      "fiducial_wavelength_um": 0.808885,
+      "fiducial_bandwidth_um": 0.020303,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 4,
+      "detector": 1,
+      "channel": 5,
+      "fiducial_wavelength_um": 0.828514,
+      "fiducial_bandwidth_um": 0.02063,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 5,
+      "detector": 1,
+      "channel": 6,
+      "fiducial_wavelength_um": 0.848198,
+      "fiducial_bandwidth_um": 0.021184,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 6,
+      "detector": 1,
+      "channel": 7,
+      "fiducial_wavelength_um": 0.868415,
+      "fiducial_bandwidth_um": 0.022027,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 7,
+      "detector": 1,
+      "channel": 8,
+      "fiducial_wavelength_um": 0.889748,
+      "fiducial_bandwidth_um": 0.022931,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 8,
+      "detector": 1,
+      "channel": 9,
+      "fiducial_wavelength_um": 0.911199,
+      "fiducial_bandwidth_um": 0.023756,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 9,
+      "detector": 1,
+      "channel": 10,
+      "fiducial_wavelength_um": 0.933198,
+      "fiducial_bandwidth_um": 0.024247,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 10,
+      "detector": 1,
+      "channel": 11,
+      "fiducial_wavelength_um": 0.95591,
+      "fiducial_bandwidth_um": 0.024772,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 11,
+      "detector": 1,
+      "channel": 12,
+      "fiducial_wavelength_um": 0.978747,
+      "fiducial_bandwidth_um": 0.025851,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 12,
+      "detector": 1,
+      "channel": 13,
+      "fiducial_wavelength_um": 1.00261,
+      "fiducial_bandwidth_um": 0.02677,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 13,
+      "detector": 1,
+      "channel": 14,
+      "fiducial_wavelength_um": 1.026975,
+      "fiducial_bandwidth_um": 0.027255,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 14,
+      "detector": 1,
+      "channel": 15,
+      "fiducial_wavelength_um": 1.051842,
+      "fiducial_bandwidth_um": 0.028093,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 15,
+      "detector": 1,
+      "channel": 16,
+      "fiducial_wavelength_um": 1.077126,
+      "fiducial_bandwidth_um": 0.029297,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 16,
+      "detector": 1,
+      "channel": 17,
+      "fiducial_wavelength_um": 1.103532,
+      "fiducial_bandwidth_um": 0.030159,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 17,
+      "detector": 2,
+      "channel": 1,
+      "fiducial_wavelength_um": 1.112502,
+      "fiducial_bandwidth_um": 0.026312,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 18,
+      "detector": 2,
+      "channel": 2,
+      "fiducial_wavelength_um": 1.139454,
+      "fiducial_bandwidth_um": 0.027449,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 19,
+      "detector": 2,
+      "channel": 3,
+      "fiducial_wavelength_um": 1.166886,
+      "fiducial_bandwidth_um": 0.028437,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 20,
+      "detector": 2,
+      "channel": 4,
+      "fiducial_wavelength_um": 1.195758,
+      "fiducial_bandwidth_um": 0.029176,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 21,
+      "detector": 2,
+      "channel": 5,
+      "fiducial_wavelength_um": 1.224781,
+      "fiducial_bandwidth_um": 0.029886,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 22,
+      "detector": 2,
+      "channel": 6,
+      "fiducial_wavelength_um": 1.254346,
+      "fiducial_bandwidth_um": 0.030428,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 23,
+      "detector": 2,
+      "channel": 7,
+      "fiducial_wavelength_um": 1.284482,
+      "fiducial_bandwidth_um": 0.031128,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 24,
+      "detector": 2,
+      "channel": 8,
+      "fiducial_wavelength_um": 1.315579,
+      "fiducial_bandwidth_um": 0.031924,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 25,
+      "detector": 2,
+      "channel": 9,
+      "fiducial_wavelength_um": 1.347074,
+      "fiducial_bandwidth_um": 0.032502,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 26,
+      "detector": 2,
+      "channel": 10,
+      "fiducial_wavelength_um": 1.379294,
+      "fiducial_bandwidth_um": 0.033378,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 27,
+      "detector": 2,
+      "channel": 11,
+      "fiducial_wavelength_um": 1.412903,
+      "fiducial_bandwidth_um": 0.034462,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 28,
+      "detector": 2,
+      "channel": 12,
+      "fiducial_wavelength_um": 1.446957,
+      "fiducial_bandwidth_um": 0.035577,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 29,
+      "detector": 2,
+      "channel": 13,
+      "fiducial_wavelength_um": 1.482534,
+      "fiducial_bandwidth_um": 0.036689,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 30,
+      "detector": 2,
+      "channel": 14,
+      "fiducial_wavelength_um": 1.518753,
+      "fiducial_bandwidth_um": 0.037626,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 31,
+      "detector": 2,
+      "channel": 15,
+      "fiducial_wavelength_um": 1.556163,
+      "fiducial_bandwidth_um": 0.038395,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 32,
+      "detector": 2,
+      "channel": 16,
+      "fiducial_wavelength_um": 1.594004,
+      "fiducial_bandwidth_um": 0.039087,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 33,
+      "detector": 2,
+      "channel": 17,
+      "fiducial_wavelength_um": 1.632796,
+      "fiducial_bandwidth_um": 0.03983,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 34,
+      "detector": 3,
+      "channel": 1,
+      "fiducial_wavelength_um": 1.6559,
+      "fiducial_bandwidth_um": 0.039666,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 35,
+      "detector": 3,
+      "channel": 2,
+      "fiducial_wavelength_um": 1.694855,
+      "fiducial_bandwidth_um": 0.04079,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 36,
+      "detector": 3,
+      "channel": 3,
+      "fiducial_wavelength_um": 1.734685,
+      "fiducial_bandwidth_um": 0.04208,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 37,
+      "detector": 3,
+      "channel": 4,
+      "fiducial_wavelength_um": 1.775889,
+      "fiducial_bandwidth_um": 0.043685,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 38,
+      "detector": 3,
+      "channel": 5,
+      "fiducial_wavelength_um": 1.817903,
+      "fiducial_bandwidth_um": 0.045203,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 39,
+      "detector": 3,
+      "channel": 6,
+      "fiducial_wavelength_um": 1.861539,
+      "fiducial_bandwidth_um": 0.046369,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 40,
+      "detector": 3,
+      "channel": 7,
+      "fiducial_wavelength_um": 1.905439,
+      "fiducial_bandwidth_um": 0.047032,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 41,
+      "detector": 3,
+      "channel": 8,
+      "fiducial_wavelength_um": 1.950356,
+      "fiducial_bandwidth_um": 0.047903,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 42,
+      "detector": 3,
+      "channel": 9,
+      "fiducial_wavelength_um": 1.99566,
+      "fiducial_bandwidth_um": 0.04908,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 43,
+      "detector": 3,
+      "channel": 10,
+      "fiducial_wavelength_um": 2.042066,
+      "fiducial_bandwidth_um": 0.051056,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 44,
+      "detector": 3,
+      "channel": 11,
+      "fiducial_wavelength_um": 2.090366,
+      "fiducial_bandwidth_um": 0.052771,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 45,
+      "detector": 3,
+      "channel": 12,
+      "fiducial_wavelength_um": 2.13988,
+      "fiducial_bandwidth_um": 0.054417,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 46,
+      "detector": 3,
+      "channel": 13,
+      "fiducial_wavelength_um": 2.190622,
+      "fiducial_bandwidth_um": 0.055241,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 47,
+      "detector": 3,
+      "channel": 14,
+      "fiducial_wavelength_um": 2.241852,
+      "fiducial_bandwidth_um": 0.056563,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 48,
+      "detector": 3,
+      "channel": 15,
+      "fiducial_wavelength_um": 2.294289,
+      "fiducial_bandwidth_um": 0.057464,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 49,
+      "detector": 3,
+      "channel": 16,
+      "fiducial_wavelength_um": 2.347129,
+      "fiducial_bandwidth_um": 0.059239,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 50,
+      "detector": 3,
+      "channel": 17,
+      "fiducial_wavelength_um": 2.402885,
+      "fiducial_bandwidth_um": 0.059435,
+      "visualization_blank": true,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 51,
+      "detector": 4,
+      "channel": 1,
+      "fiducial_wavelength_um": 2.4445,
+      "fiducial_bandwidth_um": 0.059401,
+      "visualization_blank": true,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 52,
+      "detector": 4,
+      "channel": 2,
+      "fiducial_wavelength_um": 2.505391,
+      "fiducial_bandwidth_um": 0.075324,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 53,
+      "detector": 4,
+      "channel": 3,
+      "fiducial_wavelength_um": 2.574908,
+      "fiducial_bandwidth_um": 0.077037,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 54,
+      "detector": 4,
+      "channel": 4,
+      "fiducial_wavelength_um": 2.645976,
+      "fiducial_bandwidth_um": 0.078228,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 55,
+      "detector": 4,
+      "channel": 5,
+      "fiducial_wavelength_um": 2.719049,
+      "fiducial_bandwidth_um": 0.081878,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 56,
+      "detector": 4,
+      "channel": 6,
+      "fiducial_wavelength_um": 2.794716,
+      "fiducial_bandwidth_um": 0.08305,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 57,
+      "detector": 4,
+      "channel": 7,
+      "fiducial_wavelength_um": 2.872587,
+      "fiducial_bandwidth_um": 0.085,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 58,
+      "detector": 4,
+      "channel": 8,
+      "fiducial_wavelength_um": 2.95145,
+      "fiducial_bandwidth_um": 0.087874,
+      "visualization_blank": false,
+      "accepted": 1,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [
+        "2025W30_1B_0610_1/D4"
+      ],
+      "status": "measured"
+    },
+    {
+      "index": 59,
+      "detector": 4,
+      "channel": 9,
+      "fiducial_wavelength_um": 3.034008,
+      "fiducial_bandwidth_um": 0.090815,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 60,
+      "detector": 4,
+      "channel": 10,
+      "fiducial_wavelength_um": 3.118906,
+      "fiducial_bandwidth_um": 0.092576,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 61,
+      "detector": 4,
+      "channel": 11,
+      "fiducial_wavelength_um": 3.206326,
+      "fiducial_bandwidth_um": 0.094793,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 62,
+      "detector": 4,
+      "channel": 12,
+      "fiducial_wavelength_um": 3.294892,
+      "fiducial_bandwidth_um": 0.096451,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 63,
+      "detector": 4,
+      "channel": 13,
+      "fiducial_wavelength_um": 3.385655,
+      "fiducial_bandwidth_um": 0.098034,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 64,
+      "detector": 4,
+      "channel": 14,
+      "fiducial_wavelength_um": 3.478921,
+      "fiducial_bandwidth_um": 0.100028,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 65,
+      "detector": 4,
+      "channel": 15,
+      "fiducial_wavelength_um": 3.57367,
+      "fiducial_bandwidth_um": 0.102585,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 66,
+      "detector": 4,
+      "channel": 16,
+      "fiducial_wavelength_um": 3.670917,
+      "fiducial_bandwidth_um": 0.10583,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 67,
+      "detector": 4,
+      "channel": 17,
+      "fiducial_wavelength_um": 3.771649,
+      "fiducial_bandwidth_um": 0.107713,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 68,
+      "detector": 5,
+      "channel": 1,
+      "fiducial_wavelength_um": 3.833988,
+      "fiducial_bandwidth_um": 0.035375,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 69,
+      "detector": 5,
+      "channel": 2,
+      "fiducial_wavelength_um": 3.867595,
+      "fiducial_bandwidth_um": 0.035618,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 70,
+      "detector": 5,
+      "channel": 3,
+      "fiducial_wavelength_um": 3.901372,
+      "fiducial_bandwidth_um": 0.035889,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 71,
+      "detector": 5,
+      "channel": 4,
+      "fiducial_wavelength_um": 3.936098,
+      "fiducial_bandwidth_um": 0.036307,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 72,
+      "detector": 5,
+      "channel": 5,
+      "fiducial_wavelength_um": 3.970728,
+      "fiducial_bandwidth_um": 0.036504,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 73,
+      "detector": 5,
+      "channel": 6,
+      "fiducial_wavelength_um": 4.006071,
+      "fiducial_bandwidth_um": 0.036583,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 74,
+      "detector": 5,
+      "channel": 7,
+      "fiducial_wavelength_um": 4.041453,
+      "fiducial_bandwidth_um": 0.036791,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 75,
+      "detector": 5,
+      "channel": 8,
+      "fiducial_wavelength_um": 4.077212,
+      "fiducial_bandwidth_um": 0.036692,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 76,
+      "detector": 5,
+      "channel": 9,
+      "fiducial_wavelength_um": 4.113086,
+      "fiducial_bandwidth_um": 0.036746,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 77,
+      "detector": 5,
+      "channel": 10,
+      "fiducial_wavelength_um": 4.148826,
+      "fiducial_bandwidth_um": 0.036736,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 78,
+      "detector": 5,
+      "channel": 11,
+      "fiducial_wavelength_um": 4.185436,
+      "fiducial_bandwidth_um": 0.037159,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 79,
+      "detector": 5,
+      "channel": 12,
+      "fiducial_wavelength_um": 4.221558,
+      "fiducial_bandwidth_um": 0.03666,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 80,
+      "detector": 5,
+      "channel": 13,
+      "fiducial_wavelength_um": 4.258286,
+      "fiducial_bandwidth_um": 0.0372,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 81,
+      "detector": 5,
+      "channel": 14,
+      "fiducial_wavelength_um": 4.295445,
+      "fiducial_bandwidth_um": 0.037377,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 82,
+      "detector": 5,
+      "channel": 15,
+      "fiducial_wavelength_um": 4.33254,
+      "fiducial_bandwidth_um": 0.037357,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 83,
+      "detector": 5,
+      "channel": 16,
+      "fiducial_wavelength_um": 4.369539,
+      "fiducial_bandwidth_um": 0.037761,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 84,
+      "detector": 5,
+      "channel": 17,
+      "fiducial_wavelength_um": 4.406861,
+      "fiducial_bandwidth_um": 0.037738,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 85,
+      "detector": 6,
+      "channel": 1,
+      "fiducial_wavelength_um": 4.435794,
+      "fiducial_bandwidth_um": 0.036626,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 86,
+      "detector": 6,
+      "channel": 2,
+      "fiducial_wavelength_um": 4.468081,
+      "fiducial_bandwidth_um": 0.036931,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 87,
+      "detector": 6,
+      "channel": 3,
+      "fiducial_wavelength_um": 4.501294,
+      "fiducial_bandwidth_um": 0.036516,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 88,
+      "detector": 6,
+      "channel": 4,
+      "fiducial_wavelength_um": 4.534334,
+      "fiducial_bandwidth_um": 0.037449,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 89,
+      "detector": 6,
+      "channel": 5,
+      "fiducial_wavelength_um": 4.567448,
+      "fiducial_bandwidth_um": 0.035961,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 90,
+      "detector": 6,
+      "channel": 6,
+      "fiducial_wavelength_um": 4.601338,
+      "fiducial_bandwidth_um": 0.038417,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 91,
+      "detector": 6,
+      "channel": 7,
+      "fiducial_wavelength_um": 4.635891,
+      "fiducial_bandwidth_um": 0.037527,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 92,
+      "detector": 6,
+      "channel": 8,
+      "fiducial_wavelength_um": 4.670264,
+      "fiducial_bandwidth_um": 0.038446,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 93,
+      "detector": 6,
+      "channel": 9,
+      "fiducial_wavelength_um": 4.705394,
+      "fiducial_bandwidth_um": 0.038088,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 94,
+      "detector": 6,
+      "channel": 10,
+      "fiducial_wavelength_um": 4.740191,
+      "fiducial_bandwidth_um": 0.036749,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 95,
+      "detector": 6,
+      "channel": 11,
+      "fiducial_wavelength_um": 4.775325,
+      "fiducial_bandwidth_um": 0.03777,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 96,
+      "detector": 6,
+      "channel": 12,
+      "fiducial_wavelength_um": 4.810037,
+      "fiducial_bandwidth_um": 0.037691,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 97,
+      "detector": 6,
+      "channel": 13,
+      "fiducial_wavelength_um": 4.843985,
+      "fiducial_bandwidth_um": 0.038343,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 98,
+      "detector": 6,
+      "channel": 14,
+      "fiducial_wavelength_um": 4.880046,
+      "fiducial_bandwidth_um": 0.037937,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 99,
+      "detector": 6,
+      "channel": 15,
+      "fiducial_wavelength_um": 4.91683,
+      "fiducial_bandwidth_um": 0.038983,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 100,
+      "detector": 6,
+      "channel": 16,
+      "fiducial_wavelength_um": 4.953111,
+      "fiducial_bandwidth_um": 0.038771,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    },
+    {
+      "index": 101,
+      "detector": 6,
+      "channel": 17,
+      "fiducial_wavelength_um": 4.99057,
+      "fiducial_bandwidth_um": 0.038176,
+      "visualization_blank": false,
+      "accepted": 0,
+      "diagnostic_only": 0,
+      "rejected": 0,
+      "sample_ids": [],
+      "status": "no_passing_measurement"
+    }
+  ],
+  "bins": [
+    {
+      "bin_id": "58:0",
+      "index": 58,
+      "detector": 4,
+      "channel": 8,
+      "time_bucket": 0,
+      "flux_ujy": -18.790417168635443,
+      "statistical_sigma_ujy": 14.151138989165204,
+      "weights": [
+        1.0
+      ],
+      "equal_mean_chi2": null,
+      "equal_mean_dof": 0,
+      "equal_mean_p_value": null,
+      "count": 1,
+      "input_sample_ids": [
+        "2025W30_1B_0610_1/D4"
+      ],
+      "input_wavelengths_um": [
+        2.959841728210449
+      ],
+      "input_bandwidths_um": [
+        0.0866500735282898
+      ],
+      "input_utc_mids": [
+        "2025-07-24T09:01:29.424Z"
+      ],
+      "weighted_wavelength_um": 2.959841728210449,
+      "mjd_range": [
+        60880.376035,
+        60880.376035
+      ],
+      "wavelength_range_um": [
+        2.959841728210449,
+        2.959841728210449
+      ],
+      "response_description": "Inverse-variance mean of the listed native measurements at their actual CWAVE/CBAND; response mixed, not a newly calibrated common bandpass.",
+      "scatter_warning": false
+    }
+  ],
+  "assignments": {
+    "2025W30_1B_0610_1/D4": {
+      "detector": 4,
+      "channel": 8,
+      "index": 58,
+      "nominal": true,
+      "parent_pixel_xy": [
+        1023,
+        1091
+      ],
+      "support_crosses_channel_boundary": false,
+      "coordinate_convention": "sky; no additional MWIR flip"
+    }
+  },
+  "unassigned_sample_ids": [],
+  "edge_sample_ids": [],
+  "sample_statistics": [
+    {
+      "sample_id": "2025W30_1B_0610_1/D4",
+      "bound": {
+        "upper_ujy": 18.060565256886306,
+        "credibility": 0.95,
+        "prior": "Uniform in nonnegative true flux; zero for negative true flux",
+        "likelihood": "Gaussian fixed-position measurement with the reported conditional statistical error",
+        "interpretation": "Observed-data upper credible bound, not a detection-completeness limit or total-error bound."
+      },
+      "sensitivity": {
+        "flux_ujy": 94.0322472376488,
+        "threshold_sigma": 5,
+        "false_positive_probability_one_position": 2.8665157187919333e-07,
+        "target_detection_probability": 0.95,
+        "interpretation": "Conditional Gaussian fixed-position sensitivity. Quality-gate acceptance, source searching, varying variance and real-sky completeness are not included."
+      },
+      "snr": -1.3278377933410375,
+      "reason": null
+    }
+  ],
+  "spectral_model": {
+    "id": "58ae8512a2df7d8ae9778ec950dad5bd512ed956bcb6beb0aa000dc3263faa33",
+    "policy": "native-source-summary-1",
+    "channels": [
+      {
+        "index": 0,
+        "detector": 1,
+        "channel": 1,
+        "fiducial_wavelength_um": 0.752711,
+        "fiducial_bandwidth_um": 0.018345,
+        "visualization_blank": false
+      },
+      {
+        "index": 1,
+        "detector": 1,
+        "channel": 2,
+        "fiducial_wavelength_um": 0.771016,
+        "fiducial_bandwidth_um": 0.018814,
+        "visualization_blank": false
+      },
+      {
+        "index": 2,
+        "detector": 1,
+        "channel": 3,
+        "fiducial_wavelength_um": 0.789457,
+        "fiducial_bandwidth_um": 0.019602,
+        "visualization_blank": false
+      },
+      {
+        "index": 3,
+        "detector": 1,
+        "channel": 4,
+        "fiducial_wavelength_um": 0.808885,
+        "fiducial_bandwidth_um": 0.020303,
+        "visualization_blank": false
+      },
+      {
+        "index": 4,
+        "detector": 1,
+        "channel": 5,
+        "fiducial_wavelength_um": 0.828514,
+        "fiducial_bandwidth_um": 0.02063,
+        "visualization_blank": false
+      },
+      {
+        "index": 5,
+        "detector": 1,
+        "channel": 6,
+        "fiducial_wavelength_um": 0.848198,
+        "fiducial_bandwidth_um": 0.021184,
+        "visualization_blank": false
+      },
+      {
+        "index": 6,
+        "detector": 1,
+        "channel": 7,
+        "fiducial_wavelength_um": 0.868415,
+        "fiducial_bandwidth_um": 0.022027,
+        "visualization_blank": false
+      },
+      {
+        "index": 7,
+        "detector": 1,
+        "channel": 8,
+        "fiducial_wavelength_um": 0.889748,
+        "fiducial_bandwidth_um": 0.022931,
+        "visualization_blank": false
+      },
+      {
+        "index": 8,
+        "detector": 1,
+        "channel": 9,
+        "fiducial_wavelength_um": 0.911199,
+        "fiducial_bandwidth_um": 0.023756,
+        "visualization_blank": false
+      },
+      {
+        "index": 9,
+        "detector": 1,
+        "channel": 10,
+        "fiducial_wavelength_um": 0.933198,
+        "fiducial_bandwidth_um": 0.024247,
+        "visualization_blank": false
+      },
+      {
+        "index": 10,
+        "detector": 1,
+        "channel": 11,
+        "fiducial_wavelength_um": 0.95591,
+        "fiducial_bandwidth_um": 0.024772,
+        "visualization_blank": false
+      },
+      {
+        "index": 11,
+        "detector": 1,
+        "channel": 12,
+        "fiducial_wavelength_um": 0.978747,
+        "fiducial_bandwidth_um": 0.025851,
+        "visualization_blank": false
+      },
+      {
+        "index": 12,
+        "detector": 1,
+        "channel": 13,
+        "fiducial_wavelength_um": 1.00261,
+        "fiducial_bandwidth_um": 0.02677,
+        "visualization_blank": false
+      },
+      {
+        "index": 13,
+        "detector": 1,
+        "channel": 14,
+        "fiducial_wavelength_um": 1.026975,
+        "fiducial_bandwidth_um": 0.027255,
+        "visualization_blank": false
+      },
+      {
+        "index": 14,
+        "detector": 1,
+        "channel": 15,
+        "fiducial_wavelength_um": 1.051842,
+        "fiducial_bandwidth_um": 0.028093,
+        "visualization_blank": false
+      },
+      {
+        "index": 15,
+        "detector": 1,
+        "channel": 16,
+        "fiducial_wavelength_um": 1.077126,
+        "fiducial_bandwidth_um": 0.029297,
+        "visualization_blank": false
+      },
+      {
+        "index": 16,
+        "detector": 1,
+        "channel": 17,
+        "fiducial_wavelength_um": 1.103532,
+        "fiducial_bandwidth_um": 0.030159,
+        "visualization_blank": false
+      },
+      {
+        "index": 17,
+        "detector": 2,
+        "channel": 1,
+        "fiducial_wavelength_um": 1.112502,
+        "fiducial_bandwidth_um": 0.026312,
+        "visualization_blank": false
+      },
+      {
+        "index": 18,
+        "detector": 2,
+        "channel": 2,
+        "fiducial_wavelength_um": 1.139454,
+        "fiducial_bandwidth_um": 0.027449,
+        "visualization_blank": false
+      },
+      {
+        "index": 19,
+        "detector": 2,
+        "channel": 3,
+        "fiducial_wavelength_um": 1.166886,
+        "fiducial_bandwidth_um": 0.028437,
+        "visualization_blank": false
+      },
+      {
+        "index": 20,
+        "detector": 2,
+        "channel": 4,
+        "fiducial_wavelength_um": 1.195758,
+        "fiducial_bandwidth_um": 0.029176,
+        "visualization_blank": false
+      },
+      {
+        "index": 21,
+        "detector": 2,
+        "channel": 5,
+        "fiducial_wavelength_um": 1.224781,
+        "fiducial_bandwidth_um": 0.029886,
+        "visualization_blank": false
+      },
+      {
+        "index": 22,
+        "detector": 2,
+        "channel": 6,
+        "fiducial_wavelength_um": 1.254346,
+        "fiducial_bandwidth_um": 0.030428,
+        "visualization_blank": false
+      },
+      {
+        "index": 23,
+        "detector": 2,
+        "channel": 7,
+        "fiducial_wavelength_um": 1.284482,
+        "fiducial_bandwidth_um": 0.031128,
+        "visualization_blank": false
+      },
+      {
+        "index": 24,
+        "detector": 2,
+        "channel": 8,
+        "fiducial_wavelength_um": 1.315579,
+        "fiducial_bandwidth_um": 0.031924,
+        "visualization_blank": false
+      },
+      {
+        "index": 25,
+        "detector": 2,
+        "channel": 9,
+        "fiducial_wavelength_um": 1.347074,
+        "fiducial_bandwidth_um": 0.032502,
+        "visualization_blank": false
+      },
+      {
+        "index": 26,
+        "detector": 2,
+        "channel": 10,
+        "fiducial_wavelength_um": 1.379294,
+        "fiducial_bandwidth_um": 0.033378,
+        "visualization_blank": false
+      },
+      {
+        "index": 27,
+        "detector": 2,
+        "channel": 11,
+        "fiducial_wavelength_um": 1.412903,
+        "fiducial_bandwidth_um": 0.034462,
+        "visualization_blank": false
+      },
+      {
+        "index": 28,
+        "detector": 2,
+        "channel": 12,
+        "fiducial_wavelength_um": 1.446957,
+        "fiducial_bandwidth_um": 0.035577,
+        "visualization_blank": false
+      },
+      {
+        "index": 29,
+        "detector": 2,
+        "channel": 13,
+        "fiducial_wavelength_um": 1.482534,
+        "fiducial_bandwidth_um": 0.036689,
+        "visualization_blank": false
+      },
+      {
+        "index": 30,
+        "detector": 2,
+        "channel": 14,
+        "fiducial_wavelength_um": 1.518753,
+        "fiducial_bandwidth_um": 0.037626,
+        "visualization_blank": false
+      },
+      {
+        "index": 31,
+        "detector": 2,
+        "channel": 15,
+        "fiducial_wavelength_um": 1.556163,
+        "fiducial_bandwidth_um": 0.038395,
+        "visualization_blank": false
+      },
+      {
+        "index": 32,
+        "detector": 2,
+        "channel": 16,
+        "fiducial_wavelength_um": 1.594004,
+        "fiducial_bandwidth_um": 0.039087,
+        "visualization_blank": false
+      },
+      {
+        "index": 33,
+        "detector": 2,
+        "channel": 17,
+        "fiducial_wavelength_um": 1.632796,
+        "fiducial_bandwidth_um": 0.03983,
+        "visualization_blank": false
+      },
+      {
+        "index": 34,
+        "detector": 3,
+        "channel": 1,
+        "fiducial_wavelength_um": 1.6559,
+        "fiducial_bandwidth_um": 0.039666,
+        "visualization_blank": false
+      },
+      {
+        "index": 35,
+        "detector": 3,
+        "channel": 2,
+        "fiducial_wavelength_um": 1.694855,
+        "fiducial_bandwidth_um": 0.04079,
+        "visualization_blank": false
+      },
+      {
+        "index": 36,
+        "detector": 3,
+        "channel": 3,
+        "fiducial_wavelength_um": 1.734685,
+        "fiducial_bandwidth_um": 0.04208,
+        "visualization_blank": false
+      },
+      {
+        "index": 37,
+        "detector": 3,
+        "channel": 4,
+        "fiducial_wavelength_um": 1.775889,
+        "fiducial_bandwidth_um": 0.043685,
+        "visualization_blank": false
+      },
+      {
+        "index": 38,
+        "detector": 3,
+        "channel": 5,
+        "fiducial_wavelength_um": 1.817903,
+        "fiducial_bandwidth_um": 0.045203,
+        "visualization_blank": false
+      },
+      {
+        "index": 39,
+        "detector": 3,
+        "channel": 6,
+        "fiducial_wavelength_um": 1.861539,
+        "fiducial_bandwidth_um": 0.046369,
+        "visualization_blank": false
+      },
+      {
+        "index": 40,
+        "detector": 3,
+        "channel": 7,
+        "fiducial_wavelength_um": 1.905439,
+        "fiducial_bandwidth_um": 0.047032,
+        "visualization_blank": false
+      },
+      {
+        "index": 41,
+        "detector": 3,
+        "channel": 8,
+        "fiducial_wavelength_um": 1.950356,
+        "fiducial_bandwidth_um": 0.047903,
+        "visualization_blank": false
+      },
+      {
+        "index": 42,
+        "detector": 3,
+        "channel": 9,
+        "fiducial_wavelength_um": 1.99566,
+        "fiducial_bandwidth_um": 0.04908,
+        "visualization_blank": false
+      },
+      {
+        "index": 43,
+        "detector": 3,
+        "channel": 10,
+        "fiducial_wavelength_um": 2.042066,
+        "fiducial_bandwidth_um": 0.051056,
+        "visualization_blank": false
+      },
+      {
+        "index": 44,
+        "detector": 3,
+        "channel": 11,
+        "fiducial_wavelength_um": 2.090366,
+        "fiducial_bandwidth_um": 0.052771,
+        "visualization_blank": false
+      },
+      {
+        "index": 45,
+        "detector": 3,
+        "channel": 12,
+        "fiducial_wavelength_um": 2.13988,
+        "fiducial_bandwidth_um": 0.054417,
+        "visualization_blank": false
+      },
+      {
+        "index": 46,
+        "detector": 3,
+        "channel": 13,
+        "fiducial_wavelength_um": 2.190622,
+        "fiducial_bandwidth_um": 0.055241,
+        "visualization_blank": false
+      },
+      {
+        "index": 47,
+        "detector": 3,
+        "channel": 14,
+        "fiducial_wavelength_um": 2.241852,
+        "fiducial_bandwidth_um": 0.056563,
+        "visualization_blank": false
+      },
+      {
+        "index": 48,
+        "detector": 3,
+        "channel": 15,
+        "fiducial_wavelength_um": 2.294289,
+        "fiducial_bandwidth_um": 0.057464,
+        "visualization_blank": false
+      },
+      {
+        "index": 49,
+        "detector": 3,
+        "channel": 16,
+        "fiducial_wavelength_um": 2.347129,
+        "fiducial_bandwidth_um": 0.059239,
+        "visualization_blank": false
+      },
+      {
+        "index": 50,
+        "detector": 3,
+        "channel": 17,
+        "fiducial_wavelength_um": 2.402885,
+        "fiducial_bandwidth_um": 0.059435,
+        "visualization_blank": true
+      },
+      {
+        "index": 51,
+        "detector": 4,
+        "channel": 1,
+        "fiducial_wavelength_um": 2.4445,
+        "fiducial_bandwidth_um": 0.059401,
+        "visualization_blank": true
+      },
+      {
+        "index": 52,
+        "detector": 4,
+        "channel": 2,
+        "fiducial_wavelength_um": 2.505391,
+        "fiducial_bandwidth_um": 0.075324,
+        "visualization_blank": false
+      },
+      {
+        "index": 53,
+        "detector": 4,
+        "channel": 3,
+        "fiducial_wavelength_um": 2.574908,
+        "fiducial_bandwidth_um": 0.077037,
+        "visualization_blank": false
+      },
+      {
+        "index": 54,
+        "detector": 4,
+        "channel": 4,
+        "fiducial_wavelength_um": 2.645976,
+        "fiducial_bandwidth_um": 0.078228,
+        "visualization_blank": false
+      },
+      {
+        "index": 55,
+        "detector": 4,
+        "channel": 5,
+        "fiducial_wavelength_um": 2.719049,
+        "fiducial_bandwidth_um": 0.081878,
+        "visualization_blank": false
+      },
+      {
+        "index": 56,
+        "detector": 4,
+        "channel": 6,
+        "fiducial_wavelength_um": 2.794716,
+        "fiducial_bandwidth_um": 0.08305,
+        "visualization_blank": false
+      },
+      {
+        "index": 57,
+        "detector": 4,
+        "channel": 7,
+        "fiducial_wavelength_um": 2.872587,
+        "fiducial_bandwidth_um": 0.085,
+        "visualization_blank": false
+      },
+      {
+        "index": 58,
+        "detector": 4,
+        "channel": 8,
+        "fiducial_wavelength_um": 2.95145,
+        "fiducial_bandwidth_um": 0.087874,
+        "visualization_blank": false
+      },
+      {
+        "index": 59,
+        "detector": 4,
+        "channel": 9,
+        "fiducial_wavelength_um": 3.034008,
+        "fiducial_bandwidth_um": 0.090815,
+        "visualization_blank": false
+      },
+      {
+        "index": 60,
+        "detector": 4,
+        "channel": 10,
+        "fiducial_wavelength_um": 3.118906,
+        "fiducial_bandwidth_um": 0.092576,
+        "visualization_blank": false
+      },
+      {
+        "index": 61,
+        "detector": 4,
+        "channel": 11,
+        "fiducial_wavelength_um": 3.206326,
+        "fiducial_bandwidth_um": 0.094793,
+        "visualization_blank": false
+      },
+      {
+        "index": 62,
+        "detector": 4,
+        "channel": 12,
+        "fiducial_wavelength_um": 3.294892,
+        "fiducial_bandwidth_um": 0.096451,
+        "visualization_blank": false
+      },
+      {
+        "index": 63,
+        "detector": 4,
+        "channel": 13,
+        "fiducial_wavelength_um": 3.385655,
+        "fiducial_bandwidth_um": 0.098034,
+        "visualization_blank": false
+      },
+      {
+        "index": 64,
+        "detector": 4,
+        "channel": 14,
+        "fiducial_wavelength_um": 3.478921,
+        "fiducial_bandwidth_um": 0.100028,
+        "visualization_blank": false
+      },
+      {
+        "index": 65,
+        "detector": 4,
+        "channel": 15,
+        "fiducial_wavelength_um": 3.57367,
+        "fiducial_bandwidth_um": 0.102585,
+        "visualization_blank": false
+      },
+      {
+        "index": 66,
+        "detector": 4,
+        "channel": 16,
+        "fiducial_wavelength_um": 3.670917,
+        "fiducial_bandwidth_um": 0.10583,
+        "visualization_blank": false
+      },
+      {
+        "index": 67,
+        "detector": 4,
+        "channel": 17,
+        "fiducial_wavelength_um": 3.771649,
+        "fiducial_bandwidth_um": 0.107713,
+        "visualization_blank": false
+      },
+      {
+        "index": 68,
+        "detector": 5,
+        "channel": 1,
+        "fiducial_wavelength_um": 3.833988,
+        "fiducial_bandwidth_um": 0.035375,
+        "visualization_blank": false
+      },
+      {
+        "index": 69,
+        "detector": 5,
+        "channel": 2,
+        "fiducial_wavelength_um": 3.867595,
+        "fiducial_bandwidth_um": 0.035618,
+        "visualization_blank": false
+      },
+      {
+        "index": 70,
+        "detector": 5,
+        "channel": 3,
+        "fiducial_wavelength_um": 3.901372,
+        "fiducial_bandwidth_um": 0.035889,
+        "visualization_blank": false
+      },
+      {
+        "index": 71,
+        "detector": 5,
+        "channel": 4,
+        "fiducial_wavelength_um": 3.936098,
+        "fiducial_bandwidth_um": 0.036307,
+        "visualization_blank": false
+      },
+      {
+        "index": 72,
+        "detector": 5,
+        "channel": 5,
+        "fiducial_wavelength_um": 3.970728,
+        "fiducial_bandwidth_um": 0.036504,
+        "visualization_blank": false
+      },
+      {
+        "index": 73,
+        "detector": 5,
+        "channel": 6,
+        "fiducial_wavelength_um": 4.006071,
+        "fiducial_bandwidth_um": 0.036583,
+        "visualization_blank": false
+      },
+      {
+        "index": 74,
+        "detector": 5,
+        "channel": 7,
+        "fiducial_wavelength_um": 4.041453,
+        "fiducial_bandwidth_um": 0.036791,
+        "visualization_blank": false
+      },
+      {
+        "index": 75,
+        "detector": 5,
+        "channel": 8,
+        "fiducial_wavelength_um": 4.077212,
+        "fiducial_bandwidth_um": 0.036692,
+        "visualization_blank": false
+      },
+      {
+        "index": 76,
+        "detector": 5,
+        "channel": 9,
+        "fiducial_wavelength_um": 4.113086,
+        "fiducial_bandwidth_um": 0.036746,
+        "visualization_blank": false
+      },
+      {
+        "index": 77,
+        "detector": 5,
+        "channel": 10,
+        "fiducial_wavelength_um": 4.148826,
+        "fiducial_bandwidth_um": 0.036736,
+        "visualization_blank": false
+      },
+      {
+        "index": 78,
+        "detector": 5,
+        "channel": 11,
+        "fiducial_wavelength_um": 4.185436,
+        "fiducial_bandwidth_um": 0.037159,
+        "visualization_blank": false
+      },
+      {
+        "index": 79,
+        "detector": 5,
+        "channel": 12,
+        "fiducial_wavelength_um": 4.221558,
+        "fiducial_bandwidth_um": 0.03666,
+        "visualization_blank": false
+      },
+      {
+        "index": 80,
+        "detector": 5,
+        "channel": 13,
+        "fiducial_wavelength_um": 4.258286,
+        "fiducial_bandwidth_um": 0.0372,
+        "visualization_blank": false
+      },
+      {
+        "index": 81,
+        "detector": 5,
+        "channel": 14,
+        "fiducial_wavelength_um": 4.295445,
+        "fiducial_bandwidth_um": 0.037377,
+        "visualization_blank": false
+      },
+      {
+        "index": 82,
+        "detector": 5,
+        "channel": 15,
+        "fiducial_wavelength_um": 4.33254,
+        "fiducial_bandwidth_um": 0.037357,
+        "visualization_blank": false
+      },
+      {
+        "index": 83,
+        "detector": 5,
+        "channel": 16,
+        "fiducial_wavelength_um": 4.369539,
+        "fiducial_bandwidth_um": 0.037761,
+        "visualization_blank": false
+      },
+      {
+        "index": 84,
+        "detector": 5,
+        "channel": 17,
+        "fiducial_wavelength_um": 4.406861,
+        "fiducial_bandwidth_um": 0.037738,
+        "visualization_blank": false
+      },
+      {
+        "index": 85,
+        "detector": 6,
+        "channel": 1,
+        "fiducial_wavelength_um": 4.435794,
+        "fiducial_bandwidth_um": 0.036626,
+        "visualization_blank": false
+      },
+      {
+        "index": 86,
+        "detector": 6,
+        "channel": 2,
+        "fiducial_wavelength_um": 4.468081,
+        "fiducial_bandwidth_um": 0.036931,
+        "visualization_blank": false
+      },
+      {
+        "index": 87,
+        "detector": 6,
+        "channel": 3,
+        "fiducial_wavelength_um": 4.501294,
+        "fiducial_bandwidth_um": 0.036516,
+        "visualization_blank": false
+      },
+      {
+        "index": 88,
+        "detector": 6,
+        "channel": 4,
+        "fiducial_wavelength_um": 4.534334,
+        "fiducial_bandwidth_um": 0.037449,
+        "visualization_blank": false
+      },
+      {
+        "index": 89,
+        "detector": 6,
+        "channel": 5,
+        "fiducial_wavelength_um": 4.567448,
+        "fiducial_bandwidth_um": 0.035961,
+        "visualization_blank": false
+      },
+      {
+        "index": 90,
+        "detector": 6,
+        "channel": 6,
+        "fiducial_wavelength_um": 4.601338,
+        "fiducial_bandwidth_um": 0.038417,
+        "visualization_blank": false
+      },
+      {
+        "index": 91,
+        "detector": 6,
+        "channel": 7,
+        "fiducial_wavelength_um": 4.635891,
+        "fiducial_bandwidth_um": 0.037527,
+        "visualization_blank": false
+      },
+      {
+        "index": 92,
+        "detector": 6,
+        "channel": 8,
+        "fiducial_wavelength_um": 4.670264,
+        "fiducial_bandwidth_um": 0.038446,
+        "visualization_blank": false
+      },
+      {
+        "index": 93,
+        "detector": 6,
+        "channel": 9,
+        "fiducial_wavelength_um": 4.705394,
+        "fiducial_bandwidth_um": 0.038088,
+        "visualization_blank": false
+      },
+      {
+        "index": 94,
+        "detector": 6,
+        "channel": 10,
+        "fiducial_wavelength_um": 4.740191,
+        "fiducial_bandwidth_um": 0.036749,
+        "visualization_blank": false
+      },
+      {
+        "index": 95,
+        "detector": 6,
+        "channel": 11,
+        "fiducial_wavelength_um": 4.775325,
+        "fiducial_bandwidth_um": 0.03777,
+        "visualization_blank": false
+      },
+      {
+        "index": 96,
+        "detector": 6,
+        "channel": 12,
+        "fiducial_wavelength_um": 4.810037,
+        "fiducial_bandwidth_um": 0.037691,
+        "visualization_blank": false
+      },
+      {
+        "index": 97,
+        "detector": 6,
+        "channel": 13,
+        "fiducial_wavelength_um": 4.843985,
+        "fiducial_bandwidth_um": 0.038343,
+        "visualization_blank": false
+      },
+      {
+        "index": 98,
+        "detector": 6,
+        "channel": 14,
+        "fiducial_wavelength_um": 4.880046,
+        "fiducial_bandwidth_um": 0.037937,
+        "visualization_blank": false
+      },
+      {
+        "index": 99,
+        "detector": 6,
+        "channel": 15,
+        "fiducial_wavelength_um": 4.91683,
+        "fiducial_bandwidth_um": 0.038983,
+        "visualization_blank": false
+      },
+      {
+        "index": 100,
+        "detector": 6,
+        "channel": 16,
+        "fiducial_wavelength_um": 4.953111,
+        "fiducial_bandwidth_um": 0.038771,
+        "visualization_blank": false
+      },
+      {
+        "index": 101,
+        "detector": 6,
+        "channel": 17,
+        "fiducial_wavelength_um": 4.99057,
+        "fiducial_bandwidth_um": 0.038176,
+        "visualization_blank": false
+      }
+    ],
+    "channel_map_sha256": "e5b4003fcd5cdaf36277c58a742a3cec813916f6304aa083544e5cd4dca6d138",
+    "coordinate_convention": "sky; no additional MWIR flip",
+    "definition": "Central native pixel in the official geometric 17-channel map; source PSF support may span a channel boundary.",
+    "fiducial_semantics": "Laboratory representative channel centers/widths for labeling, not replacements for per-sample pipeline CWAVE/CBAND.",
+    "visualization_blank_semantics": "Blank HiPS layers 50/51 do not prove the absence or validity of native measurements in those nominal channels.",
+    "source_url": "https://irsa.ipac.caltech.edu/data/SPHEREx/docs/spectral_files_20260812/SPHERExSpectralFiles_202607.tar",
+    "source_etag": "\"1a079800-659fa773f9c47\"",
+    "documentation": "https://irsa.ipac.caltech.edu/data/SPHEREx/docs/SPHERExSpectralFiles_202607.pdf"
+  },
+  "measured_nominal_channels": 1,
+  "interpretation": "Time-combined descriptive summaries. Missing or unassigned measurements are not zeros or upper bounds. Original individual measurements remain authoritative.",
+  "scatter_interpretation": "Equal-mean Gaussian chi-square is conditional on independent reported errors and a constant expectation. Differing spectral responses, variability or systematics can cause scatter. Warning uses family threshold 0.01 divided by tested bins; it is not a variability detection.",
+  "uncertainty_method": "Independent native statistical variances propagated through fixed inverse-variance weights. Native correlations, common calibration, spectral-model and source-position systematics are not supplied.",
+  "source": {
+    "name": "Adjacent fixed sky position (no source identification)",
+    "ra": 247.87725175719143,
+    "dec": 30.16146715509152,
+    "ref_epoch": 2016,
+    "pmra": null,
+    "pmdec": null
+  },
+  "credits": "SPHEREx: NASA/JPL-Caltech/Caltech-IPAC, IRSA. Supplied source-position metadata and its interpretation remain separate from measured native fluxes.",
+  "parent_product_url": "/v1/products/070a1101e7cb812dea4361b27037699c85b2cc13389441aff72a8c4113c69a37",
+  "units": "uJy",
+  "exports": {
+    "coverage.ecsv": {
+      "url": "/v1/products/e8c8bcef75cf4edd37e170c75f29241ea369d8f6262234c2e46dfc3224b1d937/coverage.ecsv",
+      "sha256": "4d3cac155e6c137a6d865ae01e6d34dafd588e9917be8595ca8ac1815a13ffe3"
+    },
+    "coverage.csv": {
+      "url": "/v1/products/e8c8bcef75cf4edd37e170c75f29241ea369d8f6262234c2e46dfc3224b1d937/coverage.csv",
+      "sha256": "be5c0d46bec65c39f86cef14c38246856aa9ed9e40a3456cc7774fe2ea9693dd"
+    },
+    "bins.ecsv": {
+      "url": "/v1/products/e8c8bcef75cf4edd37e170c75f29241ea369d8f6262234c2e46dfc3224b1d937/bins.ecsv",
+      "sha256": "abb7081017dfdba832bc87dd12e12828cbae3b8bf19c0a41cac4399fffdfe9e6"
+    },
+    "bins.csv": {
+      "url": "/v1/products/e8c8bcef75cf4edd37e170c75f29241ea369d8f6262234c2e46dfc3224b1d937/bins.csv",
+      "sha256": "5a37ff56824b3fa5f4eeb175aca28760f5a05b533c9b5638ad2b99fde3c579a3"
+    },
+    "limits.ecsv": {
+      "url": "/v1/products/e8c8bcef75cf4edd37e170c75f29241ea369d8f6262234c2e46dfc3224b1d937/limits.ecsv",
+      "sha256": "d1abb05037594c796dc99d36c9c8399bd3275cb51a8084e34866b9980f70d438"
+    },
+    "limits.csv": {
+      "url": "/v1/products/e8c8bcef75cf4edd37e170c75f29241ea369d8f6262234c2e46dfc3224b1d937/limits.csv",
+      "sha256": "fa43c0098169f70120eda4d44f87f3525043f65c38e8c886cd2fd2a3dbceb80c"
+    },
+    "summary.svg": {
+      "url": "/v1/products/e8c8bcef75cf4edd37e170c75f29241ea369d8f6262234c2e46dfc3224b1d937/summary.svg",
+      "sha256": "b1668e32a31a4d4d3d4b040e1569aacf1f6084cf101785acafdb7680b630fad7"
+    }
+  }
+}

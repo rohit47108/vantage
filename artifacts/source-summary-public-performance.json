@@ -1,0 +1,34 @@
+{
+  "baseURL": "https://vantage-spherex-nk8n0qk0s-rohit-singhs-projects-48f82479.vercel.app/sequence/d236d29869051a40bf0d5e09247b9c71a8cdd29c9dfcfc028126462e8f217af0",
+  "checked_utc": "2026-11-15T16:17:31.114Z",
+  "first_frame_ms": 530,
+  "decoded_swaps_ms": [
+    3.5,
+    1.6000000014901161,
+    2.600000001490116,
+    1.3999999985098839,
+    1.2999999970197678
+  ],
+  "canvas_draw_ms": [
+    1.5,
+    0.6000000014901161,
+    0.8999999985098839,
+    0.5999999977648258,
+    0.5999999977648258
+  ],
+  "event_to_draw_ms": [
+    2,
+    1,
+    1.7000000029802322,
+    0.8000000007450581,
+    0.6999999992549419
+  ],
+  "raf_observation_ms": [
+    3.699999999254942,
+    1.800000000745058,
+    2.7000000029802322,
+    1.6000000014901161,
+    1.5
+  ],
+  "environment": "Headless Chrome on Windows, fresh browser context, actual network. No mobile throttling. Swap timing ends when draw calls finish; RAF observation delay is separate. This is not physical display presentation timing."
+}

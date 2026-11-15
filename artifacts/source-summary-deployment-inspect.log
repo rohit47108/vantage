@@ -1,0 +1,38 @@
+Vercel CLI 65.16.0
+> Fetched deployment "vantage-spherex-nk8n0qk0s-rohit-singhs-projects-48f82479.vercel.app" in rohit-singhs-projects-48f82479 [416ms]
+
+  General
+
+    id		dpl_FcvPEnJEZYmRmAjVeUFLfjQmTLsW
+    name	vantage-spherex
+    target	preview
+    status	● Ready
+    url		https://vantage-spherex-nk8n0qk0s-rohit-singhs-projects-48f82479.vercel.app
+    created	Sun Nov 15 2026 11:15:45 GMT-0500 (Eastern Standard Time) [41s ago]
+
+
+  Build Machine
+
+    requested build machine basic
+    actual assigned cores   2 vCPU (actual assignment)
+    memory                  8192 MiB
+    selection type          fixed
+    selection source        plan-default
+
+
+  Build Cache
+
+    not saved (nothing to cache)
+
+
+  Duration
+
+    build duration	5s
+    post-build duration	unavailable
+    billable duration	unavailable
+    CPU Minutes Usage	unavailable
+
+
+  Builds
+
+    ╶ .        [0ms]

@@ -1,0 +1,135 @@
+{
+  "checked_utc": "2026-11-15T16:18:02.335493+00:00",
+  "base": "https://vantage-spherex-nk8n0qk0s-rohit-singhs-projects-48f82479.vercel.app",
+  "products": [
+    {
+      "label": "full_p330e",
+      "parent_id": "e6040e5c2bb4353f4e8d0bbf4f72b938cc8650b35dc91745db008328fbdddca7",
+      "job": {
+        "job_id": "34ead06a58a2400dbf9629f0cd3c5e2a",
+        "status_url": "/v1/analysis/jobs/34ead06a58a2400dbf9629f0cd3c5e2a"
+      },
+      "state": {
+        "job_id": "34ead06a58a2400dbf9629f0cd3c5e2a",
+        "state": "complete",
+        "result_id": "fd9bf514c8185bd41bb55719ca8754e2129732094d7f0413fc9c0596be13648d",
+        "error": null,
+        "updated": 1794759483.6400313
+      },
+      "product_id": "fd9bf514c8185bd41bb55719ca8754e2129732094d7f0413fc9c0596be13648d",
+      "coverage_rows": 102,
+      "measured_channels": 88,
+      "selected_samples": 147,
+      "bins": 118,
+      "downloads": [
+        {
+          "name": "coverage.ecsv",
+          "bytes": 5899,
+          "sha256": "5586635c20c8d650b088b72b7d727dec937b0ed102b59449554ccf7db6616a32",
+          "verified_exact": true
+        },
+        {
+          "name": "coverage.csv",
+          "bytes": 4205,
+          "sha256": "415dbede821596edc0d3a7ccb5e125ce106224f67ceaf603af1a6a484bbe97c2",
+          "verified_exact": true
+        },
+        {
+          "name": "bins.ecsv",
+          "bytes": 33774,
+          "sha256": "af2f22328531936a54f030f631a112b0957aece4c3399cb2af30c3f7f9c62054",
+          "verified_exact": true
+        },
+        {
+          "name": "bins.csv",
+          "bytes": 31604,
+          "sha256": "f212621803715ed56d3e41528e40599fe011d5eb233bdcdfe6c2a1ab3f92a1df",
+          "verified_exact": true
+        },
+        {
+          "name": "limits.ecsv",
+          "bytes": 19031,
+          "sha256": "da097828693bc7184d47f9462fe1b3caa2800c0d9bb9e4c6d2cb12b406c2af84",
+          "verified_exact": true
+        },
+        {
+          "name": "limits.csv",
+          "bytes": 16170,
+          "sha256": "e5c9000ce776049b3b2b1128b4404b75635e3521971624869b925571fee9b713",
+          "verified_exact": true
+        },
+        {
+          "name": "summary.svg",
+          "bytes": 22891,
+          "sha256": "61ddcd0e77bf002bb3d9f83e2687ddb42f4b70db64513cf4597b15b24c715eda",
+          "verified_exact": true
+        }
+      ]
+    },
+    {
+      "label": "adjacent_fixed_position",
+      "parent_id": "070a1101e7cb812dea4361b27037699c85b2cc13389441aff72a8c4113c69a37",
+      "job": {
+        "job_id": "70db769efff9409889d6aed9e58c415d",
+        "status_url": "/v1/analysis/jobs/70db769efff9409889d6aed9e58c415d"
+      },
+      "state": {
+        "job_id": "70db769efff9409889d6aed9e58c415d",
+        "state": "complete",
+        "result_id": "e8c8bcef75cf4edd37e170c75f29241ea369d8f6262234c2e46dfc3224b1d937",
+        "error": null,
+        "updated": 1794759495.6782558
+      },
+      "product_id": "e8c8bcef75cf4edd37e170c75f29241ea369d8f6262234c2e46dfc3224b1d937",
+      "coverage_rows": 102,
+      "measured_channels": 1,
+      "selected_samples": 1,
+      "bins": 1,
+      "downloads": [
+        {
+          "name": "coverage.ecsv",
+          "bytes": 7117,
+          "sha256": "4d3cac155e6c137a6d865ae01e6d34dafd588e9917be8595ca8ac1815a13ffe3",
+          "verified_exact": true
+        },
+        {
+          "name": "coverage.csv",
+          "bytes": 5423,
+          "sha256": "be5c0d46bec65c39f86cef14c38246856aa9ed9e40a3456cc7774fe2ea9693dd",
+          "verified_exact": true
+        },
+        {
+          "name": "bins.ecsv",
+          "bytes": 2745,
+          "sha256": "abb7081017dfdba832bc87dd12e12828cbae3b8bf19c0a41cac4399fffdfe9e6",
+          "verified_exact": true
+        },
+        {
+          "name": "bins.csv",
+          "bytes": 555,
+          "sha256": "5a37ff56824b3fa5f4eeb175aca28760f5a05b533c9b5638ad2b99fde3c579a3",
+          "verified_exact": true
+        },
+        {
+          "name": "limits.ecsv",
+          "bytes": 2130,
+          "sha256": "d1abb05037594c796dc99d36c9c8399bd3275cb51a8084e34866b9980f70d438",
+          "verified_exact": true
+        },
+        {
+          "name": "limits.csv",
+          "bytes": 145,
+          "sha256": "fa43c0098169f70120eda4d44f87f3525043f65c38e8c886cd2fd2a3dbceb80c",
+          "verified_exact": true
+        },
+        {
+          "name": "summary.svg",
+          "bytes": 1826,
+          "sha256": "b1668e32a31a4d4d3d4b040e1569aacf1f6084cf101785acafdb7680b630fad7",
+          "verified_exact": true
+        }
+      ]
+    }
+  ],
+  "passed": true
+}
