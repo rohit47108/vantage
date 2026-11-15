@@ -1,0 +1,13 @@
+{
+  "url": "https://nasa-irsa-spherex.s3.us-east-1.amazonaws.com/qr2/level2/2025W32_1A/l2b-v20-2025-264/3/level2_2025W32_1A_0662_3D3_spx_l2b-v20-2025-264.fits",
+  "mode": "range_read_native_crop_research",
+  "parent_pixel_bounds_zero_halfopen": [
+    361,
+    512,
+    420,
+    571
+  ],
+  "bytes": 5106240,
+  "sha256": "68149b2347d50de29c697e2d8977bd1a00a01109f55a5ae1050628c93ade83be",
+  "access_date": "2026-10-12"
+}

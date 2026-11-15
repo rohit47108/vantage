@@ -1,0 +1,16 @@
+{
+  "name": "horizons_comet_spherex",
+  "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40-163182%27&TLIST_TYPE=%27MJD%27&QUANTITIES=%271%2C3%2C20%27&ANG_FORMAT=%27DEG%27&CSV_FORMAT=%27YES%27&TIME_DIGITS=%27FRACSEC%27&REF_SYSTEM=%27ICRF%27&EXTRA_PREC=%27YES%27&COMMAND=%273I%27&TLIST=%2760894.247538099%2C60894.5881452635%27",
+  "status": 200,
+  "bytes": 9275,
+  "seconds": 0.592,
+  "headers": {
+    "Server": "nginx",
+    "Date": "Mon, 19 Oct 2026 01:58:05 GMT",
+    "Content-Type": "application/json",
+    "Transfer-Encoding": "chunked",
+    "Connection": "keep-alive"
+  },
+  "sha256": "e7c9e5e7eb434add8f7a56e371f71c8c545d4959205450bb1dbb04be0c1d5635",
+  "access_date": "2026-10-19"
+}

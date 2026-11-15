@@ -1,0 +1,514 @@
+{
+  "name": "sia_barnard_qr2",
+  "url": "https://irsa.ipac.caltech.edu/SIA?COLLECTION=spherex_qr2&POS=CIRCLE+269.45207696+4.69336497+0.01&MAXREC=3000",
+  "status": 200,
+  "bytes": 515552,
+  "seconds": 21.262,
+  "headers": {
+    "Server": "nginx",
+    "Date": "Sun, 04 Oct 2026 21:53:09 GMT",
+    "Content-Type": "application/x-votable+xml",
+    "Content-Length": "515552",
+    "Connection": "keep-alive",
+    "Server-Timing": "main;dur=20359.968, prepare_internal;dur=174.993, generate_adql;dur=0.089, query_delegate;dur=20180.153, query_execute;dur=178.649, database_query;dur=178.622, run_postgres;dur=171.128",
+    "Set-Cookie": "anonymous=c3/f2/7dd511fe4a1e3e58a949a69f8ad1"
+  },
+  "sha256": "749048b90efe8475cf6b6490fee01daf9d712c586203b9fe2bdfeb7c2bf67279",
+  "access_date": "2026-10-04",
+  "fields": [
+    {
+      "name": "s_ra",
+      "datatype": "double",
+      "ID": "col_0",
+      "ucd": "pos.eq.ra",
+      "unit": "deg",
+      "utype": "obscore:char.spatialaxis.coverage.location.coord.position2d.value2.c1"
+    },
+    {
+      "name": "s_dec",
+      "datatype": "double",
+      "ID": "col_1",
+      "ucd": "pos.eq.dec",
+      "unit": "deg",
+      "utype": "obscore:char.spatialaxis.coverage.location.coord.position2d.value2.c2"
+    },
+    {
+      "name": "facility_name",
+      "datatype": "char",
+      "arraysize": "*",
+      "ID": "col_2",
+      "ucd": "meta.id;instr.tel",
+      "utype": "obscore:provenance.obsconfig.facility.name"
+    },
+    {
+      "name": "instrument_name",
+      "datatype": "char",
+      "arraysize": "*",
+      "ID": "col_3",
+      "ucd": "meta.id;instr",
+      "utype": "obscore:provenance.obsconfig.instrument.name"
+    },
+    {
+      "name": "dataproduct_subtype",
+      "datatype": "char",
+      "arraysize": "*",
+      "ID": "col_4",
+      "ucd": "meta.code",
+      "utype": "caom2:artifact.producttype"
+    },
+    {
+      "name": "calib_level",
+      "datatype": "short",
+      "ID": "col_5",
+      "ucd": "meta.code;obs.calib",
+      "utype": "obscore:obsdataset.caliblevel"
+    },
+    {
+      "name": "dataproduct_type",
+      "datatype": "char",
+      "arraysize": "*",
+      "ID": "col_6",
+      "ucd": "meta.id",
+      "utype": "obscore:obsdataset.dataproducttype"
+    },
+    {
+      "name": "energy_bandpassname",
+      "datatype": "char",
+      "arraysize": "*",
+      "ID": "col_7",
+      "utype": "caom2:Energy.bandpassName"
+    },
+    {
+      "name": "energy_emband",
+      "datatype": "char",
+      "arraysize": "*",
+      "ID": "col_8",
+      "utype": "caom2:Energy.emBand"
+    },
+    {
+      "name": "obs_id",
+      "datatype": "char",
+      "arraysize": "*",
+      "ID": "col_9",
+      "ucd": "meta.id",
+      "utype": "obscore:dataid.observationid"
+    },
+    {
+      "name": "s_resolution",
+      "datatype": "double",
+      "ID": "col_10",
+      "ucd": "pos.angResolution",
+      "unit": "arcsec",
+      "utype": "obscore:char.spatialaxis.resolution.refval.value"
+    },
+    {
+      "name": "em_min",
+      "datatype": "double",
+      "ID": "col_11",
+      "ucd": "em.wl;stat.min",
+      "unit": "m",
+      "utype": "obscore:char.spectralaxis.coverage.bounds.limits.lolimit"
+    },
+    {
+      "name": "em_max",
+      "datatype": "double",
+      "ID": "col_12",
+      "ucd": "em.wl;stat.max",
+      "unit": "m",
+      "utype": "obscore:char.spectralaxis.coverage.bounds.limits.hilimit"
+    },
+    {
+      "name": "em_res_power",
+      "datatype": "double",
+      "ID": "col_13",
+      "ucd": "spect.resolution",
+      "utype": "obscore:char.spectralaxis.resolution.resolpower.refval"
+    },
+    {
+      "name": "proposal_title",
+      "datatype": "char",
+      "arraysize": "*",
+      "ID": "col_14",
+      "utype": "caom2:Proposal.title"
+    },
+    {
+      "name": "access_url",
+      "datatype": "char",
+      "arraysize": "*",
+      "ID": "col_15",
+      "ucd": "meta.ref.url",
+      "utype": "obscore:access.reference"
+    },
+    {
+      "name": "access_format",
+      "datatype": "char",
+      "arraysize": "*",
+      "ID": "col_16",
+      "ucd": "meta.code.mime",
+      "utype": "obscore:access.format"
+    },
+    {
+      "name": "access_estsize",
+      "datatype": "long",
+      "ID": "col_17",
+      "ucd": "phys.size;meta.file",
+      "unit": "kbyte",
+      "utype": "obscore:access.size"
+    },
+    {
+      "name": "t_exptime",
+      "datatype": "double",
+      "ID": "col_18",
+      "ucd": "time.duration;obs.exposure",
+      "unit": "s",
+      "utype": "obscore:char.timeaxis.coverage.support.extent"
+    },
+    {
+      "name": "s_region",
+      "datatype": "char",
+      "arraysize": "*",
+      "ID": "col_19",
+      "ucd": "pos.outline;obs.field",
+      "unit": "deg",
+      "utype": "obscore:char.spatialaxis.coverage.support.area"
+    },
+    {
+      "name": "obs_collection",
+      "datatype": "char",
+      "arraysize": "*",
+      "ID": "col_20",
+      "ucd": "meta.id",
+      "utype": "obscore:dataid.collection"
+    },
+    {
+      "name": "obs_intent",
+      "datatype": "char",
+      "arraysize": "*",
+      "ID": "col_21",
+      "utype": "caom2:ObservationIntentType"
+    },
+    {
+      "name": "algorithm_name",
+      "datatype": "char",
+      "arraysize": "*",
+      "ID": "col_22",
+      "utype": "caom2:Algorithm"
+    },
+    {
+      "name": "facility_keywords",
+      "datatype": "char",
+      "arraysize": "*",
+      "ID": "col_23",
+      "utype": "caom2:Telescope.keywords"
+    },
+    {
+      "name": "instrument_keywords",
+      "datatype": "char",
+      "arraysize": "*",
+      "ID": "col_24",
+      "utype": "caom2:Instrument.keywords"
+    },
+    {
+      "name": "environment_photometric",
+      "datatype": "boolean",
+      "ID": "col_25",
+      "utype": "caom2:Environment.photometric"
+    },
+    {
+      "name": "proposal_id",
+      "datatype": "char",
+      "arraysize": "*",
+      "ID": "col_26",
+      "ucd": "meta.id;obs.proposal",
+      "utype": "obscore:provenance.proposal.identifier"
+    },
+    {
+      "name": "proposal_pi",
+      "datatype": "char",
+      "arraysize": "*",
+      "ID": "col_27",
+      "utype": "caom2:Proposal.pi"
+    },
+    {
+      "name": "proposal_project",
+      "datatype": "char",
+      "arraysize": "*",
+      "ID": "col_28",
+      "utype": "caom2:Proposal.project"
+    },
+    {
+      "name": "target_name",
+      "datatype": "char",
+      "arraysize": "*",
+      "ID": "col_29",
+      "ucd": "meta.id;src",
+      "utype": "obscore:target.name"
+    },
+    {
+      "name": "target_type",
+      "datatype": "char",
+      "arraysize": "*",
+      "ID": "col_30",
+      "utype": "caom2:Target.type"
+    },
+    {
+      "name": "target_standard",
+      "datatype": "boolean",
+      "ID": "col_31",
+      "utype": "caom2:Target.standard"
+    },
+    {
+      "name": "target_moving",
+      "datatype": "boolean",
+      "ID": "col_32",
+      "utype": "caom2:Target.moving"
+    },
+    {
+      "name": "target_keywords",
+      "datatype": "char",
+      "arraysize": "*",
+      "ID": "col_33",
+      "utype": "caom2:Target.keywords"
+    },
+    {
+      "name": "obs_release_date",
+      "datatype": "char",
+      "arraysize": "*",
+      "ID": "col_34",
+      "ucd": "time.release",
+      "utype": "obscore:Curation.releaseDate",
+      "xtype": "timestamp"
+    },
+    {
+      "name": "s_xel1",
+      "datatype": "long",
+      "ID": "col_35",
+      "ucd": "meta.number",
+      "utype": "obscore:char.spatialaxis.numbins1"
+    },
+    {
+      "name": "s_xel2",
+      "datatype": "long",
+      "ID": "col_36",
+      "ucd": "meta.number",
+      "utype": "obscore:char.spatialaxis.numbins2"
+    },
+    {
+      "name": "s_pixel_scale",
+      "datatype": "double",
+      "ID": "col_37",
+      "unit": "arcsec",
+      "utype": "phys.angSize;instr.pixel"
+    },
+    {
+      "name": "position_timedependent",
+      "datatype": "boolean",
+      "ID": "col_38",
+      "utype": "caom2:Position.timeDependent"
+    },
+    {
+      "name": "t_min",
+      "datatype": "double",
+      "ID": "col_39",
+      "ucd": "time.start;obs.exposure",
+      "unit": "d",
+      "utype": "obscore:char.timeaxis.coverage.bounds.limits.starttime"
+    },
+    {
+      "name": "t_max",
+      "datatype": "double",
+      "ID": "col_40",
+      "ucd": "time.end;obs.exposure",
+      "unit": "d",
+      "utype": "obscore:char.timeaxis.coverage.bounds.limits.stoptime"
+    },
+    {
+      "name": "t_resolution",
+      "datatype": "double",
+      "ID": "col_41",
+      "ucd": "time.resolution",
+      "unit": "s",
+      "utype": "obscore:char.timeaxis.resolution.refval.value"
+    },
+    {
+      "name": "t_xel",
+      "datatype": "long",
+      "ID": "col_42",
+      "ucd": "meta.number",
+      "utype": "obscore:char.timeaxis.numbins"
+    },
+    {
+      "name": "obs_publisher_did",
+      "datatype": "char",
+      "arraysize": "*",
+      "ID": "col_43",
+      "ucd": "meta.ref.uri;meta.curation",
+      "utype": "obscore:curation.publisherdid"
+    },
+    {
+      "name": "s_fov",
+      "datatype": "double",
+      "ID": "col_44",
+      "ucd": "phys.angSize;instr.fov",
+      "unit": "deg",
+      "utype": "obscore:char.spatialaxis.coverage.bounds.extent.diameter"
+    },
+    {
+      "name": "em_xel",
+      "datatype": "long",
+      "ID": "col_45",
+      "ucd": "meta.number",
+      "utype": "obscore:char.spectralaxis.numbins"
+    },
+    {
+      "name": "pol_states",
+      "datatype": "char",
+      "arraysize": "*",
+      "ID": "col_46",
+      "ucd": "meta.code;phys.polarization",
+      "utype": "obscore:char.polarizationaxis.statelist"
+    },
+    {
+      "name": "pol_xel",
+      "datatype": "long",
+      "ID": "col_47",
+      "ucd": "meta.number",
+      "utype": "obscore:char.polarizationaxis.numbins"
+    },
+    {
+      "name": "cloud_access",
+      "datatype": "char",
+      "arraysize": "*",
+      "ID": "col_48"
+    },
+    {
+      "name": "o_ucd",
+      "datatype": "char",
+      "arraysize": "*",
+      "ID": "col_49",
+      "ucd": "meta.ucd",
+      "utype": "obscore:char.observableaxis.ucd"
+    },
+    {
+      "name": "upload_row_id",
+      "datatype": "long",
+      "ID": "col_50"
+    }
+  ],
+  "rows": 241,
+  "sample_rows": [
+    [
+      "269.15896235933246",
+      "5.0241054980510373",
+      "SPHEREx",
+      "SPHEREx",
+      "science",
+      "2",
+      "image",
+      "SPHEREx-D2",
+      "Infrared",
+      "2026W12_1A_0311_3",
+      "3.075000",
+      "1.10330e-06",
+      "1.64990e-06",
+      "41.400000",
+      "SPHEREx LVF Survey Data",
+      "https://irsa.ipac.caltech.edu/ibe/data/spherex/qr2/level2/2026W12_1A/l2b-v24-2026-082/2/level2_2026W12_1A_0311_3D2_spx_l2b-v24-2026-082.fits",
+      "image/fits",
+      "71638",
+      "113.582600",
+      "POLYGON ICRS 270.85886832839725 3.2605068998144446 267.3910426658271 3.3297372222199333 267.43638235120864 6.813725622900985 270.950985521347 6.743368801090426 270.85886832839725 3.2605068998144446",
+      "spherex_qr2",
+      "science",
+      "exposure",
+      null,
+      null,
+      null,
+      null,
+      null,
+      "SPHEREx",
+      "SPS_15646",
+      "field",
+      "0",
+      "0",
+      null,
+      "2026-04-21 00:55:18",
+      "2040",
+      "2040",
+      "6.150000",
+      "0",
+      "61116.683136",
+      "61116.684468",
+      null,
+      null,
+      "ivo://irsa.ipac/spherex_qr2?2026W12_1A_0311_3/D2",
+      "3.4849999999999999",
+      null,
+      null,
+      null,
+      "{\"aws\": {\"bucket_name\": \"nasa-irsa-spherex\", \"key\":\"qr2/level2/2026W12_1A/l2b-v24-2026-082/2/level2_2026W12_1A_0311_3D2_spx_l2b-v24-2026-082.fits\", \"region\": \"us-east-1\"}}",
+      null,
+      "1"
+    ],
+    [
+      "269.16301848353692",
+      "5.0412526264323896",
+      "SPHEREx",
+      "SPHEREx",
+      "science",
+      "2",
+      "image",
+      "SPHEREx-D5",
+      "Infrared",
+      "2026W12_1A_0311_3",
+      "3.075000",
+      "3.81130e-06",
+      "4.43000e-06",
+      "111.600000",
+      "SPHEREx LVF Survey Data",
+      "https://irsa.ipac.caltech.edu/ibe/data/spherex/qr2/level2/2026W12_1A/l2b-v24-2026-082/5/level2_2026W12_1A_0311_3D5_spx_l2b-v24-2026-082.fits",
+      "image/fits",
+      "71638",
+      "113.582600",
+      "POLYGON ICRS 270.8561549757592 3.267663968105117 267.3848873573915 3.353611282999774 267.44747207566303 6.840688815838264 270.9650241168857 6.753820828892099 270.8561549757592 3.267663968105117",
+      "spherex_qr2",
+      "science",
+      "exposure",
+      null,
+      null,
+      null,
+      null,
+      null,
+      "SPHEREx",
+      "SPS_15646",
+      "field",
+      "0",
+      "0",
+      null,
+      "2026-04-21 00:55:18",
+      "2040",
+      "2040",
+      "6.150000",
+      "0",
+      "61116.683136",
+      "61116.684468",
+      null,
+      null,
+      "ivo://irsa.ipac/spherex_qr2?2026W12_1A_0311_3/D5",
+      "3.4849999999999999",
+      null,
+      null,
+      null,
+      "{\"aws\": {\"bucket_name\": \"nasa-irsa-spherex\", \"key\":\"qr2/level2/2026W12_1A/l2b-v24-2026-082/5/level2_2026W12_1A_0311_3D5_spx_l2b-v24-2026-082.fits\", \"region\": \"us-east-1\"}}",
+      null,
+      "1"
+    ]
+  ],
+  "query_status": [
+    {
+      "name": "QUERY_STATUS",
+      "value": "OK",
+      "text": null
+    }
+  ]
+}

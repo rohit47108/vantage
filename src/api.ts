@@ -14,6 +14,6 @@ export async function readResponse(response: Response) {
   return response.json();
 }
 
-export async function json(url: string) {
-  return readResponse(await fetch(url));
+export async function json<T = any>(url: string, options?: RequestInit): Promise<T> {
+  return readResponse(await fetch(url, options));
 }

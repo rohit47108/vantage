@@ -1,0 +1,16 @@
+{
+  "name": "most_ceres",
+  "url": "https://irsa.ipac.caltech.edu/cgi-bin/MOST/nph-most?catalog=spherex&input_type=name_input&obj_name=Ceres&obs_begin=2025+08+01&obs_end=2025+08+10&output_mode=VOTable",
+  "status": 400,
+  "bytes": 569,
+  "seconds": 0.557,
+  "headers": {
+    "Server": "nginx",
+    "Date": "Sun, 04 Oct 2026 21:52:59 GMT",
+    "Content-Type": "text/plain",
+    "Transfer-Encoding": "chunked",
+    "Connection": "keep-alive"
+  },
+  "sha256": "6e1de774a203808240d94987cc7d311259a763eac34b200562bf1c6421c38f96",
+  "access_date": "2026-10-04"
+}

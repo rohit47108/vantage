@@ -1,0 +1,22 @@
+{
+  "name": "sesame_barnard",
+  "url": "https://cds.unistra.fr/cgi-bin/nph-sesame/-oxp/SNV?Barnard%27s%20star",
+  "status": 200,
+  "bytes": 1184,
+  "seconds": 0.462,
+  "headers": {
+    "Date": "Mon, 12 Oct 2026 06:05:32 GMT",
+    "Server": "Apache/2.4.66 (Unix)",
+    "Content-Type": "text/plain",
+    "Access-Control-Allow-Origin": "*",
+    "Content-Length": "1184",
+    "Keep-Alive": "timeout=5, max=1000",
+    "Connection": "Keep-Alive"
+  },
+  "sha256": "adf253c5eb02dd66cb2b9781c173ce2d520d1cd38311e4e31e3cdfd4280c7c36",
+  "access_date": "2026-10-12",
+  "fields": [],
+  "rows": 0,
+  "sample_rows": [],
+  "query_status": []
+}

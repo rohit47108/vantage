@@ -27,8 +27,8 @@ test('inspection, synchronized comparison, overlays, exports and immutable resto
   await page.goto(`/sequence/${item.id}`);
   await expect(page.getByRole('heading',{name:'M101',exact:true})).toBeVisible();
   await page.getByRole('button',{name:'Zoom in',exact:true}).click();
-  await page.getByRole('img').press('ArrowLeft');
-  await page.getByRole('img').press('Enter');
+  await page.getByRole('img',{name:/Infrared sky/}).press('ArrowLeft');
+  await page.getByRole('img',{name:/Infrared sky/}).press('Enter');
   await expect(page.getByText('ICRS · degrees',{exact:true})).toBeVisible();
   await page.getByRole('checkbox',{name:'Joint support (cyan)',exact:true}).check();
   await page.getByRole('button',{name:'A/B compare',exact:true}).click();

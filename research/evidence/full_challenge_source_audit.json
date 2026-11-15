@@ -1,0 +1,155 @@
+[
+  {
+    "id": "s02",
+    "url": "https://irsa.ipac.caltech.edu/data/SPHEREx/docs/overview_qr.html",
+    "checked_utc": "2026-11-07T15:59:26.431412+00:00",
+    "status": 200,
+    "final_url": "https://irsa.ipac.caltech.edu/data/SPHEREx/docs/overview_qr.html",
+    "content_type": "text/html",
+    "bytes": 6684,
+    "sha256": "8d0afdd5400357b14fd5cb97bf179db57ce88c4efb1b97966ca2fe8908d53d57"
+  },
+  {
+    "id": "s13",
+    "url": "https://www.spaceappschallenge.org/2026/challenges/planet-x-and-spherex/",
+    "checked_utc": "2026-11-07T15:59:26.431979+00:00",
+    "status": 200,
+    "final_url": "https://www.spaceappschallenge.org/2026/challenges/planet-x-and-spherex/",
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 73028,
+    "sha256": "a0b9288061419d21751de02b089e9d86a59b123dfb6809e418f33604c188918a",
+    "separate_inspection": "Browser checked published full Objectives and Resources tab."
+  },
+  {
+    "id": "s14",
+    "url": "https://www.spaceappschallenge.org/resources/participant-faqs/",
+    "checked_utc": "2026-11-07T15:59:26.432586+00:00",
+    "status": 200,
+    "final_url": "https://www.spaceappschallenge.org/resources/participant-faqs/",
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 155002,
+    "sha256": "63d7d320ecef316ba7f85bd1d6f51948f20b22ad5817957f0db25641a34ffcfa"
+  },
+  {
+    "id": "s72",
+    "url": "https://caltech-ipac.github.io/spherex-archive-documentation/spherex-data-access/",
+    "checked_utc": "2026-11-07T15:59:26.432992+00:00",
+    "status": 200,
+    "final_url": "https://caltech-ipac.github.io/spherex-archive-documentation/spherex-data-access/",
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 111848,
+    "sha256": "521ff97ae7812634430db96209f24328e33f166e6f0d37e6ce7725ffa526a91f"
+  },
+  {
+    "id": "s76",
+    "url": "https://www.ipac.caltech.edu/doi/10.26131/IRSA678",
+    "checked_utc": "2026-11-07T15:59:26.433907+00:00",
+    "status": 200,
+    "final_url": "https://www.ipac.caltech.edu/doi/10.26131/IRSA678",
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 29887,
+    "sha256": "47143fcf08a7e74dad4b22bd8bc65f38d98588834994800a468021772cc53a6f",
+    "saved_path": "research/evidence/full_source_s76.html",
+    "separate_inspection": "IPAC publication metadata text inspected; linked IRSA product page returned 404."
+  },
+  {
+    "id": "s77",
+    "url": "https://www.ipac.caltech.edu/doi/10.26131/IRSA679",
+    "checked_utc": "2026-11-07T15:59:26.509605+00:00",
+    "status": 200,
+    "final_url": "https://www.ipac.caltech.edu/doi/10.26131/IRSA679",
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 29820,
+    "sha256": "25982d21a70df270f3480410fb3030c2195782f6d1255d51d5b86ee8c7cd18c6",
+    "saved_path": "research/evidence/full_source_s77.html",
+    "separate_inspection": "IPAC publication metadata text inspected; linked IRSA product page returned 404."
+  },
+  {
+    "id": "s78",
+    "url": "https://irsa.ipac.caltech.edu/onlinehelp/spherex/help.pdf?id=607b86d",
+    "checked_utc": "2026-11-07T15:59:26.764334+00:00",
+    "status": 200,
+    "final_url": "https://irsa.ipac.caltech.edu/onlinehelp/spherex/help.pdf?id=607b86d",
+    "content_type": "application/pdf",
+    "bytes": 21602944,
+    "sha256": "edd32284656c6b355ff5b0cb5d88b79c7a1acd8026e70ffd5b088bd237afeb63",
+    "separate_inspection": "Actual 216-page PDF downloaded and checked in retained extracted text."
+  },
+  {
+    "id": "s79",
+    "url": "https://simbad.u-strasbg.fr/simbad/sim-id?Ident=Epsilon+Indi+B",
+    "checked_utc": "2026-11-07T15:59:26.806416+00:00",
+    "error": "HTTPSConnectionPool(host='simbad.u-strasbg.fr', port=443): Max retries exceeded with url: /simbad/sim-id?Ident=Epsilon+Indi+B (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001C497597B10>, 'Connection to simbad.u-strasbg.fr timed out. (connect timeout=5)'))",
+    "separate_inspection": "Catalog fields inspected through public web index; direct CLI status recorded separately."
+  },
+  {
+    "id": "s80",
+    "url": "https://www.aanda.org/articles/aa/pdf/2004/03/aa0292.pdf",
+    "checked_utc": "2026-11-07T15:59:26.883559+00:00",
+    "status": 403,
+    "final_url": "https://www.aanda.org/articles/aa/pdf/2004/03/aa0292.pdf",
+    "content_type": "text/html",
+    "bytes": 93,
+    "sha256": "0d3e98ca727fc1201b436170af5a63f23348aaf146a3ac6234f6c4da283e8b34",
+    "separate_inspection": "Primary paper PDF text inspected; identifies resolved separation in observing epoch."
+  },
+  {
+    "id": "s81",
+    "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=WISEA+J085510.74-071442.5",
+    "checked_utc": "2026-11-07T15:59:27.065102+00:00",
+    "error": "HTTPSConnectionPool(host='simbad.cds.unistra.fr', port=443): Max retries exceeded with url: /simbad/sim-id?Ident=WISEA+J085510.74-071442.5 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001C497596FD0>, 'Connection to simbad.cds.unistra.fr timed out. (connect timeout=5)'))",
+    "separate_inspection": "Catalog fields inspected through public web index; direct CLI status recorded separately."
+  },
+  {
+    "id": "s82",
+    "url": "https://doi.org/10.1088/2041-8205/786/2/L18",
+    "checked_utc": "2026-11-07T15:59:27.111066+00:00",
+    "status": 200,
+    "final_url": "https://iopscience.iop.org/article/10.1088/2041-8205/786/2/L18",
+    "content_type": "text/html;charset=UTF-8",
+    "bytes": 151557,
+    "sha256": "ddbcb1e363dcb92a14ece88ae55b808c55d625ddfe35b699cae01ac68968419f",
+    "separate_inspection": "Primary discovery and first proper-motion/parallax analysis; current prediction uses separate SIMBAD values."
+  },
+  {
+    "id": "s83",
+    "url": "https://vsx.aavso.org/index.php?revid=418953&view=detail.top",
+    "checked_utc": "2026-11-07T15:59:27.185329+00:00",
+    "status": 200,
+    "final_url": "https://vsx.aavso.org/index.php?revid=418953&view=detail.top",
+    "content_type": "text/html; charset=ISO-8859-1",
+    "bytes": 46524,
+    "sha256": "16ff80f61d4132278d634a6b97bba6cd7ee132d93b797e4488d78fda02234d80",
+    "saved_path": "research/evidence/full_source_s83.html",
+    "separate_inspection": "Catalog fields inspected through public web index; direct CLI status recorded separately."
+  },
+  {
+    "id": "s84",
+    "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=%40376084&Name=V%2A+R+Dra&submit=submit",
+    "checked_utc": "2026-11-07T15:59:27.322309+00:00",
+    "error": "HTTPSConnectionPool(host='simbad.cds.unistra.fr', port=443): Max retries exceeded with url: /simbad/sim-id?Ident=%40376084&Name=V%2A+R+Dra&submit=submit (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001C497596350>, 'Connection to simbad.cds.unistra.fr timed out. (connect timeout=5)'))",
+    "separate_inspection": "Catalog fields inspected through public web index; direct CLI status recorded separately."
+  },
+  {
+    "id": "s85",
+    "url": "https://www.aavso.org/sites/default/files/bulletin/Bulletin2014.pdf",
+    "checked_utc": "2026-11-07T15:59:32.009102+00:00",
+    "status": 404,
+    "final_url": "https://aavso.org/sites/default/files/bulletin/Bulletin2014.pdf",
+    "content_type": "text/html",
+    "bytes": 146,
+    "sha256": "55f7d9e99b8e2d4e0e193b2f0275501e6d9c1ebd29cadbea6a0da48a8587e3e0",
+    "separate_inspection": "Historical AAVSO bulletin inspected in the web PDF index, p. 6, R Dra row. Direct CLI returned 404."
+  },
+  {
+    "id": "s86",
+    "url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJS%2F253%2F7%2Ftablea1&-c=133.81890825+-7.247048&-c.rs=300&-out.max=20&-out.all=1",
+    "checked_utc": "2026-11-07T16:04:37.201476+00:00",
+    "status": 200,
+    "final_url": "https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJS%2F253%2F7%2Ftablea1&-c=133.81890825+-7.247048&-c.rs=300&-out.max=20&-out.all=1",
+    "saved_path": "research/evidence/full_wise_kirkpatrick_vizier.tsv",
+    "bytes": 8876,
+    "sha256": "eb8e2eaf084753bc1ca0a6469464d1d48096d8aefffb0328f3ce7b0ee8ad9c4a",
+    "separate_inspection": "Exact WISE 0855 row in machine-readable Kirkpatrick et al. Table A1 inspected."
+  }
+]

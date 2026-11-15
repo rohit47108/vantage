@@ -1,0 +1,17 @@
+{
+  "url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/qr2/spectral_wcs/cal-wcs-v4-2025-254/2/spectral_wcs_D2_spx_cal-wcs-v4-2025-254.fits",
+  "status": 200,
+  "bytes": 33312960,
+  "seconds": 6.277,
+  "headers": {
+    "Server": "nginx",
+    "Date": "Mon, 12 Oct 2026 06:05:17 GMT",
+    "Content-Type": "application/fits",
+    "Content-Length": "33312960",
+    "Connection": "keep-alive",
+    "accept-ranges": "bytes",
+    "last-modified": "Thu, 11 Sep 2025 19:12:40 GMT",
+    "etag": "\"e2a271de996c70718fd686c54c744b7c\""
+  },
+  "sha256": "40c49a5acbf7047b7cebf3d46471cb99639867996f48a22d0e283f7e529249d7"
+}

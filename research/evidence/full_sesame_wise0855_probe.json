@@ -1,0 +1,7 @@
+{
+  "name": "full_sesame_wise0855",
+  "url": "https://cds.unistra.fr/cgi-bin/nph-sesame/-oxp/S?WISE%20J085510.83-071442.5",
+  "params": null,
+  "error": "HTTPSConnectionPool(host='cds.unistra.fr', port=443): Max retries exceeded with url: /cgi-bin/nph-sesame/-oxp/S?WISE%20J085510.83-071442.5 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001971178E0D0>, 'Connection to cds.unistra.fr timed out. (connect timeout=15)'))",
+  "seconds": 15.11120619999997
+}

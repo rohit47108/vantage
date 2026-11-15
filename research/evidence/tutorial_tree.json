@@ -1,0 +1,866 @@
+{
+  "sha": "42385a18142b57be4685613c7a3e7eec1629a60f",
+  "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/trees/42385a18142b57be4685613c7a3e7eec1629a60f",
+  "tree": [
+    {
+      "path": ".binder",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "fbe848e51197025e55f1afe66bac155d4463671c",
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/trees/fbe848e51197025e55f1afe66bac155d4463671c"
+    },
+    {
+      "path": ".binder/overrides.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "218f1844f93b2b3c25324ef7064fe627e3e14cdc",
+      "size": 126,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/218f1844f93b2b3c25324ef7064fe627e3e14cdc"
+    },
+    {
+      "path": ".binder/postBuild",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3a6057fb916edad147c1cb4f76066dcaf2a0c51d",
+      "size": 159,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/3a6057fb916edad147c1cb4f76066dcaf2a0c51d"
+    },
+    {
+      "path": ".binder/requirements.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "80a6366f7764f3bc3a35fdd2f892d014205e6c12",
+      "size": 32,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/80a6366f7764f3bc3a35fdd2f892d014205e6c12"
+    },
+    {
+      "path": ".circleci",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0207077195a62c8999024c39cbb4bdfa781b2714",
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/trees/0207077195a62c8999024c39cbb4bdfa781b2714"
+    },
+    {
+      "path": ".circleci/config.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "31064a6a8982d49fa9b8f59e15ebad3fa72034e3",
+      "size": 868,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/31064a6a8982d49fa9b8f59e15ebad3fa72034e3"
+    },
+    {
+      "path": ".github",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "aab0116905b7b02c55bcbc8f77e7c790a5c83fb5",
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/trees/aab0116905b7b02c55bcbc8f77e7c790a5c83fb5"
+    },
+    {
+      "path": ".github/circleci-artifacts.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "16dc31ff7343f5480e1bb0affdac5585c0927eef",
+      "size": 142,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/16dc31ff7343f5480e1bb0affdac5585c0927eef"
+    },
+    {
+      "path": ".github/dependabot.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3a4c20c7b8336fe0c3ad05b95078f9621899e71d",
+      "size": 540,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/3a4c20c7b8336fe0c3ad05b95078f9621899e71d"
+    },
+    {
+      "path": ".github/workflows",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a662141d0d4ea6562740eda14b12f73be32288a3",
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/trees/a662141d0d4ea6562740eda14b12f73be32288a3"
+    },
+    {
+      "path": ".github/workflows/ci_publish.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a552a0934a00fcf6868cdcb31763e54c5ed9b279",
+      "size": 4869,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/a552a0934a00fcf6868cdcb31763e54c5ed9b279"
+    },
+    {
+      "path": ".github/workflows/ci_tests_run_notebooks.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ad3a9f413df08093a52453ec6f5fa4f019596f1a",
+      "size": 2993,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/ad3a9f413df08093a52453ec6f5fa4f019596f1a"
+    },
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3f7c783439dec379f5f69e7d8add6c4b51eb9047",
+      "size": 1176,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/3f7c783439dec379f5f69e7d8add6c4b51eb9047"
+    },
+    {
+      "path": ".gitmodules",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": ".mailmap",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e11b450951b7b23d73304af829dc22445c04d14a",
+      "size": 389,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/e11b450951b7b23d73304af829dc22445c04d14a"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6b352549a7946979a56f4e49d2d21c2a981df96e",
+      "size": 1526,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/6b352549a7946979a56f4e49d2d21c2a981df96e"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c0181294a566a6f7ac9fe2b8d1be8953b8dac7be",
+      "size": 539,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/c0181294a566a6f7ac9fe2b8d1be8953b8dac7be"
+    },
+    {
+      "path": "_static",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3ab3aad30c3a9a53b42d207c98b6589c677949d0",
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/trees/3ab3aad30c3a9a53b42d207c98b6589c677949d0"
+    },
+    {
+      "path": "_static/custom.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9a1a170fd8e923dfd585dcfe2212382ede050279",
+      "size": 172,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/9a1a170fd8e923dfd585dcfe2212382ede050279"
+    },
+    {
+      "path": "_static/irsa-favicon.ico",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3f77804ca6d713929b9f71fc91639563d30273a6",
+      "size": 2238,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/3f77804ca6d713929b9f71fc91639563d30273a6"
+    },
+    {
+      "path": "_static/irsa_logo.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f246c1c422456fb7e21f7ed7c5e4d72ca3e84037",
+      "size": 11737,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/f246c1c422456fb7e21f7ed7c5e4d72ca3e84037"
+    },
+    {
+      "path": "deploy_to_fornax_manifest.in",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "57db50d227bb9534174b92fff42daebf7a00bced",
+      "size": 2791,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/57db50d227bb9534174b92fff42daebf7a00bced"
+    },
+    {
+      "path": "ignore_tutorials",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "acd271461865c5b9a914c4951220c7fcc11bb325",
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/trees/acd271461865c5b9a914c4951220c7fcc11bb325"
+    },
+    {
+      "path": "ignore_tutorials/ignore_all_testing",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "29105c7bec77ba97321ceb315025087b98262df4",
+      "size": 141,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/29105c7bec77ba97321ceb315025087b98262df4"
+    },
+    {
+      "path": "ignore_tutorials/ignore_circleci_testing",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "036d747faee1620d75df29ba978eaa7f6918f88a",
+      "size": 616,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/036d747faee1620d75df29ba978eaa7f6918f88a"
+    },
+    {
+      "path": "ignore_tutorials/ignore_gha_testing",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "198286524695bc90ae7f64c7d0a2fbd1997ea85b",
+      "size": 206,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/198286524695bc90ae7f64c7d0a2fbd1997ea85b"
+    },
+    {
+      "path": "ignore_tutorials/ignore_osx_testing",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "365bb3f0c531d7d11bc42a6da1e3d3c2833d0606",
+      "size": 144,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/365bb3f0c531d7d11bc42a6da1e3d3c2833d0606"
+    },
+    {
+      "path": "ignore_tutorials/ignore_rendering_execution",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bd339c6a9c0286ca0784aeb0ee0f2f46b9edc4dd",
+      "size": 356,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/bd339c6a9c0286ca0784aeb0ee0f2f46b9edc4dd"
+    },
+    {
+      "path": "ignore_tutorials/ignore_windows_testing",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2c4df5470fc33dd705ef12bc7b78059aac3e2b4a",
+      "size": 281,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/2c4df5470fc33dd705ef12bc7b78059aac3e2b4a"
+    },
+    {
+      "path": "index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f159877a9281a539f01399d63c6575557838cb55",
+      "size": 529,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/f159877a9281a539f01399d63c6575557838cb55"
+    },
+    {
+      "path": "jupytext.toml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "29a19d37ca7136e8b370832e05fa57ef36fbcac2",
+      "size": 46,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/29a19d37ca7136e8b370832e05fa57ef36fbcac2"
+    },
+    {
+      "path": "myst.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5bed8855b7614f84c904d8a82cdce481eff6562d",
+      "size": 1630,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/5bed8855b7614f84c904d8a82cdce481eff6562d"
+    },
+    {
+      "path": "notebook_metadata.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "12a8f26f7a793e1621cfb40a1582789f5535b254",
+      "size": 7670,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/12a8f26f7a793e1621cfb40a1582789f5535b254"
+    },
+    {
+      "path": "plugins",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e94fb484d6b455ff99f54db0e60853e0c43c3a43",
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/trees/e94fb484d6b455ff99f54db0e60853e0c43c3a43"
+    },
+    {
+      "path": "plugins/.gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b9470778764f72c5257a3361590d2994547f90e1",
+      "size": 20,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/b9470778764f72c5257a3361590d2994547f90e1"
+    },
+    {
+      "path": "plugins/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b9aeec5bb7e7c16f5bf86d8f7df10f8c546de139",
+      "size": 2333,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/b9aeec5bb7e7c16f5bf86d8f7df10f8c546de139"
+    },
+    {
+      "path": "plugins/package-lock.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "da619d9362c7aa16b0b83948652597c844f4db9b",
+      "size": 15025,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/da619d9362c7aa16b0b83948652597c844f4db9b"
+    },
+    {
+      "path": "plugins/package.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "886c688aa4b2c9edcc3ebf4c2d5ccfa513e95a04",
+      "size": 330,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/886c688aa4b2c9edcc3ebf4c2d5ccfa513e95a04"
+    },
+    {
+      "path": "plugins/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5776cda0fac270f202ac103ce4d315becfc50ad6",
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/trees/5776cda0fac270f202ac103ce4d315becfc50ad6"
+    },
+    {
+      "path": "plugins/src/notebook-gallery.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "407a32070a087e470c92d94157e81898c97f8d35",
+      "size": 4184,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/407a32070a087e470c92d94157e81898c97f8d35"
+    },
+    {
+      "path": "site_requirements.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c7634060df9d849b8731957ecc791f295355aaa6",
+      "size": 104,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/c7634060df9d849b8731957ecc791f295355aaa6"
+    },
+    {
+      "path": "test_requirements.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f2472130c2037d26f13410b078e44e78f0aa2da7",
+      "size": 37,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/f2472130c2037d26f13410b078e44e78f0aa2da7"
+    },
+    {
+      "path": "toc.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b6db362453b1bc3b3050447c16309b1662c3fdb9",
+      "size": 4282,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/b6db362453b1bc3b3050447c16309b1662c3fdb9"
+    },
+    {
+      "path": "tox.ini",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5171dead46ba075e678ad95a69cc2bee6bea9b69",
+      "size": 7243,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/5171dead46ba075e678ad95a69cc2bee6bea9b69"
+    },
+    {
+      "path": "tutorial_requirements.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "70b4983c4a39ba8d9c554b6c7e53ea04df3532d7",
+      "size": 765,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/70b4983c4a39ba8d9c554b6c7e53ea04df3532d7"
+    },
+    {
+      "path": "tutorials",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7e29bd6f7a78064710b2d864f727b52e74370e3d",
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/trees/7e29bd6f7a78064710b2d864f727b52e74370e3d"
+    },
+    {
+      "path": "tutorials/cosmos",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6465a380b19f819355c9fb1c5b4bc4543bab269e",
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/trees/6465a380b19f819355c9fb1c5b4bc4543bab269e"
+    },
+    {
+      "path": "tutorials/cosmos/sia_v1_cosmos.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b3401b990b3be89e0365acde5d76a0a5e255b0ad",
+      "size": 8405,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/b3401b990b3be89e0365acde5d76a0a5e255b0ad"
+    },
+    {
+      "path": "tutorials/euclid",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "972494c8e312c266f86c7495e16cf9a797705831",
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/trees/972494c8e312c266f86c7495e16cf9a797705831"
+    },
+    {
+      "path": "tutorials/euclid/1_Euclid_intro_MER_images.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2a3a84ad7ee28dcfea98d221f5bcdf08d949c6d7",
+      "size": 14173,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/2a3a84ad7ee28dcfea98d221f5bcdf08d949c6d7"
+    },
+    {
+      "path": "tutorials/euclid/2_Euclid_intro_MER_catalog.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "892b0990ecc09a1eaaced773f03bd377ef71c8a0",
+      "size": 5832,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/892b0990ecc09a1eaaced773f03bd377ef71c8a0"
+    },
+    {
+      "path": "tutorials/euclid/3_Euclid_intro_1D_spectra.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7f5b5756b0998af34113096f4ed82084dd53027f",
+      "size": 6212,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/7f5b5756b0998af34113096f4ed82084dd53027f"
+    },
+    {
+      "path": "tutorials/euclid/4_Euclid_intro_PHZ_catalog.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "87618aeeee8380ea478d8f18d2850a5556a39b38",
+      "size": 14822,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/87618aeeee8380ea478d8f18d2850a5556a39b38"
+    },
+    {
+      "path": "tutorials/euclid/5_Euclid_intro_SPE_catalog.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d79f925b4cad9d42d576ae29a5ced0521204235c",
+      "size": 9993,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/d79f925b4cad9d42d576ae29a5ced0521204235c"
+    },
+    {
+      "path": "tutorials/euclid/Euclid_ERO.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0384ce968f9fce6472cd4b1c0a6cd65bb67eb83d",
+      "size": 29446,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/0384ce968f9fce6472cd4b1c0a6cd65bb67eb83d"
+    },
+    {
+      "path": "tutorials/euclid/euclid-cloud-access.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "55215d73c0487cb47a4a64e27c0c05e07b1f3766",
+      "size": 12426,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/55215d73c0487cb47a4a64e27c0c05e07b1f3766"
+    },
+    {
+      "path": "tutorials/euclid/euclid.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "63cb0d71bbc2ece1717b06ec19f35e1425e2bb8b",
+      "size": 1737,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/63cb0d71bbc2ece1717b06ec19f35e1425e2bb8b"
+    },
+    {
+      "path": "tutorials/euclid/euclid_clusters_tutorial.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b6245a7ff45566295c060362dbf3881c0ada7ed5",
+      "size": 79766,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/b6245a7ff45566295c060362dbf3881c0ada7ed5"
+    },
+    {
+      "path": "tutorials/euclid/merged-objects-hats-catalog",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "402fc620e630ac3e52cda66c3a636e99537514be",
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/trees/402fc620e630ac3e52cda66c3a636e99537514be"
+    },
+    {
+      "path": "tutorials/euclid/merged-objects-hats-catalog/1-euclid-q1-hats-intro.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f84945263dbf06c3bab011bd4456685b555e635c",
+      "size": 19341,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/f84945263dbf06c3bab011bd4456685b555e635c"
+    },
+    {
+      "path": "tutorials/euclid/merged-objects-hats-catalog/4-euclid-q1-hats-magnitudes.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b3227650ef9842af0daa372f78f1cd848717b313",
+      "size": 17405,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/b3227650ef9842af0daa372f78f1cd848717b313"
+    },
+    {
+      "path": "tutorials/simulated-data",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "45b8f05c173607efe0c39890dc21decfd2288dc5",
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/trees/45b8f05c173607efe0c39890dc21decfd2288dc5"
+    },
+    {
+      "path": "tutorials/simulated-data/OpenUniverse2024",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f5692c0d01c5360348f80cf6335edb49b03aac0b",
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/trees/f5692c0d01c5360348f80cf6335edb49b03aac0b"
+    },
+    {
+      "path": "tutorials/simulated-data/OpenUniverse2024/openuniverse2024_SED_fit.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8c101abea259061e82e062a6e1de6b9201e1de87",
+      "size": 66625,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/8c101abea259061e82e062a6e1de6b9201e1de87"
+    },
+    {
+      "path": "tutorials/simulated-data/OpenUniverse2024/openuniverse2024_TDE_light_curve.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "77b2b0a9a1c0e6ac8c9e7f73802fb2f8e6599e8a",
+      "size": 35212,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/77b2b0a9a1c0e6ac8c9e7f73802fb2f8e6599e8a"
+    },
+    {
+      "path": "tutorials/simulated-data/OpenUniverse2024/openuniverse2024_firefly_visualization.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2bafe7f7630a1b56b20fbb6a5cd793e0f51dab4f",
+      "size": 43017,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/2bafe7f7630a1b56b20fbb6a5cd793e0f51dab4f"
+    },
+    {
+      "path": "tutorials/simulated-data/OpenUniverse2024/openuniverse2024_quickstart.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6f13120fa43fc430f5bd9b4a89e436d1809d9a0c",
+      "size": 15424,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/6f13120fa43fc430f5bd9b4a89e436d1809d9a0c"
+    },
+    {
+      "path": "tutorials/simulated-data/OpenUniverse2024/openuniverse2024_roman_tds_supernova.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "06acbd9940ebaab19e6d46239caca393303445ce",
+      "size": 14574,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/06acbd9940ebaab19e6d46239caca393303445ce"
+    },
+    {
+      "path": "tutorials/simulated-data/cosmoDC2_TAP_access.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4a7ee0f6f9e56a4cabd858be6048be9150b125d1",
+      "size": 8178,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/4a7ee0f6f9e56a4cabd858be6048be9150b125d1"
+    },
+    {
+      "path": "tutorials/simulated-data/roman_hlss_number_density.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6734cbb76d6b177693b018e4aa0485966d14e37c",
+      "size": 45267,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/6734cbb76d6b177693b018e4aa0485966d14e37c"
+    },
+    {
+      "path": "tutorials/simulated-data/simulated.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "90b5dfcc58e49762b0fe48820feaae5f11de18b5",
+      "size": 1651,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/90b5dfcc58e49762b0fe48820feaae5f11de18b5"
+    },
+    {
+      "path": "tutorials/spherex",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "eeba7dad4a0ab055227a000b712ce451ffa69ebb",
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/trees/eeba7dad4a0ab055227a000b712ce451ffa69ebb"
+    },
+    {
+      "path": "tutorials/spherex/spherex.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1f9ea93bc81f619dfd0740315be078ef36443922",
+      "size": 1493,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/1f9ea93bc81f619dfd0740315be078ef36443922"
+    },
+    {
+      "path": "tutorials/spherex/spherex_cutouts.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ce50448bd276ec3ef4d04684a38709eae6f25172",
+      "size": 15877,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/ce50448bd276ec3ef4d04684a38709eae6f25172"
+    },
+    {
+      "path": "tutorials/spherex/spherex_intro.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "48f6e4e80ab71c06c769db6a9a0deed997b3efc4",
+      "size": 18685,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/48f6e4e80ab71c06c769db6a9a0deed997b3efc4"
+    },
+    {
+      "path": "tutorials/spherex/spherex_mosaic.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3e3a451ac066ed11badd830c903edb5487caee08",
+      "size": 25034,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/3e3a451ac066ed11badd830c903edb5487caee08"
+    },
+    {
+      "path": "tutorials/spherex/spherex_psf.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c96188f1487104979d39dbf3a2eb09298c0a313e",
+      "size": 26760,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/c96188f1487104979d39dbf3a2eb09298c0a313e"
+    },
+    {
+      "path": "tutorials/spherex/spherex_source_discovery",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6727ee93d792e0f2ced00a3c62f5028b6feee744",
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/trees/6727ee93d792e0f2ced00a3c62f5028b6feee744"
+    },
+    {
+      "path": "tutorials/spherex/spherex_source_discovery/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e8ec7a094e23205ff6176f42f9833a48df0af62e",
+      "size": 3298,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/e8ec7a094e23205ff6176f42f9833a48df0af62e"
+    },
+    {
+      "path": "tutorials/spherex/spherex_source_discovery/conda-spherex_sdt.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d0e7053ed607278333ee016919bccb376f0d0ae7",
+      "size": 282,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/d0e7053ed607278333ee016919bccb376f0d0ae7"
+    },
+    {
+      "path": "tutorials/spherex/spherex_source_discovery/spherex_source_discovery_tool",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "cb55f5258fbf216ca475911b65c83a073974327b",
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/trees/cb55f5258fbf216ca475911b65c83a073974327b"
+    },
+    {
+      "path": "tutorials/spherex/spherex_source_discovery/spherex_source_discovery_tool/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cbcf66d5c8b907c8a2160f1aa884ab80b9254d13",
+      "size": 145,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/cbcf66d5c8b907c8a2160f1aa884ab80b9254d13"
+    },
+    {
+      "path": "tutorials/spherex/spherex_source_discovery/spherex_source_discovery_tool/aperture_photometry.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "71fdc7046cdab040111caf542a45a9bdc0a2714b",
+      "size": 22071,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/71fdc7046cdab040111caf542a45a9bdc0a2714b"
+    },
+    {
+      "path": "tutorials/spherex/spherex_source_discovery/spherex_source_discovery_tool/bokeh_viz.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4bfcbf98b0cbfce696bc5a199ffb82bc3f7150bd",
+      "size": 24446,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/4bfcbf98b0cbfce696bc5a199ffb82bc3f7150bd"
+    },
+    {
+      "path": "tutorials/spherex/spherex_source_discovery/spherex_source_discovery_tool/default.conv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2590b9cba71399a05c5487e7a7441843f0fdb10b",
+      "size": 88,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/2590b9cba71399a05c5487e7a7441843f0fdb10b"
+    },
+    {
+      "path": "tutorials/spherex/spherex_source_discovery/spherex_source_discovery_tool/default.nnw",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4b521bd432f70b333331b2c88b11b63cf38dc5b4",
+      "size": 2187,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/4b521bd432f70b333331b2c88b11b63cf38dc5b4"
+    },
+    {
+      "path": "tutorials/spherex/spherex_source_discovery/spherex_source_discovery_tool/default_sdt.param",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e2d8284fbc68b3933493d2bb5e9ab1566bf49c2f",
+      "size": 154,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/e2d8284fbc68b3933493d2bb5e9ab1566bf49c2f"
+    },
+    {
+      "path": "tutorials/spherex/spherex_source_discovery/spherex_source_discovery_tool/default_sdt.sex",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "74ecdf15c9f45fbfd4d15cff2f18315a6e8b6005",
+      "size": 7210,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/74ecdf15c9f45fbfd4d15cff2f18315a6e8b6005"
+    },
+    {
+      "path": "tutorials/spherex/spherex_source_discovery/spherex_source_discovery_tool/firefly_viz.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "392a1c53892ceb25d391a5e01d46bbbdd47894e5",
+      "size": 2222,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/392a1c53892ceb25d391a5e01d46bbbdd47894e5"
+    },
+    {
+      "path": "tutorials/spherex/spherex_source_discovery/spherex_source_discovery_tool/sdt_utils.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3b1e4b38bd1a14030a96c3de5429d4f6d7834a7d",
+      "size": 3267,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/3b1e4b38bd1a14030a96c3de5429d4f6d7834a7d"
+    },
+    {
+      "path": "tutorials/spherex/spherex_source_discovery/spherex_source_discovery_tool/source_extraction.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2fb15259d1cd6cf79229a714e354b585b4ae36cd",
+      "size": 1966,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/2fb15259d1cd6cf79229a714e354b585b4ae36cd"
+    },
+    {
+      "path": "tutorials/spherex/spherex_source_discovery/spherex_source_discovery_tool_demo.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dd7df3f53173043b4c686be3fb1245d8bcbd663c",
+      "size": 34933,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/dd7df3f53173043b4c686be3fb1245d8bcbd663c"
+    },
+    {
+      "path": "tutorials/spitzer",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "452f901f0b6e9375545034d2d00df5528962ccdc",
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/trees/452f901f0b6e9375545034d2d00df5528962ccdc"
+    },
+    {
+      "path": "tutorials/spitzer/plot_Spitzer_IRS_spectra.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a23b46b11c5abf32eeefe411947b4c5e29f89d17",
+      "size": 7892,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/a23b46b11c5abf32eeefe411947b4c5e29f89d17"
+    },
+    {
+      "path": "tutorials/techniques-and-tools",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d5bdcf8deb5d2561d7a14a5aff5adb489c4eb054",
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/trees/d5bdcf8deb5d2561d7a14a5aff5adb489c4eb054"
+    },
+    {
+      "path": "tutorials/techniques-and-tools/MOST_queries.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3462fc56ac2732b40df6e8c76dd0dd777b261ddf",
+      "size": 47216,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/3462fc56ac2732b40df6e8c76dd0dd777b261ddf"
+    },
+    {
+      "path": "tutorials/techniques-and-tools/Parallelize_Convolution.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7636f381bc4e9f95e1f126c69154bf2defb80f14",
+      "size": 7111,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/7636f381bc4e9f95e1f126c69154bf2defb80f14"
+    },
+    {
+      "path": "tutorials/techniques-and-tools/SEDs_in_Firefly.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "23ce4acc06e4ede1d3b2306a4067bedcd8055ae9",
+      "size": 21535,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/23ce4acc06e4ede1d3b2306a4067bedcd8055ae9"
+    },
+    {
+      "path": "tutorials/techniques-and-tools/cloud-access-intro.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b1552f9facc761415b3d147d17a84d4f978f62c1",
+      "size": 13255,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/b1552f9facc761415b3d147d17a84d4f978f62c1"
+    },
+    {
+      "path": "tutorials/techniques-and-tools/irsa-hats-with-lsdb.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5b2e226e3fdccd34751aae537b3b3dbfc5fe49fd",
+      "size": 25682,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/5b2e226e3fdccd34751aae537b3b3dbfc5fe49fd"
+    },
+    {
+      "path": "tutorials/techniques-and-tools/techniques.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ed78096d853dfb9b6b49fd81c5ea86a3165ab712",
+      "size": 736,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/ed78096d853dfb9b6b49fd81c5ea86a3165ab712"
+    },
+    {
+      "path": "tutorials/wise",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0566e32c6ab2c82d1cd63373a817c54eb0fbf4c4",
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/trees/0566e32c6ab2c82d1cd63373a817c54eb0fbf4c4"
+    },
+    {
+      "path": "tutorials/wise/NEOWISE_light_curve_demo.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "62fdf5bc79f699d31b2b15654853957d5af4d655",
+      "size": 9285,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/62fdf5bc79f699d31b2b15654853957d5af4d655"
+    },
+    {
+      "path": "tutorials/wise/neowise-source-table-lightcurves.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d92352aaec8aa78f675f32a0af0bbaa9c022fc2f",
+      "size": 18404,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/d92352aaec8aa78f675f32a0af0bbaa9c022fc2f"
+    },
+    {
+      "path": "tutorials/wise/neowise-source-table-strategies.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "befc5997e9883bbe20440ab96e899bc1f98bae51",
+      "size": 20632,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/befc5997e9883bbe20440ab96e899bc1f98bae51"
+    },
+    {
+      "path": "tutorials/wise/sia_allwise_atlas.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f278dfc10ecb7e2bb760f9e68bf154d63addd805",
+      "size": 8798,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/f278dfc10ecb7e2bb760f9e68bf154d63addd805"
+    },
+    {
+      "path": "tutorials/wise/wise-allwise-catalog-demo.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "48d2ecae765b6e0e467a1b77e9b183eeb5b39f17",
+      "size": 16068,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/48d2ecae765b6e0e467a1b77e9b183eeb5b39f17"
+    },
+    {
+      "path": "tutorials/wise/wise.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "73594302e2a60ea070da5d2fde2f3e311ec1fbfe",
+      "size": 1388,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/73594302e2a60ea070da5d2fde2f3e311ec1fbfe"
+    },
+    {
+      "path": "tutorials/ztf",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e6c90fd6917e782c3497f8d1e241034c72a23bad",
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/trees/e6c90fd6917e782c3497f8d1e241034c72a23bad"
+    },
+    {
+      "path": "tutorials/ztf/ztf_lightcurves.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cacf1b8f09f062146a82140b71414b4d0ba444b0",
+      "size": 18417,
+      "url": "https://api.github.com/repos/Caltech-IPAC/irsa-tutorials/git/blobs/cacf1b8f09f062146a82140b71414b4d0ba444b0"
+    }
+  ],
+  "truncated": false
+}

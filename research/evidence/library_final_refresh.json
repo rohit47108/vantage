@@ -1,0 +1,74 @@
+[
+  {
+    "repo": "astropy/astropy",
+    "status": 200,
+    "tag": "v8.0.1",
+    "published_at": "2026-07-08T13:01:37Z",
+    "url": "https://github.com/astropy/astropy/releases/tag/v8.0.1",
+    "checked_utc": "2026-10-19T01:49:20.466916+00:00"
+  },
+  {
+    "repo": "astropy/pyvo",
+    "status": 200,
+    "tag": "v1.9.1",
+    "published_at": "2026-06-11T14:44:33Z",
+    "url": "https://github.com/astropy/pyvo/releases/tag/v1.9.1",
+    "checked_utc": "2026-10-19T01:49:20.605258+00:00"
+  },
+  {
+    "repo": "astropy/astroquery",
+    "status": 200,
+    "tag": "v0.4.11",
+    "published_at": "2025-09-20T04:28:38Z",
+    "url": "https://github.com/astropy/astroquery/releases/tag/v0.4.11",
+    "checked_utc": "2026-10-19T01:49:20.726244+00:00"
+  },
+  {
+    "repo": "astropy/reproject",
+    "status": 200,
+    "tag": "v0.21.0",
+    "published_at": "2026-06-25T14:10:55Z",
+    "url": "https://github.com/astropy/reproject/releases/tag/v0.21.0",
+    "checked_utc": "2026-10-19T01:49:20.868441+00:00"
+  },
+  {
+    "repo": "astropy/photutils",
+    "status": 200,
+    "tag": "3.1.1",
+    "published_at": "2026-10-16T23:52:32Z",
+    "url": "https://github.com/astropy/photutils/releases/tag/3.1.1",
+    "checked_utc": "2026-10-19T01:49:20.998959+00:00"
+  },
+  {
+    "repo": "cds-astro/aladin-lite",
+    "status": 200,
+    "tag": "v3.8.1",
+    "published_at": "2026-03-05T14:26:57Z",
+    "url": "https://github.com/cds-astro/aladin-lite/releases/tag/v3.8.1",
+    "checked_utc": "2026-10-19T01:49:21.121249+00:00"
+  },
+  {
+    "repo": "tiangolo/fastapi",
+    "status": 200,
+    "tag": "0.146.0",
+    "published_at": "2026-10-18T15:18:08Z",
+    "url": "https://github.com/fastapi/fastapi/releases/tag/0.146.0",
+    "checked_utc": "2026-10-19T01:49:21.334212+00:00"
+  },
+  {
+    "repo": "vitejs/vite",
+    "status": 200,
+    "tag": "v8.3.4",
+    "published_at": "2026-10-08T12:03:54Z",
+    "url": "https://github.com/vitejs/vite/releases/tag/v8.3.4",
+    "checked_utc": "2026-10-19T01:49:21.451001+00:00"
+  },
+  {
+    "repo": "facebook/react",
+    "status": 200,
+    "tag": "v19.3.1",
+    "published_at": "2026-10-14T17:06:15Z",
+    "url": "https://github.com/react/react/releases/tag/v19.3.1",
+    "checked_utc": "2026-10-19T01:49:21.659761+00:00"
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "url": "https://irsa.ipac.caltech.edu/SIA?COLLECTION=spherex_dr1&MAXREC=1",
+  "http_status": 200,
+  "rows": 0,
+  "query_status": [
+    "OK"
+  ]
+}

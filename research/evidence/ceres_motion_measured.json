@@ -1,0 +1,6 @@
+{
+  "predicted_displacement_arcsec": 142.95778591164955,
+  "screening_centroid_displacement_arcsec": 139.05477877093998,
+  "duration_hours": 4.796533620043192,
+  "caveat": "Screening centroids, not PSF-fit astrometry; differing passbands and flags disallow a photometric-change claim."
+}

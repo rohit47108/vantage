@@ -1,0 +1,287 @@
+{
+  "name": "most_ceres_id",
+  "url": "https://irsa.ipac.caltech.edu/cgi-bin/MOST/nph-most?catalog=spherex&input_type=naifid_input&obj_naifid=20000001&obs_begin=2025+08+01&obs_end=2025+08+10&output_mode=VOTable",
+  "status": 200,
+  "bytes": 13860,
+  "seconds": 2.716,
+  "headers": {
+    "Server": "nginx",
+    "Date": "Sun, 04 Oct 2026 21:59:51 GMT",
+    "Content-Type": "text/xml",
+    "Transfer-Encoding": "chunked",
+    "Connection": "keep-alive"
+  },
+  "sha256": "6580b4d5c1613a2e44a707cf83475eab0d8f6f1345420ce0d5c758e25bac278f",
+  "access_date": "2026-10-04",
+  "fields": [
+    {
+      "name": "ra_obj",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "dec_obj",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "sun_dist",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "geo_dist",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "dist_ctr",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "phase",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "vmag",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "match",
+      "datatype": "int",
+      "unit": ""
+    },
+    {
+      "name": "proposal_id",
+      "datatype": "char",
+      "arraysize": "*"
+    },
+    {
+      "name": "target_name",
+      "datatype": "char",
+      "arraysize": "*"
+    },
+    {
+      "name": "target_moving",
+      "datatype": "char",
+      "arraysize": "*"
+    },
+    {
+      "name": "observationid",
+      "datatype": "char",
+      "arraysize": "*"
+    },
+    {
+      "name": "planeid",
+      "datatype": "char",
+      "arraysize": "*"
+    },
+    {
+      "name": "productid",
+      "datatype": "char",
+      "arraysize": "*"
+    },
+    {
+      "name": "instrument",
+      "datatype": "char",
+      "arraysize": "*"
+    },
+    {
+      "name": "start_date",
+      "datatype": "char",
+      "arraysize": "*"
+    },
+    {
+      "name": "end_date",
+      "datatype": "char",
+      "arraysize": "*"
+    },
+    {
+      "name": "mjd_start",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "mjd_end",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "exposure_time",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "ra",
+      "ucd": "POS_EQ_RA_MAIN",
+      "ref": "J2000",
+      "datatype": "float",
+      "unit": "deg",
+      "precision": "F3",
+      "width": "7"
+    },
+    {
+      "name": "dec",
+      "ucd": "POS_EQ_DEC_MAIN",
+      "ref": "J2000",
+      "datatype": "float",
+      "unit": "deg",
+      "precision": "F3",
+      "width": "7"
+    },
+    {
+      "name": "ra1",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "dec1",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "ra2",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "dec2",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "ra3",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "dec3",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "ra4",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "dec4",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "uri",
+      "datatype": "char",
+      "arraysize": "*"
+    },
+    {
+      "name": "id",
+      "ucd": "ID_MAIN",
+      "datatype": "char",
+      "arraysize": "*"
+    },
+    {
+      "name": "JD",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "Date",
+      "datatype": "char",
+      "arraysize": "*"
+    },
+    {
+      "name": "RA_obs",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "Dec_obs",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "RA_geoc",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "Dec_geoc",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "ObsDist",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "GeoDist",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "HelioDist",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "Phase",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "Vmag",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "segment",
+      "datatype": "int",
+      "unit": ""
+    },
+    {
+      "name": "id",
+      "ucd": "ID_MAIN",
+      "datatype": "char",
+      "arraysize": "*"
+    }
+  ],
+  "rows": 37,
+  "sample_rows": [
+    [
+      "2460888.500000",
+      "2025-AUG-01 00:00:00.000",
+      "19.75414020",
+      "-5.54131524",
+      "19.75665767",
+      "-5.54063290",
+      "2.430851622",
+      "2.430856232",
+      "2.964124216",
+      "18.5110",
+      "8.78",
+      "0",
+      "0"
+    ],
+    [
+      "2460888.750000",
+      "2025-AUG-01 06:00:00.000",
+      "19.77393801",
+      "-5.55136486",
+      "19.77642185",
+      "-5.54887699",
+      "2.427703943",
+      "2.427729466",
+      "2.964041311",
+      "18.4811",
+      "8.78",
+      "0",
+      "1"
+    ]
+  ],
+  "query_status": []
+}

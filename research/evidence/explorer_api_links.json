@@ -1,0 +1,16 @@
+[
+  "https://irsa.ipac.caltech.edu/onlinehelp/spherex/spherex/api.html#intro",
+  "https://irsa.ipac.caltech.edu/onlinehelp/spherex/spherex/api.html#inputparameters",
+  "https://irsa.ipac.caltech.edu/onlinehelp/spherex/spherex/api.html#inputexamples",
+  "https://irsa.ipac.caltech.edu/voapi.html",
+  "https://irsa.ipac.caltech.edu/applications/spherex/?api=spectral-images&ra=255.65704&dec=-26.26794&sr=30m&spatialRegionOperation=intersects",
+  "https://irsa.ipac.caltech.edu/applications/spherex/?api=spectral-images&ra=255.65704&dec=-26.26794&sr=30m&spatialRegionOperation=intersects&execute=true",
+  "https://irsa.ipac.caltech.edu/applications/spherex/?api=spectral-images&polygon=255.520471%20-26.287903,%20255.677640%20-26.392810,%20255.790943%20-26.256165,%20255.633857%20-26.151382&spatialRegionOperation=contains_shape",
+  "https://irsa.ipac.caltech.edu/applications/spherex/?api=spectral-images&polygon=255.520471%20-26.287903,%20255.677640%20-26.392810,%20255.790943%20-26.256165,%20255.633857%20-26.151382&spatialRegionOperation=contains_shape&execute=true",
+  "https://irsa.ipac.caltech.edu/applications/spherex/?api=spectral-images&exposureMin=2025-08-24T23:59:26Z&exposureMax=2025-08-25T00:18:50Z&exposureTimeMode=iso",
+  "https://irsa.ipac.caltech.edu/applications/spherex/?api=spectral-images&exposureMin=2025-08-24T23:59:26Z&exposureMax=2025-08-25T00:18:50Z&exposureTimeMode=iso&execute=true",
+  "https://irsa.ipac.caltech.edu/applications/spherex/?api=spectral-images&obsCoreWavelengthRangeType=contains&obsCoreWavelengthContains=1.25",
+  "https://irsa.ipac.caltech.edu/applications/spherex/?api=spectral-images&obsCoreWavelengthRangeType=contains&obsCoreWavelengthContains=1.25&execute=true",
+  "https://irsa.ipac.caltech.edu/applications/spherex/?api=spectral-images&ra=255.65704&dec=-26.26794&spatialRegionOperation=contains_point&obsCoreWavelengthRangeType=overlaps&obsCoreWavelengthMinRange=1.64&obsCoreWavelengthMaxRange=2.42",
+  "https://irsa.ipac.caltech.edu/applications/spherex/?api=spectral-images&ra=255.65704&dec=-26.26794&spatialRegionOperation=contains_point&obsCoreWavelengthRangeType=overlaps&obsCoreWavelengthMinRange=1.64&obsCoreWavelengthMaxRange=2.42&execute=true"
+]

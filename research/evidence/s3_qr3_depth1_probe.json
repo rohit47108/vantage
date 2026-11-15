@@ -1,0 +1,27 @@
+{
+  "name": "s3_qr3_depth1",
+  "url": "https://nasa-irsa-spherex.s3.us-east-1.amazonaws.com/?list-type=2&delimiter=%2F&prefix=qr3%2Flevel2%2F2026W30_1B%2F&max-keys=3",
+  "status": 200,
+  "bytes": 475,
+  "seconds": 0.118,
+  "headers": {
+    "x-amz-id-2": "yAOAa8ieI4QlVYmNWcsdENgrkOVrpiobiKCgyg7lvCgIU6D8Dq9Vv5h7096CwtvVhMQ5oaWqthXEEVberljBViqV8FO/Wop4",
+    "x-amz-request-id": "YRS7Q68GTK8HSA3T",
+    "Server": "AmazonS3",
+    "Date": "Sun, 04 Oct 2026 21:53:00 GMT",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "HEAD, GET",
+    "Access-Control-Expose-Headers": "ETag, x-amz-meta-custom-header",
+    "Access-Control-Max-Age": "3000",
+    "Vary": "Origin, Access-Control-Request-Headers, Access-Control-Request-Method",
+    "x-amz-bucket-region": "us-east-1",
+    "Content-Type": "application/xml",
+    "Transfer-Encoding": "chunked"
+  },
+  "sha256": "3a103607d8ca586bfe5f2efded1630b3fd704c9d03418a9ad4016eff01f75ec5",
+  "access_date": "2026-10-04",
+  "fields": [],
+  "rows": 0,
+  "sample_rows": [],
+  "query_status": []
+}

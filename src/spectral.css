@@ -1,0 +1,189 @@
+.spectral-workspace {
+  min-height: 100dvh;
+}
+.spectral-workspace header {
+  position: relative;
+  height: auto;
+  min-height: 68px;
+  padding: 12px 24px;
+  flex-wrap: wrap;
+}
+.spectral-workspace .mode-switch {
+  display: flex;
+  gap: 4px;
+  margin: 0 auto;
+}
+.mode-switch button[aria-current] {
+  background: #24414a;
+  border-color: var(--cyan);
+}
+.spectral-layout {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr) 250px;
+  max-width: 1700px;
+  margin: 0 auto;
+  gap: 32px;
+  padding: 32px;
+}
+.spectral-controls,
+.spectral-inspector {
+  min-width: 0;
+  line-height: 1.6;
+}
+.spectral-controls h1 {
+  font-size: 26px;
+  line-height: 1.15;
+  letter-spacing: -0.7px;
+}
+.spectral-workspace .eyebrow {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--cyan);
+}
+.spectral-workspace p {
+  color: #aabac8;
+  line-height: 1.6;
+}
+.spectral-workspace label {
+  display: block;
+  margin: 16px 0 8px;
+  line-height: 1.5;
+}
+.spectral-workspace input:not([type="checkbox"]),
+.spectral-workspace select {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  min-height: 40px;
+}
+.spectral-workspace input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+}
+.spectral-workspace input[type="range"] {
+  padding: 0;
+}
+.spectral-workspace summary {
+  cursor: pointer;
+  padding: 12px 0;
+  color: #dbe8ef;
+}
+.spectral-workspace details {
+  border-top: 1px solid var(--line);
+  margin-top: 24px;
+}
+.spectral-workspace .spectral-main {
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+.spectral-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+.spectral-heading h2 {
+  font-size: 32px;
+  margin: 8px 0;
+  letter-spacing: -1px;
+}
+.spectral-heading .badge {
+  white-space: nowrap;
+  margin-top: 16px;
+}
+.spectral-image {
+  aspect-ratio: 1;
+  max-height: 60vh;
+  min-height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #05080b;
+  margin: 20px auto;
+  border: 1px solid var(--line);
+}
+.spectral-image canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: pixelated;
+  cursor: crosshair;
+}
+.wavelength-dock {
+  border-top: 1px solid var(--line);
+  padding-top: 4px;
+}
+.wave-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.spectral-inspector {
+  padding-left: 24px;
+  border-left: 1px solid var(--line);
+}
+.spectral-inspector h2 {
+  font-size: 17px;
+}
+.spectral-inspector button {
+  display: block;
+  width: 100%;
+  margin-top: 12px;
+  min-height: 44px;
+}
+.spectral-inspector dt {
+  color: var(--muted);
+  margin-top: 12px;
+}
+.spectral-inspector dd {
+  margin: 0;
+  font-family: monospace;
+}
+@media (max-width: 1150px) {
+  .spectral-layout {
+    grid-template-columns: 230px minmax(0, 1fr);
+    gap: 24px;
+    padding: 24px;
+  }
+  .spectral-inspector {
+    grid-column: 1/-1;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+    padding: 20px 0;
+  }
+}
+@media (max-width: 700px) {
+  .spectral-layout {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+  .spectral-main {
+    grid-row: 1;
+  }
+  .spectral-workspace header {
+    padding: 12px;
+    gap: 12px;
+  }
+  .spectral-workspace .mode-switch {
+    order: 3;
+    flex-basis: 100%;
+    justify-content: center;
+  }
+  .spectral-workspace .brand-logo {
+    width: 120px;
+  }
+  .spectral-image {
+    max-height: none;
+  }
+  .spectral-heading h2 {
+    font-size: 28px;
+  }
+  .spectral-controls {
+    border-top: 1px solid var(--line);
+    padding-top: 16px;
+  }
+}

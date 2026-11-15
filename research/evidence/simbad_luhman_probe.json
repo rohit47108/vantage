@@ -1,0 +1,19 @@
+{
+  "name": "simbad_luhman",
+  "url": "https://simbad.cds.unistra.fr/simbad/sim-tap/sync?REQUEST=doQuery&LANG=ADQL&FORMAT=csv&QUERY=SELECT+b.main_id%2Cb.ra%2Cb.dec%2Cb.pmra%2Cb.pmdec%2Cb.plx_value%2Cb.rvz_radvel+FROM+basic+b+JOIN+ident+i+ON+b.oid%3Di.oidref+WHERE+i.id%3D%27WISE+J104915.57-531906.1%27",
+  "status": 200,
+  "bytes": 130,
+  "seconds": 0.533,
+  "headers": {
+    "Date": "Mon, 19 Oct 2026 01:46:10 GMT",
+    "Server": "Apache/2.4.52 (Ubuntu)",
+    "Set-Cookie": "JSESSIONID=9830BDC3936221E1961D0F4F68B2D067.new; Path=/simbad; Secure; HttpOnly",
+    "Access-Control-Allow-Origin": "*",
+    "Keep-Alive": "timeout=5, max=1000",
+    "Connection": "Keep-Alive",
+    "Transfer-Encoding": "chunked",
+    "Content-Type": "text/csv;charset=UTF-8"
+  },
+  "sha256": "3c21c5074a7ecf40831f6e76ebb4db2e46b5f0933ee8bb87eedcd1a1d1d97bba",
+  "access_date": "2026-10-19"
+}

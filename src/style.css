@@ -601,3 +601,4 @@ main .comparison canvas {
     z-index: 4;
   }
 }
+@media(max-width:760px){.brand .brand-logo{width:108px;height:26px}.brand-logo img{width:108px;height:108px;top:-40px}}

@@ -1,0 +1,28 @@
+{
+  "purpose": "Compare S3 native-section research fallback against authentic IBE native cutout of same parent/bounds",
+  "arrays_equal": {
+    "IMAGE": true,
+    "FLAGS": true,
+    "VARIANCE": true,
+    "ZODI": true,
+    "PSF": true
+  },
+  "hdu_names_equal": true,
+  "wcs_wave_values_equal": true,
+  "wcs_coordinate_values": [
+    [
+      29.136602866784052,
+      28.838770148421496,
+      1.6180615090132573,
+      0.03883506997435103
+    ],
+    [
+      29.136602866784052,
+      28.838770148421496,
+      1.6180615090132573,
+      0.03883506997435103
+    ]
+  ],
+  "max_wcs_difference": 0.0,
+  "passed": true
+}

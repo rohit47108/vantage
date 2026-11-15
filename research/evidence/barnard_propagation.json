@@ -1,0 +1,14 @@
+[
+  {
+    "date_utc": "2025-08-15",
+    "ra_deg": 269.4463438658854,
+    "dec_deg": 4.767225573111216,
+    "caveat": "Space-motion propagation from SIMBAD epoch 2000; apparent observer parallax not applied."
+  },
+  {
+    "date_utc": "2026-05-05",
+    "ra_deg": 269.4461824532991,
+    "dec_deg": 4.76930485511708,
+    "caveat": "Space-motion propagation from SIMBAD epoch 2000; apparent observer parallax not applied."
+  }
+]

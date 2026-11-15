@@ -1,0 +1,14 @@
+[
+  "http://www.ivoa.net",
+  "https://irsa.ipac.caltech.edu/docs/program_interface/api_catalogs.html",
+  "https://irsa.ipac.caltech.edu/docs/program_interface/api_images.html",
+  "https://irsa.ipac.caltech.edu/docs/program_interface/api_spectra.html",
+  "https://irsa.ipac.caltech.edu/applications/DUST/docs/dustProgramInterface.html",
+  "https://irsa.ipac.caltech.edu/docs/program_interface/ztf_lightcurve_api.html",
+  "https://irsa.ipac.caltech.edu/applications/MOST/MOSTProgramInterface.html",
+  "https://irsa.ipac.caltech.edu/ibe/",
+  "https://astroquery.readthedocs.io/en/latest/ipac/irsa/irsa.html",
+  "https://astroquery.readthedocs.io",
+  "https://astroquery.readthedocs.io/en/latest/ipac/irsa/irsa.html",
+  "https://irsa.ipac.caltech.edu/docs/notebooks/"
+]

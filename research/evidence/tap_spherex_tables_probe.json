@@ -1,0 +1,18 @@
+{
+  "name": "tap_spherex_tables",
+  "url": "https://irsa.ipac.caltech.edu/TAP/sync?QUERY=SELECT+table_name%2C+description+FROM+TAP_SCHEMA.tables+WHERE+table_name+LIKE+%27spherex%25%27&FORMAT=CSV",
+  "status": 200,
+  "bytes": 280,
+  "seconds": 0.448,
+  "headers": {
+    "Server": "nginx",
+    "Date": "Sun, 04 Oct 2026 21:50:20 GMT",
+    "Content-Type": "text/csv",
+    "Content-Length": "280",
+    "Connection": "keep-alive",
+    "Server-Timing": "main;dur=16.790, prepare_internal;dur=1.257, generate_adql;dur=0.006, query_delegate;dur=11.112, query_execute;dur=11.106, database_query;dur=11.092",
+    "Set-Cookie": "anonymous=9c/c5/6e685d440ab3305cc316db542cc2"
+  },
+  "sha256": "c10b055b7d5ad64ec21156f96b11c34e3c5ee3ab9d02ba046e3c3171038dbe53",
+  "access_date": "2026-10-04"
+}

@@ -1,5 +1,7 @@
 # Vantage acceptance record
 
+This section records the earlier temporal demonstration. It does not establish completion of the new analysis-product goal. Current full-scope acceptance is tracked separately in tasks/product-evidence.md.
+
 Tested on Windows with Node 24.17, Python 3.13 and headless Chrome. The public deployment uses Vercel static delivery and a temporary tunnel to the local Python service. All eleven tests pass in the public report, `artifacts/browser-results.json`, with no skipped or flaky tests.
 
 | Requirement | Evidence and result |

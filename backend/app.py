@@ -26,6 +26,8 @@ from backend.science import ROOT, POLICY, build_sequence
 RUNTIME = Path(os.environ.get('VANTAGE_RUNTIME', ROOT / '.runtime'))
 RUNTIME.mkdir(exist_ok=True)
 app = FastAPI(title='Vantage scientific service')
+from backend.spectral_routes import router as spectral_router
+app.include_router(spectral_router)
 
 
 @app.middleware('http')
@@ -258,3 +260,8 @@ def frontend(sequence_id: str | None = None):
 @app.get('/favicon.svg')
 def favicon():
     return FileResponse(ROOT/'public/favicon.svg')
+
+
+@app.get('/vantage-logo.png')
+def brand_logo():
+    return FileResponse(ROOT/'public/vantage-logo.png')

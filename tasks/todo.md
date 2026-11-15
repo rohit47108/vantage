@@ -1,4 +1,6 @@
-# Implementation checklist
+# Earlier demo checklist
+
+The active complete-product checklist is product-evidence.md. Its pending requirements remain required. The checks below describe the earlier, narrower demo only.
 
 - [x] Inspect supplied objective, workspace and Skyline reference
 - [x] Read planning/source/design/build skills and refresh release documentation

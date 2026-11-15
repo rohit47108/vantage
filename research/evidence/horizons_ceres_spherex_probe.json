@@ -1,0 +1,16 @@
+{
+  "name": "horizons_ceres_spherex",
+  "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40-163182%27&TLIST_TYPE=%27MJD%27&QUANTITIES=%271%2C3%2C20%27&ANG_FORMAT=%27DEG%27&CSV_FORMAT=%27YES%27&TIME_DIGITS=%27FRACSEC%27&REF_SYSTEM=%27ICRF%27&EXTRA_PREC=%27YES%27&COMMAND=%271%3B%27&TLIST=%2760859.093852034%2C60859.2937076015%27",
+  "status": 200,
+  "bytes": 8749,
+  "seconds": 0.404,
+  "headers": {
+    "Server": "nginx",
+    "Date": "Mon, 19 Oct 2026 01:58:04 GMT",
+    "Content-Type": "application/json",
+    "Transfer-Encoding": "chunked",
+    "Connection": "keep-alive"
+  },
+  "sha256": "c6b1de26a8899ee85d9d3435c3dc7fa7064ef8c080ec9490c4aa2e0f31bb60e1",
+  "access_date": "2026-10-19"
+}

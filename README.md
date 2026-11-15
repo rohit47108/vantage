@@ -1,6 +1,16 @@
 # Vantage
 
-SPHEREx sky exploration built from authentic calibrated detector exposures. The original research package remains in the workspace. Current build status, verified public URL and hosting limits are in IMPLEMENTATION_STATUS.md.
+Explore the changing infrared sky with authentic NASA SPHEREx data. Vantage combines fixed-field time playback with a new 102-channel wavelength workspace. Numerical analysis features are under development; this repository does not yet satisfy the complete-product specification.
+
+## Current capabilities
+
+- Eight real-data examples, including all five challenge targets, Ceres, M101 and explicitly tracked 3I/ATLAS.
+- Coordinate coverage search, fixed-grid temporal playback, pixel inspection, synchronized comparison, scientific support overlays, immutable sequence links and image/provenance exports.
+- Metadata-driven wavelength navigation across the DR1 all-sky visualization cube, six detector groups, blank-channel handling, wavelength playback, user-selected false color and view/image exports. Native files are range-read by the backend; the browser never downloads a full cube.
+
+The wavelength cube combines many observation times. Its brightness values and hit/flag maps are visual context, not validated source photometry or a temporal sequence. Source extraction, validated coaddition/subtraction, Gaia/WISE integration, durable hosting and other complete-product requirements remain in progress. Track actual evidence in [the requirement matrix](tasks/product-evidence.md) and [implementation plan](tasks/product-plan.md).
+
+The original research is retained separately from current findings under research/updates/2026-11-14. Current service URLs and hosting limits are in IMPLEMENTATION_STATUS.md.
 
 ## Local launch
 
@@ -31,7 +41,11 @@ After `npm run build`, use `python -m scripts.stage_deploy --backend-url https:/
 
 `python -m scripts.verify_fallback` forces an IBE failure and compares actual S3 native pixels with an authentic IBE cutout. It makes public network requests. Bundled React licenses are in `public/licenses`.
 
-Optional future work includes persistent cloud Python hosting, a context atlas, credited survey overlays, annotations, and validated photometry, coadds, differences or spectra.
+The active product goal requires persistent cloud Python hosting, survey context, saved investigations, validated coadds, differences and source spectra. These are not represented as completed features.
+
+## License and attribution
+
+Project code is MIT licensed; the existing [LICENSE](LICENSE) is retained. NASA/SPHEREx observations and third-party software retain their own attribution and license requirements. The project MIT license does not relicense upstream data or software. Full NASA/IRSA acknowledgment text is in required_acknowledgments.txt and the application. Historical QR2 native benchmark inputs are preserved under research/fixtures because upstream direct downloads have a retirement date; their exact URLs and SHA-256 hashes are recorded in demo_dataset_manifest.json. Downloaded upstream documentation is not republished as project code.
 
 ## Data and scientific scope
 

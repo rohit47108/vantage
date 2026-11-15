@@ -1,0 +1,32 @@
+[
+  {
+    "name": "PRIMARY",
+    "shape": [],
+    "unit": null,
+    "dtype": null
+  },
+  {
+    "name": "CWAVE",
+    "shape": [
+      2040,
+      2040
+    ],
+    "unit": "um",
+    "dtype": ">f4"
+  },
+  {
+    "name": "CBAND",
+    "shape": [
+      2040,
+      2040
+    ],
+    "unit": "um",
+    "dtype": ">f4"
+  },
+  {
+    "name": "WCS-WAVE",
+    "shape": null,
+    "unit": null,
+    "dtype": "(numpy.record, [('X', '>i4', (9,)), ('Y', '>i4', (14,)), ('VALUES', '>f4', (14, 9, 2))])"
+  }
+]

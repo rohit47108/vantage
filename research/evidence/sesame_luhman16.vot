@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Sesame xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="https://vizier.cds.unistra.fr/xml/sesame_4x.xsd">
+<Target option="SNV">
+  <name>WISE J104915.57-531906.1</name>
+  <!-- Q8973700 #1 -->
+  <Resolver name="Sc=Simbad (CDS, via client/server)"><!--delay: 262ms [5] -->
+    <oid>8048683</oid>
+    <otype>**</otype>
+    <jpos>10:49:18.91 -53:19:10.0</jpos>
+    <jradeg>162.328814</jradeg>
+    <jdedeg>-53.319466</jdedeg>
+    <refPos>2003yCat.2246....0C</refPos>
+    <errRAmas>60</errRAmas><errDEmas>60</errDEmas>
+    <pm>
+      <v>2790.415</v><e>0.210</e><q>B</q><r>2018A&amp;A...618A.111L</r>
+      <pa>277.347</pa>
+      <pmRA>-2767.502</pmRA><epmRA>0.147</epmRA>
+      <pmDE>356.856</pmDE><epmDE>0.150</epmDE>
+    </pm>
+    <plx><v>501.557</v><e>0.082</e><q>B</q><r>2018A&amp;A...618A.111L</r></plx>
+    <spType>L7.5+T0.5</spType><spNum>0.00036B00.0000.0000000000100000</spNum>
+    <oname>NAME Luhman 16</oname>
+    <nrefs>128</nrefs>
+  </Resolver>
+</Target>
+</Sesame>
+<!--- ****Total of 1 crashes -->
+<!-- Configuration tested: /run/sesame.conf -->

@@ -1,0 +1,38 @@
+{
+  "common_center_deg": [
+    248.48258565376483,
+    -17.0135542385354
+  ],
+  "shape_yx": [
+    195,
+    195
+  ],
+  "spectral_eligible_fraction": 0.7647863247863248,
+  "endpoint_calibrations": [
+    {
+      "image": "2025W32_1A_0662_3",
+      "source_epoch": "2025W32_1A_0662_3",
+      "wave_um": 2.1902968883514404,
+      "bandwidth_um": 0.05471658334136009
+    },
+    {
+      "image": "2025W32_1A_0662_3",
+      "source_epoch": "2025W32_2D_0017_4",
+      "wave_um": 2.1914124488830566,
+      "bandwidth_um": 0.055178284645080566
+    },
+    {
+      "image": "2025W32_2D_0017_4",
+      "source_epoch": "2025W32_1A_0662_3",
+      "wave_um": 2.1964423656463623,
+      "bandwidth_um": 0.054419588297605515
+    },
+    {
+      "image": "2025W32_2D_0017_4",
+      "source_epoch": "2025W32_2D_0017_4",
+      "wave_um": 2.1923015117645264,
+      "bandwidth_um": 0.05386291444301605
+    }
+  ],
+  "scope": "Full-parent calibration geometry only; no science pixels or quality masks checked for this larger box."
+}

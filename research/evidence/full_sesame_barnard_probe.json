@@ -1,0 +1,7 @@
+{
+  "name": "full_sesame_barnard",
+  "url": "https://cds.unistra.fr/cgi-bin/nph-sesame/-oxp/S?Barnard%27s%20star",
+  "params": null,
+  "error": "HTTPSConnectionPool(host='cds.unistra.fr', port=443): Max retries exceeded with url: /cgi-bin/nph-sesame/-oxp/S?Barnard%27s%20star (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x0000019711788EC0>, 'Connection to cds.unistra.fr timed out. (connect timeout=15)'))",
+  "seconds": 15.111779800000022
+}

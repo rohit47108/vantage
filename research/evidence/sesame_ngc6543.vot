@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Sesame xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="https://vizier.cds.unistra.fr/xml/sesame_4x.xsd">
+<Target option="SNV">
+  <name>NGC 6543</name>
+  <!-- Q8973705 #1 -->
+  <Resolver name="Sc=Simbad (CDS, via client/server)"><!--delay: 0ms [0] -->
+    <INFO>from cache</INFO>
+    <oid>11673229</oid>
+    <otype>PN</otype>
+    <jpos>17:58:33.40 +66:37:58.7</jpos>
+    <jradeg>269.63918316</jradeg>
+    <jdedeg>66.63298631</jdedeg>
+    <refPos>2020yCat.1350....0G</refPos>
+    <errRAmas>0.0281</errRAmas><errDEmas>0.0287</errDEmas>
+    <pm>
+      <v>6.546</v><e>0.059</e><q>A</q><r>2020yCat.1350....0G</r>
+      <pa>183.8</pa>
+      <pmRA>-0.434</pmRA><epmRA>0.042</epmRA>
+      <pmDE>-6.532</pmDE><epmDE>0.041</epmDE>
+    </pm>
+    <Vel><v>-65.7</v><e>0.9</e><q>E</q><r>1953GCRV..C......0W</r></Vel>
+    <plx><v>0.7321</v><e>0.0287</e><q>A</q><r>2020yCat.1350....0G</r></plx>
+    <spType>[WC]</spType><spNum>2.0015FF00.0000.0000000000000000</spNum>
+    <oname>NGC  6543</oname>
+    <nrefs>1207</nrefs>
+  </Resolver>
+</Target>
+</Sesame>
+<!--- ====Done (2026-Oct-04,21:52:49z)==== -->

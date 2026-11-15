@@ -1,0 +1,16 @@
+{
+  "name": "horizons_spherex_lookup",
+  "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27SPHEREx%27&MAKE_EPHEM=%27NO%27&OBJ_DATA=%27YES%27",
+  "status": 200,
+  "bytes": 2378,
+  "seconds": 0.411,
+  "headers": {
+    "Server": "nginx",
+    "Date": "Mon, 19 Oct 2026 01:57:26 GMT",
+    "Content-Type": "application/json",
+    "Transfer-Encoding": "chunked",
+    "Connection": "keep-alive"
+  },
+  "sha256": "a618f78e3323bd0337b4b898114dfdec18fc060ad1f8856bdb88501e8feabfea",
+  "access_date": "2026-10-19"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "full_sesame_r_dra",
+  "url": "https://cds.unistra.fr/cgi-bin/nph-sesame/-oxp/S?R%20Dra",
+  "params": null,
+  "error": "HTTPSConnectionPool(host='cds.unistra.fr', port=443): Max retries exceeded with url: /cgi-bin/nph-sesame/-oxp/S?R%20Dra (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001971164B250>, 'Connection to cds.unistra.fr timed out. (connect timeout=15)'))",
+  "seconds": 15.011263899999904
+}

@@ -1,0 +1,7 @@
+{
+  "name": "full_sesame_eps_indi_b",
+  "url": "https://cds.unistra.fr/cgi-bin/nph-sesame/-oxp/S?eps%20Ind%20B",
+  "params": null,
+  "error": "HTTPSConnectionPool(host='cds.unistra.fr', port=443): Max retries exceeded with url: /cgi-bin/nph-sesame/-oxp/S?eps%20Ind%20B (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000001971178DBD0>, 'Connection to cds.unistra.fr timed out. (connect timeout=15)'))",
+  "seconds": 15.110672199999954
+}

@@ -1,0 +1,22 @@
+{
+  "name": "sesame_ngc1333",
+  "url": "https://cds.unistra.fr/cgi-bin/nph-sesame/-oxp/SNV?NGC%201333",
+  "status": 200,
+  "bytes": 1044,
+  "seconds": 0.607,
+  "headers": {
+    "Date": "Sun,  4 Oct 2026 21:52:48 GMT",
+    "Server": "Apache/2.4.66 (Unix)",
+    "Content-Type": "text/plain",
+    "Access-Control-Allow-Origin": "*",
+    "Keep-Alive": "timeout=5, max=1000",
+    "Connection": "Keep-Alive",
+    "Transfer-Encoding": "chunked"
+  },
+  "sha256": "61cb0408707d2cc6d04a3d92ee8dba7d27c28d47201be665f07e4ff608a1133b",
+  "access_date": "2026-10-04",
+  "fields": [],
+  "rows": 0,
+  "sample_rows": [],
+  "query_status": []
+}

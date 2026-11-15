@@ -1,0 +1,19 @@
+{
+  "name": "simbad_barnard",
+  "url": "https://simbad.cds.unistra.fr/simbad/sim-tap/sync?REQUEST=doQuery&LANG=ADQL&FORMAT=csv&QUERY=SELECT+b.main_id%2Cb.ra%2Cb.dec%2Cb.pmra%2Cb.pmdec%2Cb.plx_value%2Cb.rvz_radvel+FROM+basic+b+JOIN+ident+i+ON+b.oid%3Di.oidref+WHERE+i.id%3D%27Barnard%27%27s+star%27",
+  "status": 200,
+  "bytes": 141,
+  "seconds": 0.528,
+  "headers": {
+    "Date": "Mon, 12 Oct 2026 06:05:32 GMT",
+    "Server": "Apache/2.4.52 (Ubuntu)",
+    "Set-Cookie": "JSESSIONID=3E82F35D3B523AC5B038B042760F2885.new; Path=/simbad; Secure; HttpOnly",
+    "Access-Control-Allow-Origin": "*",
+    "Keep-Alive": "timeout=5, max=1000",
+    "Connection": "Keep-Alive",
+    "Transfer-Encoding": "chunked",
+    "Content-Type": "text/csv;charset=UTF-8"
+  },
+  "sha256": "322540587577b86855e634c2c57f1f71a2597dd82866d67a5967c1fd1721a89d",
+  "access_date": "2026-10-12"
+}

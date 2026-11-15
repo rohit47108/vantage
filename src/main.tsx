@@ -7,6 +7,7 @@ import { readView, viewQuery } from "./viewState";
 import type { Sequence, Plane, Coverage } from "./types";
 import { json, readResponse } from "./api";
 import "./style.css";
+import { SpectralExplorer } from "./SpectralExplorer";
 
 function download(name: string, value: string, type = "application/json") {
   const url = URL.createObjectURL(new Blob([value], { type }));
@@ -16,7 +17,7 @@ function download(name: string, value: string, type = "application/json") {
   link.click();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
-function App() {
+function TemporalExplorer({onSpectral}:{onSpectral:()=>void}) {
   const [catalog, setCatalog] = useState<Sequence[]>([]),
     [sequence, setSequence] = useState<Sequence | null>(null),
     [planes, setPlanes] = useState<Plane[]>([]);
@@ -316,6 +317,7 @@ function App() {
         <span className="badge">● {sequence?.data_status || "prepared"}</span>
       </header>
       <nav aria-label="Main navigation">
+        <button title="Explore wavelengths" onClick={onSpectral}>λ<small>Wavelengths</small></button>
         <button
           title="Explore"
           onClick={() => {
@@ -850,5 +852,9 @@ function App() {
       )}
     </>
   );
+}
+function App(){
+  const [mode,setMode]=useState(new URLSearchParams(location.search).get('view')==='wavelengths'?'wavelengths':'time');
+  return mode==='wavelengths'?<SpectralExplorer onTime={()=>{history.pushState(null,'','/');setMode('time');}}/>:<TemporalExplorer onSpectral={()=>{history.pushState(null,'','/?view=wavelengths');setMode('wavelengths');}}/>;
 }
 createRoot(document.getElementById("root")!).render(<App />);

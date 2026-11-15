@@ -1,0 +1,118 @@
+[
+  {
+    "obs_id": "2025W32_1A_0662_3",
+    "url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/qr2/level2/2025W32_1A/l2b-v20-2025-264/3/level2_2025W32_1A_0662_3D3_spx_l2b-v20-2025-264.fits",
+    "mjd": 60894.247538099,
+    "ra_deg": 248.59962679462888,
+    "dec_deg": -17.027980660128883,
+    "xy": [
+      389.6364088170036,
+      541.2146145709895
+    ],
+    "wave_um": 2.190443277359009,
+    "bandwidth_um": 0.05466555058956146,
+    "fixture": "comet_epoch_a.fits",
+    "background_MJy_sr": 0.23132017254829407,
+    "annulus_scatter_MJy_sr": 0.026220778003335,
+    "peak_pixel_yx": [
+      27,
+      30
+    ],
+    "positive_weight_centroid_xy": [
+      29.22089277497675,
+      28.198688207327212
+    ],
+    "centroid_ra_deg": 248.6009350713936,
+    "centroid_dec_deg": -17.026453380696445,
+    "centroid_prediction_offset_arcsec": 7.1070664960409236,
+    "peak_empirical_snr": 19.164230346679688,
+    "method": "research screening only; positive-weight centroid, no PSF fit or crowding correction"
+  },
+  {
+    "obs_id": "2025W32_2D_0017_4",
+    "url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/qr2/level2/2025W32_2D/l2b-v20-2025-265/3/level2_2025W32_2D_0017_4D3_spx_l2b-v20-2025-265.fits",
+    "mjd": 60894.5881452635,
+    "ra_deg": 248.36554451290078,
+    "dec_deg": -16.999127816941915,
+    "xy": [
+      989.0457150818448,
+      515.9655910847947
+    ],
+    "wave_um": 2.1922903060913086,
+    "bandwidth_um": 0.05382884666323662,
+    "fixture": "comet_epoch_b.fits",
+    "background_MJy_sr": 0.2297438383102417,
+    "annulus_scatter_MJy_sr": 0.03425365686416626,
+    "peak_pixel_yx": [
+      26,
+      27
+    ],
+    "positive_weight_centroid_xy": [
+      29.031431478623123,
+      28.001039899317597
+    ],
+    "centroid_ra_deg": 248.36579110782506,
+    "centroid_dec_deg": -16.997498721034034,
+    "centroid_prediction_offset_arcsec": 5.925872840015972,
+    "peak_empirical_snr": 8.754508972167969,
+    "method": "research screening only; positive-weight centroid, no PSF fit or crowding correction"
+  },
+  {
+    "obs_id": "2025W27_1A_0591_4",
+    "url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/qr2/level2/2025W27_1A/l2b-v20-2025-258/2/level2_2025W27_1A_0591_4D2_spx_l2b-v20-2025-258.fits",
+    "mjd": 60859.093852034,
+    "ra_deg": 15.616618,
+    "dec_deg": -5.471722,
+    "xy": [
+      1627.8603745536495,
+      769.9151338318976
+    ],
+    "wave_um": 1.4134820699691772,
+    "bandwidth_um": 0.03385486826300621,
+    "fixture": "ceres_epoch_a.fits",
+    "background_MJy_sr": 0.3935740888118744,
+    "annulus_scatter_MJy_sr": 0.026299290359020233,
+    "peak_pixel_yx": [
+      27,
+      29
+    ],
+    "positive_weight_centroid_xy": [
+      29.139373626831272,
+      28.512804880881287
+    ],
+    "centroid_ra_deg": 15.616434039281733,
+    "centroid_dec_deg": -5.472532064387226,
+    "centroid_prediction_offset_arcsec": 2.989817032220343,
+    "peak_empirical_snr": 261.2556457519531,
+    "method": "research screening only; positive-weight centroid, no PSF fit or crowding correction"
+  },
+  {
+    "obs_id": "2025W27_1A_0632_1",
+    "url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/qr2/level2/2025W27_1A/l2b-v20-2025-258/2/level2_2025W27_1A_0632_1D2_spx_l2b-v20-2025-258.fits",
+    "mjd": 60859.2937076015,
+    "ra_deg": 15.656114,
+    "dec_deg": -5.46614,
+    "xy": [
+      1600.8299093864016,
+      649.6161837230469
+    ],
+    "wave_um": 1.4482266902923584,
+    "bandwidth_um": 0.03516227751970291,
+    "fixture": "ceres_epoch_b.fits",
+    "background_MJy_sr": 0.39270535111427307,
+    "annulus_scatter_MJy_sr": 0.02406463213264942,
+    "peak_pixel_yx": [
+      32,
+      29
+    ],
+    "positive_weight_centroid_xy": [
+      29.50496841428194,
+      29.340614019847795
+    ],
+    "centroid_ra_deg": 15.654573208002695,
+    "centroid_dec_deg": -5.465418020098679,
+    "centroid_prediction_offset_arcsec": 6.10277600096729,
+    "peak_empirical_snr": 19.63552474975586,
+    "method": "research screening only; positive-weight centroid, no PSF fit or crowding correction"
+  }
+]

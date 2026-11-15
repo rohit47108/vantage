@@ -1,0 +1,176 @@
+{
+  "name": "comet_d3_link_4",
+  "url": "https://irsa.ipac.caltech.edu/datalink/links/spherex?ID=ivo://irsa.ipac/spherex_qr2?2025W32_1A_0612_1/D3",
+  "status": 200,
+  "bytes": 12702,
+  "seconds": 4.095,
+  "headers": {
+    "Server": "nginx",
+    "Date": "Mon, 12 Oct 2026 06:03:34 GMT",
+    "Content-Type": "application/x-votable+xml",
+    "Content-Length": "12702",
+    "Connection": "keep-alive",
+    "Server-Timing": "main;dur=3534.157, prepare_internal;dur=8.559, generate_adql;dur=0.074, query_delegate;dur=3520.394, oversee_sync;dur=3515.438, submit_sync;dur=3.261, spinoff_queued;dur=3508.276, TAP_main;dur=139.088, query_execute;dur=110.716, database_query;dur=110.137, run_postgres;dur=107.927",
+    "Set-Cookie": "anonymous=fd/07/431b337d6786a969d095c5e841f7"
+  },
+  "sha256": "31b95447986fe5313f0fc02a27697494a53eadfb6da6b9ce4b663b3417305c2b",
+  "access_date": "2026-10-12",
+  "fields": [
+    {
+      "name": "id",
+      "datatype": "char",
+      "arraysize": "*",
+      "ID": "col_0",
+      "ucd": "meta.id;meta.main"
+    },
+    {
+      "name": "access_url",
+      "datatype": "char",
+      "arraysize": "*",
+      "ID": "col_1",
+      "ucd": "meta.ref.url"
+    },
+    {
+      "name": "service_def",
+      "datatype": "char",
+      "arraysize": "*",
+      "ID": "col_2",
+      "ucd": "meta.ref"
+    },
+    {
+      "name": "error_message",
+      "datatype": "char",
+      "arraysize": "*",
+      "ID": "col_3",
+      "ucd": "meta.code.error"
+    },
+    {
+      "name": "semantics",
+      "datatype": "char",
+      "arraysize": "*",
+      "ID": "col_4",
+      "ucd": "meta.code"
+    },
+    {
+      "name": "description",
+      "datatype": "char",
+      "arraysize": "*",
+      "ID": "col_5",
+      "ucd": "meta.note"
+    },
+    {
+      "name": "content_type",
+      "datatype": "char",
+      "arraysize": "*",
+      "ID": "col_6",
+      "ucd": "meta.code.mime"
+    },
+    {
+      "name": "content_length",
+      "datatype": "long",
+      "ID": "col_7",
+      "ucd": "phys.size;meta.file",
+      "unit": "byte"
+    },
+    {
+      "name": "content_qualifier",
+      "datatype": "char",
+      "arraysize": "*",
+      "ID": "col_8"
+    },
+    {
+      "name": "local_semantics",
+      "datatype": "char",
+      "arraysize": "*",
+      "ID": "col_9",
+      "ucd": "meta.code"
+    },
+    {
+      "name": "link_auth",
+      "datatype": "char",
+      "arraysize": "*",
+      "ID": "col_10",
+      "ucd": "meta.code"
+    },
+    {
+      "name": "link_authorized",
+      "datatype": "boolean",
+      "ID": "col_11",
+      "ucd": "meta.code"
+    },
+    {
+      "name": "path",
+      "datatype": "char",
+      "arraysize": "*",
+      "ID": "col_12"
+    },
+    {
+      "name": "center_ra",
+      "datatype": "double",
+      "ID": "col_13",
+      "ucd": "pos.eq.ra",
+      "unit": "deg",
+      "utype": "obscore:char.spatialaxis.coverage.location.coord.position2d.value2.c1"
+    },
+    {
+      "name": "center_dec",
+      "datatype": "double",
+      "ID": "col_14",
+      "ucd": "pos.eq.dec",
+      "unit": "deg",
+      "utype": "obscore:char.spatialaxis.coverage.location.coord.position2d.value2.c2"
+    },
+    {
+      "name": "cloud_access",
+      "datatype": "char",
+      "arraysize": "*",
+      "ID": "col_15"
+    }
+  ],
+  "rows": 11,
+  "sample_rows": [
+    [
+      "ivo://irsa.ipac/spherex_qr2?2025W32_1A_0612_1/D3",
+      "https://irsa.ipac.caltech.edu/ibe/data/spherex/qr2/level2/2025W32_1A/l2b-v20-2025-264/3/level2_2025W32_1A_0612_1D3_spx_l2b-v20-2025-264.fits",
+      null,
+      null,
+      "#this",
+      "ivo://irsa.ipac/spherex_qr2?2025W32_1A_0612_1/D3 science image",
+      "image/fits",
+      "71634240",
+      null,
+      null,
+      "optional",
+      "1",
+      null,
+      null,
+      null,
+      "{\"aws\": {\"bucket_name\": \"nasa-irsa-spherex\", \"key\":\"qr2/level2/2025W32_1A/l2b-v20-2025-264/3/level2_2025W32_1A_0612_1D3_spx_l2b-v20-2025-264.fits\", \"region\": \"us-east-1\"}}"
+    ],
+    [
+      "ivo://irsa.ipac/spherex_qr2?2025W32_1A_0612_1/D3",
+      null,
+      "ibe-cutout",
+      null,
+      "#cutout",
+      "ivo://irsa.ipac/spherex_qr2?2025W32_1A_0612_1/D3 science image",
+      "image/fits",
+      null,
+      null,
+      null,
+      "optional",
+      "1",
+      "spherex/qr2/level2/2025W32_1A/l2b-v20-2025-264/3/level2_2025W32_1A_0612_1D3_spx_l2b-v20-2025-264.fits",
+      "249.91592301959474",
+      "-15.836677725084531",
+      "{}"
+    ]
+  ],
+  "query_status": [
+    {
+      "name": "QUERY_STATUS",
+      "value": "OK",
+      "text": null
+    }
+  ]
+}

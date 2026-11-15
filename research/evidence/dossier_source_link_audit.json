@@ -1,0 +1,676 @@
+[
+  {
+    "id": "s01",
+    "url": "https://irsa.ipac.caltech.edu/Missions/spherex.html",
+    "status": 200,
+    "final_url": "https://irsa.ipac.caltech.edu/Missions/spherex.html",
+    "content_type": "text/html",
+    "checked_utc": "2026-10-19T01:56:03.896042+00:00",
+    "seconds": 0.256
+  },
+  {
+    "id": "s02",
+    "url": "https://irsa.ipac.caltech.edu/data/SPHEREx/docs/overview_qr.html",
+    "status": 200,
+    "final_url": "https://irsa.ipac.caltech.edu/data/SPHEREx/docs/overview_qr.html",
+    "content_type": "text/html",
+    "checked_utc": "2026-10-19T01:56:03.896559+00:00",
+    "seconds": 0.256
+  },
+  {
+    "id": "s03",
+    "url": "https://spherex.caltech.edu/page/data-products",
+    "status": 200,
+    "final_url": "https://spherex.caltech.edu/page/data-products",
+    "content_type": "text/html; charset=utf-8",
+    "checked_utc": "2026-10-19T01:56:04.129262+00:00",
+    "seconds": 0.488
+  },
+  {
+    "id": "s04",
+    "url": "https://caltech-ipac.github.io/spherex-archive-documentation/spherex-data-products/",
+    "status": 200,
+    "final_url": "https://caltech-ipac.github.io/spherex-archive-documentation/spherex-data-products/",
+    "content_type": "text/html; charset=utf-8",
+    "checked_utc": "2026-10-19T01:56:03.768867+00:00",
+    "seconds": 0.127
+  },
+  {
+    "id": "s05",
+    "url": "https://irsa.ipac.caltech.edu/ibe/sia.html",
+    "status": 200,
+    "final_url": "https://irsa.ipac.caltech.edu/ibe/sia.html",
+    "content_type": "text/html",
+    "checked_utc": "2026-10-19T01:56:04.046073+00:00",
+    "seconds": 0.277
+  },
+  {
+    "id": "s06",
+    "url": "https://irsa.ipac.caltech.edu/ibe/cutouts.html",
+    "status": 200,
+    "final_url": "https://irsa.ipac.caltech.edu/ibe/cutouts.html",
+    "content_type": "text/html",
+    "checked_utc": "2026-10-19T01:56:04.200924+00:00",
+    "seconds": 0.304
+  },
+  {
+    "id": "s07",
+    "url": "https://irsa.ipac.caltech.edu/docs/program_interface/TAP.html",
+    "status": 200,
+    "final_url": "https://irsa.ipac.caltech.edu/docs/program_interface/TAP.html",
+    "content_type": "text/html",
+    "checked_utc": "2026-10-19T01:56:04.176913+00:00",
+    "seconds": 0.28
+  },
+  {
+    "id": "s08",
+    "url": "https://irsa.ipac.caltech.edu/cloud_access/",
+    "status": 200,
+    "final_url": "https://irsa.ipac.caltech.edu/cloud_access/",
+    "content_type": "text/html",
+    "checked_utc": "2026-10-19T01:56:04.334152+00:00",
+    "seconds": 0.288
+  },
+  {
+    "id": "s09",
+    "url": "https://caltech-ipac.github.io/irsa-tutorials/spherex-intro/",
+    "status": 200,
+    "final_url": "https://caltech-ipac.github.io/irsa-tutorials/spherex-intro/",
+    "content_type": "text/html; charset=utf-8",
+    "checked_utc": "2026-10-19T01:56:04.320975+00:00",
+    "seconds": 0.191
+  },
+  {
+    "id": "s10",
+    "url": "https://caltech-ipac.github.io/irsa-tutorials/spherex-psf/",
+    "status": 200,
+    "final_url": "https://caltech-ipac.github.io/irsa-tutorials/spherex-psf/",
+    "content_type": "text/html; charset=utf-8",
+    "checked_utc": "2026-10-19T01:56:04.267719+00:00",
+    "seconds": 0.091
+  },
+  {
+    "id": "s11",
+    "url": "https://irsa.ipac.caltech.edu/data/SPHEREx/docs/spherex_spectral_calibrations.html",
+    "status": 200,
+    "final_url": "https://irsa.ipac.caltech.edu/data/SPHEREx/docs/spherex_spectral_calibrations.html",
+    "content_type": "text/html",
+    "checked_utc": "2026-10-19T01:56:04.478593+00:00",
+    "seconds": 0.277
+  },
+  {
+    "id": "s12",
+    "url": "https://reproject.readthedocs.io/en/stable/celestial.html",
+    "status": 200,
+    "final_url": "https://reproject.readthedocs.io/en/stable/celestial.html",
+    "content_type": "text/html; charset=utf-8",
+    "checked_utc": "2026-10-19T01:56:04.417052+00:00",
+    "seconds": 0.149
+  },
+  {
+    "id": "s13",
+    "url": "https://www.spaceappschallenge.org/2026/challenges/planet-x-and-spherex/",
+    "status": 200,
+    "final_url": "https://www.spaceappschallenge.org/2026/challenges/planet-x-and-spherex/",
+    "content_type": "text/html; charset=utf-8",
+    "checked_utc": "2026-10-19T01:56:04.782762+00:00",
+    "seconds": 0.462
+  },
+  {
+    "id": "s14",
+    "url": "https://www.spaceappschallenge.org/resources/participant-faqs/",
+    "status": 200,
+    "final_url": "https://www.spaceappschallenge.org/resources/participant-faqs/",
+    "content_type": "text/html; charset=utf-8",
+    "checked_utc": "2026-10-19T01:56:04.701648+00:00",
+    "seconds": 0.367
+  },
+  {
+    "id": "s15",
+    "url": "https://science.nasa.gov/mission/spherex/",
+    "status": 200,
+    "final_url": "https://science.nasa.gov/mission/spherex/",
+    "content_type": "text/html; charset=UTF-8",
+    "checked_utc": "2026-10-19T01:56:05.135935+00:00",
+    "seconds": 0.718
+  },
+  {
+    "id": "s16",
+    "url": "https://arxiv.org/abs/2108.09868",
+    "status": 200,
+    "final_url": "https://arxiv.org/abs/2108.09868",
+    "content_type": "text/html; charset=utf-8",
+    "checked_utc": "2026-10-19T01:56:04.536870+00:00",
+    "seconds": 0.058
+  },
+  {
+    "id": "s17",
+    "url": "https://irsa.ipac.caltech.edu/data/SPHEREx/docs/comet3iatlas/index.html",
+    "status": 200,
+    "final_url": "https://irsa.ipac.caltech.edu/data/SPHEREx/docs/comet3iatlas/index.html",
+    "content_type": "text/html",
+    "checked_utc": "2026-10-19T01:56:05.372277+00:00",
+    "seconds": 0.835
+  },
+  {
+    "id": "s18",
+    "url": "https://caltech-ipac.github.io/irsa-tutorials/spherex-source-discovery-tool-demo/",
+    "status": 200,
+    "final_url": "https://caltech-ipac.github.io/irsa-tutorials/spherex-source-discovery-tool-demo/",
+    "content_type": "text/html; charset=utf-8",
+    "checked_utc": "2026-10-19T01:56:04.803376+00:00",
+    "seconds": 0.101
+  },
+  {
+    "id": "s19",
+    "url": "https://irsa.ipac.caltech.edu/data/SPHEREx/docs/SPHEREx_Expsupp_QR.pdf",
+    "status": 200,
+    "final_url": "https://irsa.ipac.caltech.edu/data/SPHEREx/docs/SPHEREx_Expsupp_QR.pdf",
+    "content_type": "application/pdf",
+    "checked_utc": "2026-10-19T01:56:06.280888+00:00",
+    "seconds": 1.498
+  },
+  {
+    "id": "s20",
+    "url": "https://doi.org/10.3847/1538-4357/ae2be2",
+    "status": 200,
+    "final_url": "https://validate.perfdrive.com/fb803c746e9148689b3984a31fccd902/?ssa=79124c17-24b5-467a-b9f1-a43bedc6e7a8&ssb=91586233083&ssc=https%3A%2F%2Fiopscience.iop.org%2Farticle%2F10.3847%2F1538-4357%2Fae2be2&ssi=361250ea-cnvj-47aa-85ca-d0f93360c76b&ssk=botmanager_support@radware.com&ssm=09536623348155846100545089883360&ssn=a094cf00342c08f85a68a5bf18a4b46a493417dd890e-9c1e-4ae7-bed0b4&sso=873a8a8c-536225cd7148c2c72492f767e4af7f1672f70ef519a34d51&ssp=77485137071792381348179236212826586&ssq=01958977496431153139874964835840163415817&ssr=MTc0LjU3LjEzMC4xODc=&sst=Vantage%20research%20source%20verification&ssu=&ssv=&ssw=&ssx=eyJ1em14IjoiN2ZjMDAwNzJhZmRmZjktMzc3ZC00NjM3LTg2Y2UtN2FlMzFlMjM2NDlkMS0xNzkyMzc0OTY0MzA5MC0wMGE3MTg1YWZlNjE4M2QxNGRkMTAiLCJfX3V6bWYiOiI3ZjkwMDAxN2RkODkwZS05YzFlLTRhZTctYmE4Yy01MzYyMjVjZDcxNDgxLTE3OTIzNzQ5NjQzMDkwLTAwNWQ4Mjk2NDg0MWFmZDhmMzcxMCIsInJkIjoiaW9wLm9yZyJ9",
+    "content_type": "text/html; charset=UTF-8",
+    "checked_utc": "2026-10-19T01:56:05.360983+00:00",
+    "seconds": 0.557
+  },
+  {
+    "id": "s21",
+    "url": "https://irsa.ipac.caltech.edu/data/SPHEREx/docs/SPHERExSpectralFiles_202607.pdf",
+    "status": 200,
+    "final_url": "https://irsa.ipac.caltech.edu/data/SPHEREx/docs/SPHERExSpectralFiles_202607.pdf",
+    "content_type": "application/pdf",
+    "checked_utc": "2026-10-19T01:56:07.137417+00:00",
+    "seconds": 2.001
+  },
+  {
+    "id": "s22",
+    "url": "https://doi.org/10.3847/1538-4365/ae8843",
+    "status": 200,
+    "final_url": "https://validate.perfdrive.com/fb803c746e9148689b3984a31fccd902/?ssa=8cae191e-33a2-4d71-9104-7c364daa256b&ssb=91586233083&ssc=https%3A%2F%2Fiopscience.iop.org%2Farticle%2F10.3847%2F1538-4365%2Fae8843&ssi=214b10f9-cnvj-4503-b627-eb5c1a53998e&ssk=botmanager_support@radware.com&ssm=09536623348155846100545089883360&ssn=a094cf0015ea70965d54556d0b16b46a4934f39a1960-7f6d-43c9-bed0b4&sso=873a8367-18df418f913bc2c72492c00f410bf75dbb07fd3d19a34d51&ssp=77485137071792381348179236212826586&ssq=01958977496431153139874964835840163415817&ssr=MTc0LjU3LjEzMC4xODc=&sst=Vantage%20research%20source%20verification&ssu=&ssv=&ssw=&ssx=eyJ1em14IjoiN2ZjMDAwMWE1NzdiMDUtMTNmMi00Yzc2LThhNjgtNWI3YjgwZWZiNjg3MS0xNzkyMzc0OTY0Nzk4MC0wMGEzYWJhYTI0N2VmZGI2NGI3MTAiLCJfX3V6bWYiOiI3ZjkwMDBmMzlhMTk2MC03ZjZkLTQzYzktYjM2Ny0xOGRmNDE4ZjkxM2IxLTE3OTIzNzQ5NjQ3OTgwLTAwNWVhYWE4ZGI2YjA1MDVhMDgxMCIsInJkIjoiaW9wLm9yZyJ9",
+    "content_type": "text/html; charset=UTF-8",
+    "checked_utc": "2026-10-19T01:56:05.829364+00:00",
+    "seconds": 0.468
+  },
+  {
+    "id": "s23",
+    "url": "https://caltech-ipac.github.io/irsa-tutorials/spherex-mosaic/",
+    "status": 200,
+    "final_url": "https://caltech-ipac.github.io/irsa-tutorials/spherex-mosaic/",
+    "content_type": "text/html; charset=utf-8",
+    "checked_utc": "2026-10-19T01:56:05.473011+00:00",
+    "seconds": 0.1
+  },
+  {
+    "id": "s24",
+    "url": "https://irsa.ipac.caltech.edu/onlinehelp/spherex/spherex/sp.html",
+    "status": 200,
+    "final_url": "https://irsa.ipac.caltech.edu/onlinehelp/spherex/spherex/sp.html",
+    "content_type": "text/html",
+    "checked_utc": "2026-10-19T01:56:05.751654+00:00",
+    "seconds": 0.278
+  },
+  {
+    "id": "s25",
+    "url": "https://irsa.ipac.caltech.edu/onlinehelp/spherex/spherex/mosaic.html",
+    "status": 200,
+    "final_url": "https://irsa.ipac.caltech.edu/onlinehelp/spherex/spherex/mosaic.html",
+    "content_type": "text/html",
+    "checked_utc": "2026-10-19T01:56:06.034054+00:00",
+    "seconds": 0.282
+  },
+  {
+    "id": "s26",
+    "url": "https://arxiv.org/abs/2603.25790",
+    "status": 200,
+    "final_url": "https://arxiv.org/abs/2603.25790",
+    "content_type": "text/html; charset=utf-8",
+    "checked_utc": "2026-10-19T01:56:06.100658+00:00",
+    "seconds": 0.271
+  },
+  {
+    "id": "s27",
+    "url": "https://ivoa.net/documents/SIA/",
+    "status": 200,
+    "final_url": "https://ivoa.net/documents/SIA/",
+    "content_type": "text/html; charset=UTF-8",
+    "checked_utc": "2026-10-19T01:56:06.629160+00:00",
+    "seconds": 0.595
+  },
+  {
+    "id": "s28",
+    "url": "https://ivoa.net/documents/ObsCore/",
+    "status": 200,
+    "final_url": "https://ivoa.net/documents/ObsCore/",
+    "content_type": "text/html; charset=UTF-8",
+    "checked_utc": "2026-10-19T01:56:06.653056+00:00",
+    "seconds": 0.552
+  },
+  {
+    "id": "s29",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS",
+    "status": 200,
+    "final_url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS",
+    "content_type": "text/html",
+    "checked_utc": "2026-10-19T01:56:06.390701+00:00",
+    "seconds": 0.109
+  },
+  {
+    "id": "s30",
+    "url": "https://ivoa.net/documents/TAP/",
+    "status": 200,
+    "final_url": "https://ivoa.net/documents/TAP/",
+    "content_type": "text/html; charset=UTF-8",
+    "checked_utc": "2026-10-19T01:56:06.733790+00:00",
+    "seconds": 0.343
+  },
+  {
+    "id": "s31",
+    "url": "https://pyvo.readthedocs.io/en/latest/dal/index.html",
+    "status": 200,
+    "final_url": "https://pyvo.readthedocs.io/en/latest/dal/index.html",
+    "content_type": "text/html; charset=utf-8",
+    "checked_utc": "2026-10-19T01:56:06.816838+00:00",
+    "seconds": 0.187
+  },
+  {
+    "id": "s32",
+    "url": "https://ivoa.net/documents/DataLink/",
+    "status": 200,
+    "final_url": "https://ivoa.net/documents/DataLink/",
+    "content_type": "text/html; charset=UTF-8",
+    "checked_utc": "2026-10-19T01:56:07.012116+00:00",
+    "seconds": 0.359
+  },
+  {
+    "id": "s33",
+    "url": "https://caltech-ipac.github.io/irsa-tutorials/spherex-cutouts/",
+    "status": 200,
+    "final_url": "https://caltech-ipac.github.io/irsa-tutorials/spherex-cutouts/",
+    "content_type": "text/html; charset=utf-8",
+    "checked_utc": "2026-10-19T01:56:06.800650+00:00",
+    "seconds": 0.066
+  },
+  {
+    "id": "s34",
+    "url": "https://registry.opendata.aws/spherex-qr/",
+    "status": 200,
+    "final_url": "https://registry.opendata.aws/spherex-qr/",
+    "content_type": "text/html",
+    "checked_utc": "2026-10-19T01:56:07.011521+00:00",
+    "seconds": 0.211
+  },
+  {
+    "id": "s35",
+    "url": "https://docs.astropy.org/en/stable/io/fits/usage/cloud.html",
+    "status": 200,
+    "final_url": "https://docs.astropy.org/en/stable/io/fits/usage/cloud.html",
+    "content_type": "text/html; charset=utf-8",
+    "checked_utc": "2026-10-19T01:56:07.052048+00:00",
+    "seconds": 0.235
+  },
+  {
+    "id": "s36",
+    "url": "https://irsa.ipac.caltech.edu/applications/MOST/MOSTProgramInterface.html",
+    "status": 200,
+    "final_url": "https://irsa.ipac.caltech.edu/applications/MOST/MOSTProgramInterface.html",
+    "content_type": "text/html",
+    "checked_utc": "2026-10-19T01:56:08.145125+00:00",
+    "seconds": 1.133
+  },
+  {
+    "id": "s37",
+    "url": "https://pyvo.readthedocs.io/en/latest/api/pyvo.dal.SIA2Service.html",
+    "status": 200,
+    "final_url": "https://pyvo.readthedocs.io/en/latest/api/pyvo.dal.SIA2Service.html",
+    "content_type": "text/html; charset=utf-8",
+    "checked_utc": "2026-10-19T01:56:07.207976+00:00",
+    "seconds": 0.195
+  },
+  {
+    "id": "s38",
+    "url": "https://astroquery.readthedocs.io/en/latest/ipac/irsa/irsa.html",
+    "status": 200,
+    "final_url": "https://astroquery.readthedocs.io/en/latest/ipac/irsa/irsa.html",
+    "content_type": "text/html; charset=utf-8",
+    "checked_utc": "2026-10-19T01:56:07.203412+00:00",
+    "seconds": 0.151
+  },
+  {
+    "id": "s39",
+    "url": "https://ned.ipac.caltech.edu/Documents/Guides/Interface/URLs",
+    "status": 200,
+    "final_url": "https://ned.ipac.caltech.edu/Documents/Guides/Interface/URLs",
+    "content_type": "text/html; charset=utf-8",
+    "checked_utc": "2026-10-19T01:56:07.917198+00:00",
+    "seconds": 0.779
+  },
+  {
+    "id": "s40",
+    "url": "https://docs.fornax.sciencecloud.nasa.gov/",
+    "status": 200,
+    "final_url": "https://docs.fornax.sciencecloud.nasa.gov/",
+    "content_type": "text/html; charset=utf-8",
+    "checked_utc": "2026-10-19T01:56:07.441955+00:00",
+    "seconds": 0.238
+  },
+  {
+    "id": "s41",
+    "url": "https://astroquery.readthedocs.io/en/latest/simbad/simbad.html",
+    "status": 200,
+    "final_url": "https://astroquery.readthedocs.io/en/latest/simbad/simbad.html",
+    "content_type": "text/html; charset=utf-8",
+    "checked_utc": "2026-10-19T01:56:07.368227+00:00",
+    "seconds": 0.16
+  },
+  {
+    "id": "s42",
+    "url": "https://docs.astropy.org/en/stable/coordinates/apply_space_motion.html",
+    "status": 200,
+    "final_url": "https://docs.astropy.org/en/stable/coordinates/apply_space_motion.html",
+    "content_type": "text/html; charset=utf-8",
+    "checked_utc": "2026-10-19T01:56:07.568788+00:00",
+    "seconds": 0.197
+  },
+  {
+    "id": "s43",
+    "url": "https://ssd-api.jpl.nasa.gov/doc/horizons.html",
+    "status": 200,
+    "final_url": "https://ssd-api.jpl.nasa.gov/doc/horizons.html",
+    "content_type": "text/html",
+    "checked_utc": "2026-10-19T01:56:07.732720+00:00",
+    "seconds": 0.29
+  },
+  {
+    "id": "s44",
+    "url": "https://ssd-api.jpl.nasa.gov/doc/index.php",
+    "status": 200,
+    "final_url": "https://ssd-api.jpl.nasa.gov/doc/index.php",
+    "content_type": "text/html; charset=UTF-8",
+    "checked_utc": "2026-10-19T01:56:07.806915+00:00",
+    "seconds": 0.238
+  },
+  {
+    "id": "s45",
+    "url": "https://fits.gsfc.nasa.gov/fits_standard.html",
+    "status": 200,
+    "final_url": "https://fits.gsfc.nasa.gov/fits_standard.html",
+    "content_type": "text/html; charset=UTF-8",
+    "checked_utc": "2026-10-19T01:56:07.936877+00:00",
+    "seconds": 0.204
+  },
+  {
+    "id": "s46",
+    "url": "https://photutils.readthedocs.io/en/stable/user_guide/psf_matching.html",
+    "status": 200,
+    "final_url": "https://photutils.readthedocs.io/en/stable/user_guide/psf_matching.html",
+    "content_type": "text/html; charset=utf-8",
+    "checked_utc": "2026-10-19T01:56:08.001760+00:00",
+    "seconds": 0.195
+  },
+  {
+    "id": "s47",
+    "url": "https://docs.astropy.org/en/stable/api/astropy.nddata.VarianceUncertainty.html",
+    "status": 200,
+    "final_url": "https://docs.astropy.org/en/stable/api/astropy.nddata.VarianceUncertainty.html",
+    "content_type": "text/html; charset=utf-8",
+    "checked_utc": "2026-10-19T01:56:40.280123+00:00",
+    "seconds": 0.178,
+    "replaces_invalid_pointer": "/nddata/uncertainty.html returned 404; corrected to current API reference"
+  },
+  {
+    "id": "s48",
+    "url": "https://photutils.readthedocs.io/en/stable/user_guide/detection.html",
+    "status": 200,
+    "final_url": "https://photutils.readthedocs.io/en/stable/user_guide/detection.html",
+    "content_type": "text/html; charset=utf-8",
+    "checked_utc": "2026-10-19T01:56:08.150297+00:00",
+    "seconds": 0.213
+  },
+  {
+    "id": "s49",
+    "url": "https://docs.astropy.org/en/stable/visualization/normalization.html",
+    "status": 200,
+    "final_url": "https://docs.astropy.org/en/stable/visualization/normalization.html",
+    "content_type": "text/html; charset=utf-8",
+    "checked_utc": "2026-10-19T01:56:08.183689+00:00",
+    "seconds": 0.182
+  },
+  {
+    "id": "s50",
+    "url": "https://spherex.caltech.edu/news/nasa-s-spherex-mission-tracks-brightening-of-interstellar-comet",
+    "status": 200,
+    "final_url": "https://spherex.caltech.edu/news/nasa-s-spherex-mission-tracks-brightening-of-interstellar-comet",
+    "content_type": "text/html; charset=utf-8",
+    "checked_utc": "2026-10-19T01:56:08.783552+00:00",
+    "seconds": 0.688
+  },
+  {
+    "id": "s51",
+    "url": "https://simbad.cds.unistra.fr/Pages/guide/ch15.htx",
+    "status": 200,
+    "final_url": "https://simbad.cds.unistra.fr/Pages/guide/ch15.htx",
+    "content_type": "text/html; charset=utf-8",
+    "checked_utc": "2026-10-19T01:56:08.715288+00:00",
+    "seconds": 0.57
+  },
+  {
+    "id": "s52",
+    "url": "https://aladin.cds.unistra.fr/AladinLite/doc/",
+    "status": 200,
+    "final_url": "https://aladin.cds.unistra.fr/AladinLite/doc/",
+    "content_type": "text/html",
+    "checked_utc": "2026-10-19T01:56:08.641285+00:00",
+    "seconds": 0.489
+  },
+  {
+    "id": "s53",
+    "url": "https://github.com/cds-astro/aladin-lite/blob/master/LICENSE",
+    "status": 200,
+    "final_url": "https://github.com/cds-astro/aladin-lite/blob/master/LICENSE",
+    "content_type": "text/html; charset=utf-8",
+    "checked_utc": "2026-10-19T01:56:08.644181+00:00",
+    "seconds": 0.46
+  },
+  {
+    "id": "s54",
+    "url": "https://docs.worldwidetelescope.org/webgl-reference/latest/",
+    "status": 200,
+    "final_url": "https://docs.worldwidetelescope.org/webgl-reference/latest/",
+    "content_type": "text/html",
+    "checked_utc": "2026-10-19T01:56:09.067893+00:00",
+    "seconds": 0.426
+  },
+  {
+    "id": "s55",
+    "url": "https://github.com/ericmandel/js9",
+    "status": 200,
+    "final_url": "https://github.com/ericmandel/js9",
+    "content_type": "text/html; charset=utf-8",
+    "checked_utc": "2026-10-19T01:56:09.201617+00:00",
+    "seconds": 0.557
+  },
+  {
+    "id": "s56",
+    "url": "https://github.com/astrojs/fitsjs",
+    "status": 200,
+    "final_url": "https://github.com/astrojs/fitsjs",
+    "content_type": "text/html; charset=utf-8",
+    "checked_utc": "2026-10-19T01:56:09.200527+00:00",
+    "seconds": 0.485
+  },
+  {
+    "id": "s57",
+    "url": "https://plotly.com/javascript/",
+    "status": 200,
+    "final_url": "https://plotly.com/javascript/",
+    "content_type": "text/html; charset=utf-8",
+    "checked_utc": "2026-10-19T01:56:08.945622+00:00",
+    "seconds": 0.162
+  },
+  {
+    "id": "s58",
+    "url": "https://d3js.org/d3-scale",
+    "status": 200,
+    "final_url": "https://d3js.org/d3-scale",
+    "content_type": "text/html; charset=utf-8",
+    "checked_utc": "2026-10-19T01:56:09.067043+00:00",
+    "seconds": 0.121
+  },
+  {
+    "id": "s59",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API",
+    "status": 200,
+    "final_url": "https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API",
+    "content_type": "text/html",
+    "checked_utc": "2026-10-19T01:56:09.211080+00:00",
+    "seconds": 0.143
+  },
+  {
+    "id": "s60",
+    "url": "https://www.ivoa.net/documents/HiPS/",
+    "status": 200,
+    "final_url": "https://www.ivoa.net/documents/HiPS/",
+    "content_type": "text/html; charset=UTF-8",
+    "checked_utc": "2026-10-19T01:56:09.782772+00:00",
+    "seconds": 0.714
+  },
+  {
+    "id": "s61",
+    "url": "https://irsa.ipac.caltech.edu/onlinehelp/spherex/spherex/api.html",
+    "status": 200,
+    "final_url": "https://irsa.ipac.caltech.edu/onlinehelp/spherex/spherex/api.html",
+    "content_type": "text/html",
+    "checked_utc": "2026-10-19T01:56:09.468861+00:00",
+    "seconds": 0.268
+  },
+  {
+    "id": "s62",
+    "url": "https://sky.esa.int/esasky/",
+    "status": 200,
+    "final_url": "https://sky.esa.int/esasky/",
+    "content_type": "text/html;charset=UTF-8",
+    "checked_utc": "2026-10-19T01:56:09.984036+00:00",
+    "seconds": 0.782
+  },
+  {
+    "id": "s63",
+    "url": "https://www.zooniverse.org/about",
+    "status": 200,
+    "final_url": "https://www.zooniverse.org/about",
+    "content_type": "text/html; charset=utf-8",
+    "checked_utc": "2026-10-19T01:56:09.427414+00:00",
+    "seconds": 0.216
+  },
+  {
+    "id": "s64",
+    "url": "https://react.dev/learn/build-a-react-app-from-scratch",
+    "status": 200,
+    "final_url": "https://react.dev/learn/build-a-react-app-from-scratch",
+    "content_type": "text/html; charset=utf-8",
+    "checked_utc": "2026-10-19T01:56:09.557437+00:00",
+    "seconds": 0.13
+  },
+  {
+    "id": "s65",
+    "url": "https://vite.dev/guide/",
+    "status": 200,
+    "final_url": "https://vite.dev/guide/",
+    "content_type": "text/html; charset=UTF-8",
+    "checked_utc": "2026-10-19T01:56:09.587639+00:00",
+    "seconds": 0.118
+  },
+  {
+    "id": "s66",
+    "url": "https://fastapi.tiangolo.com/tutorial/background-tasks/",
+    "status": 200,
+    "final_url": "https://fastapi.tiangolo.com/tutorial/background-tasks/",
+    "content_type": "text/html; charset=utf-8",
+    "checked_utc": "2026-10-19T01:56:09.699939+00:00",
+    "seconds": 0.142
+  },
+  {
+    "id": "s67",
+    "url": "https://www.w3.org/TR/WCAG22/",
+    "status": 200,
+    "final_url": "https://www.w3.org/TR/WCAG22/",
+    "content_type": "text/html; charset=utf-8",
+    "checked_utc": "2026-10-19T01:56:09.680981+00:00",
+    "seconds": 0.093
+  },
+  {
+    "id": "s68",
+    "url": "https://irsa.ipac.caltech.edu/ack.html",
+    "status": 200,
+    "final_url": "https://irsa.ipac.caltech.edu/ack.html",
+    "content_type": "text/html",
+    "checked_utc": "2026-10-19T01:56:10.059739+00:00",
+    "seconds": 0.378
+  },
+  {
+    "id": "s69",
+    "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+    "status": 200,
+    "final_url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+    "content_type": "text/html; charset=UTF-8",
+    "checked_utc": "2026-10-19T01:56:09.766713+00:00",
+    "seconds": 0.067
+  },
+  {
+    "id": "s70",
+    "url": "https://spaceapps-v2-staging.s3.amazonaws.com/media/documents/Final_Space_Apps_2025_Judging_Guidelines_for_web.pdf",
+    "status": 200,
+    "final_url": "https://spaceapps-v2-staging.s3.amazonaws.com/media/documents/Final_Space_Apps_2025_Judging_Guidelines_for_web.pdf",
+    "content_type": "application/pdf",
+    "checked_utc": "2026-10-19T01:56:09.924615+00:00",
+    "seconds": 0.158
+  },
+  {
+    "id": "s71",
+    "url": "https://www.spaceappschallenge.org/2025/awards/",
+    "status": 200,
+    "final_url": "https://www.spaceappschallenge.org/2025/awards/",
+    "content_type": "text/html; charset=utf-8",
+    "checked_utc": "2026-10-19T01:56:10.104514+00:00",
+    "seconds": 0.321
+  },
+  {
+    "id": "s72",
+    "url": "https://caltech-ipac.github.io/spherex-archive-documentation/spherex-data-access/",
+    "status": 200,
+    "final_url": "https://caltech-ipac.github.io/spherex-archive-documentation/spherex-data-access/",
+    "content_type": "text/html; charset=utf-8",
+    "checked_utc": "2026-10-19T01:56:10.047576+00:00",
+    "seconds": 0.123
+  },
+  {
+    "id": "s73",
+    "url": "https://github.com/Caltech-IPAC/irsa-tutorials/tree/main/tutorials/spherex",
+    "status": 200,
+    "final_url": "https://github.com/Caltech-IPAC/irsa-tutorials/tree/main/tutorials/spherex",
+    "content_type": "text/html; charset=utf-8",
+    "checked_utc": "2026-10-19T01:56:10.401859+00:00",
+    "seconds": 0.417
+  },
+  {
+    "id": "s74",
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27SPHEREx%27&MAKE_EPHEM=%27NO%27&OBJ_DATA=%27YES%27",
+    "status": 200,
+    "final_url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27SPHEREx%27&MAKE_EPHEM=%27NO%27&OBJ_DATA=%27YES%27",
+    "checked_utc": "2026-10-19T01:59:43.595516+00:00"
+  },
+  {
+    "id": "s75",
+    "url": "https://www.cosmos.esa.int/web/gaia-users/archive/programmatic-access",
+    "status": 200,
+    "final_url": "https://www.cosmos.esa.int/web/gaia-users/archive/programmatic-access",
+    "checked_utc": "2026-10-19T01:59:44.635395+00:00",
+    "linked_credit_page_status": 451,
+    "limitation": "Linked credit document unavailable from this environment; no Gaia data in core."
+  }
+]

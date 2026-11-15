@@ -1,0 +1,726 @@
+{
+  "scope": "Research deliverable and artifact audit; not application validation",
+  "checked_utc": "2026-11-07T16:04:47.752015+00:00",
+  "word_count": 26914,
+  "source_references": 86,
+  "fixture_count": 28,
+  "fixture_bytes": 229340160,
+  "checks": [
+    {
+      "check": "A-Z ordered",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "all reference definitions resolve",
+      "passed": true,
+      "detail": "[]"
+    },
+    {
+      "check": "75 unique checked source pointers",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "source pointers HTTP200",
+      "passed": true,
+      "detail": "Underlying optional Gaia credit child returned 451 and is disclosed."
+    },
+    {
+      "check": "November source audit covers all added references",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "November source audit URLs match final index",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "November source access results disclosed",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "separate handoff matches final Z",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "22 requested handoff subsections",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "65 requirement audit rows",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "30 direct answers",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "proposed JSON example 1 valid",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "proposed JSON example 2 valid",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "proposed JSON example 3 valid",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "at least eight metadata target fixtures",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "28 unique listed FITS files",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "file hash ceres_epoch_a.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "science shape consistency ceres_epoch_a.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "file hash ceres_epoch_b.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "science shape consistency ceres_epoch_b.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "file hash comet_epoch_a.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "science shape consistency comet_epoch_a.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "file hash comet_epoch_b.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "science shape consistency comet_epoch_b.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "file hash epsf_d2.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "calibration HDUs epsf_d2.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "file hash m101_epoch_a.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "science shape consistency m101_epoch_a.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "file hash m101_epoch_b.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "science shape consistency m101_epoch_b.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "file hash m101_qr2_cutout.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "science shape consistency m101_qr2_cutout.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "file hash native_crop_equivalence_check.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "science shape consistency native_crop_equivalence_check.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "file hash qr3_cutout.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "science shape consistency qr3_cutout.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "file hash spectral_wcs_d2.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "calibration HDUs spectral_wcs_d2.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "file hash spectral_wcs_d3.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "calibration HDUs spectral_wcs_d3.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "file hash full_barnard_frame1_2025W34_2B_0557_4.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "science shape consistency full_barnard_frame1_2025W34_2B_0557_4.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "file hash full_barnard_frame2.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "science shape consistency full_barnard_frame2.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "file hash full_barnard_frame3.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "science shape consistency full_barnard_frame3.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "file hash full_eps_indi_b_frame1_2025W17_4B_0222_4.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "science shape consistency full_eps_indi_b_frame1_2025W17_4B_0222_4.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "file hash full_eps_indi_b_frame2_2025W23_2B_0258_3.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "science shape consistency full_eps_indi_b_frame2_2025W23_2B_0258_3.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "file hash full_eps_indi_b_frame3_2025W45_2A_0404_1.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "science shape consistency full_eps_indi_b_frame3_2025W45_2A_0404_1.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "file hash full_wise0855_frame1.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "science shape consistency full_wise0855_frame1.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "file hash full_wise0855_frame2.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "science shape consistency full_wise0855_frame2.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "file hash full_wise0855_frame3.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "science shape consistency full_wise0855_frame3.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "file hash full_rw_aur_frame1_2025W37_1A_0068_1.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "science shape consistency full_rw_aur_frame1_2025W37_1A_0068_1.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "file hash full_rw_aur_frame2_2025W37_1A_0553_1.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "science shape consistency full_rw_aur_frame2_2025W37_1A_0553_1.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "file hash full_rw_aur_frame3_2026W10_1A_0092_2.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "science shape consistency full_rw_aur_frame3_2026W10_1A_0092_2.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "file hash full_r_dra_frame1.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "science shape consistency full_r_dra_frame1.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "file hash full_r_dra_frame2.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "science shape consistency full_r_dra_frame2.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "file hash full_r_dra_frame3.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "science shape consistency full_r_dra_frame3.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "file hash full_spectral_wcs_d6.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "calibration HDUs full_spectral_wcs_d6.fits",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "five named challenge benchmarks",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "15 challenge frames and one new calibration",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "15 successful live calibration associations",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "WISE challenge coordinates resolve to fixed manifest center",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "three distinct chronological visits barnard",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "common fixed WCS grid barnard",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "common-grid support ordering barnard",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "no full-field numerical authorization barnard",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "archive snapshot barnard qr2",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "archive snapshot barnard qr3",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "frame FITS, manifest and visit identity 2025W34_2B_0557_4",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "independent scalar calibration sample 2025W34_2B_0557_4",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "frame FITS, manifest and visit identity 2026W11_2A_0513_1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "independent scalar calibration sample 2026W11_2A_0513_1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "frame FITS, manifest and visit identity 2026W12_2A_0496_1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "independent scalar calibration sample 2026W12_2A_0496_1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "three distinct chronological visits eps_indi_b",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "common fixed WCS grid eps_indi_b",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "common-grid support ordering eps_indi_b",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "no full-field numerical authorization eps_indi_b",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "archive snapshot eps_indi_b qr2",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "archive snapshot eps_indi_b qr3",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "frame FITS, manifest and visit identity 2025W17_4B_0222_4",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "independent scalar calibration sample 2025W17_4B_0222_4",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "frame FITS, manifest and visit identity 2025W23_2B_0258_3",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "independent scalar calibration sample 2025W23_2B_0258_3",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "frame FITS, manifest and visit identity 2025W45_2A_0404_1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "independent scalar calibration sample 2025W45_2A_0404_1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "three distinct chronological visits wise0855",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "common fixed WCS grid wise0855",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "common-grid support ordering wise0855",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "no full-field numerical authorization wise0855",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "archive snapshot wise0855 qr2",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "archive snapshot wise0855 qr3",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "frame FITS, manifest and visit identity 2026W17_2A_0591_1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "independent scalar calibration sample 2026W17_2A_0591_1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "frame FITS, manifest and visit identity 2026W18_2A_0065_1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "independent scalar calibration sample 2026W18_2A_0065_1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "frame FITS, manifest and visit identity 2026W19_2A_0568_1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "independent scalar calibration sample 2026W19_2A_0568_1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "three distinct chronological visits rw_aur",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "common fixed WCS grid rw_aur",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "common-grid support ordering rw_aur",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "no full-field numerical authorization rw_aur",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "archive snapshot rw_aur qr2",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "archive snapshot rw_aur qr3",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "frame FITS, manifest and visit identity 2025W37_1A_0068_1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "independent scalar calibration sample 2025W37_1A_0068_1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "frame FITS, manifest and visit identity 2025W37_1A_0553_1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "independent scalar calibration sample 2025W37_1A_0553_1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "frame FITS, manifest and visit identity 2026W10_1A_0092_2",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "independent scalar calibration sample 2026W10_1A_0092_2",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "three distinct chronological visits r_dra",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "common fixed WCS grid r_dra",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "common-grid support ordering r_dra",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "no full-field numerical authorization r_dra",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "archive snapshot r_dra qr2",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "archive snapshot r_dra qr3",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "frame FITS, manifest and visit identity 2025W20_2D_0243_1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "independent scalar calibration sample 2025W20_2D_0243_1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "frame FITS, manifest and visit identity 2025W24_2D_0033_1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "independent scalar calibration sample 2025W24_2D_0033_1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "frame FITS, manifest and visit identity 2026W19_1A_0842_1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "independent scalar calibration sample 2026W19_1A_0842_1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "DR1 kept outside verified collections",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "native crop equivalence proof",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "M101 restricted field evidence",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "spacecraft observer verified",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "required acknowledgment text present",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "no application scaffold",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "no unfinished prose markers",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "passed": true
+}

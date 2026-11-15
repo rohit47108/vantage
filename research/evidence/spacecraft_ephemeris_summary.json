@@ -1,0 +1,44 @@
+{
+  "ceres": {
+    "observer": "500@-163182",
+    "frame": "ICRF astrometric",
+    "positions_deg": [
+      [
+        15.616755326,
+        -5.471754315
+      ],
+      [
+        15.656253443,
+        -5.466179734
+      ]
+    ],
+    "predicted_displacement_arcsec": 142.96153697563037,
+    "source": "research/evidence/horizons_ceres_spherex.json",
+    "signature": {
+      "version": "1.2",
+      "source": "NASA/JPL Horizons API"
+    },
+    "formal_observer_uncertainty": "not established; TLE-derived observer trajectory"
+  },
+  "comet": {
+    "observer": "500@-163182",
+    "frame": "ICRF astrometric",
+    "positions_deg": [
+      [
+        248.599593498,
+        -17.027706336
+      ],
+      [
+        248.365490854,
+        -16.998762551
+      ]
+    ],
+    "predicted_displacement_arcsec": 812.5957253853468,
+    "source": "research/evidence/horizons_comet_spherex.json",
+    "signature": {
+      "source": "NASA/JPL Horizons API",
+      "version": "1.2"
+    },
+    "formal_observer_uncertainty": "not established; TLE-derived observer trajectory"
+  }
+}

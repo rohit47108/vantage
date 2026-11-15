@@ -1,0 +1,22 @@
+{
+  "name": "sesame_mira",
+  "url": "https://cds.unistra.fr/cgi-bin/nph-sesame/-oxp/SNV?Mira",
+  "status": 200,
+  "bytes": 1172,
+  "seconds": 0.521,
+  "headers": {
+    "Date": "Sun,  4 Oct 2026 21:52:48 GMT",
+    "Server": "Apache/2.4.66 (Unix)",
+    "Content-Type": "text/plain",
+    "Access-Control-Allow-Origin": "*",
+    "Content-Length": "1172",
+    "Keep-Alive": "timeout=5, max=1000",
+    "Connection": "Keep-Alive"
+  },
+  "sha256": "ca3c17ec2f446ad97b22086d5305106057767cad153ab55bce3e790e16b9f7de",
+  "access_date": "2026-10-04",
+  "fields": [],
+  "rows": 0,
+  "sample_rows": [],
+  "query_status": []
+}

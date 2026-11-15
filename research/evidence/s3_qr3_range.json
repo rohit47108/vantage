@@ -1,0 +1,24 @@
+{
+  "url": "https://nasa-irsa-spherex.s3.us-east-1.amazonaws.com/qr3/level2/2026W30_1B/l2b-v27-2026-222/1/level2_2026W30_1B_0001_1D1_spx_l2b-v27-2026-222.fits",
+  "status": 206,
+  "bytes": 65536,
+  "headers": {
+    "x-amz-id-2": "q9Jr5kwg20Syczk9Aa9c8CWj6aZLVqyjNXUzAgOLK6Zr8jBkyEPWYZSD7FMyjwogIbfxA61g4wA=",
+    "x-amz-request-id": "JCNTDQFHE61Q2VBD",
+    "Date": "Sun, 04 Oct 2026 21:59:04 GMT",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "HEAD, GET",
+    "Access-Control-Expose-Headers": "ETag, x-amz-meta-custom-header",
+    "Access-Control-Max-Age": "3000",
+    "Vary": "Origin, Access-Control-Request-Headers, Access-Control-Request-Method",
+    "Last-Modified": "Thu, 17 Sep 2026 14:50:36 GMT",
+    "ETag": "\"9202a45c15381fdd8f9281ea4669445d\"",
+    "x-amz-storage-class": "INTELLIGENT_TIERING",
+    "x-amz-server-side-encryption": "AES256",
+    "Accept-Ranges": "bytes",
+    "Content-Range": "bytes 0-65535/65851200",
+    "Content-Type": "binary/octet-stream",
+    "Content-Length": "65536",
+    "Server": "AmazonS3"
+  }
+}

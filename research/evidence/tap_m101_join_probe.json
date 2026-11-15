@@ -1,0 +1,18 @@
+{
+  "name": "tap_m101_join",
+  "url": "https://irsa.ipac.caltech.edu/TAP/sync?REQUEST=doQuery&LANG=ADQL&QUERY=SELECT+TOP+5+o.collection%2Co.observationid%2Cp.energy_bandpassname%2Cp.time_bounds_lower%2Cp.time_bounds_upper%2Cp.provenance_version%2Cp.obs_publisher_did%2C%27https%3A%2F%2Firsa.ipac.caltech.edu%2F%27+%7C%7C+a.uri+AS+access_url+FROM+spherex.observation+o+JOIN+spherex.plane+p+ON+o.obsid%3Dp.obsid+JOIN+spherex.artifact+a+ON+a.planeid%3Dp.planeid+WHERE+1%3DCONTAINS%28POINT%28%27ICRS%27%2C210.80227%2C54.34895%29%2Cp.poly%29+AND+p.energy_bandpassname%3D%27SPHEREx-D2%27+AND+o.collection%3D%27spherex_qr2%27+ORDER+BY+p.time_bounds_lower&FORMAT=CSV&MAXREC=20",
+  "status": 200,
+  "bytes": 1434,
+  "seconds": 13.854,
+  "headers": {
+    "Server": "nginx",
+    "Date": "Mon, 12 Oct 2026 06:02:44 GMT",
+    "Content-Type": "text/csv",
+    "Content-Length": "1434",
+    "Connection": "keep-alive",
+    "Server-Timing": "main;dur=13537.828, prepare_internal;dur=2.714, generate_adql;dur=0.010, query_delegate;dur=13530.275, oversee_sync;dur=13525.190, submit_sync;dur=3.301, spinoff_queued;dur=3510.493, spinoff_running;dur=10005.791, TAP_main;dur=216.946, query_execute;dur=187.903, database_query;dur=187.408, run_postgres;dur=185.374",
+    "Set-Cookie": "anonymous=7d/3a/735df3f5c5b82245f38040caa409"
+  },
+  "sha256": "764041a89ca494991c92d867d6ad387fb8d1bde8e9ffa01f0a2cc836fe6b0ca8",
+  "access_date": "2026-10-12"
+}

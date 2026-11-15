@@ -1,0 +1,8 @@
+{
+  "url": "https://irsa.ipac.caltech.edu/SIA?COLLECTION=spherex_qr2&MAXREC=1",
+  "http_status": 200,
+  "rows": 1,
+  "query_status": [
+    "OVERFLOW"
+  ]
+}

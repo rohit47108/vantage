@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<VOTABLE version="1.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://www.ivoa.net/xml/VOTable/v1.3"
+xmlns:stc="http://www.ivoa.net/xml/STC/v1.30" >
+<DEFINITIONS>
+<COOSYS ID="J2000" equinox="2000." epoch="2000." system="eq_FK5" />
+</DEFINITIONS>
+<RESOURCE name="MOST Output Tables">
+<TABLE name="imgframes_matched_final_table.tbl">
+<PARAM name="output_url" datatype="char" arraysize="*" value="https://irsa.ipac.caltech.edu/workspace/TMP_T2JmT8_2800821/MOST/pid2800821" />
+<PARAM name="catalog" datatype="char" arraysize="*" value="spherex" />
+<PARAM name="user_input_begin_time" datatype="char" arraysize="*" value="2025 08 01" />
+<PARAM name="user_input_end_time" datatype="char" arraysize="*" value="2025 08 10" />
+<PARAM name="object_name" datatype="char" arraysize="*" value="1 Ceres (A801 AA)" />
+<PARAM name="element_epoch" datatype="char" arraysize="*" value="60888.0000   (2025-Aug-01 00:00:00.0000)" />
+<PARAM name="eccentricity" datatype="char" arraysize="*" value=" 0.079467450286983" />
+<PARAM name="inclination" datatype="char" arraysize="*" value="10.587791880954700" />
+<PARAM name="argument_perihelion" datatype="char" arraysize="*" value="73.274959559928845" />
+<PARAM name="ascending_node" datatype="char" arraysize="*" value="80.251155485097556" />
+<PARAM name="semimajor_axis" datatype="char" arraysize="*" value=" 2.765890283102736" />
+<PARAM name="mean_anomaly" datatype="char" arraysize="*" value="207.558952728733601" />
+<PARAM name="magnitude_parameters" datatype="char" arraysize="*" value=" 3.34  0.00" />
+<PARAM name="job_time_stamp" datatype="char" arraysize="*" value="Sun Oct  4 14:59:52 2026" />
+<PARAM name="description" datatype="char" arraysize="*" value="MOST ODBC query result" />
+<PARAM name="fixlen" datatype="char" arraysize="*" value="T" />
+<FIELD name="ra_obj" datatype="double" unit=""/>
+<FIELD name="dec_obj" datatype="double" unit=""/>
+<FIELD name="sun_dist" datatype="double" unit=""/>
+<FIELD name="geo_dist" datatype="double" unit=""/>
+<FIELD name="dist_ctr" datatype="double" unit=""/>
+<FIELD name="phase" datatype="double" unit=""/>
+<FIELD name="vmag" datatype="double" unit=""/>
+<FIELD name="match" datatype="int" unit=""/>
+<FIELD name="proposal_id" datatype="char" arraysize="*"/>
+<FIELD name="target_name" datatype="char" arraysize="*"/>
+<FIELD name="target_moving" datatype="char" arraysize="*"/>
+<FIELD name="observationid" datatype="char" arraysize="*"/>
+<FIELD name="planeid" datatype="char" arraysize="*"/>
+<FIELD name="productid" datatype="char" arraysize="*"/>
+<FIELD name="instrument" datatype="char" arraysize="*"/>
+<FIELD name="start_date" datatype="char" arraysize="*"/>
+<FIELD name="end_date" datatype="char" arraysize="*"/>
+<FIELD name="mjd_start" datatype="double" unit=""/>
+<FIELD name="mjd_end" datatype="double" unit=""/>
+<FIELD name="exposure_time" datatype="double" unit=""/>
+<FIELD name="ra" ucd="POS_EQ_RA_MAIN" ref="J2000" datatype="float" unit="deg" precision="F3" width="7" />
+<FIELD name="dec" ucd="POS_EQ_DEC_MAIN" ref="J2000" datatype="float" unit="deg" precision="F3" width="7" />
+<FIELD name="ra1" datatype="double" unit=""/>
+<FIELD name="dec1" datatype="double" unit=""/>
+<FIELD name="ra2" datatype="double" unit=""/>
+<FIELD name="dec2" datatype="double" unit=""/>
+<FIELD name="ra3" datatype="double" unit=""/>
+<FIELD name="dec3" datatype="double" unit=""/>
+<FIELD name="ra4" datatype="double" unit=""/>
+<FIELD name="dec4" datatype="double" unit=""/>
+<FIELD name="uri" datatype="char" arraysize="*"/>
+<FIELD name="id" ucd="ID_MAIN" datatype="char" arraysize="*" />
+<DATA>
+<TABLEDATA>
+</TABLEDATA>
+</DATA>
+</TABLE>
+<TABLE name="orbital_path.tbl">
+<FIELD name="JD" datatype="double" unit=""/>
+<FIELD name="Date" datatype="char" arraysize="*"/>
+<FIELD name="RA_obs" datatype="double" unit=""/>
+<FIELD name="Dec_obs" datatype="double" unit=""/>
+<FIELD name="RA_geoc" datatype="double" unit=""/>
+<FIELD name="Dec_geoc" datatype="double" unit=""/>
+<FIELD name="ObsDist" datatype="double" unit=""/>
+<FIELD name="GeoDist" datatype="double" unit=""/>
+<FIELD name="HelioDist" datatype="double" unit=""/>
+<FIELD name="Phase" datatype="double" unit=""/>
+<FIELD name="Vmag" datatype="double" unit=""/>
+<FIELD name="segment" datatype="int" unit=""/>
+<FIELD name="id" ucd="ID_MAIN" datatype="char" arraysize="*" />
+<DATA>
+<TABLEDATA>
+<TR><TD>2460888.500000</TD><TD>2025-AUG-01 00:00:00.000</TD><TD>19.75414020</TD><TD>-5.54131524</TD><TD>19.75665767</TD><TD>-5.54063290</TD><TD>2.430851622</TD><TD>2.430856232</TD><TD>2.964124216</TD><TD>18.5110</TD><TD>8.78</TD><TD>0</TD><TD>0</TD></TR>
+<TR><TD>2460888.750000</TD><TD>2025-AUG-01 06:00:00.000</TD><TD>19.77393801</TD><TD>-5.55136486</TD><TD>19.77642185</TD><TD>-5.54887699</TD><TD>2.427703943</TD><TD>2.427729466</TD><TD>2.964041311</TD><TD>18.4811</TD><TD>8.78</TD><TD>0</TD><TD>1</TD></TR>
+<TR><TD>2460889.000000</TD><TD>2025-AUG-01 12:00:00.000</TD><TD>19.79277361</TD><TD>-5.55856233</TD><TD>19.79587613</TD><TD>-5.55725251</TD><TD>2.424526607</TD><TD>2.424607904</TD><TD>2.963958252</TD><TD>18.4512</TD><TD>8.77</TD><TD>0</TD><TD>2</TD></TR>
+<TR><TD>2460889.250000</TD><TD>2025-AUG-01 18:00:00.000</TD><TD>19.81241629</TD><TD>-5.56626095</TD><TD>19.81501972</TD><TD>-5.56575934</TD><TD>2.421478756</TD><TD>2.421491597</TD><TD>2.963875040</TD><TD>18.4219</TD><TD>8.77</TD><TD>0</TD><TD>3</TD></TR>
+<TR><TD>2460889.500000</TD><TD>2025-AUG-02 00:00:00.000</TD><TD>19.83144769</TD><TD>-5.57676714</TD><TD>19.83385185</TD><TD>-5.57439736</TD><TD>2.418365805</TD><TD>2.418380599</TD><TD>2.963791675</TD><TD>18.3912</TD><TD>8.77</TD><TD>0</TD><TD>4</TD></TR>
+<TR><TD>2460889.750000</TD><TD>2025-AUG-02 06:00:00.000</TD><TD>19.84928357</TD><TD>-5.58476200</TD><TD>19.85237175</TD><TD>-5.58316642</TD><TD>2.415193910</TD><TD>2.415274964</TD><TD>2.963708157</TD><TD>18.3601</TD><TD>8.76</TD><TD>0</TD><TD>5</TD></TR>
+<TR><TD>2460890.000000</TD><TD>2025-AUG-02 12:00:00.000</TD><TD>19.86787657</TD><TD>-5.59244812</TD><TD>19.87057863</TD><TD>-5.59206640</TD><TD>2.412152133</TD><TD>2.412174745</TD><TD>2.963624485</TD><TD>18.3299</TD><TD>8.76</TD><TD>0</TD><TD>6</TD></TR>
+<TR><TD>2460890.250000</TD><TD>2025-AUG-02 18:00:00.000</TD><TD>19.88613326</TD><TD>-5.60328587</TD><TD>19.88847173</TD><TD>-5.60109714</TD><TD>2.409074358</TD><TD>2.409079994</TD><TD>2.963540660</TD><TD>18.2985</TD><TD>8.75</TD><TD>0</TD><TD>7</TD></TR>
+<TR><TD>2460890.500000</TD><TD>2025-AUG-03 00:00:00.000</TD><TD>19.90300157</TD><TD>-5.61213245</TD><TD>19.90605028</TD><TD>-5.61025851</TD><TD>2.405912833</TD><TD>2.405990764</TD><TD>2.963456682</TD><TD>18.2663</TD><TD>8.75</TD><TD>0</TD><TD>8</TD></TR>
+<TR><TD>2460890.750000</TD><TD>2025-AUG-03 06:00:00.000</TD><TD>19.92050554</TD><TD>-5.61988168</TD><TD>19.92331351</TD><TD>-5.61955036</TD><TD>2.402873884</TD><TD>2.402907109</TD><TD>2.963372551</TD><TD>18.2351</TD><TD>8.74</TD><TD>0</TD><TD>9</TD></TR>
+<TR><TD>2460891.000000</TD><TD>2025-AUG-03 12:00:00.000</TD><TD>19.93796822</TD><TD>-5.63092881</TD><TD>19.94026067</TD><TD>-5.62897254</TD><TD>2.399830470</TD><TD>2.399829081</TD><TD>2.963288267</TD><TD>18.2030</TD><TD>8.74</TD><TD>0</TD><TD>10</TD></TR>
+<TR><TD>2460891.250000</TD><TD>2025-AUG-03 18:00:00.000</TD><TD>19.95390598</TD><TD>-5.64065084</TD><TD>19.95689098</TD><TD>-5.63852489</TD><TD>2.396684610</TD><TD>2.396756734</TD><TD>2.963203830</TD><TD>18.1698</TD><TD>8.74</TD><TD>0</TD><TD>11</TD></TR>
+<TR><TD>2460891.500000</TD><TD>2025-AUG-04 00:00:00.000</TD><TD>19.97028896</TD><TD>-5.64856147</TD><TD>19.97320370</TD><TD>-5.64820725</TD><TD>2.393646152</TD><TD>2.393690120</TD><TD>2.963119240</TD><TD>18.1375</TD><TD>8.73</TD><TD>0</TD><TD>12</TD></TR>
+<TR><TD>2460891.750000</TD><TD>2025-AUG-04 06:00:00.000</TD><TD>19.98692751</TD><TD>-5.65970730</TD><TD>19.98919807</TD><TD>-5.65801946</TD><TD>2.390635142</TD><TD>2.390629293</TD><TD>2.963034498</TD><TD>18.1046</TD><TD>8.73</TD><TD>0</TD><TD>13</TD></TR>
+<TR><TD>2460892.000000</TD><TD>2025-AUG-04 12:00:00.000</TD><TD>20.00197368</TD><TD>-5.67029624</TD><TD>20.00487334</TD><TD>-5.66796136</TD><TD>2.387510297</TD><TD>2.387574305</TD><TD>2.962949602</TD><TD>18.0704</TD><TD>8.72</TD><TD>0</TD><TD>14</TD></TR>
+<TR><TD>2460892.250000</TD><TD>2025-AUG-04 18:00:00.000</TD><TD>20.01721303</TD><TD>-5.67848240</TD><TD>20.02022875</TD><TD>-5.67803277</TD><TD>2.384471117</TD><TD>2.384525210</TD><TD>2.962864554</TD><TD>18.0370</TD><TD>8.72</TD><TD>0</TD><TD>15</TD></TR>
+<TR><TD>2460892.500000</TD><TD>2025-AUG-05 00:00:00.000</TD><TD>20.03298749</TD><TD>-5.68963455</TD><TD>20.03526356</TD><TD>-5.68823353</TD><TD>2.381489563</TD><TD>2.381482059</TD><TD>2.962779353</TD><TD>18.0034</TD><TD>8.72</TD><TD>0</TD><TD>16</TD></TR>
+<TR><TD>2460892.750000</TD><TD>2025-AUG-05 06:00:00.000</TD><TD>20.04718006</TD><TD>-5.70104953</TD><TD>20.04997702</TD><TD>-5.69856346</TD><TD>2.378390782</TD><TD>2.378444907</TD><TD>2.962693999</TD><TD>17.9682</TD><TD>8.71</TD><TD>0</TD><TD>17</TD></TR>
+<TR><TD>2460893.000000</TD><TD>2025-AUG-05 12:00:00.000</TD><TD>20.06126448</TD><TD>-5.70963444</TD><TD>20.06436838</TD><TD>-5.70902237</TD><TD>2.375350871</TD><TD>2.375413805</TD><TD>2.962608493</TD><TD>17.9337</TD><TD>8.71</TD><TD>0</TD><TD>18</TD></TR>
+<TR><TD>2460893.250000</TD><TD>2025-AUG-05 18:00:00.000</TD><TD>20.07612642</TD><TD>-5.72072529</TD><TD>20.07843692</TD><TD>-5.71961010</TD><TD>2.372395102</TD><TD>2.372388807</TD><TD>2.962522834</TD><TD>17.8993</TD><TD>8.70</TD><TD>0</TD><TD>19</TD></TR>
+<TR><TD>2460893.500000</TD><TD>2025-AUG-06 00:00:00.000</TD><TD>20.08949916</TD><TD>-5.73289573</TD><TD>20.09218187</TD><TD>-5.73032645</TD><TD>2.369326868</TD><TD>2.369369965</TD><TD>2.962437022</TD><TD>17.8632</TD><TD>8.70</TD><TD>0</TD><TD>20</TD></TR>
+<TR><TD>2460893.750000</TD><TD>2025-AUG-06 06:00:00.000</TD><TD>20.10242976</TD><TD>-5.74200257</TD><TD>20.10560251</TD><TD>-5.74117124</TD><TD>2.366287460</TD><TD>2.366357333</TD><TD>2.962351058</TD><TD>17.8275</TD><TD>8.69</TD><TD>0</TD><TD>21</TD></TR>
+<TR><TD>2460894.000000</TD><TD>2025-AUG-06 12:00:00.000</TD><TD>20.11632452</TD><TD>-5.75299365</TD><TD>20.11869810</TD><TD>-5.75214427</TD><TD>2.363353323</TD><TD>2.363350963</TD><TD>2.962264942</TD><TD>17.7923</TD><TD>8.69</TD><TD>0</TD><TD>22</TD></TR>
+<TR><TD>2460894.250000</TD><TD>2025-AUG-06 18:00:00.000</TD><TD>20.12890413</TD><TD>-5.76582350</TD><TD>20.13146789</TD><TD>-5.76324536</TD><TD>2.360319252</TD><TD>2.360350908</TD><TD>2.962178673</TD><TD>17.7553</TD><TD>8.69</TD><TD>0</TD><TD>23</TD></TR>
+<TR><TD>2460894.500000</TD><TD>2025-AUG-07 00:00:00.000</TD><TD>20.14069468</TD><TD>-5.77556817</TD><TD>20.14391116</TD><TD>-5.77447430</TD><TD>2.357282764</TD><TD>2.357357221</TD><TD>2.962092252</TD><TD>17.7185</TD><TD>8.68</TD><TD>0</TD><TD>24</TD></TR>
+<TR><TD>2460894.750000</TD><TD>2025-AUG-07 06:00:00.000</TD><TD>20.15356415</TD><TD>-5.78645277</TD><TD>20.15602716</TD><TD>-5.78583089</TD><TD>2.354365982</TD><TD>2.354369954</TD><TD>2.962005678</TD><TD>17.6824</TD><TD>8.68</TD><TD>0</TD><TD>25</TD></TR>
+<TR><TD>2460895.000000</TD><TD>2025-AUG-07 12:00:00.000</TD><TD>20.16536710</TD><TD>-5.79982650</TD><TD>20.16781516</TD><TD>-5.79731495</TD><TD>2.351368635</TD><TD>2.351389162</TD><TD>2.961918952</TD><TD>17.6446</TD><TD>8.67</TD><TD>0</TD><TD>26</TD></TR>
+<TR><TD>2460895.250000</TD><TD>2025-AUG-07 18:00:00.000</TD><TD>20.17604364</TD><TD>-5.81030871</TD><TD>20.17927442</TD><TD>-5.80892625</TD><TD>2.348338538</TD><TD>2.348414896</TD><TD>2.961832074</TD><TD>17.6066</TD><TD>8.67</TD><TD>0</TD><TD>27</TD></TR>
+<TR><TD>2460895.500000</TD><TD>2025-AUG-08 00:00:00.000</TD><TD>20.18782975</TD><TD>-5.82111250</TD><TD>20.19040421</TD><TD>-5.82066460</TD><TD>2.345434976</TD><TD>2.345447210</TD><TD>2.961745044</TD><TD>17.5695</TD><TD>8.66</TD><TD>0</TD><TD>28</TD></TR>
+<TR><TD>2460895.750000</TD><TD>2025-AUG-08 06:00:00.000</TD><TD>20.19886018</TD><TD>-5.83490322</TD><TD>20.20120379</TD><TD>-5.83252979</TD><TD>2.342475722</TD><TD>2.342486157</TD><TD>2.961657862</TD><TD>17.5310</TD><TD>8.66</TD><TD>0</TD><TD>29</TD></TR>
+<TR><TD>2460896.000000</TD><TD>2025-AUG-08 12:00:00.000</TD><TD>20.20845956</TD><TD>-5.84620003</TD><TD>20.21167242</TD><TD>-5.84452160</TD><TD>2.339456335</TD><TD>2.339531791</TD><TD>2.961570528</TD><TD>17.4918</TD><TD>8.66</TD><TD>0</TD><TD>30</TD></TR>
+<TR><TD>2460896.250000</TD><TD>2025-AUG-08 18:00:00.000</TD><TD>20.21910728</TD><TD>-5.85697944</TD><TD>20.22180936</TD><TD>-5.85663981</TD><TD>2.336562352</TD><TD>2.336584164</TD><TD>2.961483041</TD><TD>17.4538</TD><TD>8.65</TD><TD>0</TD><TD>31</TD></TR>
+<TR><TD>2460896.500000</TD><TD>2025-AUG-09 00:00:00.000</TD><TD>20.22935562</TD><TD>-5.87105663</TD><TD>20.23161387</TD><TD>-5.86888422</TD><TD>2.333641333</TD><TD>2.333643331</TD><TD>2.961395403</TD><TD>17.4146</TD><TD>8.65</TD><TD>0</TD><TD>32</TD></TR>
+<TR><TD>2460896.750000</TD><TD>2025-AUG-09 06:00:00.000</TD><TD>20.23792316</TD><TD>-5.88321626</TD><TD>20.24108521</TD><TD>-5.88125459</TD><TD>2.330637543</TD><TD>2.330709345</TD><TD>2.961307613</TD><TD>17.3743</TD><TD>8.64</TD><TD>0</TD><TD>33</TD></TR>
+<TR><TD>2460897.000000</TD><TD>2025-AUG-09 12:00:00.000</TD><TD>20.24738415</TD><TD>-5.89405531</TD><TD>20.25022264</TD><TD>-5.89375071</TD><TD>2.327750209</TD><TD>2.327782259</TD><TD>2.961219671</TD><TD>17.3352</TD><TD>8.64</TD><TD>0</TD><TD>34</TD></TR>
+<TR><TD>2460897.250000</TD><TD>2025-AUG-09 18:00:00.000</TD><TD>20.25682653</TD><TD>-5.90829390</TD><TD>20.25902542</TD><TD>-5.90637235</TD><TD>2.324866388</TD><TD>2.324862130</TD><TD>2.961131577</TD><TD>17.2952</TD><TD>8.63</TD><TD>0</TD><TD>35</TD></TR>
+<TR><TD>2460897.500000</TD><TD>2025-AUG-10 00:00:00.000</TD><TD>20.26441290</TD><TD>-5.92133291</TD><TD>20.26749280</TD><TD>-5.91911928</TD><TD>2.321883379</TD><TD>2.321949010</TD><TD>2.961043331</TD><TD>17.2538</TD><TD>8.63</TD><TD>0</TD><TD>36</TD></TR>
+</TABLEDATA>
+</DATA>
+</TABLE>
+</RESOURCE>
+</VOTABLE>

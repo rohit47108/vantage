@@ -1,5 +1,17 @@
 # Vantage implementation status
 
+## New complete-product goal — active
+
+The later complete-product specification supersedes the demo scope described below. The application is PARTIALLY COMPLETE for that goal. See tasks/product-evidence.md; coadds, subtraction, source extraction, Gaia/WISE, embeds/investigations, release promotion and durable hosting still require implementation/validation.
+
+The new spectral workspace runs at /?view=wavelengths. Verified locally: 102-channel metadata, six detector groups, two blank layers, actual range-read native brightness/hits/flags, false color, pixel inspection, view restore, provenance and image export. Fourteen scientific/API tests pass, including six new spectral tests. Two new real-data browser tests passed on desktop/mobile, with no automated WCAG A/AA findings in the tested spectral state. Full updated browser regression and new public release are pending.
+
+Independent native range sampling and the north-up visual sampler agree exactly at the official tutorial coordinate for channel 62: 12.00507926940918 MJy/sr. This validates that context sample, not source photometry. Research/updates/2026-11-14 retains current cube properties and native schema evidence.
+
+GitHub origin is https://github.com/rohit47108/vantage.git. Its original MIT license and history were merged. Publication status must be verified after push.
+
+## Earlier temporal demonstration
+
 Updated November 14, 2026. Required demonstration workflows are complete at the documented scientific scope. Public acceptance passed all eleven browser tests, including real date and precision-wavelength selection.
 
 ## Public demo

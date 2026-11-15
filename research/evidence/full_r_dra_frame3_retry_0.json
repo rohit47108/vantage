@@ -1,0 +1,11 @@
+{
+  "url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/qr2/level2/2026W19_1A/l2b-v24-2026-131/6/level2_2026W19_1A_0842_1D6_spx_l2b-v24-2026-131.fits?center=248.16761083294998%2C66.75497941722deg&size=0.1deg",
+  "status": 503,
+  "headers": {
+    "Server": "nginx",
+    "Date": "Sat, 07 Nov 2026 15:47:17 GMT",
+    "Content-Length": "25",
+    "Connection": "keep-alive",
+    "retry-after": "5"
+  }
+}

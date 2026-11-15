@@ -1,0 +1,325 @@
+{
+  "name": "most_ceres_wide",
+  "url": "https://irsa.ipac.caltech.edu/cgi-bin/MOST/nph-most?catalog=spherex&input_type=naifid_input&obj_naifid=20000001&obs_begin=2025+04+01&obs_end=2026+08+01&output_mode=VOTable",
+  "status": 200,
+  "bytes": 722588,
+  "seconds": 6.887,
+  "headers": {
+    "Server": "nginx",
+    "Date": "Mon, 12 Oct 2026 06:02:26 GMT",
+    "Content-Type": "text/xml",
+    "Transfer-Encoding": "chunked",
+    "Connection": "keep-alive"
+  },
+  "sha256": "1d44d3588efd75e1a765d8e573756708aa1b2d600f1e0b153e78d34934616f0b",
+  "access_date": "2026-10-12",
+  "fields": [
+    {
+      "name": "ra_obj",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "dec_obj",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "sun_dist",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "geo_dist",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "dist_ctr",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "phase",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "vmag",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "match",
+      "datatype": "int",
+      "unit": ""
+    },
+    {
+      "name": "proposal_id",
+      "datatype": "char",
+      "arraysize": "*"
+    },
+    {
+      "name": "target_name",
+      "datatype": "char",
+      "arraysize": "*"
+    },
+    {
+      "name": "target_moving",
+      "datatype": "char",
+      "arraysize": "*"
+    },
+    {
+      "name": "observationid",
+      "datatype": "char",
+      "arraysize": "*"
+    },
+    {
+      "name": "planeid",
+      "datatype": "char",
+      "arraysize": "*"
+    },
+    {
+      "name": "productid",
+      "datatype": "char",
+      "arraysize": "*"
+    },
+    {
+      "name": "instrument",
+      "datatype": "char",
+      "arraysize": "*"
+    },
+    {
+      "name": "start_date",
+      "datatype": "char",
+      "arraysize": "*"
+    },
+    {
+      "name": "end_date",
+      "datatype": "char",
+      "arraysize": "*"
+    },
+    {
+      "name": "mjd_start",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "mjd_end",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "exposure_time",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "ra",
+      "ucd": "POS_EQ_RA_MAIN",
+      "ref": "J2000",
+      "datatype": "float",
+      "unit": "deg",
+      "precision": "F3",
+      "width": "7"
+    },
+    {
+      "name": "dec",
+      "ucd": "POS_EQ_DEC_MAIN",
+      "ref": "J2000",
+      "datatype": "float",
+      "unit": "deg",
+      "precision": "F3",
+      "width": "7"
+    },
+    {
+      "name": "ra1",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "dec1",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "ra2",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "dec2",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "ra3",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "dec3",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "ra4",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "dec4",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "uri",
+      "datatype": "char",
+      "arraysize": "*"
+    },
+    {
+      "name": "id",
+      "ucd": "ID_MAIN",
+      "datatype": "char",
+      "arraysize": "*"
+    },
+    {
+      "name": "JD",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "Date",
+      "datatype": "char",
+      "arraysize": "*"
+    },
+    {
+      "name": "RA_obs",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "Dec_obs",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "RA_geoc",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "Dec_geoc",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "ObsDist",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "GeoDist",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "HelioDist",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "Phase",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "Vmag",
+      "datatype": "double",
+      "unit": ""
+    },
+    {
+      "name": "segment",
+      "datatype": "int",
+      "unit": ""
+    },
+    {
+      "name": "id",
+      "ucd": "ID_MAIN",
+      "datatype": "char",
+      "arraysize": "*"
+    }
+  ],
+  "rows": 2194,
+  "sample_rows": [
+    [
+      "13.773770",
+      "-5.771515",
+      "2.9748",
+      "2.9314",
+      "0.6137",
+      "19.7983",
+      "9.25",
+      "1",
+      "null",
+      "SPS_38470",
+      "0",
+      "2025W26_1A_0306_1",
+      "D2BEF5B9-A0C1-42D5-B645-4FC35821246F",
+      "D4",
+      "SPHEREx",
+      "2025-06-24 09:25:54.454",
+      "2025-06-24 09:27:49.571",
+      "60850.392991366",
+      "60850.394323744",
+      "113.5826",
+      "14.164460376932265",
+      "-6.246535874375679",
+      "16.42812998401433",
+      "-7.115406321491541",
+      "13.235834813603628",
+      "-8.566927386829043",
+      "11.893654263261688",
+      "-5.343568219042127",
+      "15.09551989466501",
+      "-3.8829675794782665",
+      "ibe/data/spherex/qr2/level2/2025W26_1A/l2b-v20-2025-257/4/level2_2025W26_1A_0306_1D4_spx_l2b-v20-2025-257.fits",
+      "0"
+    ],
+    [
+      "13.774122",
+      "-5.771576",
+      "2.9748",
+      "2.9314",
+      "0.4279",
+      "19.7983",
+      "9.25",
+      "1",
+      "null",
+      "SPS_38469",
+      "0",
+      "2025W26_1A_0306_2",
+      "44194260-9E10-40A9-BAC8-86506546F886",
+      "D4",
+      "SPHEREx",
+      "2025-06-24 09:28:03.383",
+      "2025-06-24 09:29:58.501",
+      "60850.394483611",
+      "60850.39581599",
+      "113.5826",
+      "14.086456951229005",
+      "-6.065892683213836",
+      "16.34889736600203",
+      "-6.9357324560953035",
+      "13.157427550169006",
+      "-8.386036997139236",
+      "11.816659711460932",
+      "-5.162356093930065",
+      "15.018247838435345",
+      "-3.7024500147702804",
+      "ibe/data/spherex/qr2/level2/2025W26_1A/l2b-v20-2025-257/4/level2_2025W26_1A_0306_2D4_spx_l2b-v20-2025-257.fits",
+      "1"
+    ]
+  ],
+  "query_status": []
+}

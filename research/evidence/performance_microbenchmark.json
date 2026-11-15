@@ -1,0 +1,20 @@
+{
+  "kind": "single-host small-fixture microbenchmark; not deployment SLA",
+  "utc": "2026-10-19T01:49:46.510492+00:00",
+  "platform": "Windows",
+  "python": "3.13.2",
+  "shape_yx": [
+    59,
+    59
+  ],
+  "fits_load_four_science_arrays": {
+    "median_ms": 3.590299999814306,
+    "min_ms": 3.546200000528188,
+    "runs": 5
+  },
+  "reproject_one_plane_59square": {
+    "median_ms": 5.280100000163657,
+    "min_ms": 5.193800000597548,
+    "runs": 5
+  }
+}

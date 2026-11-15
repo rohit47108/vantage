@@ -1,0 +1,22 @@
+{
+  "name": "sesame_luhman16",
+  "url": "https://cds.unistra.fr/cgi-bin/nph-sesame/-oxp/SNV?WISE%20J104915.57-531906.1",
+  "status": 200,
+  "bytes": 1129,
+  "seconds": 0.633,
+  "headers": {
+    "Date": "Sun,  4 Oct 2026 21:52:47 GMT",
+    "Server": "Apache/2.4.66 (Unix)",
+    "Content-Type": "text/plain",
+    "Access-Control-Allow-Origin": "*",
+    "Content-Length": "1129",
+    "Keep-Alive": "timeout=5, max=1000",
+    "Connection": "Keep-Alive"
+  },
+  "sha256": "277fc8e635319ddcb1d0e40626fb078f252b29f7e82f71f59f428acbd530b594",
+  "access_date": "2026-10-04",
+  "fields": [],
+  "rows": 0,
+  "sample_rows": [],
+  "query_status": []
+}

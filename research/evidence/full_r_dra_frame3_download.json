@@ -1,0 +1,15 @@
+{
+  "url": "https://irsa.ipac.caltech.edu/ibe/data/spherex/qr2/level2/2026W19_1A/l2b-v24-2026-131/6/level2_2026W19_1A_0842_1D6_spx_l2b-v24-2026-131.fits?center=248.16761083294998%2C66.75497941722deg&size=0.1deg",
+  "status": 200,
+  "bytes": 5106240,
+  "seconds": 4.849,
+  "headers": {
+    "Server": "nginx",
+    "Date": "Sat, 07 Nov 2026 15:47:19 GMT",
+    "Content-Type": "application/fits",
+    "Transfer-Encoding": "chunked",
+    "Connection": "keep-alive",
+    "content-disposition": "attachment; filename=level2_2026W19_1A_0842_1D6_spx_l2b-v24-2026-131.fits"
+  },
+  "sha256": "f62a734df9b894ca1c6ee1ee79fbefc5b8ab68735b132faeb6413b52ba5b2d2e"
+}

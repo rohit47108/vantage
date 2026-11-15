@@ -1,0 +1,293 @@
+{
+  "barnard": {
+    "grid_shape_yx": [
+      59,
+      59
+    ],
+    "grid_center_deg": [
+      269.44624,
+      4.76864
+    ],
+    "pixel_scale_arcsec": 6.15,
+    "frames": [
+      {
+        "grid_wcs_roundtrip_max_px": 2.3500766806397694e-08,
+        "cutout_parent_offset_xy": [
+          1126.0,
+          1484.0
+        ],
+        "field_finite_fraction": 0.9640907785119218,
+        "obs_id": "2025W34_2B_0557_4",
+        "positive_peak_screening": true,
+        "defect_bits_in_source_core": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "grid_wcs_roundtrip_max_px": 9.4832383976507e-09,
+        "cutout_parent_offset_xy": [
+          830.0,
+          1535.0
+        ],
+        "field_finite_fraction": 0.9640907785119218,
+        "obs_id": "2026W11_2A_0513_1",
+        "positive_peak_screening": true,
+        "defect_bits_in_source_core": [
+          0,
+          1,
+          2,
+          26
+        ]
+      },
+      {
+        "grid_wcs_roundtrip_max_px": 4.974490980195788e-08,
+        "cutout_parent_offset_xy": [
+          1758.0,
+          1560.0
+        ],
+        "field_finite_fraction": 0.9666762424590635,
+        "obs_id": "2026W12_2A_0496_1",
+        "positive_peak_screening": true,
+        "defect_bits_in_source_core": [
+          0,
+          1,
+          2,
+          26
+        ]
+      }
+    ],
+    "joint_finite_fraction": 0.9390979603562195,
+    "spectral_on_joint_finite_fraction_of_grid": 0.07497845446710716,
+    "joint_strict_flag_and_spectral_fraction_of_grid_before_psf_margin": 0.058029301924734274,
+    "first_last_prediction_displacement_arcsec": 5.877537018343367,
+    "scope": "Sampled WCS/spectral/quality geometry and visual assets; not a PSF-registered detection, photometric result, or measured centroid."
+  },
+  "eps_indi_b": {
+    "grid_shape_yx": [
+      59,
+      59
+    ],
+    "grid_center_deg": [
+      331.0441465885212,
+      -56.78284419511611
+    ],
+    "pixel_scale_arcsec": 6.15,
+    "frames": [
+      {
+        "grid_wcs_roundtrip_max_px": 2.0303599177730484e-08,
+        "cutout_parent_offset_xy": [
+          1232.0,
+          1362.0
+        ],
+        "field_finite_fraction": 0.8379775926457914,
+        "obs_id": "2025W17_4B_0222_4",
+        "positive_peak_screening": true,
+        "defect_bits_in_source_core": []
+      },
+      {
+        "grid_wcs_roundtrip_max_px": 1.7582699883839145e-08,
+        "cutout_parent_offset_xy": [
+          1227.0,
+          1361.0
+        ],
+        "field_finite_fraction": 0.8408503303648377,
+        "obs_id": "2025W23_2B_0258_3",
+        "positive_peak_screening": true,
+        "defect_bits_in_source_core": []
+      },
+      {
+        "grid_wcs_roundtrip_max_px": 1.6967507692713803e-08,
+        "cutout_parent_offset_xy": [
+          715.0,
+          1326.0
+        ],
+        "field_finite_fraction": 0.841424877908647,
+        "obs_id": "2025W45_2A_0404_1",
+        "positive_peak_screening": true,
+        "defect_bits_in_source_core": []
+      }
+    ],
+    "joint_finite_fraction": 0.8310830221200805,
+    "spectral_on_joint_finite_fraction_of_grid": 0.16661878770468255,
+    "joint_strict_flag_and_spectral_fraction_of_grid_before_psf_margin": 0.15081873024992817,
+    "first_last_prediction_displacement_arcsec": 2.5156424021885995,
+    "scope": "Sampled WCS/spectral/quality geometry and visual assets; not a PSF-registered detection, photometric result, or measured centroid."
+  },
+  "wise0855": {
+    "grid_shape_yx": [
+      59,
+      59
+    ],
+    "grid_center_deg": [
+      133.79512916666664,
+      -7.245147222222222
+    ],
+    "pixel_scale_arcsec": 6.15,
+    "frames": [
+      {
+        "grid_wcs_roundtrip_max_px": 2.1127397428735971e-07,
+        "cutout_parent_offset_xy": [
+          1767.0,
+          592.0
+        ],
+        "field_finite_fraction": 0.8586613042229244,
+        "obs_id": "2026W17_2A_0591_1",
+        "positive_peak_screening": true,
+        "defect_bits_in_source_core": []
+      },
+      {
+        "grid_wcs_roundtrip_max_px": 2.8907208265062537e-09,
+        "cutout_parent_offset_xy": [
+          356.0,
+          577.0
+        ],
+        "field_finite_fraction": 0.8509049123814996,
+        "obs_id": "2026W18_2A_0065_1",
+        "positive_peak_screening": true,
+        "defect_bits_in_source_core": []
+      },
+      {
+        "grid_wcs_roundtrip_max_px": 1.5522544487248384e-08,
+        "cutout_parent_offset_xy": [
+          355.0,
+          577.0
+        ],
+        "field_finite_fraction": 0.8526285550129273,
+        "obs_id": "2026W19_2A_0568_1",
+        "positive_peak_screening": true,
+        "defect_bits_in_source_core": []
+      }
+    ],
+    "joint_finite_fraction": 0.843723068083884,
+    "spectral_on_joint_finite_fraction_of_grid": 0.843723068083884,
+    "joint_strict_flag_and_spectral_fraction_of_grid_before_psf_margin": 0.5894857799482908,
+    "first_last_prediction_displacement_arcsec": 0.294551272969599,
+    "scope": "Sampled WCS/spectral/quality geometry and visual assets; not a PSF-registered detection, photometric result, or measured centroid."
+  },
+  "rw_aur": {
+    "grid_shape_yx": [
+      59,
+      59
+    ],
+    "grid_center_deg": [
+      76.95654,
+      30.40144
+    ],
+    "pixel_scale_arcsec": 6.15,
+    "frames": [
+      {
+        "grid_wcs_roundtrip_max_px": 4.296696903482117e-09,
+        "cutout_parent_offset_xy": [
+          1734.0,
+          658.0
+        ],
+        "field_finite_fraction": 0.9428325193909796,
+        "obs_id": "2025W37_1A_0068_1",
+        "positive_peak_screening": true,
+        "defect_bits_in_source_core": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "grid_wcs_roundtrip_max_px": 3.923479831466207e-07,
+        "cutout_parent_offset_xy": [
+          1734.0,
+          695.0
+        ],
+        "field_finite_fraction": 0.9431197931628842,
+        "obs_id": "2025W37_1A_0553_1",
+        "positive_peak_screening": true,
+        "defect_bits_in_source_core": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "grid_wcs_roundtrip_max_px": 1.6258734908199832e-07,
+        "cutout_parent_offset_xy": [
+          194.0,
+          709.0
+        ],
+        "field_finite_fraction": 0.9413961505314565,
+        "obs_id": "2026W10_1A_0092_2",
+        "positive_peak_screening": true,
+        "defect_bits_in_source_core": [
+          0,
+          1,
+          26
+        ]
+      }
+    ],
+    "joint_finite_fraction": 0.9322033898305084,
+    "spectral_on_joint_finite_fraction_of_grid": 0.0,
+    "joint_strict_flag_and_spectral_fraction_of_grid_before_psf_margin": 0.0,
+    "first_last_prediction_displacement_arcsec": 0.0,
+    "scope": "Sampled WCS/spectral/quality geometry and visual assets; not a PSF-registered detection, photometric result, or measured centroid."
+  },
+  "r_dra": {
+    "grid_shape_yx": [
+      59,
+      59
+    ],
+    "grid_center_deg": [
+      248.16761083294998,
+      66.75497941722
+    ],
+    "pixel_scale_arcsec": 6.15,
+    "frames": [
+      {
+        "grid_wcs_roundtrip_max_px": 9.68565759316528e-07,
+        "cutout_parent_offset_xy": [
+          1784.0,
+          1920.0
+        ],
+        "field_finite_fraction": 0.8129847744900891,
+        "obs_id": "2025W20_2D_0243_1",
+        "positive_peak_screening": true,
+        "defect_bits_in_source_core": [
+          1,
+          2
+        ]
+      },
+      {
+        "grid_wcs_roundtrip_max_px": 4.5539825032495426e-07,
+        "cutout_parent_offset_xy": [
+          545.0,
+          1880.0
+        ],
+        "field_finite_fraction": 0.8718758977305372,
+        "obs_id": "2025W24_2D_0033_1",
+        "positive_peak_screening": true,
+        "defect_bits_in_source_core": [
+          1,
+          2
+        ]
+      },
+      {
+        "grid_wcs_roundtrip_max_px": 1.02227990460377e-06,
+        "cutout_parent_offset_xy": [
+          1785.0,
+          1921.0
+        ],
+        "field_finite_fraction": 0.8158575122091353,
+        "obs_id": "2026W19_1A_0842_1",
+        "positive_peak_screening": true,
+        "defect_bits_in_source_core": [
+          1,
+          2,
+          26
+        ]
+      }
+    ],
+    "joint_finite_fraction": 0.7954610744039069,
+    "spectral_on_joint_finite_fraction_of_grid": 0.30623384085033034,
+    "joint_strict_flag_and_spectral_fraction_of_grid_before_psf_margin": 0.283539212869865,
+    "first_last_prediction_displacement_arcsec": 0.0,
+    "scope": "Sampled WCS/spectral/quality geometry and visual assets; not a PSF-registered detection, photometric result, or measured centroid."
+  }
+}

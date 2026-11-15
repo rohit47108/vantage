@@ -1,0 +1,18 @@
+{
+  "name": "tap_provenance_input_schema",
+  "url": "https://irsa.ipac.caltech.edu/TAP/sync?QUERY=SELECT+column_name%2Cdatatype%2Cunit%2Cdescription+FROM+TAP_SCHEMA.columns+WHERE+table_name%3D%27spherex.provenance_input%27&FORMAT=CSV",
+  "status": 200,
+  "bytes": 166,
+  "seconds": 0.253,
+  "headers": {
+    "Server": "nginx",
+    "Date": "Sun, 04 Oct 2026 21:51:14 GMT",
+    "Content-Type": "text/csv",
+    "Content-Length": "166",
+    "Connection": "keep-alive",
+    "Server-Timing": "main;dur=6.638, prepare_internal;dur=1.117, generate_adql;dur=0.005, query_delegate;dur=1.029, query_execute;dur=1.023, database_query;dur=1.004",
+    "Set-Cookie": "anonymous=6d/e8/484c7b5649e63a7e2b4a9cd4f65e"
+  },
+  "sha256": "1bfcf1eadf30119039244837ebe4147e6e2358557dc5bd237aa946f476ad102b",
+  "access_date": "2026-10-04"
+}

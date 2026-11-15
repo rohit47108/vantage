@@ -1,0 +1,25 @@
+{
+  "url": "https://nasa-irsa-spherex.s3.us-east-1.amazonaws.com/qr3/epsf/cal-epsf-v1-2026-191/2/epsf_D2_spx_cal-epsf-v1-2026-191.fits",
+  "status": 200,
+  "bytes": 7943040,
+  "seconds": 0.455,
+  "headers": {
+    "x-amz-id-2": "GKKLqM4iNWEv+ayxujU/rrFVOfOC6fnMuGIH0Wh0IN/JUW+WqLYKhsAHD8iRo0zzT2ZSP3GKECuODHUi7l2YRADtsFrdB+Ew",
+    "x-amz-request-id": "JFQKJARX3TP5F3RK",
+    "Server": "AmazonS3",
+    "Date": "Mon, 19 Oct 2026 01:57:27 GMT",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "HEAD, GET",
+    "Access-Control-Expose-Headers": "ETag, x-amz-meta-custom-header",
+    "Access-Control-Max-Age": "3000",
+    "Vary": "Origin, Access-Control-Request-Headers, Access-Control-Request-Method",
+    "Last-Modified": "Thu, 17 Sep 2026 14:40:10 GMT",
+    "ETag": "\"4271972259cb7f0c352e8140af073be8\"",
+    "x-amz-storage-class": "INTELLIGENT_TIERING",
+    "x-amz-server-side-encryption": "AES256",
+    "Accept-Ranges": "bytes",
+    "Content-Type": "binary/octet-stream",
+    "Content-Length": "7943040"
+  },
+  "sha256": "7b94af0250aa7e56a9e78af34ca2c1373985926c0a0f3263218d1b0ddc94a926"
+}

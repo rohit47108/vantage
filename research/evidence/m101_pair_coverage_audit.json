@@ -1,0 +1,20 @@
+{
+  "purpose": "research spectral coverage audit; not validated PSF-matched difference",
+  "shape_yx": [
+    59,
+    59
+  ],
+  "central_bilinear_wave_um": [
+    1.5762357711791992,
+    1.5755988359451294
+  ],
+  "spectral_eligible_pixels": 694,
+  "spectral_eligible_fraction": 0.19936799770180982,
+  "strict_quality_and_spectral_pixels": 585,
+  "central_mismatch_bandwidths": 0.01668967306613922,
+  "median_difference_MJy_sr_unmatched_psf": 0.011048316955566406,
+  "mjd_mid": [
+    60824.397039164,
+    61016.478451155
+  ]
+}
