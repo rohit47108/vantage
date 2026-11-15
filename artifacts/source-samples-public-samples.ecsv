@@ -1,0 +1,63 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: mjd_mid, unit: d, datatype: float64}
+# - {name: wavelength_um, unit: um, datatype: float64}
+# - {name: bandwidth_um, unit: um, datatype: float64}
+# - {name: flux_ujy, unit: uJy, datatype: float64}
+# - {name: statistical_sigma_ujy, unit: uJy, datatype: float64}
+# - {name: reduced_chi2, datatype: float64, description: Residual sum normalized by its expected noise value from R C R^T; not a discovery
+#     p-value.}
+# - {name: obs_id, datatype: string}
+# - {name: utc_mid, datatype: string}
+# - {name: detector, datatype: int64}
+# - {name: release, datatype: string}
+# - {name: status, datatype: string}
+# - {name: reason, datatype: string}
+# meta: !!omap
+# - {id: d4ebfc4305d9ce56ef7b9943ca9e13c51a9348abb5853fdae99ae154e68ce92e}
+# - {policy: retained-native-source-samples-1}
+# - source: {astrometric_params_solved: 31.0, dec: 30.14604947207, dec_error: 0.01, duplicated_source: 0.0, id: '1312054926303736704',
+#     parallax: 2.2149, phot_g_mean_mag: 12.849974, pmdec: -38.705, pmdec_error: 0.014, pmra: -8.882, pmra_error: 0.011, ra: 247.8908392831,
+#     ra_error: 0.0076, radial_velocity: -53.87, ref_epoch: 2016.0, ruwe: 0.885}
+# - request:
+#     aperture_radius: 2.5
+#     background_inner: 5.0
+#     background_outer: 8.0
+#     method: psf
+#     observation_indices: [0, 1, 2, 3]
+#     refine_centroid: true
+#     target_key: p330e
+#     target_revision: 0be6fd927e86f0a053dd9eb40d34bcbd0770e19442e120133fd538004230d27b
+# - sampling:
+#     accepted_samples: 1
+#     available_observations: 4
+#     detectors: [2]
+#     diagnostic_only_samples: 2
+#     interpretation: Partial retained D2 sampling. Each point has its own observation time and central CWAVE/CBAND. Unobserved channels
+#       are not inferred or zero-filled.
+#     mjd_range: [60872.904404, 61090.207367]
+#     rejected_samples: 1
+#     selected_observation_indices: [0, 1, 2, 3]
+#     unselected_observations: 0
+# - {uncertainty_method: 'Native independent-pixel statistical covariance, including fitted local background and optional centroid/source
+#     cross covariance. Common calibration, native correlations and PSF/model errors are not supplied and are excluded.'}
+# - limitations: [This first workflow enables the retained P330E D2 test field only; arbitrary fields and six-detector/102-channel extraction
+#       remain pending., Samples at different acquisition times are not an instantaneous spectrum. No wavelength binning or time averaging
+#       is performed., 'Accepted means the stated mask/coverage/fit checks pass. It is not a probability of detection, identity, isolation
+#       or a claim of discovery.', Point-source flux uses the finite calibrated ePSF convention; unknown outer wings are not invented.
+#       No deblending or extended-source measurements., Wavelength bars use central CWAVE/CBAND at the fitted source position; they do
+#       not encode the full response variation over the native estimator., Gaia angular motion omits observer parallax and perspective
+#       acceleration. The small parallax for this benchmark is documented in the source record., 'No clipping, separate ZODI subtraction
+#       or common calibration-error estimate. Signed fluxes and statistical errors are retained, with no automatic upper-limit claims.']
+# - {credits: 'SPHEREx: NASA/JPL-Caltech/Caltech-IPAC, IRSA; Gaia DR3: ESA/Gaia/DPAC, mirrored at IRSA. P330E isolation and CALSPEC consistency
+#     evidence: research/updates/2026-11-15/photometry/METHODS.md.'}
+# - {time_scale: UTC}
+# - {covariance_resource: 'manifest.json: each sample contains its source/background parameter covariance and, when fitted, full centroid
+#     covariance with explicit parameter order.'}
+# schema: astropy-2.0
+mjd_mid wavelength_um bandwidth_um flux_ujy statistical_sigma_ujy reduced_chi2 obs_id utc_mid detector release status reason
+60872.904404 1.6210556030273438 0.03934287279844284 28012.407397231786 173.88403352111393 5.242018425690604 2025W29_1A_0544_1 2025-07-16T21:42:20.506Z 2 dr1 diagnostic_only "Source/background residual score exceeds the declared maximum of 3. Inspect the fit; excluded from the accepted-sample plot."
+60877.3219045 1.4197288751602173 0.03427177295088768 28983.684677755784 175.6402060617618 1.5545639936137239 2025W30_1B_0059_3 2025-07-21T07:43:32.549Z 2 dr1 accepted ""
+61085.2534185 1.2979791164398193 0.031165137887001038 29896.480225003346 184.29541182720905 3.998414303620698 2026W07_2A_0338_3 2026-02-14T06:04:55.358Z 2 dr1 diagnostic_only "Source/background residual score exceeds the declared maximum of 3. Inspect the fit; excluded from the accepted-sample plot."
+61090.207367 "" "" "" "" "" 2026W08_1A_0601_1 2026-02-19T04:58:36.509Z 2 dr1 rejected "Native cutout does not cover the source position"

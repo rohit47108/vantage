@@ -1,0 +1,5 @@
+mjd_mid,wavelength_um,bandwidth_um,flux_ujy,statistical_sigma_ujy,reduced_chi2,obs_id,utc_mid,detector,release,status,reason
+60872.904404,1.6210556030273438,0.03934287279844284,28012.407397231786,173.88403352111393,5.242018425690604,2025W29_1A_0544_1,2025-07-16T21:42:20.506Z,2,dr1,diagnostic_only,Source/background residual score exceeds the declared maximum of 3. Inspect the fit; excluded from the accepted-sample plot.
+60877.3219045,1.4197288751602173,0.03427177295088768,28983.684677755784,175.6402060617618,1.5545639936137239,2025W30_1B_0059_3,2025-07-21T07:43:32.549Z,2,dr1,accepted,
+61085.2534185,1.2979791164398193,0.031165137887001038,29896.480225003346,184.29541182720905,3.998414303620698,2026W07_2A_0338_3,2026-02-14T06:04:55.358Z,2,dr1,diagnostic_only,Source/background residual score exceeds the declared maximum of 3. Inspect the fit; excluded from the accepted-sample plot.
+61090.207367,,,,,,2026W08_1A_0601_1,2026-02-19T04:58:36.509Z,2,dr1,rejected,Native cutout does not cover the source position

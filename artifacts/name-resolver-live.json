@@ -10,7 +10,7 @@
   "warning": "Resolved catalog position. No observation epoch or proper-motion correction is inferred from this name lookup.",
   "query": "M101",
   "query_url": "https://vizier.idia.ac.za/viz-bin/nph-sesame/-oxp/SNV?M101",
-  "retrieved_utc": "2026-11-15T07:56:12.211927+00:00",
+  "retrieved_utc": "2026-11-15T05:51:43.946845+00:00",
   "data_status": "cached",
   "credits": "CDS Sesame/SIMBAD; CDS, Strasbourg and its official mirror."
 }
