@@ -306,7 +306,7 @@ function App() {
     <>
       <header>
         <a className="brand" href="/">
-          ◉ <strong>Vantage</strong>
+          <span className="brand-logo"><img src="/vantage-logo.png" alt="Vantage" /></span>
           <span>/ Explore</span>
         </a>
         <span className="tag">SPHEREx · infrared sky</span>

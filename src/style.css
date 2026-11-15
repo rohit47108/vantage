@@ -105,6 +105,8 @@ header {
   position: relative;
   z-index: 2;
 }
+.brand .brand-logo { display: block; position: relative; width: 140px; height: 30px; overflow: hidden; flex-shrink: 0; }
+.brand-logo img { position: absolute; width: 140px; height: 140px; max-width: none; left: 0; top: -52px; }
 .brand {
   color: #e4eef4;
   font-size: 19px;
