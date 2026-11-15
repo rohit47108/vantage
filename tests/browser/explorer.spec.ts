@@ -116,8 +116,9 @@ test('measure prepared startup and decoded frame changes',async({page})=>{
   await page.waitForFunction(()=>document.querySelector('canvas')?.dataset.ready);
   const first=await page.evaluate(()=>performance.now());
   const swaps:number[]=[];
+  const draws:number[]=[],scheduling:number[]=[],observed:number[]=[];
   for(let index=0;index<5;index++){
-    swaps.push(await page.evaluate(async()=>{
+    const sample=await page.evaluate(async()=>{
       const before=performance.now();
       const canvas=document.querySelector('canvas')!;
       const previous=canvas.dataset.ready;
@@ -126,10 +127,13 @@ test('measure prepared startup and decoded frame changes',async({page})=>{
       const label=document.querySelector('input[aria-label="Selected frame"]') as HTMLInputElement;
       (label.value==='0'?next:back).click();
       while(canvas.dataset.ready===previous)await new Promise(resolve=>requestAnimationFrame(resolve));
-      return performance.now()-before;
-    }));
+      // Measure completed canvas updates, separately from a delayed headless RAF poll.
+      // The poll can wake tens of milliseconds after the new pixels already exist.
+      return {total:Number(canvas.dataset.renderFinished)-before,observed:performance.now()-before,draw:Number(canvas.dataset.renderMs),scheduling:Number(canvas.dataset.renderStarted)-before};
+    });
+    swaps.push(sample.total);draws.push(sample.draw);scheduling.push(sample.scheduling);observed.push(sample.observed);
   }
-  writeFileSync('artifacts/performance.json',JSON.stringify({baseURL:page.url(),checked_utc:new Date().toISOString(),first_frame_ms:first,decoded_swaps_ms:swaps,environment:'Headless Chrome on Windows, fresh browser context, actual network. No mobile throttling.'},null,2));
+  writeFileSync('artifacts/performance.json',JSON.stringify({baseURL:page.url(),checked_utc:new Date().toISOString(),first_frame_ms:first,decoded_swaps_ms:swaps,canvas_draw_ms:draws,event_to_draw_ms:scheduling,raf_observation_ms:observed,environment:'Headless Chrome on Windows, fresh browser context, actual network. No mobile throttling. Swap timing ends when draw calls finish; RAF observation delay is separate. This is not physical display presentation timing.'},null,2));
   expect(first).toBeLessThan(3000);
   expect(Math.max(...swaps)).toBeLessThan(50);
 });

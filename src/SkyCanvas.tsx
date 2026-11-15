@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import type { Plane, Frame } from "./types";
+import type { CatalogMarker } from "./surveys";
 interface Props {
   plane: Plane;
   frame: Frame;
@@ -10,6 +11,8 @@ interface Props {
   onPan: (p: number[]) => void;
   onInspect: (x: number, y: number) => void;
   canvasRef?: React.RefObject<HTMLCanvasElement | null>;
+  catalogMarkers?:CatalogMarker[];
+  onCatalogSelect?:(key:string)=>void;
 }
 export function SkyCanvas({
   plane,
@@ -21,6 +24,8 @@ export function SkyCanvas({
   onPan,
   onInspect,
   canvasRef,
+  catalogMarkers=[],
+  onCatalogSelect,
 }: Props) {
   const local = useRef<HTMLCanvasElement>(null);
   const ref = canvasRef || local;
@@ -28,6 +33,7 @@ export function SkyCanvas({
   useEffect(() => {
     const canvas = ref.current;
     if (!canvas) return;
+    const renderStarted=performance.now();
     const context = canvas.getContext("2d")!;
     const [height, width] = plane.shape;
     const small = document.createElement("canvas");
@@ -80,11 +86,31 @@ export function SkyCanvas({
       );
       context.stroke();
     }
+    for(const marker of catalogMarkers){
+      const [x,y]=marker.pixel;
+      if(!Number.isFinite(x)||!Number.isFinite(y)||x<-.5||y<-.5||x>=width-.5||y>=height-.5)continue;
+      const cx=-350+(x+.5)*700/width,cy=350-(y+.5)*700/height;
+      const r=(marker.selected?9:5)/zoom;
+      context.globalAlpha=marker.opacity;
+      context.strokeStyle=marker.selected?'#ffffff':marker.survey==='gaia'?'#a9c7ee':'#f2b760';
+      context.lineWidth=(marker.selected?2:1.2)/zoom;
+      context.beginPath();
+      if(marker.survey==='gaia')context.arc(cx,cy,r,0,Math.PI*2);
+      else{context.moveTo(cx,cy-r);context.lineTo(cx+r,cy);context.lineTo(cx,cy+r);context.lineTo(cx-r,cy);context.closePath();}
+      context.stroke();
+    }
     context.restore();
+    canvas.dataset.renderStarted=String(renderStarted);
+    canvas.dataset.renderMs=String(performance.now()-renderStarted);
+    canvas.dataset.renderFinished=String(performance.now());
     canvas.dataset.ready = frame.obs_id;
-  }, [plane, frame, zoom, pan, stretch, overlays, ref]);
+  }, [plane, frame, zoom, pan, stretch, overlays, ref,catalogMarkers]);
   function inspect(clientX: number, clientY: number) {
     const rect = ref.current!.getBoundingClientRect();
+    const wx=(((clientX-rect.left)*800/rect.width)-400-pan[0])/zoom;
+    const wy=(((clientY-rect.top)*800/rect.height)-400-pan[1])/zoom;
+    const candidates=catalogMarkers.map(m=>({marker:m,distance:Math.hypot(wx-(-350+(m.pixel[0]+.5)*700/plane.shape[1]),wy-(350-(m.pixel[1]+.5)*700/plane.shape[0]))})).sort((a,b)=>a.distance-b.distance);
+    if(candidates[0]&&candidates[0].distance*zoom<14*800/rect.width)onCatalogSelect?.(candidates[0].marker.key);
     const x = Math.floor(
       ((((clientX - rect.left) * 800) / rect.width - 400 - pan[0]) /
         zoom /

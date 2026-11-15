@@ -10,6 +10,11 @@ import "./style.css";
 import { SpectralExplorer } from "./SpectralExplorer";
 import { CoaddAnalysis } from "./CoaddAnalysis";
 import { Brand } from "./Brand";
+import {NameLookup} from './NameLookup';
+import {SurveyContext} from './SurveyContext';
+import type {Associations} from './SurveyContext';
+import {useSurveyLayers} from './surveys';
+import type {CatalogMarker} from './surveys';
 
 function download(name: string, value: string, type = "application/json") {
   const url = URL.createObjectURL(new Blob([value], { type }));
@@ -51,6 +56,26 @@ function TemporalExplorer({onSpectral}:{onSpectral:()=>void}) {
   const [endDate, setEndDate] = useState("");
   const [wavelength, setWavelength] = useState("");
   const [failedSelection, setFailedSelection] = useState<Sequence | null>(null);
+  const [surveyOpacity,setSurveyOpacity]=useState([.8,.8]);
+  const [selectedCatalog,setSelectedCatalog]=useState<string|null>(null);
+  const [surveyFrame,setSurveyFrame]=useState<number|null>(null);
+  const [surveyOpen,setSurveyOpen]=useState(false);
+  const [associations,setAssociations]=useState<Associations|null>(null);
+  const surveys=useSurveyLayers(sequence,overlays);
+  useEffect(()=>{setSelectedCatalog(null);setSurveyFrame(null);setAssociations(null);},[sequence?.id]);
+  useEffect(()=>setSurveyFrame(null),[index,compare,a,b]);
+  function catalogMarkers(frameIndex:number):CatalogMarker[]{
+    return [surveys.gaia.layer,surveys.wise.layer].flatMap((layer,i)=>{
+      if(!layer||layer.sequence_id!==sequence?.id||!overlays.includes(layer.survey)||surveyOpacity[i]===0)return [];
+      return layer.sources.flatMap(source=>{
+        const pixel=source.pixels_by_frame[frameIndex];
+        return pixel?[{key:`${source.survey}:${source.id}`,survey:source.survey,pixel,selected:selectedCatalog===`${source.survey}:${source.id}`,opacity:surveyOpacity[i]}]:[];
+      });
+    });
+  }
+  function selectCatalog(key:string,frameIndex:number){
+    setSelectedCatalog(key);setSurveyFrame(frameIndex);setPanel(true);setSurveyOpen(true);
+  }
   const request = useRef(0),
     canvas = useRef<HTMLCanvasElement>(null);
   async function open(s: Sequence, replace = true, collapseControls = true) {
@@ -93,6 +118,7 @@ function TemporalExplorer({onSpectral}:{onSpectral:()=>void}) {
       setPan(view.pan);
       setStretch(view.stretch);
       setOverlays(view.overlays);
+      setSurveyOpacity(view.survey_opacity||[.8,.8]);
       setJobId(null);
       setFailedSelection(null);
       if (window.innerWidth <= 760 && collapseControls) setPanel(false);
@@ -265,7 +291,7 @@ function TemporalExplorer({onSpectral}:{onSpectral:()=>void}) {
   function share(search = false) {
     const path = search
       ? `/sky?ra=${encodeURIComponent(ra)}&dec=${encodeURIComponent(dec)}&fov_arcmin=${fov}`
-      : `/sequence/${sequence!.id}?${viewQuery({ frame: index, zoom, pan, stretch, overlays })}`;
+      : `/sequence/${sequence!.id}?${viewQuery({ frame: index, zoom, pan, stretch, overlays,survey_opacity:surveyOpacity })}`;
     navigator.clipboard
       .writeText(location.origin + path)
       .then(() => setMessage("Link copied."))
@@ -274,12 +300,13 @@ function TemporalExplorer({onSpectral}:{onSpectral:()=>void}) {
   function exportImage() {
     if (!sequence || !canvas.current) return;
     const out = document.createElement("canvas");
+    const catalogLayers=[surveys.gaia.layer,surveys.wise.layer].filter(layer=>layer&&overlays.includes(layer.survey));
     out.width = 800;
-    out.height = 960;
+    out.height = catalogLayers.length?1020:960;
     const exportedFrame = sequence.frames[compare ? a : index];
     const ctx = out.getContext("2d")!;
     ctx.fillStyle = "#090d12";
-    ctx.fillRect(0, 0, 800, 960);
+    ctx.fillRect(0, 0, 800, out.height);
     ctx.drawImage(canvas.current, 0, 0);
     ctx.fillStyle = "#ecf3f7";
     ctx.font = "16px monospace";
@@ -304,6 +331,11 @@ function TemporalExplorer({onSpectral}:{onSpectral:()=>void}) {
       24,
       912,
     );
+    if(catalogLayers.length){
+      ctx.fillText(`Catalog context: ${catalogLayers.map(l=>l!.survey==='gaia'?'Gaia DR3 optical circles':'AllWISE historical IR diamonds').join('; ')}`,24,944);
+      ctx.fillText('ESA/Gaia/DPAC · WISE UCLA/JPL/Caltech/NASA · full credits in provenance',24,970);
+      ctx.fillText('Imported positions; not SPHEREx detections or confirmed identities.',24,996);
+    }
     const link = document.createElement("a");
     link.download = `vantage-${sequence.key}-${compare ? a : index}.png`;
     link.href = out.toDataURL();
@@ -354,6 +386,7 @@ function TemporalExplorer({onSpectral}:{onSpectral:()=>void}) {
             </button>
           </div>
           <p className="muted">One patch of sky. Different moments in time.</p>
+          <NameLookup onResolve={result=>{setRa(String(result.center_deg[0]));setDec(String(result.center_deg[1]));history.pushState(null,'',`/sky?ra=${result.center_deg[0]}&dec=${result.center_deg[1]}&fov_arcmin=${fov}`);void searchCoordinates(String(result.center_deg[0]),String(result.center_deg[1]),fov);}}/>
           <form onSubmit={search}>
             <label>
               Right ascension
@@ -509,6 +542,9 @@ function TemporalExplorer({onSpectral}:{onSpectral:()=>void}) {
               </button>
             ))}
           </div>
+          <details className="survey-disclosure" open={surveyOpen} onToggle={e=>setSurveyOpen(e.currentTarget.open)}><summary>Other telescopes · Gaia / WISE</summary>
+            <SurveyContext key={sequence?.id} sequence={sequence} frame={surveyFrame??(compare?a:index)} gaia={surveys.gaia} wise={surveys.wise} overlays={overlays} toggle={name=>setOverlays(old=>old.includes(name)?old.filter(x=>x!==name):[...old,name])} opacity={surveyOpacity} setOpacity={setSurveyOpacity} selected={selectedCatalog} onSelect={key=>selectCatalog(key,compare?a:index)} retry={surveys.retry} onAssociations={setAssociations}/>
+          </details>
           <h2>Layers</h2>
           {["prediction", "coverage", "quality", "spectral"].map((name) => (
             <label className="check" key={name}>
@@ -597,6 +633,8 @@ function TemporalExplorer({onSpectral}:{onSpectral:()=>void}) {
                 setInspectFrame(compare ? a : index);
               }}
               canvasRef={canvas}
+              catalogMarkers={catalogMarkers(compare?a:index)}
+              onCatalogSelect={key=>selectCatalog(key,compare?a:index)}
             />
             {compare && (
               <SkyCanvas
@@ -606,6 +644,8 @@ function TemporalExplorer({onSpectral}:{onSpectral:()=>void}) {
                 pan={pan}
                 stretch={stretch}
                 overlays={overlays}
+                catalogMarkers={catalogMarkers(b)}
+                onCatalogSelect={key=>selectCatalog(key,b)}
                 onPan={setPan}
                 onInspect={(x, y) => {
                   setInspect([x, y]);
@@ -835,7 +875,10 @@ function TemporalExplorer({onSpectral}:{onSpectral:()=>void}) {
                   JSON.stringify(
                     {
                       ...sequence,
-                      view: { frame: index, zoom, pan, stretch, overlays },
+                      view: { frame: index, zoom, pan, stretch, overlays, survey_opacity:surveyOpacity, selected_catalog:selectedCatalog, catalog_frame:surveyFrame },
+                      catalog_context:{gaia:surveys.gaia.layer,wise:surveys.wise.layer,associations,
+                        failures:{gaia:surveys.gaia.error||null,wise:surveys.wise.error||null},
+                        interpretation:'Imported catalog locators and proximity candidates; not measured SPHEREx positions or confirmed identities.'},
                     },
                     null,
                     2,
@@ -853,7 +896,7 @@ function TemporalExplorer({onSpectral}:{onSpectral:()=>void}) {
       {analysis&&sequence&&<CoaddAnalysis key={sequence.id} sequence={sequence} onClose={()=>setAnalysis(false)}/>}
       {methods && (
         <Methods
-          credits={sequence?.credits || ""}
+          credits={[sequence?.credits,surveys.gaia.layer?.credits,surveys.wise.layer?.credits].filter(Boolean).join('\n\n')}
           close={() => setMethods(false)}
         />
       )}

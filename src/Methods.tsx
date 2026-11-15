@@ -52,6 +52,16 @@ export function Methods({
         or ephemeris position, with no detection implied.
       </p>
       <pre>{credits}</pre>
+      <p>
+        Gaia circles are imported optical catalog positions, moved to each
+        SPHEREx acquisition using angular proper motion where available.
+        Observer parallax and perspective acceleration are omitted. AllWISE
+        diamonds keep their historical infrared catalog positions; W1/W2 mean
+        MJDs describe the observation sampling, not an exact positional epoch.
+        Nearby Gaia / WISE pairs are candidates, including possible blends.
+        These catalog values cannot be subtracted from SPHEREx brightness.
+      </p>
+      <p><a href="https://gea.esac.esa.int/archive/documentation/GDR3/Miscellaneous/sec_credit_and_citation_instructions/">Gaia credit and citation instructions</a> · <a href="https://irsa.ipac.caltech.edu/docs/knowledgebase/general.html">WISE / IRSA acknowledgments</a></p>
       <a
         href="https://irsa.ipac.caltech.edu/data/SPHEREx/docs/overview_qr.html"
         target="_blank"

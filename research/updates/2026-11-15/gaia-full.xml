@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<VOTABLE version="1.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://www.ivoa.net/xml/VOTable/v1.3"
+xmlns:stc="http://www.ivoa.net/xml/STC/v1.30">
+<RESOURCE type="results">
+  <INFO name="QUERY_STATUS" value="ERROR">
+    Exceeding output table size limit [doSelect()] - reduce number of output columns and/or limit search area.
+  </INFO>
+  <INFO name="LOGFILE" value="log">
+    https://irsa.ipac.caltech.edu:443/workspace/TMP_7Xn86Q_107976/Gator/irsa/107976/log.107976.html
+  </INFO>
+</RESOURCE>
+</VOTABLE>

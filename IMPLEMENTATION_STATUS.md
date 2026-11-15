@@ -2,7 +2,15 @@
 
 ## New complete-product goal — active
 
-The later complete-product specification supersedes the demo scope described below. The application is PARTIALLY COMPLETE for that goal. See tasks/product-evidence.md; coadds, subtraction, source extraction, Gaia/WISE, embeds/investigations, release promotion and durable hosting still require implementation/validation.
+The later complete-product specification supersedes the demo scope described below. The application is PARTIALLY COMPLETE for that goal. See tasks/product-evidence.md; remaining coadd methods, subtraction, source extraction, embeds/investigations, release promotion and durable hosting still require implementation/validation.
+
+### Catalog context and name lookup — November 15
+
+Gaia DR3 and AllWISE context are implemented through bounded IRSA Gator queries. Each catalog loads independently of the images and the other catalog. Source IDs remain strings, Gaia angular proper motion follows each frame's epoch/grid, and AllWISE positions retain their historical meaning. Visibility, opacity, marker/keyboard selection, exact layer/opacity links, candidate associations, image labels, full catalog/query/credit JSON exports and failure/retry states are functional. CDS Sesame follows the verified official IDIA mirror and supplies name-based coordinates in both workspaces. The user explicitly chose the restored circular logo and longer title on November 15; this supersedes the earlier branding request.
+
+Thirty-four scientific/API tests pass, including ten survey tests. Four new real-data browser tests pass locally. An independent analytic TAN projection plus Astropy angular transport agrees with the displayed M101/Barnard catalog pixels to at most 2.691e-7 pixels, against a predeclared 1e-4-pixel tolerance. This validates the stated coordinate model, not absolute centroid astrometry. Observer parallax/perspective acceleration remain omitted; WISE mean MJDs are approximate positional epochs. Gaia queries are visibly limited. See research/updates/2026-11-15/SOURCES.md and artifacts/survey-scientific-validation.json.
+
+Local API and built application: http://127.0.0.1:8000/ (exec session 9168). The previous 8000/8003 instances were positively identified and replaced by one updated service; the existing tunnel still forwards port 8000. Public acceptance for this slice is being refreshed. Earlier process IDs and preview reports below are historical checkpoints.
 
 ### Conditional coadd workflow
 

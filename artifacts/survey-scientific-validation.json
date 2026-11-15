@@ -1,0 +1,62 @@
+{
+  "checked_utc": "2026-11-15T06:21:05.404443+00:00",
+  "checks": [
+    {
+      "field": "m101",
+      "survey": "gaia",
+      "sources": 355,
+      "maximum_reference_error_pixels": 5.263238733732578e-10,
+      "tolerance_pixels": 0.0001,
+      "search_completeness": "limited",
+      "query_urls": [
+        "https://irsa.ipac.caltech.edu/cgi-bin/Gator/nph-query?catalog=gaia_dr3_source&spatial=cone&radius=0.10437578903815387&radunits=deg&objstr=210.80227+54.34895&outfmt=3&selcols=source_id%2Cra%2Cdec%2Cref_epoch%2Cpmra%2Cpmdec%2Cparallax%2Cradial_velocity%2Cphot_g_mean_mag%2Cra_error%2Cdec_error%2Cpmra_error%2Cpmdec_error%2Cruwe%2Castrometric_params_solved%2Cduplicated_source&outrows=5000"
+      ],
+      "highest_motion_source": "1609274772083489024",
+      "highest_total_motion_mas_yr": 21.249000094122074
+    },
+    {
+      "field": "m101",
+      "survey": "wise",
+      "sources": 203,
+      "maximum_reference_error_pixels": 1.5070611425471725e-11,
+      "tolerance_pixels": 0.0001,
+      "search_completeness": "complete_within_query",
+      "query_urls": [
+        "https://irsa.ipac.caltech.edu/cgi-bin/Gator/nph-query?catalog=allwise_p3as_psd&spatial=cone&radius=0.07126623367421031&radunits=deg&objstr=210.80227+54.34895&outfmt=3&selcols=designation%2Cra%2Cdec%2Cw1mpro%2Cw2mpro%2Cw1mjdmean%2Cw2mjdmean%2Ccc_flags%2Cph_qual%2Cext_flg&outrows=5000"
+      ],
+      "highest_motion_source": "J140312.52+542055.6",
+      "highest_total_motion_mas_yr": 0.0
+    },
+    {
+      "field": "barnard",
+      "survey": "gaia",
+      "sources": 500,
+      "maximum_reference_error_pixels": 2.6909345507419857e-07,
+      "tolerance_pixels": 0.0001,
+      "search_completeness": "limited",
+      "query_urls": [
+        "https://irsa.ipac.caltech.edu/cgi-bin/Gator/nph-query?catalog=gaia_dr3_source&spatial=cone&radius=0.10533175912308473&radunits=deg&objstr=269.44624+4.76864&outfmt=3&selcols=source_id%2Cra%2Cdec%2Cref_epoch%2Cpmra%2Cpmdec%2Cparallax%2Cradial_velocity%2Cphot_g_mean_mag%2Cra_error%2Cdec_error%2Cpmra_error%2Cpmdec_error%2Cruwe%2Castrometric_params_solved%2Cduplicated_source&outrows=5000"
+      ],
+      "highest_motion_source": "4472832130942575872",
+      "highest_total_motion_mas_yr": 10393.348518010785
+    },
+    {
+      "field": "barnard",
+      "survey": "wise",
+      "sources": 198,
+      "maximum_reference_error_pixels": 3.2308378195011755e-11,
+      "tolerance_pixels": 0.0001,
+      "search_completeness": "complete_within_query",
+      "query_urls": [
+        "https://irsa.ipac.caltech.edu/cgi-bin/Gator/nph-query?catalog=allwise_p3as_psd&spatial=cone&radius=0.07126623367421031&radunits=deg&objstr=269.44624+4.76864&outfmt=3&selcols=designation%2Cra%2Cdec%2Cw1mpro%2Cw2mpro%2Cw1mjdmean%2Cw2mjdmean%2Ccc_flags%2Cph_qual%2Cext_flg&outrows=5000"
+      ],
+      "highest_motion_source": "J175746.84+044624.0",
+      "highest_total_motion_mas_yr": 0.0
+    }
+  ],
+  "interpretation": "Validates catalog coordinate transport and displayed TAN alignment, not measured source centroids or complete associations.",
+  "limitations": [
+    "Observer parallax, perspective acceleration and binary motion are omitted.",
+    "WISE catalog positions are historical; band mean MJDs are approximate positional epochs."
+  ]
+}

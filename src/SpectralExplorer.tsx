@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { json } from "./api";
 import "./spectral.css";
 import { Brand } from "./Brand";
+import {NameLookup} from './NameLookup';
 
 interface Channel {
   index: number;
@@ -217,6 +218,7 @@ export function SpectralExplorer({ onTime }: { onTime: () => void }) {
             Move through real SPHEREx wavelengths. These mosaics combine
             observations across time.
           </p>
+          <NameLookup onResolve={result=>{setCenter(result.center_deg);setPlaying(false);setSelected(null);}}/>
           <label>
             Start with a field
             <select

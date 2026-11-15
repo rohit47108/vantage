@@ -1,0 +1,48 @@
+[
+  {
+    "name": "gaia",
+    "url": "https://irsa.ipac.caltech.edu/TAP/sync?REQUEST=doQuery&LANG=ADQL&FORMAT=votable&QUERY=SELECT+TOP+5+source_id%2Cra%2Cdec%2Cref_epoch%2Cpmra%2Cpmdec%2Cparallax%2Cradial_velocity%2Cphot_g_mean_mag+FROM+gaia_dr3_source+WHERE+1%3DCONTAINS%28POINT%28%27ICRS%27%2Cra%2Cdec%29%2CCIRCLE%28%27ICRS%27%2C210.80227%2C54.34895%2C0.05%29%29",
+    "status": 502,
+    "bytes": 341,
+    "sample": "<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>502 Proxy Error</title>\n</head><body>\n<h1>Proxy Error</h1>\n<p>The proxy server received an invalid\r\nresponse from an upstream server.<br />\r\nThe proxy server could not handle the request<p>Reason: <strong>Error reading from remote server</strong></p></p>\n</body></html>\n"
+  },
+  {
+    "name": "wise",
+    "url": "https://irsa.ipac.caltech.edu/TAP/sync?REQUEST=doQuery&LANG=ADQL&FORMAT=votable&QUERY=SELECT+TOP+5+designation%2Cra%2Cdec%2Cw1mpro%2Cw2mpro%2Cw1mjdmean%2Cw2mjdmean%2Ccc_flags%2Cph_qual%2Cext_flg+FROM+allwise_p3as_psd+WHERE+1%3DCONTAINS%28POINT%28%27ICRS%27%2Cra%2Cdec%29%2CCIRCLE%28%27ICRS%27%2C210.80227%2C54.34895%2C0.05%29%29",
+    "status": 502,
+    "bytes": 341,
+    "sample": "<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML 2.0//EN\">\n<html><head>\n<title>502 Proxy Error</title>\n</head><body>\n<h1>Proxy Error</h1>\n<p>The proxy server received an invalid\r\nresponse from an upstream server.<br />\r\nThe proxy server could not handle the request<p>Reason: <strong>Error reading from remote server</strong></p></p>\n</body></html>\n"
+  },
+  {
+    "name": "name",
+    "url": "https://vizier.idia.ac.za/viz-bin/nph-sesame/-oxp/SNV?M101",
+    "status": 200,
+    "bytes": 742,
+    "sample": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Sesame xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n xsi:noNamespaceSchemaLocation=\"https://vizier.cds.unistra.fr/xml/sesame_4x.xsd\">\n<Target option=\"SNV\">\n  <name>M101</name>\n  <!-- Q197364 #1 -->\n  <Resolver name=\"S=Simbad, IDIA (via url)\"><!--delay: 0ms [0] -->\n    <INFO>from cache</INFO>\n    <oid"
+  },
+  {
+    "name": "mirror",
+    "url": "https://vizier.idia.ac.za/viz-bin/nph-sesame/-oxp/SNV?M101",
+    "status": 200,
+    "bytes": 742,
+    "sample": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Sesame xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n xsi:noNamespaceSchemaLocation=\"https://vizier.cds.unistra.fr/xml/sesame_4x.xsd\">\n<Target option=\"SNV\">\n  <name>M101</name>\n  <!-- Q197362 #1 -->\n  <Resolver name=\"S=Simbad, IDIA (via url)\"><!--delay: 0ms [0] -->\n    <INFO>from cache</INFO>\n    <oid"
+  },
+  {
+    "name": "wise_gator",
+    "url": "https://irsa.ipac.caltech.edu/cgi-bin/Gator/nph-query?catalog=allwise_p3as_psd&spatial=cone&radius=3&radunits=arcmin&objstr=210.80227+54.34895&outfmt=3&selcols=designation%2Cra%2Cdec%2Cw1mpro%2Cw2mpro%2Cw1mjdmean%2Cw2mjdmean%2Ccc_flags%2Cph_qual%2Cext_flg",
+    "status": 200,
+    "bytes": 84229,
+    "sample": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<VOTABLE version=\"1.3\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://www.ivoa.net/xml/VOTable/v1.3\" xmlns:stc=\"http://www.ivoa.net/xml/STC/v1.30\" xsi:schemaLocation=\"http://www.ivoa.net/xml/VOTable/v1.3 http://www.ivoa.net/xml/VOTable/v1.3 http://www.ivoa.net/xml/STC/v1.30 http://www.ivoa"
+  },
+  {
+    "name": "gaia_gator",
+    "url": "https://irsa.ipac.caltech.edu/cgi-bin/Gator/nph-query?catalog=gaia_dr3_source&spatial=cone&radius=3&radunits=arcmin&objstr=210.80227+54.34895&outfmt=3&selcols=source_id%2Cra%2Cdec%2Cref_epoch%2Cpmra%2Cpmdec%2Cparallax%2Cradial_velocity%2Cphot_g_mean_mag",
+    "status": 200,
+    "bytes": 135084,
+    "sample": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<VOTABLE version=\"1.3\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://www.ivoa.net/xml/VOTable/v1.3\" xmlns:stc=\"http://www.ivoa.net/xml/STC/v1.30\" xsi:schemaLocation=\"http://www.ivoa.net/xml/VOTable/v1.3 http://www.ivoa.net/xml/VOTable/v1.3 http://www.ivoa.net/xml/STC/v1.30 http://www.ivoa"
+  },
+  {
+    "name": "gaia_esa",
+    "error": "ConnectTimeout"
+  }
+]

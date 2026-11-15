@@ -1,0 +1,20 @@
+.survey-context{border-top:1px solid var(--line);margin-top:24px;padding-top:16px;line-height:1.6;min-width:0;}
+.survey-context h2{font-size:17px;}.survey-context h3{font-size:15px;}
+.survey-context p{color:var(--muted);font-size:12px;}
+.survey-layer{border-bottom:1px solid var(--line);padding:12px 0;}
+.survey-context input[type=checkbox]{width:18px;height:18px;vertical-align:middle;margin-right:10px;}
+.survey-context label{display:block;margin:10px 0;}
+.survey-context input[type=range],.survey-context select{display:block;width:100%;min-height:40px;margin-top:8px;}
+.survey-context details{margin:12px 0;}.survey-context summary{cursor:pointer;}
+.survey-context li{margin-bottom:8px;}
+.catalog-id,.catalog-inspector dd{overflow-wrap:anywhere;font:11px/1.7 'IBM Plex Mono',monospace;}
+.catalog-inspector{border:1px solid var(--line);border-radius:6px;padding:12px;margin-top:16px;}
+.catalog-inspector dt{font-size:11px;color:var(--muted);margin-top:10px;}.catalog-inspector dd{margin:2px 0;}
+.catalog-table{overflow:auto;max-width:100%;font-size:11px;}.catalog-table td,.catalog-table th{padding:8px;text-align:left;}
+.name-lookup{border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:20px;}
+.name-lookup label{display:block;}.name-lookup input{display:block;width:100%;min-height:42px;margin:8px 0;}
+.name-lookup p{font-size:11px;color:var(--muted);line-height:1.6;}
+.survey-disclosure{margin-top:16px;}
+.survey-disclosure summary{min-height:44px;padding:12px 0;cursor:pointer;}
+.catalog-table:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;}
+@media(max-width:760px){main.withPanel .dock{position:static;margin:20px 0;}}

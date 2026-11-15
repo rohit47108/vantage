@@ -4,6 +4,7 @@ export interface ViewState {
   pan: number[];
   stretch: number;
   overlays: string[];
+  survey_opacity?:number[];
 }
 
 export function readView(search: string, frames: number): ViewState {
@@ -24,9 +25,10 @@ export function readView(search: string, frames: number): ViewState {
       ? (query.get("layers") || "")
           .split(",")
           .filter((x) =>
-            ["prediction", "coverage", "quality", "spectral"].includes(x),
+            ["prediction", "coverage", "quality", "spectral", "gaia", "wise"].includes(x),
           )
       : ["prediction"],
+    survey_opacity:[bounded('gaia_opacity',.8,0,1),bounded('wise_opacity',.8,0,1)],
   };
 }
 
@@ -38,6 +40,8 @@ export function viewQuery(view: ViewState) {
     y: String(view.pan[1]),
     stretch: String(view.stretch),
     layers: view.overlays.join(","),
+    gaia_opacity:String(view.survey_opacity?.[0]??.8),
+    wise_opacity:String(view.survey_opacity?.[1]??.8),
     v: "1",
   }).toString();
 }

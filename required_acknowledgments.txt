@@ -13,3 +13,15 @@ QR2: https://doi.org/10.26131/IRSA652
 QR3: https://doi.org/10.26131/IRSA662
 
 Use the acknowledgments and DOI(s) appropriate to the data actually used. Preserve source credits on any third-party/NASA publicity image.
+
+Gaia catalog context
+Source: https://gea.esac.esa.int/archive/documentation/GDR3/Miscellaneous/sec_credit_and_citation_instructions/
+Credit ESA/Gaia and DPAC, with funding from national institutions participating in the Gaia Multilateral Agreement. Cite Gaia Collaboration 2016 (The Gaia mission) and Gaia Collaboration 2023 (Gaia DR3 summary) as directed by the source. Full publication acknowledgment and consortium links are available there.
+
+AllWISE catalog context
+Source: https://irsa.ipac.caltech.edu/docs/knowledgebase/general.html
+Credit WISE, a joint project of UCLA and JPL/Caltech funded by NASA, together with NASA/IPAC IRSA. Preserve the full source-specific credits and column documentation in exported catalog metadata.
+
+Name resolution
+Source: https://cds.unistra.fr/
+CDS Sesame/SIMBAD, Strasbourg, and the official IDIA mirror used for the returned position. A name lookup does not by itself establish an observation epoch or proper-motion correction.

@@ -6,6 +6,7 @@ Explore the changing infrared sky with authentic NASA SPHEREx data. Vantage comb
 
 - Eight real-data examples, including all five challenge targets, Ceres, M101 and explicitly tracked 3I/ATLAS.
 - Coordinate coverage search, fixed-grid temporal playback, pixel inspection, synchronized comparison, scientific support overlays, immutable sequence links and image/provenance exports.
+- Object-name lookup through CDS Sesame/SIMBAD; independently loaded Gaia DR3 and AllWISE catalog overlays with frame-specific angular proper motion, source inspection, opacity, bounded candidate associations, credits and exported query/source provenance.
 - Metadata-driven wavelength navigation across the DR1 all-sky visualization cube, six detector groups, blank-channel handling, wavelength playback, user-selected false color and view/image exports. Native files are range-read by the backend; the browser never downloads a full cube.
 - Asynchronous inverse-variance coadds from selected native exposures, with conservative wavelength/quality support, FITS science and full sparse statistical-covariance exports, provenance and saved-result links. M101 supplies a successful real-data example; incompatible Ceres wavelengths are rejected. These are conditional response-mixed coadds, not PSF-homogenized photometry.
 
@@ -34,6 +35,8 @@ Install `requirements-dev.txt`, then run `npm run build`, `python -m unittest di
 
 The development lock includes Reproject as an independent spherical-reprojection reference. Run `python -m scripts.validate_coadd` to reproduce the actual M101 geometry and 2,000-realization statistical-noise validation. Method and limitations are in research/updates/2026-11-14/NUMERICAL_METHODS.md. Pending numerical jobs resume on startup of the explicitly single-instance service. `scripts/check_product_recovery.py` documents the controlled pending-request restart test; its `--seed` step is for a stopped local test service only.
 
+With the local API running, `python -m scripts.validate_surveys` checks real M101 and Barnard Gaia/AllWISE responses against independent analytic TAN projection and Astropy angular transport. It makes live requests. The model and omitted astrometric terms, API/query limits, service failures and primary documentation are recorded in research/updates/2026-11-15/SOURCES.md. Catalog markers and proximity candidates do not validate absolute astrometry or source identity.
+
 GitHub Actions runs the production build, retained-fixture/API tests, independent numerical benchmark and browser-runtime dependency audit on pushes to main and pull requests. Real-browser public acceptance is recorded separately; passing this CI workflow alone does not establish public application correctness or complete-product acceptance.
 
 Prepared display assets are included in the repository. Regeneration and offline scientific tests require the supplied FITS research package. Live search caches metadata for 24 hours and empty results for 15 minutes. Wavelength goals check up to 20 parent headers and precision maps at the requested field center.
@@ -46,7 +49,7 @@ After `npm run build`, use `python -m scripts.stage_deploy --backend-url https:/
 
 `python -m scripts.verify_fallback` forces an IBE failure and compares actual S3 native pixels with an authentic IBE cutout. It makes public network requests. Bundled React licenses are in `public/licenses`.
 
-The active product goal requires persistent cloud Python hosting, survey context, saved investigations, validated coadds, differences and source spectra. These are not represented as completed features.
+The active product goal still requires persistent cloud Python hosting, saved investigations, the remaining coadd methods, validated differences and source spectra. Catalog context is implemented; it does not establish SPHEREx detections or confirmed cross-identifications.
 
 ## License and attribution
 

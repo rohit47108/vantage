@@ -15,7 +15,7 @@ import time
 import logging
 from astropy.time import Time
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Query
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
@@ -33,6 +33,9 @@ async def lifespan(app):
 app = FastAPI(title='Vantage scientific service',lifespan=lifespan)
 from backend.spectral_routes import router as spectral_router
 app.include_router(spectral_router)
+from backend.survey_routes import router as survey_router
+from backend.surveys import resolve_name
+app.include_router(survey_router)
 
 
 @app.middleware('http')
@@ -157,11 +160,19 @@ def run(job_id, request):
 
 
 @app.get('/v1/targets/resolve')
-def resolve(ra: str, dec: str):
+def resolve(ra: str | None=None, dec: str | None=None, name: str | None=Query(default=None,min_length=1,max_length=128)):
     try:
+        if name is not None:
+            if ra is not None or dec is not None:raise ValueError('Use either an object name or coordinates, not both')
+            return resolve_name(name)
+        if ra is None or dec is None:raise ValueError('Enter an object name or both RA and declination')
         return {'center_deg': coordinates(ra, dec), 'frame': 'ICRS'}
     except ValueError as error:
         raise HTTPException(422, str(error))
+    except RuntimeError as error:
+        raise HTTPException(429,'Name resolver busy. Retry shortly.') from error
+    except Exception as error:
+        raise HTTPException(502,'Name lookup is unavailable. Retry or use coordinates.') from error
 
 
 @app.post('/v1/observations/search')
@@ -268,8 +279,3 @@ def frontend(sequence_id: str | None = None):
 @app.get('/favicon.svg')
 def favicon():
     return FileResponse(ROOT/'public/favicon.svg')
-
-
-@app.get('/vantage-logo.png')
-def brand_logo():
-    return FileResponse(ROOT/'public/vantage-logo.png')

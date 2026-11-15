@@ -1,0 +1,8 @@
+{
+  "query_url": "https://irsa.ipac.caltech.edu/cgi-bin/Gator/nph-query?catalog=gaia_dr3_source&spatial=cone&radius=0.10533175912308473&radunits=deg&objstr=269.44624+4.76864&outfmt=3&selcols=source_id%2Cra%2Cdec%2Cref_epoch%2Cpmra%2Cpmdec%2Cparallax%2Cradial_velocity%2Cphot_g_mean_mag%2Cra_error%2Cdec_error%2Cpmra_error%2Cpmdec_error%2Cruwe%2Castrometric_params_solved%2Cduplicated_source&outrows=5000&constraints=pm%3E1000",
+  "sha256": "6e131a04445fbbdc1519a60a5a1fef3d8b8a764cd4946220474f241fe217b6d0",
+  "sources": 1,
+  "ids": [
+    "4472832130942575872"
+  ]
+}

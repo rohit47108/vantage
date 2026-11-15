@@ -1,0 +1,2 @@
+# Retain upstream response bytes, including their original whitespace.
+*.xml -text -whitespace

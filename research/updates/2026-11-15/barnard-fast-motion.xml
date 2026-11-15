@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VOTABLE version="1.3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.ivoa.net/xml/VOTable/v1.3" xmlns:stc="http://www.ivoa.net/xml/STC/v1.30" xsi:schemaLocation="http://www.ivoa.net/xml/VOTable/v1.3 http://www.ivoa.net/xml/VOTable/v1.3 http://www.ivoa.net/xml/STC/v1.30 http://www.ivoa.net/xml/STC/v1.30">
+  <RESOURCE>
+    <INFO name="ORIGIN" value="IPAC Infrared Science Archive (IRSA), Caltech/JPL"/>
+    <INFO name="SIMULATED_TABLE" value="n"/>
+    <INFO name="DATETIME" value="2026-11-14 22:32:02"/>
+    <INFO name="DATABASE" value="Gaia Source Catalogue (DR3) (gaia_dr3_source)"/>
+    <INFO name="EQUINOX" value="J2000"/>
+    <INFO name="SKYAREA" value="within 0.10533175912308473 deg of  ra=269.44624 dec=+4.76864 Eq J2000 "/>
+    <INFO name="StatusFile" value="/workspace/TMP_HvliXw_1099887/Gator/irsa/1099887/log.1099887.html"/>
+    <INFO name="SQL" value="WHERE  (pm&gt;1000) "/>
+    <INFO name="SQL" value="SELECT (18 column names follow in next row.)"/>
+    <TABLE>
+      <DESCRIPTION>                                                                              
+
+source_id 
+___ Unique source identifier (unique within a particular Data Release)
+ra (deg) 
+___ Right ascension
+dec (deg) 
+___ Declination
+clon 
+___ Right ascention in Sexagesimal format.
+clat 
+___ Declination in Sexagesimal format.
+ref_epoch (yr) 
+___ Reference epoch
+pmra (mas/yr) 
+___ Proper motion in right ascension direction
+pmdec (mas/yr) 
+___ Proper motion in declination direction
+parallax (mas) 
+___ Parallax
+radial_velocity (km/s) 
+___ Spectroscopic radial velocity in the Solar system barycentric reference frame.
+phot_g_mean_mag (mag) 
+___ G-band mean magnitude
+ra_error (mas) 
+___ Standard error of right ascension
+dec_error (mas) 
+___ Standard error of declination
+pmra_error (mas/yr) 
+___ Standard error of proper motion in right ascension direction
+pmdec_error (mas/yr) 
+___ Standard error of proper motion in declination direction
+ruwe 
+___ Renormalised unit weight error
+astrometric_params_solved 
+___ Which parameters have been solved for?
+duplicated_source 
+___ Source with duplicate sources
+dist (arcsec) 
+___ Distance between the target position and each source in arcsec.
+angle (deg) 
+___ Position Angle in degree.
+</DESCRIPTION>
+      <FIELD name="source_id" datatype="long" ucd="meta.id;meta.main;meta.ref" unit="null">
+        <DESCRIPTION>Unique source identifier (unique within a particular Data Release)</DESCRIPTION>
+      </FIELD>
+      <FIELD name="ra" datatype="double" precision="11" ucd="pos.eq.ra;meta.main" unit="deg" width="24">
+        <DESCRIPTION>Right ascension</DESCRIPTION>
+      </FIELD>
+      <FIELD name="dec" datatype="double" precision="11" ucd="pos.eq.dec;meta.main" unit="deg" width="24">
+        <DESCRIPTION>Declination</DESCRIPTION>
+      </FIELD>
+      <FIELD name="clon" datatype="char" arraysize="*"/>
+      <FIELD name="clat" datatype="char" arraysize="*"/>
+      <FIELD name="ref_epoch" datatype="double" precision="3" ucd="meta.ref;time.epoch" unit="yr" width="8">
+        <DESCRIPTION>Reference epoch</DESCRIPTION>
+      </FIELD>
+      <FIELD name="pmra" datatype="double" precision="3" ucd="pos.pm;pos.eq.ra" unit="mas/yr" width="30">
+        <DESCRIPTION>Proper motion in right ascension direction</DESCRIPTION>
+      </FIELD>
+      <FIELD name="pmdec" datatype="double" precision="3" ucd="pos.pm;pos.eq.dec" unit="mas/yr" width="30">
+        <DESCRIPTION>Proper motion in declination direction</DESCRIPTION>
+      </FIELD>
+      <FIELD name="parallax" datatype="double" precision="4" ucd="pos.parallax.trig" unit="mas" width="24">
+        <DESCRIPTION>Parallax</DESCRIPTION>
+      </FIELD>
+      <FIELD name="radial_velocity" datatype="double" precision="2" ucd="spect.dopplerVeloc.opt;em.opt.I" unit="km/s" width="30">
+        <DESCRIPTION>Spectroscopic radial velocity in the Solar system barycentric reference frame.</DESCRIPTION>
+      </FIELD>
+      <FIELD name="phot_g_mean_mag" datatype="double" precision="6" ucd="phot.mag;em.opt" unit="mag" width="18">
+        <DESCRIPTION>G-band mean magnitude</DESCRIPTION>
+      </FIELD>
+      <FIELD name="ra_error" datatype="double" precision="4" ucd="stat.error;pos.eq.ra" unit="mas" width="24">
+        <DESCRIPTION>Standard error of right ascension</DESCRIPTION>
+      </FIELD>
+      <FIELD name="dec_error" datatype="double" precision="4" ucd="stat.error;pos.eq.dec" unit="mas" width="24">
+        <DESCRIPTION>Standard error of declination</DESCRIPTION>
+      </FIELD>
+      <FIELD name="pmra_error" datatype="double" precision="3" ucd="stat.error;pos.pm;pos.eq.ra" unit="mas/yr" width="30">
+        <DESCRIPTION>Standard error of proper motion in right ascension direction</DESCRIPTION>
+      </FIELD>
+      <FIELD name="pmdec_error" datatype="double" precision="3" ucd="stat.error;pos.pm;pos.eq.dec" unit="mas/yr" width="30">
+        <DESCRIPTION>Standard error of proper motion in declination direction</DESCRIPTION>
+      </FIELD>
+      <FIELD name="ruwe" datatype="double" precision="3" ucd="stat.error" unit="null" width="18">
+        <DESCRIPTION>Renormalised unit weight error</DESCRIPTION>
+      </FIELD>
+      <FIELD name="astrometric_params_solved" datatype="int" ucd="meta.number" unit="null">
+        <DESCRIPTION>Which parameters have been solved for?</DESCRIPTION>
+      </FIELD>
+      <FIELD name="duplicated_source" datatype="int" ucd="meta.code.status" unit="null">
+        <DESCRIPTION>Source with duplicate sources</DESCRIPTION>
+      </FIELD>
+      <FIELD name="dist" datatype="double" unit="arcsec"/>
+      <FIELD name="angle" datatype="double" unit="deg"/>
+      <DATA>
+        <TABLEDATA>
+          <TR>
+            <TD>4472832130942575872</TD>
+            <TD>269.44850252544001</TD>
+            <TD>4.7394200511099998</TD>
+            <TD>17h57m47.64s</TD>
+            <TD>04d44m21.91s</TD>
+            <TD>2016</TD>
+            <TD>-801.55100000000004</TD>
+            <TD>10362.394</TD>
+            <TD>546.97590000000002</TD>
+            <TD>-110.47</TD>
+            <TD>8.1939740000000008</TD>
+            <TD>0.026200000000000001</TD>
+            <TD>0.029000000000000001</TD>
+            <TD>0.032000000000000001</TD>
+            <TD>0.035999999999999997</TD>
+            <TD>1.085</TD>
+            <TD>31</TD>
+            <TD>0</TD>
+            <TD>105.504526</TD>
+            <TD>175.58745200000001</TD>
+          </TR>
+        </TABLEDATA>
+      </DATA>
+    </TABLE>
+  </RESOURCE>
+</VOTABLE>

@@ -1,0 +1,13 @@
+{
+  "old_origin": "https://dependent-singing-burning-int.trycloudflare.com",
+  "old_public_status": 502,
+  "old_public_error": "DNS_HOSTNAME_NOT_FOUND",
+  "old_connector_error": "Unauthorized: Tunnel not found",
+  "replacement_health_url": "https://journal-increases-recent-hope.trycloudflare.com/v1/health",
+  "replacement_status": 200,
+  "replacement_health": {
+    "status": "ok",
+    "policy": "vantage-visual-3"
+  },
+  "durable_hosting": false
+}

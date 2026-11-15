@@ -1,0 +1,13 @@
+{
+  "baseURL": "http://127.0.0.1:8000/sequence/d236d29869051a40bf0d5e09247b9c71a8cdd29c9dfcfc028126462e8f217af0",
+  "checked_utc": "2026-11-15T06:22:59.924Z",
+  "first_frame_ms": 330.89999997615814,
+  "decoded_swaps_ms": [
+    3.3000000715255737,
+    65.39999997615814,
+    7.900000095367432,
+    10.399999976158142,
+    12.200000047683716
+  ],
+  "environment": "Headless Chrome on Windows, fresh browser context, actual network. No mobile throttling."
+}
