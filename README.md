@@ -7,8 +7,9 @@ Explore the changing infrared sky with authentic NASA SPHEREx data. Vantage comb
 - Eight real-data examples, including all five challenge targets, Ceres, M101 and explicitly tracked 3I/ATLAS.
 - Coordinate coverage search, fixed-grid temporal playback, pixel inspection, synchronized comparison, scientific support overlays, immutable sequence links and image/provenance exports.
 - Metadata-driven wavelength navigation across the DR1 all-sky visualization cube, six detector groups, blank-channel handling, wavelength playback, user-selected false color and view/image exports. Native files are range-read by the backend; the browser never downloads a full cube.
+- Asynchronous inverse-variance coadds from selected native exposures, with conservative wavelength/quality support, FITS science and full sparse statistical-covariance exports, provenance and saved-result links. M101 supplies a successful real-data example; incompatible Ceres wavelengths are rejected. These are conditional response-mixed coadds, not PSF-homogenized photometry.
 
-The wavelength cube combines many observation times. Its brightness values and hit/flag maps are visual context, not validated source photometry or a temporal sequence. Source extraction, validated coaddition/subtraction, Gaia/WISE integration, durable hosting and other complete-product requirements remain in progress. Track actual evidence in [the requirement matrix](tasks/product-evidence.md) and [implementation plan](tasks/product-plan.md).
+The wavelength cube combines many observation times. Its brightness values and hit/flag maps are visual context, not validated source photometry or a temporal sequence. Robust and motion-compensated coaddition, PSF-matched subtraction, source extraction, Gaia/WISE integration, durable hosting and other complete-product requirements remain in progress. Track actual evidence in [the requirement matrix](tasks/product-evidence.md) and [implementation plan](tasks/product-plan.md).
 
 The original research is retained separately from current findings under research/updates/2026-11-14. Current service URLs and hosting limits are in IMPLEMENTATION_STATUS.md.
 
@@ -30,6 +31,10 @@ Generate prepared artifacts with `python -m scripts.prepare`. This verifies the 
 Run `& .\scripts\launch.ps1` to build and launch the full application at http://127.0.0.1:8000/. This procedure was tested on port 8002 as well. Use one Uvicorn process with the application's two bounded worker threads and persistent `.runtime` directory. For frontend development, run `npm run dev` separately and use http://127.0.0.1:5173/.
 
 Install `requirements-dev.txt`, then run `npm run build`, `python -m unittest discover -s tests -v`, and `npx playwright test`. Browser tests use installed Chrome and a running application. Set `VANTAGE_BASE_URL` to test a public deployment. See ACCEPTANCE.md for actual results, DEMO.md for the walkthrough, and IMPLEMENTATION_STATUS.md for the current public URL and process details.
+
+The development lock includes Reproject as an independent spherical-reprojection reference. Run `python -m scripts.validate_coadd` to reproduce the actual M101 geometry and 2,000-realization statistical-noise validation. Method and limitations are in research/updates/2026-11-14/NUMERICAL_METHODS.md. Pending numerical jobs resume on startup of the explicitly single-instance service. `scripts/check_product_recovery.py` documents the controlled pending-request restart test; its `--seed` step is for a stopped local test service only.
+
+GitHub Actions runs the production build, retained-fixture/API tests, independent numerical benchmark and browser-runtime dependency audit on pushes to main and pull requests. Real-browser public acceptance is recorded separately; passing this CI workflow alone does not establish public application correctness or complete-product acceptance.
 
 Prepared display assets are included in the repository. Regeneration and offline scientific tests require the supplied FITS research package. Live search caches metadata for 24 hours and empty results for 15 minutes. Wavelength goals check up to 20 parent headers and precision maps at the requested field center.
 

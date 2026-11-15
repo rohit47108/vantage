@@ -1,0 +1,27 @@
+{
+  "checked_utc": "2026-11-15T01:55:36.197142+00:00",
+  "product_id": "1e30be3130f662ceb1c01fe7e5caa44cf191b947aadb8c3e8d940fcf35049c16",
+  "benchmark": "Authentic M101 QR2 exposures; conditional narrowband response mixture, not precision photometry.",
+  "sources": [
+    "2025W22_1B_0584_1/D2",
+    "2025W49_2A_0650_4/D2"
+  ],
+  "retained_pixels": 105,
+  "requested_pixels": 1024,
+  "spherical_reference_normalized_max_error": 7.1759035942870555e-09,
+  "predeclared_geometry_tolerance": 0.001,
+  "full_covariance_region_variance": 0.15185062319530038,
+  "diagonal_only_region_variance": 0.07331469816868717,
+  "monte_carlo_region_variance": 0.14843405835644125,
+  "monte_carlo_realizations": 2000,
+  "predeclared_monte_carlo_relative_tolerance": 0.1,
+  "passed": true,
+  "processing_seconds_including_validation": 2.7475621999474242,
+  "limitations": [
+    "Spectral screening does not establish identical response curves or authorize precision photometry.",
+    "Native-pixel covariance and common calibration errors are not supplied and are not included in statistical errors.",
+    "WCS-only registration; input PSFs are mixed, not homogenized. This coadd is not eligible for subtraction.",
+    "Fixed-sky stacking can smear moving sources. Contributing epochs remain separate in provenance.",
+    "No ZODI subtraction, background fit, outlier clipping or photometric rescaling was performed."
+  ]
+}

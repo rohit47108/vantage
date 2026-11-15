@@ -1,0 +1,22 @@
+{
+  "job_id": "cb52bdf43e3e41fa8fc5515699111214",
+  "method": "Controlled pending authentic-data request inserted while service stopped, then startup recovery tested.",
+  "request": {
+    "sequence_id": "44622c81cc14a9b06405f8e2955a44dc94d89e547b86c384ecdc9f17d2f2bd91",
+    "frame_indices": [
+      0,
+      1
+    ],
+    "fov_arcmin": 2.9,
+    "method": "inverse_variance"
+  },
+  "job": {
+    "job_id": "cb52bdf43e3e41fa8fc5515699111214",
+    "state": "complete",
+    "result_id": "a27b1ca69aee860fd097a4271760a5eb905e5a7959b7e16f26757b0101cad5cd",
+    "error": null,
+    "updated": 1794707964.0261333
+  },
+  "restored_result_id": "a27b1ca69aee860fd097a4271760a5eb905e5a7959b7e16f26757b0101cad5cd",
+  "passed": true
+}

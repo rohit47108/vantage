@@ -20,3 +20,13 @@ Maintainability: spectral retrieval, API routing and frontend workspace are sepa
 Verification records: artifacts/product-local-browser.json, artifacts/product-public-browser.json, tests/test_hips.py and research/updates/2026-11-14. Public report is written only after its run completes. Earlier demonstration and the new complete-product goal have separate acceptance records.
 
 Remaining scope is explicitly tracked in tasks/product-evidence.md; this review does not approve the full product as complete.
+
+## Conditional coadd slice
+
+Implemented a distinct native-exposure linear coadd with a per-pixel spectral/quality gate, full sparse covariance and calibrated FITS exports. Its narrower 0.025-bandwidth engineering screen does not establish complete response equality. Results retain that limitation and are not eligible for scientific subtraction.
+
+Reviewed fixes: use actual exposure start/end for interval bounds rather than mislabeling midpoints; reject incompatible IMAGE/VARIANCE units; avoid native calibration-map out-of-range indexing; give cancelled retries distinct job IDs; resume persisted pending analysis on process startup; keep initial async loading from closing an already opened mobile control panel. The control-panel regression was observed failing with the old behavior and passing with the fix.
+
+Independent check: planar overlap versus spherical Reproject has normalized maximum discrepancy 7.18e-9 on the real M101 field. Monte Carlo integrated-region variance is 0.14843 versus full-covariance prediction 0.15185; a diagonal-only calculation produces 0.07331. These validate conditional statistical propagation, not native-pixel independence or absolute calibration.
+
+Public endpoint review: numerical inputs are bounded, source files are selected by retained checksums, scientific identities are validated, queue admission is transactional and bounded, and numerical jobs share the two existing workers. UI export paths expose scientific products, not local file paths. Global rate limits, storage quotas, multi-instance queue architecture and durable hosting remain incomplete product requirements.

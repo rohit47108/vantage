@@ -4,9 +4,19 @@
 
 The later complete-product specification supersedes the demo scope described below. The application is PARTIALLY COMPLETE for that goal. See tasks/product-evidence.md; coadds, subtraction, source extraction, Gaia/WISE, embeds/investigations, release promotion and durable hosting still require implementation/validation.
 
+### Conditional coadd workflow
+
+Current verified preview: https://vantage-spherex-l7w07dm2n-rohit-singhs-projects-48f82479.vercel.app . All sixteen public browser tests pass (no skipped/flaky tests), including actual M101 coadd submission, scientific FITS/provenance exports, saved-result restore, mobile invalid Ceres rejection and rapid target-change guards. Twenty-four scientific/API tests pass without skips. Artifacts/coadd-public-browser.json and coadd-unit-tests.txt retain results.
+
+The service now exposes POST /v1/coadds, persistent analysis-job status/cancellation and immutable /v1/products/{id} manifests/FITS. Numerical jobs share the two bounded worker threads. Pending work resumed and produced an authentic result after an actual process restart; artifacts/product-restart-recovery.json records the controlled fault-injection test. Current API exec session is 43043 on port 8000; the existing temporary tunnel remains session 31231.
+
+The new coadd is an explicitly response-mixed statistical weighted mean on a restricted region, not a completed precision-photometry or subtraction pipeline. M101 retains 105/1,024 pixels with the stronger central-wavelength/quality screen. Sparse covariance is exported, but unknown native covariance and common calibration systematics remain excluded. Robust estimators, motion compensation, full-response validation, PSF matching and absolute registration remain required. See research/updates/2026-11-14/NUMERICAL_METHODS.md.
+
+Authentic DR1 D6 cutout and calibration fixtures are now retained with hashes in research/updates/2026-11-14/dr1-fixtures.json, removing the local-cache dependency from the DR1 regression. Original historical research manifests are unchanged. Runtime dependency audit found no known vulnerabilities, and npm audit reported zero. GitHub CI run 43666276712 succeeded on Ubuntu with Python 3.13 and Node 24, including fresh dependency installation, build, scientific/API tests, independent numerical validation and npm audit. This verifies a fresh Linux checkout in addition to local Windows results.
+
 The new spectral workspace runs at /?view=wavelengths. Verified locally and publicly: 102-channel metadata, six detector groups, two blank layers, actual range-read native brightness/hits/flags, false color, pixel inspection, view restore, provenance and image export. Fourteen scientific/API tests pass, including six new spectral tests. All thirteen browser tests pass locally and on the public preview, including two new real-data spectral tests and automated WCAG A/AA checks in the tested desktop state. Reports: artifacts/product-local-browser.json and artifacts/product-public-browser.json.
 
-Current verified preview: https://vantage-spherex-7pcgn4j98-rohit-singhs-projects-48f82479.vercel.app . Local complete service: http://127.0.0.1:8000/ . API exec session 62536 replaced the earlier API session. Temporary tunnel session 31231 remains in use. This is not durable cloud backend hosting.
+Earlier spectral-only preview: https://vantage-spherex-7pcgn4j98-rohit-singhs-projects-48f82479.vercel.app . Local complete service: http://127.0.0.1:8000/ . This remains a laptop-backed temporary tunnel, not durable cloud backend hosting.
 
 Independent native range sampling and the north-up visual sampler agree exactly at the official tutorial coordinate for channel 62: 12.00507926940918 MJy/sr. This validates that context sample, not source photometry. Research/updates/2026-11-14 retains current cube properties and native schema evidence.
 
