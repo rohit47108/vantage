@@ -1,0 +1,41 @@
+{
+  "checked_utc": "2026-11-15T13:45:09.264358+00:00",
+  "preview": "https://vantage-spherex-nzpb22pbd-rohit-singhs-projects-48f82479.vercel.app",
+  "source_commit": "7b9fe84048e3b402cba78b1c50f65e6198f581d4",
+  "deployment_id": "dpl_96s1bd37xopQe2cj1y2Bz189fecJ",
+  "backend_origin": "https://charm-college-doctrine-coffee.trycloudflare.com",
+  "hosting": "Temporary local Python service and tunnel; not durable cloud backend hosting.",
+  "assets": [
+    {
+      "path": "/favicon.svg",
+      "bytes": 242,
+      "sha256": "9c088dfc0aa951d21f08a2452f63695ff3f78ccf84b5a10510e656868e0c0ca7",
+      "verified_exact": true
+    },
+    {
+      "path": "/assets/index-Dg9D9uxl.js",
+      "bytes": 316086,
+      "sha256": "4b6f4100aae2b8f42d53bb11f2c262ed87115e383e39771ddbc6dabf5a1b88bc",
+      "verified_exact": true
+    },
+    {
+      "path": "/assets/index-RuNVFwTq.css",
+      "bytes": 18487,
+      "sha256": "13fbe1dca573534bc7ba5a0c332a881616c435b8acae3b1963088cc4773004f6",
+      "verified_exact": true
+    }
+  ],
+  "health": {
+    "status": "ok",
+    "policy": "vantage-visual-3"
+  },
+  "html_verification": {
+    "local_sha256": "c318eaf115c83e063b9ca927b6bd7012a3b048770ed31e084644a9c51fb87795",
+    "public_sha256": "398364855c02b6a301b31c680766e8d8c1b45fc7af283b30ee5b0f36ec43df09",
+    "exact_after_only_these_transformations": true,
+    "removed_exact_tag": "<script async data-explicit-opt-in=\"true\" data-deployment-id=\"dpl_96s1bd37xopQe2cj1y2Bz189fecJ\" src=\"https://vercel.live/_next-live/feedback/feedback.js\"></script>",
+    "one_appended_newline_removed": false
+  },
+  "scientific_api_evidence": "artifacts/native-workflow-public-api.json",
+  "functional_source_ci": "artifacts/native-workflow-github-ci.json"
+}

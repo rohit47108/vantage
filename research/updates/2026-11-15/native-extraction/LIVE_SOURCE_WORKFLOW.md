@@ -44,7 +44,7 @@ The discovery cone encloses the supplied angular trajectory with a 60-arcsecond 
 ```json
 {
   "field_id": "<64 lowercase hex characters from source_field.id>",
-  "observation_indices": [4, 7, 63, 64, 97, 112, 113],
+  "observation_indices": [4, 7, 61, 62, 95, 110, 111],
   "method": "psf",
   "centroid_mode": "auto",
   "aperture_radius": 2.5,
@@ -54,7 +54,7 @@ The discovery cone encloses the supplied angular trajectory with a 60-arcsecond 
 }
 ```
 
-Those example indices belong to the retained live field recorded in `artifacts/native-live-field-p330e.json`; indices are not stable across a new discovery. Choose records from the returned manifest. The API rejects absent/wrong-type fields, unknown or duplicate indices, selections beyond 512 and releases without approved native calibration. Selection order is canonicalized for deduplication. Refresh creates a new server-controlled attempt; it does not change a saved field's observations or calibration snapshot. `centroid_mode: auto` refines only when the initial fixed fit has S/N at least 20 and the bounded fit meets the kernel's positional-error gate; other samples retain the supplied conditional position. `fixed` never requests refinement. The same bounds and ordering constraints on aperture/background geometry apply as in the native kernel.
+Those example indices belong to the live-query field recorded in `artifacts/native-workflow-public-field.json`; indices are not stable across a new discovery. Choose records from the returned manifest. The API rejects absent/wrong-type fields, unknown or duplicate indices, selections beyond 512 and releases without approved native calibration. Selection order is canonicalized for deduplication. Refresh creates a new server-controlled attempt; it does not change a saved field's observations or calibration snapshot. `centroid_mode: auto` refines only when the initial fixed fit has S/N at least 20 and the bounded fit meets the kernel's positional-error gate; other samples retain the supplied conditional position. `fixed` never requests refinement. The same bounds and ordering constraints on aperture/background geometry apply as in the native kernel.
 
 Jobs share the existing two-worker pool and persistent SQLite queue. At most ten logical nonterminal analysis requests are admitted. Recovery replays the persisted payload; it does not replace today's saved date defaults with tomorrow's date. Cancellation is checked between native inputs and processing stages. An in-progress external HTTP call is not immediately interrupted. Immutable scientific identities include source, options, selected field/observation context, native/calibration checksums, software policies, results and stamp checksums. Existing results remain readable after an upstream failure.
 
@@ -68,7 +68,9 @@ Actual November 15 requests are recorded in `artifacts/native-query-availability
 
 When live discovery raises an HTTP/transport exception, a retained snapshot may supply candidates only if its recorded cone encloses the entire new cone, its original time bounds contain the requested interval, it has dated official IRSA query provenance, and its data structure is valid. A query for another sky region cannot supply fallback candidates. The fallback always reports `retained_metadata_snapshot`, `limited`, its original query date/completeness and the failed query. It does not establish new ingestion, unqueried deep collections or a current complete inventory. A fresh search button can retry the provider. Failed VO queries or invalid query responses are not silently converted to success.
 
-The actual local HTTP workflow found 150 July DR1 candidates using the explicit retained P330E snapshot. Selecting seven authentic exposures produced six passing PSF measurements, one on each detector, and one authentic missing-coverage rejection. The six-detector CALSPEC consistency benchmark retains its unchanged numerical bounds. This is end-to-end evidence for that field, not a survey-wide validation of arbitrary crowded/extended/variable sources or fresh discovery in every sky region.
+The earlier local HTTP workflow found 150 July DR1 candidates using the explicit retained P330E snapshot. Selecting seven authentic exposures produced six passing PSF measurements, one on each detector, and one authentic missing-coverage rejection. Later, at 13:42 UTC, the actual date-bounded P330E query recovered: all four requested collection queries completed without overflow and returned 147 DR1 candidates. The smaller query correctly excludes the uncovered reference exposure from the broader snapshot. Public acceptance therefore selects the six passing exposures plus a covered D2 input whose residual score exceeds the unchanged maximum of 3. Its measurement remains diagnostic-only and stays out of the accepted plot. The native missing-coverage regression is retained separately. `artifacts/native-workflow-public-field.json`, public-product.json and public-api.json retain this actual query, seven-input reduction and exact scientific-download checksums.
+
+The six-detector CALSPEC consistency benchmark retains its unchanged numerical bounds. This is end-to-end evidence for P330E, not a survey-wide validation of arbitrary crowded/extended/variable sources or fresh discovery in every sky region. The earlier P177D query failures remain evidence of those attempts; P330E recovery does not establish P177D availability.
 
 ## Resource and operational limits
 

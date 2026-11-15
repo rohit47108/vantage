@@ -2,6 +2,8 @@
 
 Explore the changing infrared sky with authentic NASA SPHEREx data. Vantage combines fixed-field time playback with a new 102-channel wavelength workspace. Numerical analysis features are under development; this repository does not yet satisfy the complete-product specification.
 
+[Open the tested Vantage preview](https://vantage-spherex-nzpb22pbd-rohit-singhs-projects-48f82479.vercel.app). Its scientific backend currently depends on a local service and temporary tunnel; durable hosting remains unfinished. The latest complete browser run passes 27 cases, alongside 69 scientific/API tests and fresh Ubuntu CI. See [current release evidence and limits](IMPLEMENTATION_STATUS.md).
+
 ## Current capabilities
 
 - Eight real-data examples, including all five challenge targets, Ceres, M101 and explicitly tracked 3I/ATLAS.

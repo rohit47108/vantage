@@ -1,0 +1,127 @@
+{
+  "checked_utc": "2026-11-15T13:49:20.004748+00:00",
+  "base": "https://vantage-spherex-nzpb22pbd-rohit-singhs-projects-48f82479.vercel.app",
+  "field_id": "9b082fa67de8764f154992344dcd73973a99b11adebce9f884947346a9a68fed",
+  "discovery_status": "cached",
+  "discovery_retrieved_utc": "2026-11-15T13:42:36.193006+00:00",
+  "completeness": "complete",
+  "candidate_count": 147,
+  "job": {
+    "job": {
+      "job_id": "bc54dea7a3454d3580ae9b257f1576da",
+      "status_url": "/v1/analysis/jobs/bc54dea7a3454d3580ae9b257f1576da"
+    },
+    "state": {
+      "job_id": "bc54dea7a3454d3580ae9b257f1576da",
+      "state": "complete",
+      "result_id": "e52f4762907e229bf9ce2c3e1247d8f4b38456ec395010f2b7e7e02eeec2e915",
+      "error": null,
+      "updated": 1794750449.014105
+    },
+    "body": {
+      "field_id": "9b082fa67de8764f154992344dcd73973a99b11adebce9f884947346a9a68fed",
+      "observation_indices": [
+        4,
+        7,
+        61,
+        62,
+        95,
+        110,
+        111
+      ]
+    }
+  },
+  "product_id": "e52f4762907e229bf9ce2c3e1247d8f4b38456ec395010f2b7e7e02eeec2e915",
+  "accepted_detectors": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "sampling": {
+    "available_observations": 147,
+    "accepted_samples": 6,
+    "diagnostic_only_samples": 1,
+    "rejected_samples": 0,
+    "detectors": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "mjd_range": [
+      60867.335824,
+      60880.37752749999
+    ],
+    "interpretation": "Individual native measurements at their own acquisition times and central CWAVE/CBAND. No inferred or zero-filled missing channels; this is not an instantaneous spectrum.",
+    "unselected_observations": 140,
+    "search_completeness": "complete"
+  },
+  "downloads": [
+    {
+      "name": "samples.ecsv",
+      "bytes": 5079,
+      "sha256": "7fa0644b8e35f687e65682f01fc8cea74ab4621376fe650db47805019e9dc5c6",
+      "matches_manifest": true
+    },
+    {
+      "name": "samples.csv",
+      "bytes": 1377,
+      "sha256": "f522cea9db17bde853108bfe2cef0881f7e2ec40b7e44c63123cc6d0886a6ab2",
+      "matches_manifest": true
+    },
+    {
+      "name": "plot.svg",
+      "bytes": 3172,
+      "sha256": "bf6917b4b57705e977dddca28695fa061b9e9443f612cb592efede1a5477ec5d",
+      "matches_manifest": true
+    },
+    {
+      "sample_id": "2025W28_2A_0150_3/D3",
+      "bytes": 55964,
+      "sha256": "e81cca9ce75a8b22c372e36f17c1ef3721ab4591b2209dbe7c5d921d4ee726c8",
+      "matches_manifest": true
+    },
+    {
+      "sample_id": "2025W28_2A_0150_4/D6",
+      "bytes": 55239,
+      "sha256": "af232e7db265ce9327fd9c0d810fdb56d9a37d5ea2b1c5bb8be4a4d634d9e798",
+      "matches_manifest": true
+    },
+    {
+      "sample_id": "2025W29_1A_0544_1/D2",
+      "bytes": 55749,
+      "sha256": "7d77c616bf625b261c767a037a6e3259bc4172559921abc0d7cca92f68ee2379",
+      "matches_manifest": true
+    },
+    {
+      "sample_id": "2025W29_1A_0544_1/D5",
+      "bytes": 55683,
+      "sha256": "5c0d227623947a922fa9fe070fb27aeec7b1c64eb156c9d2b84cbc52d1d42512",
+      "matches_manifest": true
+    },
+    {
+      "sample_id": "2025W30_1B_0059_3/D2",
+      "bytes": 55864,
+      "sha256": "87dc98412a19abcb6a82b40ca3bcf5da1b99d0c7cbac5437b1517b1a449d093b",
+      "matches_manifest": true
+    },
+    {
+      "sample_id": "2025W30_1B_0610_1/D4",
+      "bytes": 56086,
+      "sha256": "99da204f2a4f94d4ca46038f7f2b6fec21af696977ea93e73c0480d6bee7ccaf",
+      "matches_manifest": true
+    },
+    {
+      "sample_id": "2025W30_1B_0610_2/D1",
+      "bytes": 55950,
+      "sha256": "d9d7311f028710c73d0054e2e6b46695c6a00564c44150e9306ede4eeaed3889",
+      "matches_manifest": true
+    }
+  ],
+  "passed": true
+}

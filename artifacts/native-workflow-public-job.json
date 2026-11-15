@@ -1,0 +1,25 @@
+{
+  "job": {
+    "job_id": "bc54dea7a3454d3580ae9b257f1576da",
+    "status_url": "/v1/analysis/jobs/bc54dea7a3454d3580ae9b257f1576da"
+  },
+  "state": {
+    "job_id": "bc54dea7a3454d3580ae9b257f1576da",
+    "state": "complete",
+    "result_id": "e52f4762907e229bf9ce2c3e1247d8f4b38456ec395010f2b7e7e02eeec2e915",
+    "error": null,
+    "updated": 1794750449.014105
+  },
+  "body": {
+    "field_id": "9b082fa67de8764f154992344dcd73973a99b11adebce9f884947346a9a68fed",
+    "observation_indices": [
+      4,
+      7,
+      61,
+      62,
+      95,
+      110,
+      111
+    ]
+  }
+}

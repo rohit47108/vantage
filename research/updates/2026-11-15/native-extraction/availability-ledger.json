@@ -23,5 +23,25 @@
       "full_request_uri_retained": false
     }
   ],
-  "interpretation": "Query-specific HTTP/transport failures. Known broad P330E SIA URI returned an actual VOTable. No live-success or complete-inventory claim for P177D; retained source metadata is explicitly dated and limited. Exact TAP parameter URIs were not retained, so these bodies alone do not reproduce the failed TAP requests."
+  "interpretation": "Query-specific HTTP/transport failures. Known broad P330E SIA URI returned an actual VOTable. No live-success or complete-inventory claim for P177D; retained source metadata is explicitly dated and limited. Exact TAP parameter URIs were not retained, so these bodies alone do not reproduce the failed TAP requests.",
+  "later_p330e_recovery": {
+    "retrieved_utc": "2026-11-15T13:42:36.193006+00:00",
+    "field_id": "9b082fa67de8764f154992344dcd73973a99b11adebce9f884947346a9a68fed",
+    "candidate_observations": 147,
+    "search_completeness": "complete",
+    "queried_collections": [
+      "spherex_dr1",
+      "spherex_qr3",
+      "spherex_dr1_deep",
+      "spherex_qr3_deep"
+    ],
+    "queries": [
+      "https://irsa.ipac.caltech.edu/SIA?COLLECTION=spherex_dr1&POS=CIRCLE+247.8908120682296+30.145946918061842+0.016667134779199184&MAXREC=500&TIME=60857.0+60888.0",
+      "https://irsa.ipac.caltech.edu/SIA?COLLECTION=spherex_qr3&POS=CIRCLE+247.8908120682296+30.145946918061842+0.016667134779199184&MAXREC=500&TIME=60857.0+60888.0",
+      "https://irsa.ipac.caltech.edu/SIA?COLLECTION=spherex_dr1_deep&POS=CIRCLE+247.8908120682296+30.145946918061842+0.016667134779199184&MAXREC=500&TIME=60857.0+60888.0",
+      "https://irsa.ipac.caltech.edu/SIA?COLLECTION=spherex_qr3_deep&POS=CIRCLE+247.8908120682296+30.145946918061842+0.016667134779199184&MAXREC=500&TIME=60857.0+60888.0"
+    ],
+    "evidence": "artifacts/native-workflow-public-field.json",
+    "scope": "Actual P330E query recovered. Earlier failures remain evidence of those attempts; this does not establish availability in other fields."
+  }
 }

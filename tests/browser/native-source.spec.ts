@@ -4,9 +4,12 @@ import {readFileSync} from 'node:fs';
 
 const acquisition=JSON.parse(readFileSync('research/updates/2026-11-15/native-extraction/acquisition.json','utf8'));
 const old=JSON.parse(readFileSync('research/updates/2026-11-15/photometry/benchmark.json','utf8'));
-const wanted=[...acquisition.observations,old.observations[1]];
+// Narrow discovery correctly excludes the uncovered reference cutout.
+// Use a covered, authentic poor-fit input for browser rejection guidance;
+// retained-fixture regressions separately test missing native coverage.
+const wanted=[...acquisition.observations.filter((row:{detector:number})=>row.detector!==2),...old.observations.slice(0,2)];
 
-test('general source workflow uses frozen discovery, all six native detectors and lazy inspection',async({page})=>{
+test('general source workflow uses frozen discovery, all six native detectors and lazy inspection',async({page,baseURL})=>{
   test.setTimeout(240_000);
   await page.goto('/?view=measure');
   await expect(page.getByRole('heading',{name:'Measure a source',exact:true})).toBeVisible();
@@ -17,6 +20,7 @@ test('general source workflow uses frozen discovery, all six native detectors an
   await page.getByRole('button',{name:'Clear observation selection'}).click();
   for(const row of wanted){
     await page.getByLabel('Filter observation IDs').fill(row.obs_id);
+    await expect(page.getByLabel(`Include ${row.obs_id}/D${row.detector}`,{exact:true})).toBeVisible();
     await page.getByLabel(`Include ${row.obs_id}/D${row.detector}`,{exact:true}).check();
   }
   await page.getByLabel('Filter observation IDs').fill('');
@@ -28,16 +32,17 @@ test('general source workflow uses frozen discovery, all six native detectors an
   await expect(page.getByTestId('native-measured-flux')).toContainText('31,248.75');
   await expect(page.getByRole('img',{name:'Native brightness cutout; source cross marks the measured position. Array rows increase upward.'})).toBeVisible();
   await expect(page.getByText('Solid: fit core · dashed: background annulus').first()).toBeVisible();
-  await page.getByRole('button',{name:'Inspect 2025W29_1A_0544_2/D2',exact:true}).click();
-  await expect(page.getByTestId('native-selected-sample')).toContainText('does not cover');
+  await expect(page.getByText('1 need fit review',{exact:true})).toBeVisible();
+  await page.getByRole('button',{name:'Inspect 2025W29_1A_0544_1/D2',exact:true}).click();
+  await expect(page.getByTestId('native-selected-sample')).toContainText('exceeds the declared maximum of 3');
   const download=page.waitForEvent('download');await page.getByRole('link',{name:'ECSV with units'}).click();
   expect((await download).suggestedFilename()).toMatch(/samples\.ecsv$/);
   await page.getByRole('button',{name:'Share measured light',exact:true}).click();
   const link=await page.getByLabel('Measured-light link').inputValue();await page.goto(link);
   await expect(page.getByRole('heading',{name:'P330E · measured light',exact:true})).toBeVisible();
-  await expect(page.getByTestId('native-selected-sample')).toContainText('does not cover');
+  await expect(page.getByTestId('native-selected-sample')).toContainText('exceeds the declared maximum of 3');
   expect((await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze()).violations).toEqual([]);
-  await page.screenshot({path:'artifacts/native-source-desktop.png',fullPage:true});
+  await page.screenshot({path:`artifacts/native-source-${baseURL?.startsWith('https:')?'public':'local'}-desktop.png`,fullPage:true});
   await page.getByRole('button',{name:'Clear observation selection'}).click();
   await page.getByLabel('Filter observation IDs').fill('2025W30_1B_0610_2');
   await page.getByLabel('Include 2025W30_1B_0610_2/D1',{exact:true}).check();
@@ -47,7 +52,7 @@ test('general source workflow uses frozen discovery, all six native detectors an
   await expect(page.getByText('1 pass fit checks',{exact:true})).toBeVisible({timeout:60_000});
 });
 
-test('moving-source links preserve coordinates and both motion components on mobile',async({page})=>{
+test('moving-source links preserve coordinates and both motion components on mobile',async({page,baseURL})=>{
   await page.setViewportSize({width:390,height:844});
   await page.goto('/?view=measure&source_ra=247.8908392831&source_dec=30.14604947207&pmra=-8.882&pmdec=-38.705&ref_epoch=2016&source_name=P330E');
   await page.getByText('Catalog motion and survey coverage',{exact:true}).click();
@@ -58,7 +63,7 @@ test('moving-source links preserve coordinates and both motion components on mob
   await expect(page.getByLabel('Apply supplied angular motion')).toBeChecked();
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
   expect((await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze()).violations).toEqual([]);
-  await page.screenshot({path:'artifacts/native-source-mobile.png',fullPage:true});
+  await page.screenshot({path:`artifacts/native-source-${baseURL?.startsWith('https:')?'public':'local'}-mobile.png`,fullPage:true});
 });
 
 test('sky inspection and real Gaia selection carry the source into native measurement',async({page})=>{
